@@ -40,6 +40,8 @@ describe('course and deck invariants', () => {
 
   it.each(topics.map((topic) => [topic.id, topic] as const))('builds a coherent 85-screen deck with unique titles for %s', (_id, topic) => {
     const deck = buildDeck(topic, course)
+    const visibleText = deck.map((slide) => [slide.kicker, slide.title, slide.body, slide.note, slide.transition, ...(slide.bullets ?? [])].filter(Boolean).join(' ')).join('\n')
+    const forbiddenServiceLabels = /^(слайд|новый слайд|раздел|блок|инфографика|визуализация|ключевой вывод|обновлённая версия|актуализировано|комментарий|примечание для дизайнера|вставить изображение|текст для слайда)$/i
     expect(deck).toHaveLength(85)
     expect(countServiceSlides(deck)).toBe(5)
     expect(deck.filter((slide) => ![2, 3, 4, 5, 85].includes(slide.number))).toHaveLength(80)
@@ -47,8 +49,21 @@ describe('course and deck invariants', () => {
     expect(new Set(deck.map((slide) => slide.title)).size).toBe(85)
     expect(deck[82].body).toContain('первоначальный ответ')
     expect(deck[84].title).toContain(topic.displayTitle)
+    expect(deck.filter((slide) => slide.kind === 'divider').map((slide) => slide.title)).toEqual(topic.questions.map((question) => question.title))
+    expect(deck[8].visual?.type).toBe('process')
+    expect(deck.filter((slide) => slide.visual).length).toBeGreaterThanOrEqual(2)
+    expect(deck.some((slide) => slide.visual?.type === 'bar')).toBe(false)
     expect(deck.some((slide) => `${slide.body ?? ''} ${slide.bullets?.join(' ') ?? ''}`.includes('0 ч'))).toBe(false)
     expect(deck.some((slide) => `${slide.body ?? ''} ${slide.bullets?.join(' ') ?? ''}`.includes('компетенции:'))).toBe(false)
+    deck.forEach((slide) => {
+      expect(slide.kicker).not.toMatch(forbiddenServiceLabels)
+      expect(slide.title).not.toMatch(forbiddenServiceLabels)
+    })
+    topic.questions.forEach((question) => {
+      for (const preservedText of [question.title, question.focus, question.rule, question.example, question.decision, question.pitfall, question.check]) {
+        expect(visibleText).toContain(preservedText)
+      }
+    })
     const narrativeText = deck.flatMap((slide) => [slide.body, slide.note, slide.transition]).filter((text): text is string => Boolean(text))
     expect(new Set(narrativeText).size).toBe(narrativeText.length)
     deck.forEach((slide) => expect(slide.sourceIds.length).toBeGreaterThan(0))

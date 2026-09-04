@@ -29,8 +29,8 @@ export const course: CourseConfig = {
   semesters: [7, 8],
   discipline: 'МДК.06.02 Инженерно-техническая поддержка сопровождения информационных систем',
   semesterThemes: {
-    7: 'Блок 1. Организация сопровождения и службы поддержки',
-    8: 'Блок 2. Отказы, диагностика и техническое обслуживание',
+    7: 'Организация сопровождения и службы поддержки',
+    8: 'Отказы, диагностика и техническое обслуживание',
   },
   materialsUrl: 'https://disk.yandex.ru/d/jfdIENXO7WUADQ',
   repository: 'https://github.com/OlgaKraven/2026-ITPSIS-lecture',

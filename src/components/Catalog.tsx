@@ -129,7 +129,7 @@ export function Catalog({ course, topics, profile, theme, onThemeChange, onOpenT
 
       <footer className="catalog-footer">
         <span>{course.learningPlatform}</span>
-        <span>2 семестровых блока · {course.totals.finalAssessment}</span>
+        <span>15 тем · 7-й и 8-й семестры · {course.totals.finalAssessment}</span>
       </footer>
     </main>
   )

@@ -42,7 +42,7 @@ test('direct links, keyboard navigation and final screen work', async ({ page })
   await page.keyboard.press('ArrowRight')
   await expect(page.locator('.slide-counter')).toHaveText('2 / 85')
   await page.goto(`./?topic=${topics[0].id}&slide=85`)
-  await expect(page.getByRole('heading', { name: `Обсуждаем решения по теме «${topics[0].displayTitle}»` })).toBeVisible()
+  await expect(page.getByRole('heading', { name: `Вопросы по теме «${topics[0].displayTitle}»` })).toBeVisible()
   await expect(page.locator('.mascot-mask img').first()).toHaveJSProperty('complete', true)
 })
 
@@ -86,7 +86,34 @@ test('materials QR and printable route are complete', async ({ page }) => {
   await page.goto(`./print?topic=${topics[0].id}&variant=teacher`)
   await page.waitForFunction(() => document.body.dataset.printReady === 'true')
   await expect(page.locator('.print-page')).toHaveCount(85)
-  await expect(page.locator('.print-page').nth(84).getByRole('heading', { name: `Обсуждаем решения по теме «${topics[0].displayTitle}»` })).toBeVisible()
+  await expect(page.locator('.print-page').nth(84).getByRole('heading', { name: `Вопросы по теме «${topics[0].displayTitle}»` })).toBeVisible()
+})
+
+test('print slides keep their content inside the page at presentation size', async ({ page }) => {
+  await page.setViewportSize({ width: 1600, height: 900 })
+  for (const topic of topics) {
+    await page.goto(`./print?topic=${topic.id}&variant=student`)
+    await page.waitForFunction(() => document.body.dataset.printReady === 'true')
+    const problems = await page.locator('.print-page').evaluateAll((pages) => pages.flatMap((page, index) => {
+      const copy = page.querySelector<HTMLElement>('.slide-copy')
+      const footer = page.querySelector<HTMLElement>('.slide-footer')
+      if (!copy || !footer) return [{ slide: index + 1, reason: 'missing layout region', title: '' }]
+      const copyRect = copy.getBoundingClientRect()
+      const footerRect = footer.getBoundingClientRect()
+      const reasons = [
+        copy.scrollHeight > copy.clientHeight + 1 ? 'vertical text overflow' : '',
+        copy.scrollWidth > copy.clientWidth + 1 ? 'horizontal text overflow' : '',
+        copyRect.bottom > footerRect.top + 1 ? 'footer overlap' : '',
+      ].filter(Boolean)
+      return reasons.map((reason) => ({
+        slide: index + 1,
+        reason,
+        title: page.querySelector('h2')?.textContent ?? '',
+        copyHeight: `${copy.clientHeight}/${copy.scrollHeight}`,
+      }))
+    }))
+    expect(problems, topic.id).toEqual([])
+  }
 })
 
 test('semester PDF route combines all lectures from the selected semester', async ({ page }) => {
