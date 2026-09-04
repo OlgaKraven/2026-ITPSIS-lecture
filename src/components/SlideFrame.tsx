@@ -1,6 +1,5 @@
 import { ExternalLink } from 'lucide-react'
 import type { ChangeEvent, CSSProperties } from 'react'
-import { getSource } from '../data/sourceRegistry'
 import type { CourseConfig, LectureTopic, Slide, TeacherProfile, TestAnswers } from '../types'
 
 type Props = {
@@ -22,10 +21,10 @@ export function SlideFrame({ slide, course, topic, profile, answers = {}, onAnsw
   const isPrint = Boolean(printVariant)
   const showTeacherNotes = printVariant === 'teacher'
   const testAnswer = slide.test ? answers[slide.test.id] : undefined
-  const sourceLinks = slide.sourceIds.map(getSource).filter((source) => Boolean(source))
   const showProfile = ['title', 'divider', 'questions'].includes(slide.kind)
   const showMascot = ['title', 'questions'].includes(slide.kind) || (slide.kind === 'example' && !slide.visual)
-  const longTitle = slide.kind === 'title' && slide.title.length > 34
+  const longTitle = (slide.kind === 'title' && slide.title.length > 34) || slide.title.length > 64
+  const denseList = (slide.bullets?.length ?? 0) >= 6
 
   const changeChoice = (event: ChangeEvent<HTMLInputElement>, index: number, multiple: boolean) => {
     if (!slide.test || !onAnswer) return
@@ -38,7 +37,7 @@ export function SlideFrame({ slide, course, topic, profile, answers = {}, onAnsw
   }
 
   return (
-    <article className={`slide-frame kind-${slide.kind} ${compact ? 'compact' : ''} ${longTitle ? 'long-title' : ''} ${slide.visual ? 'has-visual' : ''}`} aria-label={`Экран ${slide.number}: ${slide.title}`}>
+    <article className={`slide-frame kind-${slide.kind} ${compact ? 'compact' : ''} ${longTitle ? 'long-title' : ''} ${denseList ? 'dense-list' : ''} ${slide.visual ? 'has-visual' : ''}`} aria-label={`Экран ${slide.number}: ${slide.title}`}>
       <img className="side-ornament" src={asset('brand/side-ornament.png')} alt="" aria-hidden="true" />
       <header className="slide-header">
         <div className="slide-brand">
@@ -108,6 +107,54 @@ export function SlideFrame({ slide, course, topic, profile, answers = {}, onAnsw
                 <thead><tr>{slide.visual.columns.map((column) => <th key={column}>{column}</th>)}</tr></thead>
                 <tbody>{slide.visual.rows.map((row, rowIndex) => <tr key={rowIndex}>{row.map((cell, cellIndex) => <td key={`${rowIndex}-${cellIndex}`}>{cell}</td>)}</tr>)}</tbody>
               </table>
+              {slide.visual.caption && <p>{slide.visual.caption}</p>}
+            </figure>
+          )}
+
+          {slide.visual?.type === 'process' && (
+            <figure className={`slide-visual process-visual ${slide.visual.steps.length > 4 ? 'is-dense' : ''}`}>
+              <figcaption>{slide.visual.title}</figcaption>
+              <ol className="process-track">
+                {slide.visual.steps.map((step, index) => (
+                  <li key={`${step.label}-${index}`}>
+                    <span>{index + 1}</span>
+                    <strong>{step.label}</strong>
+                    {step.detail && <small>{step.detail}</small>}
+                  </li>
+                ))}
+              </ol>
+              {slide.visual.caption && <p>{slide.visual.caption}</p>}
+            </figure>
+          )}
+
+          {slide.visual?.type === 'hierarchy' && (
+            <figure className="slide-visual hierarchy-visual">
+              <figcaption>{slide.visual.title}</figcaption>
+              <div className="hierarchy-root">{slide.visual.root}</div>
+              <div className="hierarchy-branches">
+                {slide.visual.branches.map((branch) => (
+                  <div key={branch.label}>
+                    <strong>{branch.label}</strong>
+                    <small>{branch.detail}</small>
+                  </div>
+                ))}
+              </div>
+              {slide.visual.caption && <p>{slide.visual.caption}</p>}
+            </figure>
+          )}
+
+          {slide.visual?.type === 'cycle' && (
+            <figure className="slide-visual cycle-visual">
+              <figcaption>{slide.visual.title}</figcaption>
+              <ol className="cycle-track">
+                {slide.visual.steps.map((step, index) => (
+                  <li key={`${step.label}-${index}`}>
+                    <span>{index + 1}</span>
+                    <strong>{step.label}</strong>
+                    {step.detail && <small>{step.detail}</small>}
+                  </li>
+                ))}
+              </ol>
               {slide.visual.caption && <p>{slide.visual.caption}</p>}
             </figure>
           )}
@@ -186,13 +233,6 @@ export function SlideFrame({ slide, course, topic, profile, answers = {}, onAnsw
       <footer className="slide-footer">
         <div className="profile-lines">
           {showProfile && profileLines(profile).map((line) => <span key={line}>{line}</span>)}
-        </div>
-        <div className="source-links" aria-label="Источники экрана">
-          {sourceLinks.map((source) => source && (
-            <a key={source.id} href={source.location.startsWith('http') ? source.location : undefined} title={source.title}>
-              {source.id}
-            </a>
-          ))}
         </div>
       </footer>
     </article>

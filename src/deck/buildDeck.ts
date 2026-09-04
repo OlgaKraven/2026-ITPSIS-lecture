@@ -17,29 +17,22 @@ const mainLiterature = [
 ]
 
 const visualPlans: Record<string, { questionIndex: number; visual: SlideVisual }> = {
-  's07-01-support-lifecycle': { questionIndex: 2, visual: { type: 'table', title: 'Кто принимает результат', columns: ['Роль', 'Действие', 'Ответственность'], rows: [['Пользователь', 'Сообщает симптом', 'Точность исходных данных'], ['L1', 'Регистрирует', 'Полнота карточки'], ['L2', 'Диагностирует', 'Проверяемая причина'], ['Владелец услуги', 'Согласует изменение', 'Пользовательский результат']] } },
-  's07-02-support-levels': { questionIndex: 3, visual: { type: 'table', title: 'Маршрут по линиям поддержки', columns: ['Линия', 'Решает', 'Передаёт, если'], rows: [['L1', 'Приём и типовые решения', 'Нужна диагностика'], ['L2', 'Конфигурация и журналы', 'Нужно изменение продукта'], ['L3', 'Код и релиз', 'Нужно решение владельца']] } },
-  's07-03-sla': { questionIndex: 4, visual: { type: 'bar', title: 'Реакция на INC-074', items: [{ label: 'Факт', value: 7, max: 15, displayValue: '7 мин' }, { label: 'Предел P1', value: 15, max: 15, displayValue: '15 мин' }], caption: 'Отсчёт: от регистрации до подтверждённого принятия в работу.' } },
-  's07-04-ticket-flow': { questionIndex: 4, visual: { type: 'table', title: 'Инцидент, запрос и дефект', columns: ['Запись', 'Наблюдение', 'Цель'], rows: [['INC-074', 'HTTP 503', 'Восстановить услугу'], ['SR-118', 'Нужна роль', 'Выполнить запрос'], ['DEF-021', 'Workers не стартуют', 'Исправить продукт']] } },
-  's07-05-reproduction': { questionIndex: 6, visual: { type: 'table', title: 'Что осталось в минимальном сценарии', columns: ['Элемент', 'Проверка', 'Вывод'], rows: [['Вложение 12 МБ', 'Удалить файл', '503 исчезает'], ['Тема формы', 'Сменить тему', 'Не влияет'], ['Роль куратора', 'Сменить роль', 'Нужен контрольный прогон']] } },
-  's07-06-escalation': { questionIndex: 4, visual: { type: 'table', title: 'Пакет передачи INC-074', columns: ['Часть', 'Значение', 'Зачем'], rows: [['Влияние', '126 из 180', 'Приоритет'], ['Среда', 'Клиент 6.4.1', 'Повторение'], ['Свидетельство', 'requestId 8f31', 'Поиск в журнале']] } },
-  's07-07-knowledge-base': { questionIndex: 7, visual: { type: 'bar', title: 'Результаты применения KB-042', items: [{ label: 'Успешно', value: 14, max: 16, displayValue: '14' }, { label: 'Возврат на уточнение', value: 2, max: 16, displayValue: '2' }], caption: 'Возвраты показывают, какой шаг статьи требует пересмотра.' } },
-  's07-08-update-regulation': { questionIndex: 6, visual: { type: 'table', title: 'Контрольные точки релиза 6.4.2', columns: ['Время', 'Действие', 'Критерий'], rows: [['18:50', 'Снимок', 'Хэш совпал'], ['19:15', 'Сквозной тест', 'Заявка создана'], ['При двух 5xx', 'Откат', '6.4.1 отвечает']] } },
-  's07-09-change-management': { questionIndex: 4, visual: { type: 'table', title: 'Риски CHG-012', columns: ['Риск', 'Сигнал', 'Реакция'], rows: [['Workers=0', 'Метрика процесса', 'Откат'], ['Миграция дольше окна', 'Таймер 19:15', 'Остановить шаг'], ['Рост 5xx', 'Два события подряд', 'Вернуть 6.4.1']] } },
-  's07-10-backup-restore': { questionIndex: 2, visual: { type: 'bar', title: 'Бюджет RTO: 120 минут', items: [{ label: 'Решение', value: 20, max: 120, displayValue: '20 мин' }, { label: 'Восстановление', value: 70, max: 120, displayValue: '70 мин' }, { label: 'Проверка', value: 20, max: 120, displayValue: '20 мин' }, { label: 'Резерв', value: 10, max: 120, displayValue: '10 мин' }] } },
-  's08-01-failure-response': { questionIndex: 1, visual: { type: 'table', title: 'Первые минуты отказа', columns: ['Время', 'Факт', 'Решение'], rows: [['10:14', 'HTTP 503', 'Подтвердить'], ['10:16', '126 пользователей', 'Объявить P1'], ['10:19', 'Координатор назначен', 'Разделить потоки'], ['10:24', 'Сквозной тест успешен', 'Наблюдать']] } },
-  's08-02-error-collection': { questionIndex: 4, visual: { type: 'bar', title: 'Очередь и обработчики', items: [{ label: 'Очередь до события', value: 14, max: 980, displayValue: '14' }, { label: 'Очередь при отказе', value: 980, max: 980, displayValue: '980' }, { label: 'Активные workers', value: 0, max: 4, displayValue: '0 из 4' }], caption: 'Совместное изменение сигналов сильнее одиночной записи.' } },
-  's08-03-layer-localization': { questionIndex: 5, visual: { type: 'table', title: 'Результаты проверки слоёв', columns: ['Слой', 'Свидетельство', 'Статус'], rows: [['Клиент', 'Два устройства', 'Исключён'], ['Сеть', 'DNS и TLS работают', 'Исключена'], ['Приложение', 'workers=0', 'Подозрение'], ['Сервер', 'Ресурсы в норме', 'Исключён'], ['БД', '18 мс, health=ok', 'Исключена']] } },
-  's08-04-postmortem': { questionIndex: 5, visual: { type: 'bar', title: 'Фактическое влияние INC-074', items: [{ label: 'Затронутые пользователи', value: 126, max: 180, displayValue: '126 из 180' }, { label: 'Неуспешные попытки', value: 37, max: 180, displayValue: '37' }, { label: 'Потерянные записи', value: 0, max: 180, displayValue: '0' }], caption: 'Период оценки: 10:14–10:24.' } },
-  's08-05-hardware-maintenance': { questionIndex: 2, visual: { type: 'bar', title: 'Температура SRV-APP-02', items: [{ label: 'Базовый уровень', value: 61, max: 80, displayValue: '61 °C' }, { label: 'Текущее значение', value: 74, max: 80, displayValue: '74 °C' }, { label: 'Порог действия', value: 80, max: 80, displayValue: '80 °C' }], caption: 'Тренд создаёт основание для планового окна до аварии.' } },
+  's07-01-support-lifecycle': { questionIndex: 2, visual: { type: 'hierarchy', title: 'Ответственность участников сопровождения', root: 'Информационная система', branches: [{ label: 'Пользователь', detail: 'Сообщает наблюдаемый симптом' }, { label: 'L1', detail: 'Регистрирует обращение' }, { label: 'L2', detail: 'Проводит диагностику' }, { label: 'Владелец услуги', detail: 'Принимает результат изменения' }] } },
+  's07-02-support-levels': { questionIndex: 3, visual: { type: 'hierarchy', title: 'Распределение задач между уровнями поддержки', root: 'Служба поддержки', branches: [{ label: 'L1', detail: 'Приём и типовые решения' }, { label: 'L2', detail: 'Конфигурация и журналы' }, { label: 'L3', detail: 'Исправление продукта и выпуск релиза' }] } },
+  's07-03-sla': { questionIndex: 4, visual: { type: 'process', title: 'Как измеряется время реакции', steps: [{ label: 'Регистрация', detail: 'Зафиксировано начало отсчёта' }, { label: 'Принятие в работу', detail: 'Специалист подтвердил обращение' }, { label: 'Расчёт', detail: 'Интервал сравнивается с целью SLA' }] } },
+  's07-04-ticket-flow': { questionIndex: 4, visual: { type: 'table', title: 'Различие типов записей', columns: ['Запись', 'Наблюдение', 'Цель'], rows: [['INC-074', 'HTTP 503', 'Восстановить услугу'], ['SR-118', 'Нужна роль', 'Выполнить запрос'], ['DEF-021', 'Workers не стартуют', 'Исправить продукт']] } },
+  's07-05-reproduction': { questionIndex: 6, visual: { type: 'process', title: 'Минимизация сценария воспроизведения', steps: [{ label: 'Условие', detail: 'Зафиксировать среду и тестовые данные' }, { label: 'Один элемент', detail: 'Удалить или изменить только его' }, { label: 'Повтор', detail: 'Снова выполнить исходные шаги' }, { label: 'Вывод', detail: 'Оставить только существенные условия' }] } },
+  's07-06-escalation': { questionIndex: 4, visual: { type: 'process', title: 'Передача обращения без потери контекста', steps: [{ label: 'Основание', detail: 'Названа граница полномочий' }, { label: 'Сведения', detail: 'Собраны влияние, среда и проверки' }, { label: 'Адресат', detail: 'Определена компетентная роль' }, { label: 'Принятие', detail: 'Подтверждены владелец и срок' }] } },
+  's07-07-knowledge-base': { questionIndex: 7, visual: { type: 'cycle', title: 'Жизненный цикл статьи базы знаний', steps: [{ label: 'Создание', detail: 'Решение проверено' }, { label: 'Рецензирование', detail: 'Другой специалист повторил шаги' }, { label: 'Публикация', detail: 'Область применения указана' }, { label: 'Пересмотр', detail: 'Версия и результат снова проверены' }] } },
+  's07-08-update-regulation': { questionIndex: 6, visual: { type: 'process', title: 'Переход от обновления к откату', steps: [{ label: 'Контрольная точка', detail: 'Проверяется состояние услуги' }, { label: 'Критерий не выполнен', detail: 'Продолжение останавливается' }, { label: 'Откат', detail: 'Возвращается устойчивая версия' }, { label: 'Проверка', detail: 'Повторяется пользовательский сценарий' }] } },
+  's07-09-change-management': { questionIndex: 4, visual: { type: 'cycle', title: 'Управление рисками изменения', steps: [{ label: 'Выявить', detail: 'Назвать нежелательное событие' }, { label: 'Оценить', detail: 'Сопоставить вероятность и влияние' }, { label: 'Подготовить меру', detail: 'Задать предупреждение и реакцию' }, { label: 'Проверить', detail: 'Зафиксировать результат после внедрения' }] } },
+  's07-10-backup-restore': { questionIndex: 2, visual: { type: 'process', title: 'Из чего складывается время восстановления', steps: [{ label: 'Решение', detail: 'Выбрать точку возврата' }, { label: 'Подготовка', detail: 'Развернуть среду' }, { label: 'Восстановление', detail: 'Вернуть данные и конфигурацию' }, { label: 'Проверка', detail: 'Подтвердить пользовательскую функцию' }] } },
+  's08-01-failure-response': { questionIndex: 1, visual: { type: 'process', title: 'Последовательность реагирования на отказ', steps: [{ label: 'Подтвердить', detail: 'Зафиксировать симптом и влияние' }, { label: 'Классифицировать', detail: 'Назначить приоритет' }, { label: 'Стабилизировать', detail: 'Ограничить последствия' }, { label: 'Восстановить', detail: 'Проверить услугу' }] } },
+  's08-02-error-collection': { questionIndex: 4, visual: { type: 'hierarchy', title: 'Источники сведений об ошибке', root: 'Наблюдаемое событие', branches: [{ label: 'Обращения', detail: 'Контекст и влияние для пользователя' }, { label: 'Сообщение интерфейса', detail: 'Код и идентификатор запроса' }, { label: 'Журналы', detail: 'События компонентов' }, { label: 'Метрики', detail: 'Изменение состояния во времени' }] } },
+  's08-03-layer-localization': { questionIndex: 5, visual: { type: 'process', title: 'Проверка слоёв от клиента к данным', steps: [{ label: 'Рабочее место' }, { label: 'Сеть' }, { label: 'Приложение' }, { label: 'Сервер' }, { label: 'База данных' }], caption: 'Следующий шаг выбирается по результату предыдущей проверки.' } },
+  's08-04-postmortem': { questionIndex: 5, visual: { type: 'process', title: 'От события к предупреждающему действию', steps: [{ label: 'Свидетельства', detail: 'Собрана хронология' }, { label: 'Причина', detail: 'Объяснён механизм отказа' }, { label: 'Условия', detail: 'Найдены пробелы процесса' }, { label: 'Действия', detail: 'Назначены владелец и проверка' }] } },
+  's08-05-hardware-maintenance': { questionIndex: 2, visual: { type: 'cycle', title: 'Контроль состояния оборудования', steps: [{ label: 'Измерение', detail: 'Сохранить текущее значение' }, { label: 'Сравнение', detail: 'Сопоставить с базовой линией и порогом' }, { label: 'Решение', detail: 'Назначить наблюдение или обслуживание' }, { label: 'Повторная проверка', detail: 'Подтвердить результат работы' }] } },
 }
-
-const definitionOpeners = ['Сначала уточним', 'Зафиксируем границу', 'Разведём понятия', 'Соберём основу', 'Назовём точно', 'Определим рабочий смысл', 'Установим критерий', 'Закрепим вывод']
-const theoryOpeners = ['Как устроено', 'На чём держится', 'Как связаны элементы', 'Правило для команды', 'Логика решения', 'Последовательность работы', 'Граница применимости', 'Как поддерживать результат']
-const caseOpeners = ['Первый эпизод', 'Наблюдение на стенде', 'Следующий факт CampusHelp', 'Проверка на живых значениях', 'Поворот кейса', 'Данные для решения', 'Контрольный эксперимент', 'Финальный эпизод']
-const decisionOpeners = ['Первое решение', 'Команда распределяет действия', 'Выбираем проверяемый ход', 'Фиксируем рабочий маршрут', 'Сужаем область решения', 'Передаём результат дальше', 'Укрепляем процесс', 'Собираем итог']
-const riskOpeners = ['Ложная уверенность', 'Где теряется контекст', 'Ошибка в исходных условиях', 'Подмена факта предположением', 'Риск поспешного действия', 'Слабое место передачи', 'Что разрушает воспроизводимость', 'Последняя проверка на прочность']
-const checkOpeners = ['Признак первого результата', 'Проверка ответственности', 'Измеримый рубеж', 'Сверка классификации', 'Повтор независимым участником', 'Приёмка без уточнений', 'Контроль устойчивости', 'Доказательство завершения']
 const bridges = [
   'Откроем тему с базового различия, которое задаёт весь дальнейший маршрут.',
   'Следующий шаг добавляет роли и условия к уже определённому объекту.',
@@ -90,6 +83,16 @@ const reportLines = [
   'Оформите инструкцию так, чтобы её можно было выполнить без пояснений.',
   'Завершите документ итоговым критерием, ограничениями и следующим действием.',
 ]
+const practiceChecks = [
+  'Проверьте, совпадает ли формулировка с исходной темой и границами задачи.',
+  'Убедитесь, что для каждой роли указаны действие и ответственность.',
+  'Повторите измерение по тем же исходным условиям и сравните результат.',
+  'Сверьте выбранный тип или маршрут с определением из теоретической части.',
+  'Передайте фрагмент другому участнику и проверьте воспроизводимость.',
+  'Убедитесь, что адресат понимает ожидаемое действие без дополнительных пояснений.',
+  'Проверьте применимость результата на исходном и граничном сценариях.',
+  'Сопоставьте итоговый фрагмент с целью занятия и критерием завершения.',
+]
 
 const makeTests = (topic: LectureTopic): TestTask[] => {
   const [q1, q2, q3, q4, q5, q6] = topic.questions
@@ -105,6 +108,13 @@ const makeTests = (topic: LectureTopic): TestTask[] => {
 
 const testTitles = ['Выбери действие по исходному факту', 'Собери доказательный критерий', 'Найди опасное утверждение', 'Продолжи разбор CampusHelp', 'Восстанови порядок работы', 'Сформулируй проверяемый ответ']
 
+const topicMapVisual = (topic: LectureTopic): SlideVisual => ({
+  type: 'process',
+  title: 'Последовательность подвопросов',
+  steps: topic.questions.map((question, index) => ({ label: `${index + 1}. ${question.title}` })),
+  caption: 'Каждый следующий подвопрос опирается на результат предыдущего.',
+})
+
 export const buildDeck = (topic: LectureTopic, course: CourseConfig): Slide[] => {
   const semesterTopics = topics.filter((item) => item.semester === topic.semester)
   const topicNumber = semesterTopics.findIndex((item) => item.id === topic.id) + 1
@@ -113,18 +123,18 @@ export const buildDeck = (topic: LectureTopic, course: CourseConfig): Slide[] =>
   const sourceIds = Array.from(new Set(['rpd-itpsis-text', ...topic.sourceIds]))
   const titleSecondBullet = `Семестр ${topic.semester} · тема ${topicNumber} из ${semesterTopics.length}`
   const slides: Omit<Slide, 'number'>[] = [
-    { kind: 'title', kicker: `${course.discipline} · ${topic.semester}-й семестр`, title: topic.displayTitle, body: `Практическая задача: ${topic.projectArtifact}.`, bullets: [titleSecondBullet, 'От теории — к кейсу, проверке и практическому результату'], sourceIds: ['rpd-itpsis-text', 'okfks-rhino', 'synergy-logo'] },
+    { kind: 'title', kicker: `${course.discipline} · ${topic.semester}-й семестр`, title: topic.displayTitle, body: `Результат занятия: ${topic.projectArtifact}.`, bullets: [titleSecondBullet, 'Теория, пример, решение и проверка результата'], sourceIds: ['rpd-itpsis-text', 'okfks-rhino', 'synergy-logo'] },
     { kind: 'service', kicker: `${topic.semester}-й семестр`, title: course.semesterThemes[topic.semester], body: 'Темы курса.', bullets: topic.sourceContent, sourceIds },
-    { kind: 'service', kicker: 'Учебная навигация', title: 'Основная литература', bullets: mainLiterature.map((item) => item.label), links: mainLiterature.map((item) => ({ label: 'Открыть источник', url: item.url })), qrCodes: mainLiterature.map((item) => ({ label: item.shortLabel, url: item.url, assetPath: item.assetPath })), sourceIds: ['lit-main-01', 'lit-main-02'] },
+    { kind: 'service', kicker: 'Литература курса', title: 'Основная литература', bullets: mainLiterature.map((item) => item.label), links: mainLiterature.map((item) => ({ label: 'Открыть источник', url: item.url })), qrCodes: mainLiterature.map((item) => ({ label: item.shortLabel, url: item.url, assetPath: item.assetPath })), sourceIds: ['lit-main-01', 'lit-main-02'] },
     { kind: 'service', kicker: 'Практика семестра', title: 'Лабораторный маршрут и самостоятельная работа', body: selfStudy[topic.semester], bullets: semesterLabs.map((lab) => `Лабораторная работа № ${lab.number}. ${lab.title}`), sourceIds: ['rpd-itpsis-text', ...semesterLabSourceIds] },
     { kind: 'service', kicker: 'Материалы к занятиям', title: 'Папка курса', body: 'QR-код ведёт на папку с материалами.', links: [{ label: course.materialsUrl, url: course.materialsUrl }], sourceIds: ['itpsis-materials', 'synergy-logo'] },
     { kind: 'intro', kicker: 'Введение', title: 'Теория перед практическим кейсом', body: topic.introduction, transition: 'Сначала выстроим понятия и правила, затем последовательно применим их к ситуации CampusHelp.', sourceIds },
-    { kind: 'intro', kicker: 'Цель занятия', title: topic.objective, body: `К завершению будет подготовлен артефакт: ${topic.projectArtifact}.`, sourceIds },
-    { kind: 'example', kicker: 'Учебный кейс', title: 'CampusHelp: точка входа в тему', body: topic.caseBrief, bullets: [`Роль группы: ${topic.caseRole}.`, 'Все значения синтетические; персональные данные, действующие пароли, ключи и токены не используются.', `Практический результат: ${topic.projectArtifact}.`], sourceIds },
-    { kind: 'intro', kicker: 'Логика презентации', title: 'Восемь шагов одной истории', bullets: topic.questions.map((question, index) => `${index + 1}. ${question.title}`), sourceIds },
+    { kind: 'intro', kicker: 'Цель занятия', title: topic.objective, body: `Результат: ${topic.projectArtifact}.`, sourceIds },
+    { kind: 'example', kicker: 'Учебный кейс', title: 'CampusHelp: исходная ситуация', body: topic.caseBrief, bullets: [`Роль группы: ${topic.caseRole}.`, 'В кейсе используются обезличенные учебные записи; пароли, ключи, токены и персональные данные не применяются.', `Практический результат: ${topic.projectArtifact}.`], sourceIds },
+    { kind: 'intro', kicker: 'Последовательность изучения', title: `${topic.displayTitle}: восемь подвопросов`, visual: topicMapVisual(topic), sourceIds },
     { kind: 'concept', kicker: topic.codeLabel, title: 'Факты до интерпретации', body: 'Этот фрагмент задаёт исходное состояние кейса. Возвращайтесь к нему, когда нужно отделить наблюдение от гипотезы и проверить итоговый вывод.', code: topic.codeSample, codeLabel: topic.codeLabel, sourceIds },
     { kind: 'intro', kicker: 'Результаты обучения', title: 'Что войдёт в итоговый артефакт', bullets: [`точные определения без подмены близких понятий;`, `решение для кейса: ${topic.projectArtifact};`, 'позитивная, граничная и негативная проверка;', 'разделение факта, гипотезы, действия и подтверждённого вывода.'], sourceIds },
-    { kind: 'check', kicker: 'Входная диагностика', title: topic.diagnostic, body: 'Сформулируй первоначальный ответ. На экране 83 сравни его с итоговой памяткой.', sourceIds },
+    { kind: 'check', kicker: 'Входная диагностика', title: topic.diagnostic, body: 'Сформулируй первоначальный ответ. В конце занятия сравни его с итоговой памяткой.', sourceIds },
   ]
 
   topic.questions.forEach((question, index) => {
@@ -132,20 +142,20 @@ export const buildDeck = (topic: LectureTopic, course: CourseConfig): Slide[] =>
     const visual = visualPlans[topic.id]?.questionIndex === index ? visualPlans[topic.id].visual : undefined
     slides.push(
       { kind: 'divider', kicker: `ВОПРОС ${number}`, title: question.title, body: bridges[index], sourceIds, questionNumber: number },
-      { kind: 'concept', kicker: `Вопрос ${number} · под запись`, title: `${definitionOpeners[index]}: ${question.title}`, note: question.focus, sourceIds, questionNumber: number },
-      { kind: 'concept', kicker: `Вопрос ${number} · теория`, title: `${theoryOpeners[index]}: ${question.title}`, body: question.rule, transition: `${theoryTransitions[index]} Фокус: «${question.title}».`, sourceIds, questionNumber: number },
-      { kind: 'example', kicker: `Вопрос ${number} · данные кейса`, title: `${caseOpeners[index]}: ${question.title}`, body: question.example, visual, sourceIds, questionNumber: number },
-      { kind: 'decision', kicker: `Вопрос ${number} · решение команды`, title: `${decisionOpeners[index]}: ${question.title}`, body: question.decision, transition: decisionTransitions[index], sourceIds, questionNumber: number },
-      { kind: 'warning', kicker: `Вопрос ${number} · граница решения`, title: `${riskOpeners[index]}: ${question.title}`, body: question.pitfall, transition: warningTransitions[index], sourceIds, questionNumber: number },
-      { kind: 'check', kicker: `Вопрос ${number} · приёмка`, title: `${checkOpeners[index]}: ${question.title}`, body: question.check, sourceIds, questionNumber: number },
+      { kind: 'concept', kicker: `Вопрос ${number} · под запись`, title: `${question.title}: определение`, note: question.focus, sourceIds, questionNumber: number },
+      { kind: 'concept', kicker: `Вопрос ${number} · правило`, title: `${question.title}: порядок работы`, body: question.rule, transition: `${theoryTransitions[index]} Фокус: «${question.title}».`, sourceIds, questionNumber: number },
+      { kind: 'example', kicker: `Вопрос ${number} · пример`, title: `${question.title}: ситуация CampusHelp`, body: question.example, visual, sourceIds, questionNumber: number },
+      { kind: 'decision', kicker: `Вопрос ${number} · действие`, title: `${question.title}: решение команды`, body: question.decision, transition: decisionTransitions[index], sourceIds, questionNumber: number },
+      { kind: 'warning', kicker: `Вопрос ${number} · ошибка`, title: `${question.title}: ошибочный подход`, body: question.pitfall, transition: warningTransitions[index], sourceIds, questionNumber: number },
+      { kind: 'check', kicker: `Вопрос ${number} · проверка`, title: `${question.title}: критерий результата`, body: question.check, sourceIds, questionNumber: number },
     )
   })
 
   topic.questions.forEach((question, index) => {
     slides.push({
-      kind: 'practice', kicker: `Практикум по теме · этап ${index + 1} из 8`, title: `Практический шаг ${index + 1}: ${question.title}`,
-      body: `Эпизод «${question.title}» добавляет следующий доказанный фрагмент в артефакт «${topic.projectArtifact}».`,
-      bullets: [`Исходная ситуация: ${question.example}`, `Действие команды: ${question.decision}`, reportLines[index], `Критерий приёмки: ${question.check}`, `Ограничение: ${question.pitfall}`],
+      kind: 'practice', kicker: `Практическая работа · этап ${index + 1} из 8`, title: `${question.title}: часть итоговой работы`,
+      body: `Примените вывод по подвопросу «${question.title}» к результату «${topic.projectArtifact}».`,
+      bullets: [reportLines[index], `Обоснуйте связь выбранного действия с подвопросом «${question.title}».`, 'Отделите исходное условие от выполненного действия и полученного свидетельства.', practiceChecks[index]],
       sourceIds, questionNumber: index + 1,
     })
   })
@@ -153,9 +163,9 @@ export const buildDeck = (topic: LectureTopic, course: CourseConfig): Slide[] =>
   makeTests(topic).forEach((test, index) => slides.push({ kind: 'test', kicker: `Итоговое задание ${index + 1} из 6`, title: testTitles[index], sourceIds, test }))
 
   slides.push(
-    { kind: 'summary', kicker: 'Итоговая памятка', title: `Собираем тему «${topic.displayTitle}» в единый маршрут`, body: 'Сравните ваш первоначальный ответ с итогами занятия: что изменилось в терминах, аргументах и способе проверки?', bullets: topic.questions.map((question) => `${question.title}: ${question.decision}`), sourceIds },
+    { kind: 'summary', kicker: 'Итоговая памятка', title: `Итоги темы «${topic.displayTitle}»`, body: 'Сравните ваш первоначальный ответ с итогами занятия: что изменилось в терминах, аргументах и способе проверки?', bullets: topic.questions.map((question) => `${question.title}: ${question.decision}`), sourceIds },
     { kind: 'summary', kicker: 'Результат и следующий шаг', title: topic.projectArtifact, body: `Следующий шаг: ${topic.nextStep}.`, bullets: ['Вывод опирается на исходные условия и наблюдаемое свидетельство.', 'Ограничения результата и открытые вопросы зафиксированы.', 'Артефакт передаётся вместе с критериями приёмки и ответственными.'], sourceIds },
-    { kind: 'questions', kicker: 'Финал занятия', title: `Обсуждаем решения по теме «${topic.displayTitle}»`, body: 'Сформулируй вопрос через исходные условия, наблюдение, ожидаемый результат и способ проверки.', bullets: ['Какой термин требует уточнения?', 'Какое свидетельство стоит разобрать ещё раз?', 'Как проверить вывод безопасно и воспроизводимо?'], sourceIds: ['rpd-itpsis-text', 'okfks-rhino', 'synergy-logo'] },
+    { kind: 'questions', kicker: 'Обсуждение', title: `Вопросы по теме «${topic.displayTitle}»`, body: 'Сформулируй вопрос через исходные условия, наблюдение, ожидаемый результат и способ проверки.', bullets: ['Какой термин требует уточнения?', 'Какое свидетельство стоит разобрать ещё раз?', 'Как проверить вывод безопасно и воспроизводимо?'], sourceIds: ['rpd-itpsis-text', 'okfks-rhino', 'synergy-logo'] },
   )
 
   const numbered = slides.map((slide, index) => ({ ...slide, number: index + 1 }))

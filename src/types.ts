@@ -130,6 +130,25 @@ export type SlideVisual =
       rows: string[][]
       caption?: string
     }
+  | {
+      type: 'process'
+      title: string
+      steps: { label: string; detail?: string }[]
+      caption?: string
+    }
+  | {
+      type: 'hierarchy'
+      title: string
+      root: string
+      branches: { label: string; detail: string }[]
+      caption?: string
+    }
+  | {
+      type: 'cycle'
+      title: string
+      steps: { label: string; detail?: string }[]
+      caption?: string
+    }
 
 export type Slide = {
   number: number
