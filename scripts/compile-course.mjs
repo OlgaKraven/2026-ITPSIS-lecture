@@ -3,8 +3,9 @@ import {context} from '../authoring/itil-context.mjs';
 import {workedResults} from '../authoring/worked-results.mjs';
 const original=JSON.parse(await readFile('authoring/original-course.json','utf8'));
 const sources=JSON.parse(await readFile('authoring/sources.json','utf8'));
-const version='2026-09-12-itil-1';
-const course={schemaVersion:1,contentVersion:version,id:'itpsis',code:'МДК.06.02',discipline:'Инженерно-техническая поддержка сопровождения информационных систем',year:'не указан',heroTitle:'Поддержка и сопровождение',heroAccent:'информационных систем',slogan:'Понимать услугу. Находить причины. Восстанавливать работу.',mascot:'brand/mascot/okfks-rhino-catalog.png',mascotAlt:'Носорог — специалист инженерно-технической поддержки',logo:'brand/synergy-logo.png',ornament:'brand/side-ornament.png',font:'fonts/raleway-cyrillic.woff2',materialsUrl:original.course.materialsUrl,demo:false,semesters:[7,8],assessment:{mode:'autonomous',url:'assessment.json'},lectures:[]};
+const literature=JSON.parse(await readFile('authoring/literature.json','utf8'));
+const version='2026-09-12-itil-2';
+const course={schemaVersion:1,contentVersion:version,id:'itpsis',code:'МДК.06.02',discipline:'Инженерно-техническая поддержка сопровождения информационных систем',year:'не указан',heroTitle:'Поддержка и сопровождение',heroAccent:'информационных систем',slogan:'Понимать услугу. Находить причины. Восстанавливать работу.',mascot:'brand/mascot/okfks-rhino-catalog.png',mascotAlt:'Носорог — специалист инженерно-технической поддержки',logo:'brand/synergy-logo.png',ornament:'brand/side-ornament.png',font:'fonts/raleway-cyrillic.woff2',materialsUrl:original.course.materialsUrl,topicArrow:'brand/topic-arrow.webp',literature,demo:false,semesters:[7,8],assessment:{mode:'autonomous',url:'assessment.json'},lectures:[]};
 const bank={schemaVersion:1,courseId:course.id,contentVersion:version,mode:'autonomous-educational',notice:'Учебная самопроверка. Ключи технически доступны в файлах сайта. Это не защищённый экзамен.',keys:{}};
 const registry=[],mapping=[],glossary=[],questionMap=[];
 const rotate=(a,n)=>[...a.slice(n%a.length),...a.slice(0,n%a.length)];
@@ -15,6 +16,10 @@ for(const [li,t] of original.topics.entries()){
   const l={id:t.id,title:t.displayTitle,sourceTitle:t.sourceTitle,semester:t.semester,question:t.diagnostic,slides:[]};
   const add=(suffix,kind,title,fields={},source='Исходный курс · авторский учебный пример')=>{const s={id:`${t.id}-${suffix}`,kind,title,kicker:fields.kicker||t.displayTitle,...fields,source};l.slides.push(s);return s.id};
   const titleId=add('title','title',t.displayTitle,{body:t.objective,kicker:`${t.semester}-й семестр`});
+
+  literature.primary.forEach((reference,i)=>add('literature-'+(i+1),'literature','Основная литература: '+(i+1),{readingGroup:'primary',references:[reference]},'Библиография исходного курса'));
+  add('additional-reading','literature','Дополнительная литература',{readingGroup:'additional',references:[{citation:sources.references[c.reference].title,url:sources.references[c.reference].url},{citation:sources.references.versions.title,url:sources.references.versions.url}]},'Открытые материалы PeopleCert · ITIL');
+  add('materials','materials','Материалы лекции',{},'Материалы исходного курса');
   add('intro','theory','Место темы в сопровождении',{body:t.introduction});
   add('plan-a','theory','Учебные вопросы: первая часть',{bullets:t.questions.slice(0,4).map((q,i)=>`${i+1}. ${q.title}`)});
   add('plan-b','theory','Учебные вопросы: вторая часть',{bullets:t.questions.slice(4).map((q,i)=>`${i+5}. ${q.title}`)});
@@ -31,6 +36,7 @@ for(const [li,t] of original.topics.entries()){
     const kicker=`Вопрос ${qi+1} · ${q.title}`;
     const block=[];
     const qa=(suffix,kind,title,fields,source)=>{const id=add(`${prefix}-${suffix}`,kind,title,{...fields,kicker},source);block.push(id);return id};
+    const section=qa('section','section',q.title,{body:`Цель: ${q.check}`});
     const theory=qa('theory','theory',q.title,{body:`${q.focus} ${q.rule}`});
     const concept=qa('term','theory',term,{body:`${definition} ${application}`,kicker},`${sources.references[c.reference].title} · учебное применение`);
     const example=qa('example','example','Разобранный пример',{body:q.example,bullets:[`Действие: ${q.decision}`,`Образец результата: ${workedResults[li][qi]}`,`Проверка: ${q.check}`]},'CampusHelp · авторский образец решения');
@@ -59,8 +65,8 @@ for(const [li,t] of original.topics.entries()){
     glossary.push({term,definition,mainLectureId:l.id,mainSlideId:concept,questionId:qid});
     // Исходные 7 слайдов вопроса и отдельное применение сохраняются через явное соответствие.
     const oldStarts=13+qi*7;
-    const targets=[[theory],[theory,note],[theory,warning],[example,flow],[example,flow],[warning],[example,note]];
-    for(let j=0;j<7;j++)mapping.push({lectureId:l.id,oldSlide:oldStarts+j,oldQuestion:q.title,targetSlideIds:targets[j],action:j===0?'объединена':'отредактирована',reason:j===0?'Пустой разделитель объединён с объяснением; тема сохранена.':'Исходное содержание сохранено, добавлены границы применения и контроль.'});
+    const targets=[[section,theory],[theory,note],[theory,warning],[example,flow],[example,flow],[warning],[example,note]];
+    for(let j=0;j<7;j++)mapping.push({lectureId:l.id,oldSlide:oldStarts+j,oldQuestion:q.title,targetSlideIds:targets[j],action:j===0?'объединена':'отредактирована',reason:j===0?'Разделитель восстановлен по обновлённому шаблону; объяснение сохранено.':'Исходное содержание сохранено, добавлены границы применения и контроль.'});
     mapping.push({lectureId:l.id,oldSlide:69+qi,targetSlideIds:[example,flow,note],action:'объединена',reason:'Повторяемое поручение заменено разобранным применением и готовым критерием.'});
   }
   add('summary-a','summary','Главные решения: вопросы 1–4',{bullets:t.questions.slice(0,4).map(q=>q.decision)});
@@ -68,8 +74,7 @@ for(const [li,t] of original.topics.entries()){
   add('final-case','example','Итоговое применение к работе поддержки',{body:`Результат работы: ${t.projectArtifact}.`,bullets:[t.questions[0].example,t.questions[3].decision,t.questions[7].check]});
   add('next','summary','Связь с дальнейшей работой',{body:`${t.nextStep.charAt(0).toUpperCase()+t.nextStep.slice(1)}.`,bullets:[`Для закрепления: ${original.selfStudy[t.semester]}`,t.labNumbers.length?`Связанная лабораторная: ${original.laboratories.find(x=>x.topicId===t.id)?.title}.`:'Примените результат в общем регламенте сопровождения.']});
   add('sources','summary','Источники и чтение',{bullets:[sources.references[c.reference].title,sources.references[c.reference].url,'Исходные темы дисциплины и основная литература сохранены в материалах курса.','Определения и CampusHelp — учебные формулировки и авторские примеры.'],kicker:'Проверка открытых источников: 12.09.2026'});
-  add('literature-1','summary','Основная литература: управление проектами',{body:'Алексахин А. Н., Владыко И. Ю., Сибирская Е. В. Программное обеспечение управления проектами / под ред. Е. В. Сибирской. Москва: Университет «Синергия», 2025. 144 с. ISBN 978-5-4257-0670-6.',bullets:['IPR СМАРТ: https://www.iprbookshop.ru/books/156717/details','Библиографические сведения сохранены из исходного курса; закрытый полный текст не использован для цитирования.']},'Основная литература исходного курса');
-  add('literature-2','summary','Основная литература: архитектура систем',{body:'Алексахин А. Н., Вершинина Н. М., Джебилов А. В. и др. Архитектура вычислительных систем и компьютерных сетей / под ред. А. М. Нечаева, Н. М. Вершининой, Е. В. Устинова. Москва: Университет «Синергия», 2025. 436 с. ISBN 978-5-4257-0681-2.',bullets:['IPR СМАРТ: https://www.iprbookshop.ru/books/156708/details','Библиографические сведения сохранены из исходного курса; закрытый полный текст не использован для цитирования.']},'Основная литература исходного курса');
+  add('audience-questions','questions','Вопросы от аудитории',{body:`Обсудим применение: ${t.projectArtifact}.`,bullets:[`Какие условия нужны для решения по вопросу «${t.questions[0].title}»?`,`Как проверить результат по вопросу «${t.questions[7].title}»?`]},'Обсуждение · вопросы и уточнения');
   const initialTargets=['title','plan-a','sources','next','case','intro','readiness','case','plan-a','case','readiness','readiness'];
   for(let i=1;i<=12;i++)mapping.push({lectureId:l.id,oldSlide:i,targetSlideIds:i===10?l.slides.filter(s=>s.id.includes('-facts-')).map(s=>s.id):i===3?[`${t.id}-literature-1`,`${t.id}-literature-2`]:[`${t.id}-${initialTargets[i-1]}`],action:'отредактирована',reason:i===10?'Исходная учебная карточка сохранена полностью и разделена для читаемости.':'Содержание включено в введение, маршрут или источники; повторяющиеся служебные страницы объединены.'});
   for(let i=77;i<=82;i++)mapping.push({lectureId:l.id,oldSlide:i,targetSlideIds:questionMap.filter(q=>q.lectureId===l.id).flatMap(q=>q.slideIds.slice(-4)),action:'заменена',reason:'Шесть общих заданий заменены четырьмя типами после каждого из восьми вопросов; изменена версия попыток.'});

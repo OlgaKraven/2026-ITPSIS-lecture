@@ -1,18 +1,45 @@
 {
   "checkedAt": "2026-09-12",
   "originalCommit": "5eb874a338637f90e0d6e90064bc95af0cf933e0",
-  "templateCommit": "5a1f9732937a8774fad135af2c99faf1b49ba7c2",
+  "templateCommit": "066443f20bec42162145d9c4c5b9e89a1099e647",
   "templateVersion": "0.1.0",
   "references": {
-    "overview": {"title":"PeopleCert — ITIL: практики и версии", "url":"https://www.peoplecert.org/ITIL-4"},
-    "desk": {"title":"PeopleCert — практики поддержки и взаимодействие ITSM", "url":"https://atv.peoplecert.org/itsm-tool-capabilities-and-itil-service-delivery/"},
-    "sla": {"title":"PeopleCert — ITIL 4 Service Level Management", "url":"https://www.peoplecert.org/browse-certifications/it-governance-and-service-management/ITIL-1/itil-4-practitioner-service-level-management-3867"},
-    "incident": {"title":"PeopleCert — ITIL 4 Incident Management", "url":"https://www.peoplecert.org/browse-certifications/it-governance-and-service-management/ITIL-1/itil4-practices-incident-management-3684"},
-    "problem": {"title":"PeopleCert — ITIL 4 Problem Management", "url":"https://www.peoplecert.org/browse-certifications/it-governance-and-service-management/ITIL-1/itil4-practices-problem-management-3688"},
-    "change": {"title":"PeopleCert — ITIL 4 Change Enablement", "url":"https://www.peoplecert.org/browse-certifications/it-governance-and-service-management/ITIL-1/itil-4-practitioner-change-enablement-3794"},
-    "monitoring": {"title":"PeopleCert — каталог практик мониторинга и поддержки", "url":"https://www.peoplecert.org/browse-certifications/it-governance-and-service-management"},
-    "configuration": {"title":"PeopleCert — практики конфигурации, активов и развёртывания", "url":"https://atv.peoplecert.org/itsm-tool-capabilities-and-itil-service-delivery/"},
-    "versions": {"title":"PeopleCert — вопросы о переходе между версиями ITIL", "url":"https://www.peoplecert.org/help-and-support/faq-itil"}
+    "overview": {
+      "title": "PeopleCert — ITIL: практики и версии",
+      "url": "https://www.peoplecert.org/ITIL-4"
+    },
+    "desk": {
+      "title": "PeopleCert — практики поддержки и взаимодействие ITSM",
+      "url": "https://atv.peoplecert.org/itsm-tool-capabilities-and-itil-service-delivery/"
+    },
+    "sla": {
+      "title": "PeopleCert — ITIL 4 Service Level Management",
+      "url": "https://www.peoplecert.org/browse-certifications/it-governance-and-service-management/ITIL-1/itil-4-practitioner-service-level-management-3867"
+    },
+    "incident": {
+      "title": "PeopleCert — ITIL 4 Incident Management",
+      "url": "https://www.peoplecert.org/browse-certifications/it-governance-and-service-management/ITIL-1/itil4-practices-incident-management-3684"
+    },
+    "problem": {
+      "title": "PeopleCert — ITIL 4 Problem Management",
+      "url": "https://www.peoplecert.org/browse-certifications/it-governance-and-service-management/ITIL-1/itil4-practices-problem-management-3688"
+    },
+    "change": {
+      "title": "PeopleCert — ITIL 4 Change Enablement",
+      "url": "https://www.peoplecert.org/browse-certifications/it-governance-and-service-management/ITIL-1/itil-4-practitioner-change-enablement-3794"
+    },
+    "monitoring": {
+      "title": "PeopleCert — каталог практик мониторинга и поддержки",
+      "url": "https://www.peoplecert.org/browse-certifications/it-governance-and-service-management"
+    },
+    "configuration": {
+      "title": "PeopleCert — практики конфигурации, активов и развёртывания",
+      "url": "https://atv.peoplecert.org/itsm-tool-capabilities-and-itil-service-delivery/"
+    },
+    "versions": {
+      "title": "PeopleCert — вопросы о переходе между версиями ITIL",
+      "url": "https://www.peoplecert.org/help-and-support/faq-itil"
+    }
   },
   "limitations": [
     "Названия и содержание программы взяты из PROMPT.md исходного проекта. Полная утверждённая РПД, часы, компетенции и календарь не переданы.",

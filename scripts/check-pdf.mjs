@@ -8,7 +8,10 @@ for(const l of course.lectures){
   if(doc.numPages!==l.slides.length)throw Error(l.id+': неверное число страниц');
   for(let i=0;i<doc.numPages;i++){
     const p=await doc.getPage(i+1),s=l.slides[i];const content=await p.getTextContent();const text=content.items.map(x=>x.str||'').join(' '),n=norm(text);
-    const required=[s.title,s.body,s.notebook,...(s.bullets||[]),...(s.task?[s.task.prompt,...(s.task.options||[]).map(o=>o.text),...(s.task.items||[]).map(o=>o.text)]:[])].filter(Boolean);
+    const references=s.kind==='literature'?(s.references||course.literature[s.readingGroup||'primary']):[];
+    const required=[s.title,s.body,s.notebook,...(s.bullets||[]),...references.map(r=>r.citation),...(s.kind==='materials'?[course.materialsUrl]:[]),...(s.task?[s.task.prompt,...(s.task.options||[]).map(o=>o.text),...(s.task.items||[]).map(o=>o.text)]:[])].filter(Boolean);
+    const links=(await p.getAnnotations()).filter(a=>a.subtype==='Link').map(a=>a.url);
+    for(const url of [...references.map(r=>r.url),...(s.kind==='materials'?[course.materialsUrl]:[])].filter(Boolean))if(!links.includes(new URL(url).href))throw Error(`${s.id}: нет ссылки ${url} в PDF`);
     for(const item of required)if(!n.includes(norm(item)))throw Error(`${s.id}: текст отсутствует в PDF: ${item.slice(0,70)}`);
     if(/ITPSIS_PRIVATE_SCRIPT_20260912|Правильно ·|Ещё попытка|Разбор ответа/.test(text))throw Error(s.id+': приватные данные или попытка в PDF');
     const viewport=p.getViewport({scale:1});if(Math.abs(viewport.width/viewport.height-16/9)>.01)throw Error(s.id+': неверный формат');

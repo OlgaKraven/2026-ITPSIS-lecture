@@ -1,79 +1,79 @@
 {
-  "contentVersion": "2026-09-12-itil-1",
+  "contentVersion": "2026-09-12-itil-2",
   "files": [
     {
       "id": "s07-01-support-lifecycle",
-      "pages": 105,
+      "pages": 116,
       "status": "passed"
     },
     {
       "id": "s07-02-support-levels",
-      "pages": 105,
+      "pages": 116,
       "status": "passed"
     },
     {
       "id": "s07-03-sla",
-      "pages": 105,
+      "pages": 116,
       "status": "passed"
     },
     {
       "id": "s07-04-ticket-flow",
-      "pages": 104,
+      "pages": 115,
       "status": "passed"
     },
     {
       "id": "s07-05-reproduction",
-      "pages": 105,
+      "pages": 116,
       "status": "passed"
     },
     {
       "id": "s07-06-escalation",
-      "pages": 105,
+      "pages": 116,
       "status": "passed"
     },
     {
       "id": "s07-07-knowledge-base",
-      "pages": 105,
+      "pages": 116,
       "status": "passed"
     },
     {
       "id": "s07-08-update-regulation",
-      "pages": 105,
+      "pages": 116,
       "status": "passed"
     },
     {
       "id": "s07-09-change-management",
-      "pages": 105,
+      "pages": 116,
       "status": "passed"
     },
     {
       "id": "s07-10-backup-restore",
-      "pages": 105,
+      "pages": 116,
       "status": "passed"
     },
     {
       "id": "s08-01-failure-response",
-      "pages": 105,
+      "pages": 116,
       "status": "passed"
     },
     {
       "id": "s08-02-error-collection",
-      "pages": 104,
+      "pages": 115,
       "status": "passed"
     },
     {
       "id": "s08-03-layer-localization",
-      "pages": 105,
+      "pages": 116,
       "status": "passed"
     },
     {
       "id": "s08-04-postmortem",
-      "pages": 105,
+      "pages": 116,
       "status": "passed"
     },
     {
       "id": "s08-05-hardware-maintenance",
-      "pages": 105,
+      "pages": 116,
       "status": "passed"
     }
   ],

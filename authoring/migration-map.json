@@ -4,10 +4,11 @@
     "oldSlide": 13,
     "oldQuestion": "Система после ввода в эксплуатацию",
     "targetSlideIds": [
+      "s07-01-support-lifecycle-Q01-section",
       "s07-01-support-lifecycle-Q01-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-01-support-lifecycle",
@@ -90,10 +91,11 @@
     "oldSlide": 20,
     "oldQuestion": "Задачи сопровождения",
     "targetSlideIds": [
+      "s07-01-support-lifecycle-Q02-section",
       "s07-01-support-lifecycle-Q02-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-01-support-lifecycle",
@@ -176,10 +178,11 @@
     "oldSlide": 27,
     "oldQuestion": "Участники и интересы",
     "targetSlideIds": [
+      "s07-01-support-lifecycle-Q03-section",
       "s07-01-support-lifecycle-Q03-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-01-support-lifecycle",
@@ -262,10 +265,11 @@
     "oldSlide": 34,
     "oldQuestion": "Жизненный цикл обращения и изменения",
     "targetSlideIds": [
+      "s07-01-support-lifecycle-Q04-section",
       "s07-01-support-lifecycle-Q04-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-01-support-lifecycle",
@@ -348,10 +352,11 @@
     "oldSlide": 41,
     "oldQuestion": "Каталог сопровождаемых услуг",
     "targetSlideIds": [
+      "s07-01-support-lifecycle-Q05-section",
       "s07-01-support-lifecycle-Q05-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-01-support-lifecycle",
@@ -434,10 +439,11 @@
     "oldSlide": 48,
     "oldQuestion": "Область договора",
     "targetSlideIds": [
+      "s07-01-support-lifecycle-Q06-section",
       "s07-01-support-lifecycle-Q06-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-01-support-lifecycle",
@@ -520,10 +526,11 @@
     "oldSlide": 55,
     "oldQuestion": "Состав договора на сопровождение",
     "targetSlideIds": [
+      "s07-01-support-lifecycle-Q07-section",
       "s07-01-support-lifecycle-Q07-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-01-support-lifecycle",
@@ -606,10 +613,11 @@
     "oldSlide": 62,
     "oldQuestion": "Пересмотр сопровождения",
     "targetSlideIds": [
+      "s07-01-support-lifecycle-Q08-section",
       "s07-01-support-lifecycle-Q08-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-01-support-lifecycle",
@@ -1078,10 +1086,11 @@
     "oldSlide": 13,
     "oldQuestion": "Единая точка контакта",
     "targetSlideIds": [
+      "s07-02-support-levels-Q01-section",
       "s07-02-support-levels-Q01-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-02-support-levels",
@@ -1164,10 +1173,11 @@
     "oldSlide": 20,
     "oldQuestion": "Первая линия L1",
     "targetSlideIds": [
+      "s07-02-support-levels-Q02-section",
       "s07-02-support-levels-Q02-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-02-support-levels",
@@ -1250,10 +1260,11 @@
     "oldSlide": 27,
     "oldQuestion": "Вторая линия L2",
     "targetSlideIds": [
+      "s07-02-support-levels-Q03-section",
       "s07-02-support-levels-Q03-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-02-support-levels",
@@ -1336,10 +1347,11 @@
     "oldSlide": 34,
     "oldQuestion": "Третья линия L3",
     "targetSlideIds": [
+      "s07-02-support-levels-Q04-section",
       "s07-02-support-levels-Q04-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-02-support-levels",
@@ -1422,10 +1434,11 @@
     "oldSlide": 41,
     "oldQuestion": "Маршрутизация по типу и влиянию",
     "targetSlideIds": [
+      "s07-02-support-levels-Q05-section",
       "s07-02-support-levels-Q05-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-02-support-levels",
@@ -1508,10 +1521,11 @@
     "oldSlide": 48,
     "oldQuestion": "Каналы приёма",
     "targetSlideIds": [
+      "s07-02-support-levels-Q06-section",
       "s07-02-support-levels-Q06-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-02-support-levels",
@@ -1594,10 +1608,11 @@
     "oldSlide": 55,
     "oldQuestion": "Организация смены и очереди",
     "targetSlideIds": [
+      "s07-02-support-levels-Q07-section",
       "s07-02-support-levels-Q07-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-02-support-levels",
@@ -1680,10 +1695,11 @@
     "oldSlide": 62,
     "oldQuestion": "Качество передачи между уровнями",
     "targetSlideIds": [
+      "s07-02-support-levels-Q08-section",
       "s07-02-support-levels-Q08-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-02-support-levels",
@@ -2152,10 +2168,11 @@
     "oldSlide": 13,
     "oldQuestion": "Услуга и сторона соглашения",
     "targetSlideIds": [
+      "s07-03-sla-Q01-section",
       "s07-03-sla-Q01-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-03-sla",
@@ -2238,10 +2255,11 @@
     "oldSlide": 20,
     "oldQuestion": "Окно обслуживания и календарь",
     "targetSlideIds": [
+      "s07-03-sla-Q02-section",
       "s07-03-sla-Q02-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-03-sla",
@@ -2324,10 +2342,11 @@
     "oldSlide": 27,
     "oldQuestion": "Влияние и срочность",
     "targetSlideIds": [
+      "s07-03-sla-Q03-section",
       "s07-03-sla-Q03-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-03-sla",
@@ -2410,10 +2429,11 @@
     "oldSlide": 34,
     "oldQuestion": "Матрица приоритетов",
     "targetSlideIds": [
+      "s07-03-sla-Q04-section",
       "s07-03-sla-Q04-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-03-sla",
@@ -2496,10 +2516,11 @@
     "oldSlide": 41,
     "oldQuestion": "Время реакции",
     "targetSlideIds": [
+      "s07-03-sla-Q05-section",
       "s07-03-sla-Q05-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-03-sla",
@@ -2582,10 +2603,11 @@
     "oldSlide": 48,
     "oldQuestion": "Время восстановления",
     "targetSlideIds": [
+      "s07-03-sla-Q06-section",
       "s07-03-sla-Q06-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-03-sla",
@@ -2668,10 +2690,11 @@
     "oldSlide": 55,
     "oldQuestion": "Исключения и остановка часов",
     "targetSlideIds": [
+      "s07-03-sla-Q07-section",
       "s07-03-sla-Q07-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-03-sla",
@@ -2754,10 +2777,11 @@
     "oldSlide": 62,
     "oldQuestion": "Нарушение и улучшение SLA",
     "targetSlideIds": [
+      "s07-03-sla-Q08-section",
       "s07-03-sla-Q08-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-03-sla",
@@ -3226,10 +3250,11 @@
     "oldSlide": 13,
     "oldQuestion": "Первичный контакт",
     "targetSlideIds": [
+      "s07-04-ticket-flow-Q01-section",
       "s07-04-ticket-flow-Q01-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-04-ticket-flow",
@@ -3312,10 +3337,11 @@
     "oldSlide": 20,
     "oldQuestion": "Регистрационная карточка",
     "targetSlideIds": [
+      "s07-04-ticket-flow-Q02-section",
       "s07-04-ticket-flow-Q02-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-04-ticket-flow",
@@ -3398,10 +3424,11 @@
     "oldSlide": 27,
     "oldQuestion": "Инцидент как нарушение услуги",
     "targetSlideIds": [
+      "s07-04-ticket-flow-Q03-section",
       "s07-04-ticket-flow-Q03-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-04-ticket-flow",
@@ -3484,10 +3511,11 @@
     "oldSlide": 34,
     "oldQuestion": "Запрос на обслуживание",
     "targetSlideIds": [
+      "s07-04-ticket-flow-Q04-section",
       "s07-04-ticket-flow-Q04-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-04-ticket-flow",
@@ -3570,10 +3598,11 @@
     "oldSlide": 41,
     "oldQuestion": "Дефект продукта",
     "targetSlideIds": [
+      "s07-04-ticket-flow-Q05-section",
       "s07-04-ticket-flow-Q05-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-04-ticket-flow",
@@ -3656,10 +3685,11 @@
     "oldSlide": 48,
     "oldQuestion": "Категория и приоритет",
     "targetSlideIds": [
+      "s07-04-ticket-flow-Q06-section",
       "s07-04-ticket-flow-Q06-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-04-ticket-flow",
@@ -3742,10 +3772,11 @@
     "oldSlide": 55,
     "oldQuestion": "Назначение исполнителя",
     "targetSlideIds": [
+      "s07-04-ticket-flow-Q07-section",
       "s07-04-ticket-flow-Q07-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-04-ticket-flow",
@@ -3828,10 +3859,11 @@
     "oldSlide": 62,
     "oldQuestion": "Закрытие с подтверждением",
     "targetSlideIds": [
+      "s07-04-ticket-flow-Q08-section",
       "s07-04-ticket-flow-Q08-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-04-ticket-flow",
@@ -4299,10 +4331,11 @@
     "oldSlide": 13,
     "oldQuestion": "Симптом без диагноза",
     "targetSlideIds": [
+      "s07-05-reproduction-Q01-section",
       "s07-05-reproduction-Q01-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-05-reproduction",
@@ -4385,10 +4418,11 @@
     "oldSlide": 20,
     "oldQuestion": "Уточняющие вопросы",
     "targetSlideIds": [
+      "s07-05-reproduction-Q02-section",
       "s07-05-reproduction-Q02-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-05-reproduction",
@@ -4471,10 +4505,11 @@
     "oldSlide": 27,
     "oldQuestion": "Описание окружения",
     "targetSlideIds": [
+      "s07-05-reproduction-Q03-section",
       "s07-05-reproduction-Q03-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-05-reproduction",
@@ -4557,10 +4592,11 @@
     "oldSlide": 34,
     "oldQuestion": "Предусловия и тестовые данные",
     "targetSlideIds": [
+      "s07-05-reproduction-Q04-section",
       "s07-05-reproduction-Q04-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-05-reproduction",
@@ -4643,10 +4679,11 @@
     "oldSlide": 41,
     "oldQuestion": "Шаги воспроизведения",
     "targetSlideIds": [
+      "s07-05-reproduction-Q05-section",
       "s07-05-reproduction-Q05-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-05-reproduction",
@@ -4729,10 +4766,11 @@
     "oldSlide": 48,
     "oldQuestion": "Ожидаемый и фактический результат",
     "targetSlideIds": [
+      "s07-05-reproduction-Q06-section",
       "s07-05-reproduction-Q06-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-05-reproduction",
@@ -4815,10 +4853,11 @@
     "oldSlide": 55,
     "oldQuestion": "Минимизация сценария",
     "targetSlideIds": [
+      "s07-05-reproduction-Q07-section",
       "s07-05-reproduction-Q07-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-05-reproduction",
@@ -4901,10 +4940,11 @@
     "oldSlide": 62,
     "oldQuestion": "Пакет доказательств",
     "targetSlideIds": [
+      "s07-05-reproduction-Q08-section",
       "s07-05-reproduction-Q08-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-05-reproduction",
@@ -5373,10 +5413,11 @@
     "oldSlide": 13,
     "oldQuestion": "Функциональная эскалация",
     "targetSlideIds": [
+      "s07-06-escalation-Q01-section",
       "s07-06-escalation-Q01-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-06-escalation",
@@ -5459,10 +5500,11 @@
     "oldSlide": 20,
     "oldQuestion": "Иерархическая эскалация",
     "targetSlideIds": [
+      "s07-06-escalation-Q02-section",
       "s07-06-escalation-Q02-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-06-escalation",
@@ -5545,10 +5587,11 @@
     "oldSlide": 27,
     "oldQuestion": "Основание передачи",
     "targetSlideIds": [
+      "s07-06-escalation-Q03-section",
       "s07-06-escalation-Q03-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-06-escalation",
@@ -5631,10 +5674,11 @@
     "oldSlide": 34,
     "oldQuestion": "Выбор адресата",
     "targetSlideIds": [
+      "s07-06-escalation-Q04-section",
       "s07-06-escalation-Q04-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-06-escalation",
@@ -5717,10 +5761,11 @@
     "oldSlide": 41,
     "oldQuestion": "Состав пакета",
     "targetSlideIds": [
+      "s07-06-escalation-Q05-section",
       "s07-06-escalation-Q05-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-06-escalation",
@@ -5803,10 +5848,11 @@
     "oldSlide": 48,
     "oldQuestion": "Владелец и коммуникация",
     "targetSlideIds": [
+      "s07-06-escalation-Q06-section",
       "s07-06-escalation-Q06-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-06-escalation",
@@ -5889,10 +5935,11 @@
     "oldSlide": 55,
     "oldQuestion": "Ошибки при передаче",
     "targetSlideIds": [
+      "s07-06-escalation-Q07-section",
       "s07-06-escalation-Q07-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-06-escalation",
@@ -5975,10 +6022,11 @@
     "oldSlide": 62,
     "oldQuestion": "Обратная связь после решения",
     "targetSlideIds": [
+      "s07-06-escalation-Q08-section",
       "s07-06-escalation-Q08-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-06-escalation",
@@ -6447,10 +6495,11 @@
     "oldSlide": 13,
     "oldQuestion": "Назначение базы знаний",
     "targetSlideIds": [
+      "s07-07-knowledge-base-Q01-section",
       "s07-07-knowledge-base-Q01-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-07-knowledge-base",
@@ -6533,10 +6582,11 @@
     "oldSlide": 20,
     "oldQuestion": "Тип статьи",
     "targetSlideIds": [
+      "s07-07-knowledge-base-Q02-section",
       "s07-07-knowledge-base-Q02-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-07-knowledge-base",
@@ -6619,10 +6669,11 @@
     "oldSlide": 27,
     "oldQuestion": "Заголовок и симптом",
     "targetSlideIds": [
+      "s07-07-knowledge-base-Q03-section",
       "s07-07-knowledge-base-Q03-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-07-knowledge-base",
@@ -6705,10 +6756,11 @@
     "oldSlide": 34,
     "oldQuestion": "Область применения",
     "targetSlideIds": [
+      "s07-07-knowledge-base-Q04-section",
       "s07-07-knowledge-base-Q04-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-07-knowledge-base",
@@ -6791,10 +6843,11 @@
     "oldSlide": 41,
     "oldQuestion": "Шаги и свидетельства",
     "targetSlideIds": [
+      "s07-07-knowledge-base-Q05-section",
       "s07-07-knowledge-base-Q05-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-07-knowledge-base",
@@ -6877,10 +6930,11 @@
     "oldSlide": 48,
     "oldQuestion": "Проверка и откат",
     "targetSlideIds": [
+      "s07-07-knowledge-base-Q06-section",
       "s07-07-knowledge-base-Q06-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-07-knowledge-base",
@@ -6963,10 +7017,11 @@
     "oldSlide": 55,
     "oldQuestion": "Публикация и рецензирование",
     "targetSlideIds": [
+      "s07-07-knowledge-base-Q07-section",
       "s07-07-knowledge-base-Q07-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-07-knowledge-base",
@@ -7049,10 +7104,11 @@
     "oldSlide": 62,
     "oldQuestion": "Актуальность и метрики",
     "targetSlideIds": [
+      "s07-07-knowledge-base-Q08-section",
       "s07-07-knowledge-base-Q08-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-07-knowledge-base",
@@ -7521,10 +7577,11 @@
     "oldSlide": 13,
     "oldQuestion": "Цель и состав релиза",
     "targetSlideIds": [
+      "s07-08-update-regulation-Q01-section",
       "s07-08-update-regulation-Q01-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-08-update-regulation",
@@ -7607,10 +7664,11 @@
     "oldSlide": 20,
     "oldQuestion": "Готовность среды",
     "targetSlideIds": [
+      "s07-08-update-regulation-Q02-section",
       "s07-08-update-regulation-Q02-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-08-update-regulation",
@@ -7693,10 +7751,11 @@
     "oldSlide": 27,
     "oldQuestion": "План коммуникации",
     "targetSlideIds": [
+      "s07-08-update-regulation-Q03-section",
       "s07-08-update-regulation-Q03-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-08-update-regulation",
@@ -7779,10 +7838,11 @@
     "oldSlide": 34,
     "oldQuestion": "Резервная точка",
     "targetSlideIds": [
+      "s07-08-update-regulation-Q04-section",
       "s07-08-update-regulation-Q04-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-08-update-regulation",
@@ -7865,10 +7925,11 @@
     "oldSlide": 41,
     "oldQuestion": "Последовательность установки",
     "targetSlideIds": [
+      "s07-08-update-regulation-Q05-section",
       "s07-08-update-regulation-Q05-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-08-update-regulation",
@@ -7951,10 +8012,11 @@
     "oldSlide": 48,
     "oldQuestion": "Проверка после обновления",
     "targetSlideIds": [
+      "s07-08-update-regulation-Q06-section",
       "s07-08-update-regulation-Q06-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-08-update-regulation",
@@ -8037,10 +8099,11 @@
     "oldSlide": 55,
     "oldQuestion": "Критерии и порядок отката",
     "targetSlideIds": [
+      "s07-08-update-regulation-Q07-section",
       "s07-08-update-regulation-Q07-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-08-update-regulation",
@@ -8123,10 +8186,11 @@
     "oldSlide": 62,
     "oldQuestion": "Закрытие окна и отчёт",
     "targetSlideIds": [
+      "s07-08-update-regulation-Q08-section",
       "s07-08-update-regulation-Q08-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-08-update-regulation",
@@ -8595,10 +8659,11 @@
     "oldSlide": 13,
     "oldQuestion": "Ценность изменения",
     "targetSlideIds": [
+      "s07-09-change-management-Q01-section",
       "s07-09-change-management-Q01-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-09-change-management",
@@ -8681,10 +8746,11 @@
     "oldSlide": 20,
     "oldQuestion": "Тип изменения",
     "targetSlideIds": [
+      "s07-09-change-management-Q02-section",
       "s07-09-change-management-Q02-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-09-change-management",
@@ -8767,10 +8833,11 @@
     "oldSlide": 27,
     "oldQuestion": "Полнота заявки",
     "targetSlideIds": [
+      "s07-09-change-management-Q03-section",
       "s07-09-change-management-Q03-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-09-change-management",
@@ -8853,10 +8920,11 @@
     "oldSlide": 34,
     "oldQuestion": "Оценка влияния",
     "targetSlideIds": [
+      "s07-09-change-management-Q04-section",
       "s07-09-change-management-Q04-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-09-change-management",
@@ -8939,10 +9007,11 @@
     "oldSlide": 41,
     "oldQuestion": "Оценка риска",
     "targetSlideIds": [
+      "s07-09-change-management-Q05-section",
       "s07-09-change-management-Q05-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-09-change-management",
@@ -9025,10 +9094,11 @@
     "oldSlide": 48,
     "oldQuestion": "Согласование решения",
     "targetSlideIds": [
+      "s07-09-change-management-Q06-section",
       "s07-09-change-management-Q06-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-09-change-management",
@@ -9111,10 +9181,11 @@
     "oldSlide": 55,
     "oldQuestion": "Внедрение и наблюдение",
     "targetSlideIds": [
+      "s07-09-change-management-Q07-section",
       "s07-09-change-management-Q07-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-09-change-management",
@@ -9197,10 +9268,11 @@
     "oldSlide": 62,
     "oldQuestion": "Проверка и разбор изменения",
     "targetSlideIds": [
+      "s07-09-change-management-Q08-section",
       "s07-09-change-management-Q08-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-09-change-management",
@@ -9669,10 +9741,11 @@
     "oldSlide": 13,
     "oldQuestion": "Состав защищаемых данных",
     "targetSlideIds": [
+      "s07-10-backup-restore-Q01-section",
       "s07-10-backup-restore-Q01-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-10-backup-restore",
@@ -9755,10 +9828,11 @@
     "oldSlide": 20,
     "oldQuestion": "Цель RPO",
     "targetSlideIds": [
+      "s07-10-backup-restore-Q02-section",
       "s07-10-backup-restore-Q02-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-10-backup-restore",
@@ -9841,10 +9915,11 @@
     "oldSlide": 27,
     "oldQuestion": "Цель RTO",
     "targetSlideIds": [
+      "s07-10-backup-restore-Q03-section",
       "s07-10-backup-restore-Q03-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-10-backup-restore",
@@ -9927,10 +10002,11 @@
     "oldSlide": 34,
     "oldQuestion": "Полная и инкрементальная копия",
     "targetSlideIds": [
+      "s07-10-backup-restore-Q04-section",
       "s07-10-backup-restore-Q04-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-10-backup-restore",
@@ -10013,10 +10089,11 @@
     "oldSlide": 41,
     "oldQuestion": "Расписание и хранение",
     "targetSlideIds": [
+      "s07-10-backup-restore-Q05-section",
       "s07-10-backup-restore-Q05-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-10-backup-restore",
@@ -10099,10 +10176,11 @@
     "oldSlide": 48,
     "oldQuestion": "Защита и ответственность",
     "targetSlideIds": [
+      "s07-10-backup-restore-Q06-section",
       "s07-10-backup-restore-Q06-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-10-backup-restore",
@@ -10185,10 +10263,11 @@
     "oldSlide": 55,
     "oldQuestion": "Контроль задания копирования",
     "targetSlideIds": [
+      "s07-10-backup-restore-Q07-section",
       "s07-10-backup-restore-Q07-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-10-backup-restore",
@@ -10271,10 +10350,11 @@
     "oldSlide": 62,
     "oldQuestion": "Учебное восстановление",
     "targetSlideIds": [
+      "s07-10-backup-restore-Q08-section",
       "s07-10-backup-restore-Q08-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s07-10-backup-restore",
@@ -10743,10 +10823,11 @@
     "oldSlide": 13,
     "oldQuestion": "Отказ и деградация",
     "targetSlideIds": [
+      "s08-01-failure-response-Q01-section",
       "s08-01-failure-response-Q01-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s08-01-failure-response",
@@ -10829,10 +10910,11 @@
     "oldSlide": 20,
     "oldQuestion": "Масштаб последствий",
     "targetSlideIds": [
+      "s08-01-failure-response-Q02-section",
       "s08-01-failure-response-Q02-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s08-01-failure-response",
@@ -10915,10 +10997,11 @@
     "oldSlide": 27,
     "oldQuestion": "Подтверждение события",
     "targetSlideIds": [
+      "s08-01-failure-response-Q03-section",
       "s08-01-failure-response-Q03-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s08-01-failure-response",
@@ -11001,10 +11084,11 @@
     "oldSlide": 34,
     "oldQuestion": "Роли аварийной команды",
     "targetSlideIds": [
+      "s08-01-failure-response-Q04-section",
       "s08-01-failure-response-Q04-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s08-01-failure-response",
@@ -11087,10 +11171,11 @@
     "oldSlide": 41,
     "oldQuestion": "Стабилизация",
     "targetSlideIds": [
+      "s08-01-failure-response-Q05-section",
       "s08-01-failure-response-Q05-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s08-01-failure-response",
@@ -11173,10 +11258,11 @@
     "oldSlide": 48,
     "oldQuestion": "Оповещение заинтересованных сторон",
     "targetSlideIds": [
+      "s08-01-failure-response-Q06-section",
       "s08-01-failure-response-Q06-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s08-01-failure-response",
@@ -11259,10 +11345,11 @@
     "oldSlide": 55,
     "oldQuestion": "Подтверждение восстановления",
     "targetSlideIds": [
+      "s08-01-failure-response-Q07-section",
       "s08-01-failure-response-Q07-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s08-01-failure-response",
@@ -11345,10 +11432,11 @@
     "oldSlide": 62,
     "oldQuestion": "Переход к разбору",
     "targetSlideIds": [
+      "s08-01-failure-response-Q08-section",
       "s08-01-failure-response-Q08-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s08-01-failure-response",
@@ -11817,10 +11905,11 @@
     "oldSlide": 13,
     "oldQuestion": "Обращение пользователя как источник",
     "targetSlideIds": [
+      "s08-02-error-collection-Q01-section",
       "s08-02-error-collection-Q01-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s08-02-error-collection",
@@ -11903,10 +11992,11 @@
     "oldSlide": 20,
     "oldQuestion": "Сообщение интерфейса",
     "targetSlideIds": [
+      "s08-02-error-collection-Q02-section",
       "s08-02-error-collection-Q02-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s08-02-error-collection",
@@ -11989,10 +12079,11 @@
     "oldSlide": 27,
     "oldQuestion": "Журнал приложения",
     "targetSlideIds": [
+      "s08-02-error-collection-Q03-section",
       "s08-02-error-collection-Q03-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s08-02-error-collection",
@@ -12075,10 +12166,11 @@
     "oldSlide": 34,
     "oldQuestion": "Системные события",
     "targetSlideIds": [
+      "s08-02-error-collection-Q04-section",
       "s08-02-error-collection-Q04-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s08-02-error-collection",
@@ -12161,10 +12253,11 @@
     "oldSlide": 41,
     "oldQuestion": "Метрики и динамика",
     "targetSlideIds": [
+      "s08-02-error-collection-Q05-section",
       "s08-02-error-collection-Q05-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s08-02-error-collection",
@@ -12247,10 +12340,11 @@
     "oldSlide": 48,
     "oldQuestion": "Корреляция источников",
     "targetSlideIds": [
+      "s08-02-error-collection-Q06-section",
       "s08-02-error-collection-Q06-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s08-02-error-collection",
@@ -12333,10 +12427,11 @@
     "oldSlide": 55,
     "oldQuestion": "Безопасность журналов",
     "targetSlideIds": [
+      "s08-02-error-collection-Q07-section",
       "s08-02-error-collection-Q07-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s08-02-error-collection",
@@ -12419,10 +12514,11 @@
     "oldSlide": 62,
     "oldQuestion": "Организация сбора",
     "targetSlideIds": [
+      "s08-02-error-collection-Q08-section",
       "s08-02-error-collection-Q08-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s08-02-error-collection",
@@ -12890,10 +12986,11 @@
     "oldSlide": 13,
     "oldQuestion": "Модель пяти слоёв",
     "targetSlideIds": [
+      "s08-03-layer-localization-Q01-section",
       "s08-03-layer-localization-Q01-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s08-03-layer-localization",
@@ -12976,10 +13073,11 @@
     "oldSlide": 20,
     "oldQuestion": "Рабочее место",
     "targetSlideIds": [
+      "s08-03-layer-localization-Q02-section",
       "s08-03-layer-localization-Q02-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s08-03-layer-localization",
@@ -13062,10 +13160,11 @@
     "oldSlide": 27,
     "oldQuestion": "Сетевой слой",
     "targetSlideIds": [
+      "s08-03-layer-localization-Q03-section",
       "s08-03-layer-localization-Q03-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s08-03-layer-localization",
@@ -13148,10 +13247,11 @@
     "oldSlide": 34,
     "oldQuestion": "Слой приложения",
     "targetSlideIds": [
+      "s08-03-layer-localization-Q04-section",
       "s08-03-layer-localization-Q04-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s08-03-layer-localization",
@@ -13234,10 +13334,11 @@
     "oldSlide": 41,
     "oldQuestion": "Серверный слой",
     "targetSlideIds": [
+      "s08-03-layer-localization-Q05-section",
       "s08-03-layer-localization-Q05-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s08-03-layer-localization",
@@ -13320,10 +13421,11 @@
     "oldSlide": 48,
     "oldQuestion": "Слой базы данных",
     "targetSlideIds": [
+      "s08-03-layer-localization-Q06-section",
       "s08-03-layer-localization-Q06-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s08-03-layer-localization",
@@ -13406,10 +13508,11 @@
     "oldSlide": 55,
     "oldQuestion": "Проверка гипотезы приложения",
     "targetSlideIds": [
+      "s08-03-layer-localization-Q07-section",
       "s08-03-layer-localization-Q07-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s08-03-layer-localization",
@@ -13492,10 +13595,11 @@
     "oldSlide": 62,
     "oldQuestion": "Фиксация локализации",
     "targetSlideIds": [
+      "s08-03-layer-localization-Q08-section",
       "s08-03-layer-localization-Q08-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s08-03-layer-localization",
@@ -13964,10 +14068,11 @@
     "oldSlide": 13,
     "oldQuestion": "Цель разбора",
     "targetSlideIds": [
+      "s08-04-postmortem-Q01-section",
       "s08-04-postmortem-Q01-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s08-04-postmortem",
@@ -14050,10 +14155,11 @@
     "oldSlide": 20,
     "oldQuestion": "Границы события",
     "targetSlideIds": [
+      "s08-04-postmortem-Q02-section",
       "s08-04-postmortem-Q02-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s08-04-postmortem",
@@ -14136,10 +14242,11 @@
     "oldSlide": 27,
     "oldQuestion": "Хронология из свидетельств",
     "targetSlideIds": [
+      "s08-04-postmortem-Q03-section",
       "s08-04-postmortem-Q03-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s08-04-postmortem",
@@ -14222,10 +14329,11 @@
     "oldSlide": 34,
     "oldQuestion": "Непосредственная причина",
     "targetSlideIds": [
+      "s08-04-postmortem-Q04-section",
       "s08-04-postmortem-Q04-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s08-04-postmortem",
@@ -14308,10 +14416,11 @@
     "oldSlide": 41,
     "oldQuestion": "Способствующие условия",
     "targetSlideIds": [
+      "s08-04-postmortem-Q05-section",
       "s08-04-postmortem-Q05-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s08-04-postmortem",
@@ -14394,10 +14503,11 @@
     "oldSlide": 48,
     "oldQuestion": "Оценка влияния",
     "targetSlideIds": [
+      "s08-04-postmortem-Q06-section",
       "s08-04-postmortem-Q06-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s08-04-postmortem",
@@ -14480,10 +14590,11 @@
     "oldSlide": 55,
     "oldQuestion": "Предупреждающие действия",
     "targetSlideIds": [
+      "s08-04-postmortem-Q07-section",
       "s08-04-postmortem-Q07-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s08-04-postmortem",
@@ -14566,10 +14677,11 @@
     "oldSlide": 62,
     "oldQuestion": "Отчёт и контроль выполнения",
     "targetSlideIds": [
+      "s08-04-postmortem-Q08-section",
       "s08-04-postmortem-Q08-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s08-04-postmortem",
@@ -15038,10 +15150,11 @@
     "oldSlide": 13,
     "oldQuestion": "Единица учёта оборудования",
     "targetSlideIds": [
+      "s08-05-hardware-maintenance-Q01-section",
       "s08-05-hardware-maintenance-Q01-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s08-05-hardware-maintenance",
@@ -15124,10 +15237,11 @@
     "oldSlide": 20,
     "oldQuestion": "Конфигурация и зависимости",
     "targetSlideIds": [
+      "s08-05-hardware-maintenance-Q02-section",
       "s08-05-hardware-maintenance-Q02-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s08-05-hardware-maintenance",
@@ -15210,10 +15324,11 @@
     "oldSlide": 27,
     "oldQuestion": "Показатели состояния",
     "targetSlideIds": [
+      "s08-05-hardware-maintenance-Q03-section",
       "s08-05-hardware-maintenance-Q03-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s08-05-hardware-maintenance",
@@ -15296,10 +15411,11 @@
     "oldSlide": 34,
     "oldQuestion": "Планирование обслуживания",
     "targetSlideIds": [
+      "s08-05-hardware-maintenance-Q04-section",
       "s08-05-hardware-maintenance-Q04-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s08-05-hardware-maintenance",
@@ -15382,10 +15498,11 @@
     "oldSlide": 41,
     "oldQuestion": "Доступность и безопасность окна",
     "targetSlideIds": [
+      "s08-05-hardware-maintenance-Q05-section",
       "s08-05-hardware-maintenance-Q05-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s08-05-hardware-maintenance",
@@ -15468,10 +15585,11 @@
     "oldSlide": 48,
     "oldQuestion": "Работы с сервером и накопителями",
     "targetSlideIds": [
+      "s08-05-hardware-maintenance-Q06-section",
       "s08-05-hardware-maintenance-Q06-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s08-05-hardware-maintenance",
@@ -15554,10 +15672,11 @@
     "oldSlide": 55,
     "oldQuestion": "Питание, сеть и климат",
     "targetSlideIds": [
+      "s08-05-hardware-maintenance-Q07-section",
       "s08-05-hardware-maintenance-Q07-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s08-05-hardware-maintenance",
@@ -15640,10 +15759,11 @@
     "oldSlide": 62,
     "oldQuestion": "Возврат в работу и история",
     "targetSlideIds": [
+      "s08-05-hardware-maintenance-Q08-section",
       "s08-05-hardware-maintenance-Q08-theory"
     ],
     "action": "объединена",
-    "reason": "Пустой разделитель объединён с объяснением; тема сохранена."
+    "reason": "Разделитель восстановлен по обновлённому шаблону; объяснение сохранено."
   },
   {
     "lectureId": "s08-05-hardware-maintenance",

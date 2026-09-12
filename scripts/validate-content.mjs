@@ -10,11 +10,16 @@ const ids=new Set(), add=id=>{assert.ok(id&&!ids.has(id),'Повтор ID '+id);
 let cases=0,visuals=0,tasks=0;
 for(const [i,l]of c.lectures.entries()){
   add(l.id);assert.equal(l.id,original.topics[i].id);assert.equal(l.sourceTitle,original.topics[i].sourceTitle);assert.equal(l.semester,original.topics[i].semester);assert.ok(l.slides.length>=80);
+  assert.deepEqual(l.slides.slice(0,5).map(s=>s.kind),['title','literature','literature','literature','materials']);
+  assert.deepEqual(l.slides.slice(1,4).map(s=>s.readingGroup),['primary','primary','additional']);
+  assert.equal(l.slides.at(-1).kind,'questions');assert.equal(l.slides.filter(s=>s.kind==='section').length,8);
+  assert.ok(c.topicArrow);assert.ok(c.literature.primary.length);assert.equal(c.materialsUrl,original.course.materialsUrl);
   const qs=map.filter(q=>q.lectureId===l.id);assert.deepEqual(qs.map(q=>q.title),original.topics[i].questions.map(q=>q.title));
   const old=migration.filter(m=>m.lectureId===l.id);assert.equal(new Set(old.map(m=>m.oldSlide)).size,85);
   for(const m of old)for(const id of m.targetSlideIds)assert.ok(l.slides.some(s=>s.id===id));
   for(const q of qs){
     const slides=q.slideIds.map(id=>l.slides.find(s=>s.id===id));assert.ok(slides.every(Boolean));
+    assert.equal(slides[0].kind,'section');assert.equal(slides[0].title,q.title);
     assert.deepEqual(slides.slice(-4).map(s=>s.task?.type),['single','multiple','short','matching']);
     assert.equal(slides.filter(s=>s.kind==='test').length,4);assert.ok(slides.filter(s=>s.visual||s.rows).length>=2);assert.ok(slides.some(s=>s.notebook));assert.ok(slides.some(s=>s.kind==='example'));
     const first=l.slides.findIndex(s=>s.task?.id===q.testIds[0]);for(const id of q.explanationSlideIds)assert.ok(l.slides.findIndex(s=>s.id===id)<first);
