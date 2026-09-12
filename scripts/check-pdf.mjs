@@ -1,36 +1,18 @@
-import { readFile, readdir } from 'node:fs/promises'
-import path from 'node:path'
-import { getDocument } from 'pdfjs-dist/legacy/build/pdf.mjs'
-
-const variants = ['student', 'teacher']
-let checked = 0
-
-const extractText = async (file) => {
-  const data = new Uint8Array(await readFile(file))
-  const document = await getDocument({ data, useWorkerFetch: false, isEvalSupported: false }).promise
-  if (document.numPages !== 85) throw new Error(`${file}: expected 85 pages, got ${document.numPages}`)
-  const pages = []
-  for (let number = 1; number <= document.numPages; number += 1) {
-    const page = await document.getPage(number)
-    const content = await page.getTextContent()
-    pages.push(content.items.map((item) => ('str' in item ? item.str : '')).join(' '))
+import {readFile,writeFile} from 'node:fs/promises';
+import {getDocument} from 'pdfjs-dist/legacy/build/pdf.mjs';
+const course=JSON.parse(await readFile('public/course.json','utf8'));
+const norm=s=>s.normalize('NFKC').toLowerCase().replace(/[^\p{L}\p{N}]/gu,'');
+const result=[];const out=process.env.PDF_OUTPUT_DIR||'outputs/pdf';
+for(const l of course.lectures){
+  const doc=await getDocument({data:new Uint8Array(await readFile(`${out}/${l.id}.pdf`)),useWorkerFetch:false,isEvalSupported:false}).promise;
+  if(doc.numPages!==l.slides.length)throw Error(l.id+': неверное число страниц');
+  for(let i=0;i<doc.numPages;i++){
+    const p=await doc.getPage(i+1),s=l.slides[i];const content=await p.getTextContent();const text=content.items.map(x=>x.str||'').join(' '),n=norm(text);
+    const required=[s.title,s.body,s.notebook,...(s.bullets||[]),...(s.task?[s.task.prompt,...(s.task.options||[]).map(o=>o.text),...(s.task.items||[]).map(o=>o.text)]:[])].filter(Boolean);
+    for(const item of required)if(!n.includes(norm(item)))throw Error(`${s.id}: текст отсутствует в PDF: ${item.slice(0,70)}`);
+    if(/ITPSIS_PRIVATE_SCRIPT_20260912|Правильно ·|Ещё попытка|Разбор ответа/.test(text))throw Error(s.id+': приватные данные или попытка в PDF');
+    const viewport=p.getViewport({scale:1});if(Math.abs(viewport.width/viewport.height-16/9)>.01)throw Error(s.id+': неверный формат');
   }
-  return pages.join('\n')
+  result.push({id:l.id,pages:doc.numPages,status:'passed'});
 }
-
-for (const variant of variants) {
-  const root = path.resolve('outputs', 'pdf', variant)
-  const entries = (await readdir(root)).filter((name) => name.endsWith('.pdf')).sort()
-  if (entries.length !== 15) throw new Error(`${root}: expected 15 PDFs, got ${entries.length}`)
-  for (const entry of entries) {
-    const file = path.join(root, entry)
-    const text = await extractText(file)
-    const hasAnswer = text.includes('Правильный ответ')
-    const hasCriteria = text.includes('Критерии проверки')
-    if (variant === 'student' && (hasAnswer || hasCriteria)) throw new Error(`${file}: student PDF contains teacher-only answers or criteria`)
-    if (variant === 'teacher' && (!hasAnswer || !hasCriteria)) throw new Error(`${file}: teacher PDF is missing answers or criteria`)
-    checked += 1
-  }
-}
-
-console.log(`PDF checks passed: ${checked} files; 85 pages each; student answers absent; teacher answers and criteria present`)
+await writeFile('reports/pdf-check.json',JSON.stringify({contentVersion:course.contentVersion,files:result,checks:'Число, порядок, весь основной текст, варианты и условия заданий, 16:9, отсутствие интерфейса и приватного маркера. Визуальный просмотр учитывается отдельно.'},null,2)+'\n');console.log(`Проверены ${result.length} PDF, ${result.reduce((n,x)=>n+x.pages,0)} страниц.`);

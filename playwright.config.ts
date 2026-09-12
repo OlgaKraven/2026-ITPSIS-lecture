@@ -14,7 +14,7 @@ export default defineConfig({
     trace: 'retain-on-failure',
   },
   webServer: {
-    command: 'npm run dev -- --host 127.0.0.1 --port 5194 --strictPort',
+    command: 'npm run preview -- --host 127.0.0.1 --port 5194 --strictPort',
     url: 'http://127.0.0.1:5194/2026-ITPSIS-lecture/',
     reuseExistingServer: true,
     timeout: 120_000,

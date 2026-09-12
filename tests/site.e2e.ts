@@ -1,125 +1,112 @@
 import { expect, test } from '@playwright/test'
-import { course, topics } from '../src/data/courseData'
+import { readFileSync } from 'node:fs'
+import type { Course } from '@olgakraven/lecture-engine'
+const course: Course = JSON.parse(readFileSync('public/course.json', 'utf8'))
+const bank = JSON.parse(readFileSync('public/assessment.json', 'utf8'))
 
-test('catalog contains approved topics and semester filters', async ({ page }) => {
-  const errors: string[] = []
-  page.on('console', (message) => {
-    if (message.type() === 'error') errors.push(message.text())
-  })
+test('catalog, preserved topics, search and semester filters', async ({ page }) => {
   await page.goto('./')
-  await expect(page.locator('.topic-card')).toHaveCount(topics.length)
+  await expect(page.locator('.topic-card')).toHaveCount(15)
   for (const semester of course.semesters) {
-    await page.getByRole('button', { name: `${semester} семестр` }).click()
-    await expect(page.locator('.topic-card')).toHaveCount(topics.filter((topic) => topic.semester === semester).length)
+    await page.getByRole('button', { name: `${semester} семестр`, exact: true }).click()
+    await expect(page.locator('.topic-card')).toHaveCount(semester === 7 ? 10 : 5)
   }
-  await expect(page.locator('.brand-lockup img')).toHaveJSProperty('complete', true)
-  await expect(page.locator('.hero-mascot img')).toHaveJSProperty('complete', true)
-  await expect(page.getByRole('heading', { name: 'Подготовьте титульный лист и лекции' })).toBeVisible()
-  await expect(page.getByRole('group', { name: 'Скачать лекции в PDF' }).getByRole('link')).toHaveCount(3)
-  expect(errors).toEqual([])
+  await page.getByRole('button', { name: 'Все темы', exact: true }).click()
+  await page.getByRole('textbox', { name: 'Поиск по темам' }).fill('резервного')
+  await expect(page.locator('.topic-card')).toHaveCount(1)
+  await expect(page.getByRole('link', { name: 'Материалы', exact: true })).toHaveAttribute('href', course.materialsUrl)
 })
 
-test('responsive catalog has no horizontal overflow at required sizes', async ({ page }) => {
-  const viewports = [
-    { width: 1920, height: 1080 },
-    { width: 1366, height: 768 },
-    { width: 768, height: 1024 },
-    { width: 390, height: 844 },
-    { width: 360, height: 800 },
-  ]
-  for (const viewport of viewports) {
+test('responsive catalog and slides fit wide, laptop and mobile screens', async ({ page }) => {
+  for (const viewport of [{ width: 1920, height: 1080 }, { width: 1366, height: 768 }, { width: 390, height: 844 }, { width: 360, height: 800 }]) {
     await page.setViewportSize(viewport)
     await page.goto('./')
-    const sizes = await page.evaluate(() => ({ scroll: document.documentElement.scrollWidth, client: document.documentElement.clientWidth }))
-    expect(sizes.scroll, `overflow at ${viewport.width}x${viewport.height}`).toBeLessThanOrEqual(sizes.client)
-    await expect(page.getByRole('button', { name: 'Открыть' }).first()).toBeVisible()
+    await expect(page.locator('.topic-card')).toHaveCount(15)
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth + 1)).toBe(true)
+    const lecture = course.lectures[0]
+    for (const kind of ['title', 'theory', 'notebook', 'process', 'test']) {
+      const slide = lecture.slides.find(s => s.kind === kind)!
+      await page.goto(`./?lecture=${lecture.id}&slide=${slide.id}`)
+      await expect(page.locator('.active-slide .slide-frame')).toHaveAttribute('data-slide-id', slide.id)
+      expect(await page.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth + 1)).toBe(true)
+    }
   }
 })
 
-test('direct links, keyboard navigation and final screen work', async ({ page }) => {
-  await page.goto(`./?topic=${topics[0].id}&slide=1`)
-  await expect(page.locator('.slide-counter')).toHaveText('1 / 85')
+test('legacy links, keyboard navigation, stable IDs and end navigation', async ({ page }) => {
+  const l = course.lectures[0]
+  await page.goto(`./?topic=${l.id}&slide=1`)
+  await expect(page.locator('.slide-counter')).toHaveText(`1 / ${l.slides.length}`)
   await page.keyboard.press('ArrowRight')
-  await expect(page.locator('.slide-counter')).toHaveText('2 / 85')
-  await page.goto(`./?topic=${topics[0].id}&slide=85`)
-  await expect(page.getByRole('heading', { name: `Вопросы по теме «${topics[0].displayTitle}»` })).toBeVisible()
-  await expect(page.locator('.mascot-mask img').first()).toHaveJSProperty('complete', true)
+  await expect(page.locator('.slide-counter')).toHaveText(`2 / ${l.slides.length}`)
+  await page.reload()
+  await expect(page.locator('.slide-counter')).toHaveText(`2 / ${l.slides.length}`)
+  await page.keyboard.press('End')
+  await expect(page.getByRole('button', { name: 'Вперёд', exact: true })).toBeDisabled()
+  await page.goto('./?topic=unknown&slide=900')
+  await expect(page.locator('.notice')).toContainText('Лекция не найдена')
+  await expect(page.locator('.topic-card')).toHaveCount(15)
 })
 
-test('every approved topic opens directly with exactly 85 screens', async ({ page }) => {
-  for (const topic of topics) {
-    await page.goto(`./?topic=${topic.id}&slide=1`)
-    await expect(page.locator('.slide-counter'), topic.id).toHaveText('1 / 85')
-    await expect(page.getByRole('heading', { name: topic.displayTitle })).toBeVisible()
-    await expect(page.locator('.active-slide')).not.toContainText('0 ч')
-    await expect(page.locator('.active-slide')).not.toContainText('компетенции:')
-    await expect(page.getByRole('button', { name: 'Сохранить в PDF' })).toBeVisible()
-    await expect(page.getByRole('button', { name: 'Печать для студента' })).toHaveCount(0)
-  }
-})
-
-test('long topic titles fit the title slide without an inner scrollbar', async ({ page }) => {
-  await page.setViewportSize({ width: 1366, height: 768 })
-  for (const topic of topics) {
-    await page.goto(`./?topic=${topic.id}&slide=1`)
-    const titleCopy = page.locator('.active-slide .kind-title .slide-copy')
-    const sizes = await titleCopy.evaluate((element) => ({ scrollHeight: element.scrollHeight, clientHeight: element.clientHeight }))
-    expect(sizes.scrollHeight, topic.displayTitle).toBeLessThanOrEqual(sizes.clientHeight + 1)
-  }
-})
-
-test('invalid topic and slide recover without runtime crash', async ({ page }) => {
-  await page.goto('./?topic=does-not-exist&slide=900')
-  await expect(page.getByRole('status')).toContainText('не найдена')
-  await expect(page.locator('.topic-card')).toHaveCount(topics.length)
-})
-
-test('materials QR and printable route are complete', async ({ page }) => {
-  await page.goto(`./?topic=${topics[0].id}&slide=5`)
-  await expect(page.getByAltText('QR-код: материалы МДК.06.02')).toHaveJSProperty('complete', true)
-  await expect(page.getByRole('link', { name: course.materialsUrl })).toHaveAttribute('href', course.materialsUrl)
-
-  await page.goto(`./?topic=${topics[0].id}&slide=3`)
-  await expect(page.getByAltText('QR-код: Программное обеспечение управления проектами')).toHaveJSProperty('complete', true)
-  await expect(page.getByAltText('QR-код: Архитектура вычислительных систем и компьютерных сетей')).toHaveJSProperty('complete', true)
-
-  await page.goto(`./print?topic=${topics[0].id}&variant=teacher`)
-  await page.waitForFunction(() => document.body.dataset.printReady === 'true')
-  await expect(page.locator('.print-page')).toHaveCount(85)
-  await expect(page.locator('.print-page').nth(84).getByRole('heading', { name: `Вопросы по теме «${topics[0].displayTitle}»` })).toBeVisible()
-})
-
-test('print slides keep their content inside the page at presentation size', async ({ page }) => {
+test('all print pages fit their regions and have no private notes or attempts', async ({ page }) => {
+  test.setTimeout(180_000)
   await page.setViewportSize({ width: 1600, height: 900 })
-  for (const topic of topics) {
-    await page.goto(`./print?topic=${topic.id}&variant=student`)
-    await page.waitForFunction(() => document.body.dataset.printReady === 'true')
-    const problems = await page.locator('.print-page').evaluateAll((pages) => pages.flatMap((page, index) => {
-      const copy = page.querySelector<HTMLElement>('.slide-copy')
-      const footer = page.querySelector<HTMLElement>('.slide-footer')
-      if (!copy || !footer) return [{ slide: index + 1, reason: 'missing layout region', title: '' }]
-      const copyRect = copy.getBoundingClientRect()
-      const footerRect = footer.getBoundingClientRect()
-      const reasons = [
-        copy.scrollHeight > copy.clientHeight + 1 ? 'vertical text overflow' : '',
-        copy.scrollWidth > copy.clientWidth + 1 ? 'horizontal text overflow' : '',
-        copyRect.bottom > footerRect.top + 1 ? 'footer overlap' : '',
-      ].filter(Boolean)
-      return reasons.map((reason) => ({
-        slide: index + 1,
-        reason,
-        title: page.querySelector('h2')?.textContent ?? '',
-        copyHeight: `${copy.clientHeight}/${copy.scrollHeight}`,
-      }))
+  for (const l of course.lectures) {
+    await page.goto(`./?mode=print&scope=${l.id}`)
+    await expect(page.locator('.print-page')).toHaveCount(l.slides.length)
+    await page.evaluate(() => document.fonts.ready)
+    const problems = await page.locator('.slide-frame').evaluateAll(nodes => nodes.flatMap(e => {
+      const bad = [...e.querySelectorAll<HTMLElement>('.slide-copy,.slide-content,.public-task,td')].filter(x => x.scrollHeight > x.clientHeight + 3 || x.scrollWidth > x.clientWidth + 3).map(x => ({ id: e.getAttribute('data-slide-id'), type: x.className }))
+      for (const svg of e.querySelectorAll('svg')) for (const text of svg.querySelectorAll('text')) {
+        const r = text.getBBox(), b = svg.viewBox.baseVal
+        if (r.x < -2 || r.y < -2 || r.x + r.width > b.width + 2 || r.y + r.height > b.height + 2 || (svg.closest('.infographic-process') && r.y > 150 && r.y + r.height > 307)) bad.push({ id: e.getAttribute('data-slide-id'), type: 'svg-text' })
+      }
+      return bad
     }))
-    expect(problems, topic.id).toEqual([])
+    expect(problems, l.id).toEqual([])
+    await expect(page.locator('.interactive-task,.note-reader,.task-status')).toHaveCount(0)
+    await expect(page.locator('body')).not.toContainText('ITPSIS_PRIVATE_SCRIPT_20260912')
   }
 })
 
-test('semester PDF route combines all lectures from the selected semester', async ({ page }) => {
-  const semester = 8
-  const semesterTopics = topics.filter((topic) => topic.semester === semester)
-  await page.goto(`./print?scope=semester-${semester}&variant=student`)
-  await page.waitForFunction(() => document.body.dataset.printReady === 'true')
-  await expect(page.locator('.print-page')).toHaveCount(semesterTopics.length * 85)
+test('four assessment types, empty attempt, retry and restoration', async ({ page }) => {
+  const l = course.lectures[0]
+  for (const s of l.slides.filter(s => s.task).slice(0, 4)) {
+    const t = s.task!, key = bank.keys[t.id]
+    await page.goto(`./?lecture=${l.id}&slide=${s.id}`)
+    await page.getByRole('button', { name: 'Проверить', exact: true }).click()
+    await expect(page.getByRole('button', { name: 'Ещё попытка', exact: true })).toHaveCount(0)
+    if (t.type === 'single' || t.type === 'multiple') {
+      for (const id of key.correct) await page.locator('.choice-grid label').filter({ hasText: t.options!.find(o => o.id === id)!.text }).locator('input').check()
+    } else if (t.type === 'short') await page.locator('.short-field input').fill(key.accepted[0])
+    else for (const [i, item] of t.items!.entries()) await page.locator('.matching-fields select').nth(i).selectOption(key.pairs[item.id])
+    await page.getByRole('button', { name: 'Проверить', exact: true }).click()
+    await expect(page.locator('.task-status')).toContainText('Правильно')
+    await page.reload()
+    await expect(page.locator('.task-status')).toContainText('Правильно')
+    await page.getByRole('button', { name: 'Ещё попытка', exact: true }).click()
+    await expect(page.getByRole('button', { name: 'Проверить', exact: true })).toBeVisible()
+  }
+})
+
+test('two windows, independent preview, black screen and audience privacy', async ({ page }) => {
+  const l = course.lectures[0]
+  await page.goto(`./?lecture=${l.id}&slide=${l.slides[0].id}`)
+  const popup = page.waitForEvent('popup')
+  await page.getByRole('button', { name: 'Начать занятие в двух окнах', exact: true }).click()
+  const audience = await popup
+  await expect(audience.locator('.slide-frame')).toHaveAttribute('data-slide-id', l.slides[0].id)
+  await page.getByRole('button', { name: 'Вперёд', exact: true }).click()
+  await expect(audience.locator('.slide-frame')).toHaveAttribute('data-slide-id', l.slides[1].id)
+  await page.locator('.toc-list button').nth(4).click()
+  await expect(audience.locator('.slide-frame')).toHaveAttribute('data-slide-id', l.slides[1].id)
+  await page.getByRole('button', { name: 'Показать аудитории', exact: true }).click()
+  await expect(audience.locator('.slide-frame')).toHaveAttribute('data-slide-id', l.slides[4].id)
+  await page.getByRole('button', { name: 'Чёрный экран', exact: true }).click()
+  await expect(audience.locator('.black-screen')).toBeVisible()
+  await page.getByRole('button', { name: 'Вернуть слайд', exact: true }).click()
+  await audience.reload()
+  await expect(audience.locator('.slide-frame')).toHaveAttribute('data-slide-id', l.slides[4].id)
+  const resources = await audience.evaluate(() => performance.getEntriesByType('resource').map(e => e.name))
+  expect(resources.some(url => url.includes('assessment.json') || url.includes('teacher-pack'))).toBe(false)
 })

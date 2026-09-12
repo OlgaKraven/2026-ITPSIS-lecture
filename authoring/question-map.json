@@ -1,0 +1,5034 @@
+[
+  {
+    "lectureId": "s07-01-support-lifecycle",
+    "questionId": "s07-01-support-lifecycle-Q01",
+    "title": "Система после ввода в эксплуатацию",
+    "source": "src/data/courseData.ts → s07-01-support-lifecycle → questions[0]",
+    "programme": [
+      "Задачи и участники сопровождения.",
+      "Жизненный цикл после ввода в эксплуатацию.",
+      "Договор на сопровождение и его состав."
+    ],
+    "learningOutcome": "Для каждого примера однозначно определено: эксплуатация это или сопровождение.",
+    "explanationSlideIds": [
+      "s07-01-support-lifecycle-Q01-theory",
+      "s07-01-support-lifecycle-Q01-term",
+      "s07-01-support-lifecycle-Q01-example",
+      "s07-01-support-lifecycle-Q01-flow",
+      "s07-01-support-lifecycle-Q01-warning",
+      "s07-01-support-lifecycle-Q01-notebook",
+      "s07-01-support-lifecycle-Q01-distinctions"
+    ],
+    "testIds": [
+      "s07-01-support-lifecycle-Q01-T01",
+      "s07-01-support-lifecycle-Q01-T02",
+      "s07-01-support-lifecycle-Q01-T03",
+      "s07-01-support-lifecycle-Q01-T04"
+    ],
+    "slideIds": [
+      "s07-01-support-lifecycle-Q01-theory",
+      "s07-01-support-lifecycle-Q01-term",
+      "s07-01-support-lifecycle-Q01-example",
+      "s07-01-support-lifecycle-Q01-flow",
+      "s07-01-support-lifecycle-Q01-warning",
+      "s07-01-support-lifecycle-Q01-notebook",
+      "s07-01-support-lifecycle-Q01-distinctions",
+      "s07-01-support-lifecycle-Q01-test-1",
+      "s07-01-support-lifecycle-Q01-test-2",
+      "s07-01-support-lifecycle-Q01-test-3",
+      "s07-01-support-lifecycle-Q01-test-4"
+    ],
+    "practice": "Управление услугами и постоянное улучшение",
+    "sourceId": "overview"
+  },
+  {
+    "lectureId": "s07-01-support-lifecycle",
+    "questionId": "s07-01-support-lifecycle-Q02",
+    "title": "Задачи сопровождения",
+    "source": "src/data/courseData.ts → s07-01-support-lifecycle → questions[1]",
+    "programme": [
+      "Задачи и участники сопровождения.",
+      "Жизненный цикл после ввода в эксплуатацию.",
+      "Договор на сопровождение и его состав."
+    ],
+    "learningOutcome": "У каждой задачи есть вход, ответственный, выход и критерий завершения.",
+    "explanationSlideIds": [
+      "s07-01-support-lifecycle-Q02-theory",
+      "s07-01-support-lifecycle-Q02-term",
+      "s07-01-support-lifecycle-Q02-example",
+      "s07-01-support-lifecycle-Q02-flow",
+      "s07-01-support-lifecycle-Q02-warning",
+      "s07-01-support-lifecycle-Q02-notebook",
+      "s07-01-support-lifecycle-Q02-distinctions"
+    ],
+    "testIds": [
+      "s07-01-support-lifecycle-Q02-T01",
+      "s07-01-support-lifecycle-Q02-T02",
+      "s07-01-support-lifecycle-Q02-T03",
+      "s07-01-support-lifecycle-Q02-T04"
+    ],
+    "slideIds": [
+      "s07-01-support-lifecycle-Q02-theory",
+      "s07-01-support-lifecycle-Q02-term",
+      "s07-01-support-lifecycle-Q02-example",
+      "s07-01-support-lifecycle-Q02-flow",
+      "s07-01-support-lifecycle-Q02-warning",
+      "s07-01-support-lifecycle-Q02-notebook",
+      "s07-01-support-lifecycle-Q02-distinctions",
+      "s07-01-support-lifecycle-Q02-test-1",
+      "s07-01-support-lifecycle-Q02-test-2",
+      "s07-01-support-lifecycle-Q02-test-3",
+      "s07-01-support-lifecycle-Q02-test-4"
+    ],
+    "practice": "Управление услугами и постоянное улучшение",
+    "sourceId": "overview"
+  },
+  {
+    "lectureId": "s07-01-support-lifecycle",
+    "questionId": "s07-01-support-lifecycle-Q03",
+    "title": "Участники и интересы",
+    "source": "src/data/courseData.ts → s07-01-support-lifecycle → questions[2]",
+    "programme": [
+      "Задачи и участники сопровождения.",
+      "Жизненный цикл после ввода в эксплуатацию.",
+      "Договор на сопровождение и его состав."
+    ],
+    "learningOutcome": "Для каждого решения указан ровно один владелец и необходимые исполнители.",
+    "explanationSlideIds": [
+      "s07-01-support-lifecycle-Q03-theory",
+      "s07-01-support-lifecycle-Q03-term",
+      "s07-01-support-lifecycle-Q03-example",
+      "s07-01-support-lifecycle-Q03-flow",
+      "s07-01-support-lifecycle-Q03-warning",
+      "s07-01-support-lifecycle-Q03-notebook",
+      "s07-01-support-lifecycle-Q03-distinctions"
+    ],
+    "testIds": [
+      "s07-01-support-lifecycle-Q03-T01",
+      "s07-01-support-lifecycle-Q03-T02",
+      "s07-01-support-lifecycle-Q03-T03",
+      "s07-01-support-lifecycle-Q03-T04"
+    ],
+    "slideIds": [
+      "s07-01-support-lifecycle-Q03-theory",
+      "s07-01-support-lifecycle-Q03-term",
+      "s07-01-support-lifecycle-Q03-example",
+      "s07-01-support-lifecycle-Q03-flow",
+      "s07-01-support-lifecycle-Q03-warning",
+      "s07-01-support-lifecycle-Q03-notebook",
+      "s07-01-support-lifecycle-Q03-distinctions",
+      "s07-01-support-lifecycle-Q03-test-1",
+      "s07-01-support-lifecycle-Q03-test-2",
+      "s07-01-support-lifecycle-Q03-test-3",
+      "s07-01-support-lifecycle-Q03-test-4"
+    ],
+    "practice": "Управление услугами и постоянное улучшение",
+    "sourceId": "overview"
+  },
+  {
+    "lectureId": "s07-01-support-lifecycle",
+    "questionId": "s07-01-support-lifecycle-Q04",
+    "title": "Жизненный цикл обращения и изменения",
+    "source": "src/data/courseData.ts → s07-01-support-lifecycle → questions[3]",
+    "programme": [
+      "Задачи и участники сопровождения.",
+      "Жизненный цикл после ввода в эксплуатацию.",
+      "Договор на сопровождение и его состав."
+    ],
+    "learningOutcome": "Состояние каждой записи соответствует фактически завершённому действию.",
+    "explanationSlideIds": [
+      "s07-01-support-lifecycle-Q04-theory",
+      "s07-01-support-lifecycle-Q04-term",
+      "s07-01-support-lifecycle-Q04-example",
+      "s07-01-support-lifecycle-Q04-flow",
+      "s07-01-support-lifecycle-Q04-warning",
+      "s07-01-support-lifecycle-Q04-notebook",
+      "s07-01-support-lifecycle-Q04-distinctions"
+    ],
+    "testIds": [
+      "s07-01-support-lifecycle-Q04-T01",
+      "s07-01-support-lifecycle-Q04-T02",
+      "s07-01-support-lifecycle-Q04-T03",
+      "s07-01-support-lifecycle-Q04-T04"
+    ],
+    "slideIds": [
+      "s07-01-support-lifecycle-Q04-theory",
+      "s07-01-support-lifecycle-Q04-term",
+      "s07-01-support-lifecycle-Q04-example",
+      "s07-01-support-lifecycle-Q04-flow",
+      "s07-01-support-lifecycle-Q04-warning",
+      "s07-01-support-lifecycle-Q04-notebook",
+      "s07-01-support-lifecycle-Q04-distinctions",
+      "s07-01-support-lifecycle-Q04-test-1",
+      "s07-01-support-lifecycle-Q04-test-2",
+      "s07-01-support-lifecycle-Q04-test-3",
+      "s07-01-support-lifecycle-Q04-test-4"
+    ],
+    "practice": "Управление услугами и постоянное улучшение",
+    "sourceId": "overview"
+  },
+  {
+    "lectureId": "s07-01-support-lifecycle",
+    "questionId": "s07-01-support-lifecycle-Q05",
+    "title": "Каталог сопровождаемых услуг",
+    "source": "src/data/courseData.ts → s07-01-support-lifecycle → questions[4]",
+    "programme": [
+      "Задачи и участники сопровождения.",
+      "Жизненный цикл после ввода в эксплуатацию.",
+      "Договор на сопровождение и его состав."
+    ],
+    "learningOutcome": "По записи понятно, кому и какую полезность обеспечивает услуга.",
+    "explanationSlideIds": [
+      "s07-01-support-lifecycle-Q05-theory",
+      "s07-01-support-lifecycle-Q05-term",
+      "s07-01-support-lifecycle-Q05-example",
+      "s07-01-support-lifecycle-Q05-flow",
+      "s07-01-support-lifecycle-Q05-warning",
+      "s07-01-support-lifecycle-Q05-notebook",
+      "s07-01-support-lifecycle-Q05-distinctions"
+    ],
+    "testIds": [
+      "s07-01-support-lifecycle-Q05-T01",
+      "s07-01-support-lifecycle-Q05-T02",
+      "s07-01-support-lifecycle-Q05-T03",
+      "s07-01-support-lifecycle-Q05-T04"
+    ],
+    "slideIds": [
+      "s07-01-support-lifecycle-Q05-theory",
+      "s07-01-support-lifecycle-Q05-term",
+      "s07-01-support-lifecycle-Q05-example",
+      "s07-01-support-lifecycle-Q05-flow",
+      "s07-01-support-lifecycle-Q05-warning",
+      "s07-01-support-lifecycle-Q05-notebook",
+      "s07-01-support-lifecycle-Q05-distinctions",
+      "s07-01-support-lifecycle-Q05-test-1",
+      "s07-01-support-lifecycle-Q05-test-2",
+      "s07-01-support-lifecycle-Q05-test-3",
+      "s07-01-support-lifecycle-Q05-test-4"
+    ],
+    "practice": "Управление услугами и постоянное улучшение",
+    "sourceId": "overview"
+  },
+  {
+    "lectureId": "s07-01-support-lifecycle",
+    "questionId": "s07-01-support-lifecycle-Q06",
+    "title": "Область договора",
+    "source": "src/data/courseData.ts → s07-01-support-lifecycle → questions[5]",
+    "programme": [
+      "Задачи и участники сопровождения.",
+      "Жизненный цикл после ввода в эксплуатацию.",
+      "Договор на сопровождение и его состав."
+    ],
+    "learningOutcome": "Три проверочных запроса однозначно классифицируются по области договора.",
+    "explanationSlideIds": [
+      "s07-01-support-lifecycle-Q06-theory",
+      "s07-01-support-lifecycle-Q06-term",
+      "s07-01-support-lifecycle-Q06-example",
+      "s07-01-support-lifecycle-Q06-flow",
+      "s07-01-support-lifecycle-Q06-warning",
+      "s07-01-support-lifecycle-Q06-notebook",
+      "s07-01-support-lifecycle-Q06-distinctions"
+    ],
+    "testIds": [
+      "s07-01-support-lifecycle-Q06-T01",
+      "s07-01-support-lifecycle-Q06-T02",
+      "s07-01-support-lifecycle-Q06-T03",
+      "s07-01-support-lifecycle-Q06-T04"
+    ],
+    "slideIds": [
+      "s07-01-support-lifecycle-Q06-theory",
+      "s07-01-support-lifecycle-Q06-term",
+      "s07-01-support-lifecycle-Q06-example",
+      "s07-01-support-lifecycle-Q06-flow",
+      "s07-01-support-lifecycle-Q06-warning",
+      "s07-01-support-lifecycle-Q06-notebook",
+      "s07-01-support-lifecycle-Q06-distinctions",
+      "s07-01-support-lifecycle-Q06-test-1",
+      "s07-01-support-lifecycle-Q06-test-2",
+      "s07-01-support-lifecycle-Q06-test-3",
+      "s07-01-support-lifecycle-Q06-test-4"
+    ],
+    "practice": "Управление услугами и постоянное улучшение",
+    "sourceId": "overview"
+  },
+  {
+    "lectureId": "s07-01-support-lifecycle",
+    "questionId": "s07-01-support-lifecycle-Q07",
+    "title": "Состав договора на сопровождение",
+    "source": "src/data/courseData.ts → s07-01-support-lifecycle → questions[6]",
+    "programme": [
+      "Задачи и участники сопровождения.",
+      "Жизненный цикл после ввода в эксплуатацию.",
+      "Договор на сопровождение и его состав."
+    ],
+    "learningOutcome": "Один параметр имеет одно авторитетное место и согласованные ссылки.",
+    "explanationSlideIds": [
+      "s07-01-support-lifecycle-Q07-theory",
+      "s07-01-support-lifecycle-Q07-term",
+      "s07-01-support-lifecycle-Q07-example",
+      "s07-01-support-lifecycle-Q07-flow",
+      "s07-01-support-lifecycle-Q07-warning",
+      "s07-01-support-lifecycle-Q07-notebook",
+      "s07-01-support-lifecycle-Q07-distinctions"
+    ],
+    "testIds": [
+      "s07-01-support-lifecycle-Q07-T01",
+      "s07-01-support-lifecycle-Q07-T02",
+      "s07-01-support-lifecycle-Q07-T03",
+      "s07-01-support-lifecycle-Q07-T04"
+    ],
+    "slideIds": [
+      "s07-01-support-lifecycle-Q07-theory",
+      "s07-01-support-lifecycle-Q07-term",
+      "s07-01-support-lifecycle-Q07-example",
+      "s07-01-support-lifecycle-Q07-flow",
+      "s07-01-support-lifecycle-Q07-warning",
+      "s07-01-support-lifecycle-Q07-notebook",
+      "s07-01-support-lifecycle-Q07-distinctions",
+      "s07-01-support-lifecycle-Q07-test-1",
+      "s07-01-support-lifecycle-Q07-test-2",
+      "s07-01-support-lifecycle-Q07-test-3",
+      "s07-01-support-lifecycle-Q07-test-4"
+    ],
+    "practice": "Управление услугами и постоянное улучшение",
+    "sourceId": "overview"
+  },
+  {
+    "lectureId": "s07-01-support-lifecycle",
+    "questionId": "s07-01-support-lifecycle-Q08",
+    "title": "Пересмотр сопровождения",
+    "source": "src/data/courseData.ts → s07-01-support-lifecycle → questions[7]",
+    "programme": [
+      "Задачи и участники сопровождения.",
+      "Жизненный цикл после ввода в эксплуатацию.",
+      "Договор на сопровождение и его состав."
+    ],
+    "learningOutcome": "Протокол пересмотра содержит данные, решение, владельца и дату следующей оценки.",
+    "explanationSlideIds": [
+      "s07-01-support-lifecycle-Q08-theory",
+      "s07-01-support-lifecycle-Q08-term",
+      "s07-01-support-lifecycle-Q08-example",
+      "s07-01-support-lifecycle-Q08-flow",
+      "s07-01-support-lifecycle-Q08-warning",
+      "s07-01-support-lifecycle-Q08-notebook",
+      "s07-01-support-lifecycle-Q08-distinctions"
+    ],
+    "testIds": [
+      "s07-01-support-lifecycle-Q08-T01",
+      "s07-01-support-lifecycle-Q08-T02",
+      "s07-01-support-lifecycle-Q08-T03",
+      "s07-01-support-lifecycle-Q08-T04"
+    ],
+    "slideIds": [
+      "s07-01-support-lifecycle-Q08-theory",
+      "s07-01-support-lifecycle-Q08-term",
+      "s07-01-support-lifecycle-Q08-example",
+      "s07-01-support-lifecycle-Q08-flow",
+      "s07-01-support-lifecycle-Q08-warning",
+      "s07-01-support-lifecycle-Q08-notebook",
+      "s07-01-support-lifecycle-Q08-distinctions",
+      "s07-01-support-lifecycle-Q08-test-1",
+      "s07-01-support-lifecycle-Q08-test-2",
+      "s07-01-support-lifecycle-Q08-test-3",
+      "s07-01-support-lifecycle-Q08-test-4"
+    ],
+    "practice": "Управление услугами и постоянное улучшение",
+    "sourceId": "overview"
+  },
+  {
+    "lectureId": "s07-02-support-levels",
+    "questionId": "s07-02-support-levels-Q01",
+    "title": "Единая точка контакта",
+    "source": "src/data/courseData.ts → s07-02-support-levels → questions[0]",
+    "programme": [
+      "Уровни поддержки и распределение обязанностей.",
+      "Организация службы поддержки.",
+      "Каналы приёма обращений."
+    ],
+    "learningOutcome": "Любое обращение находится по одному номеру и имеет полную историю.",
+    "explanationSlideIds": [
+      "s07-02-support-levels-Q01-theory",
+      "s07-02-support-levels-Q01-term",
+      "s07-02-support-levels-Q01-example",
+      "s07-02-support-levels-Q01-flow",
+      "s07-02-support-levels-Q01-warning",
+      "s07-02-support-levels-Q01-notebook",
+      "s07-02-support-levels-Q01-distinctions"
+    ],
+    "testIds": [
+      "s07-02-support-levels-Q01-T01",
+      "s07-02-support-levels-Q01-T02",
+      "s07-02-support-levels-Q01-T03",
+      "s07-02-support-levels-Q01-T04"
+    ],
+    "slideIds": [
+      "s07-02-support-levels-Q01-theory",
+      "s07-02-support-levels-Q01-term",
+      "s07-02-support-levels-Q01-example",
+      "s07-02-support-levels-Q01-flow",
+      "s07-02-support-levels-Q01-warning",
+      "s07-02-support-levels-Q01-notebook",
+      "s07-02-support-levels-Q01-distinctions",
+      "s07-02-support-levels-Q01-test-1",
+      "s07-02-support-levels-Q01-test-2",
+      "s07-02-support-levels-Q01-test-3",
+      "s07-02-support-levels-Q01-test-4"
+    ],
+    "practice": "Service Desk — служба поддержки",
+    "sourceId": "desk"
+  },
+  {
+    "lectureId": "s07-02-support-levels",
+    "questionId": "s07-02-support-levels-Q02",
+    "title": "Первая линия L1",
+    "source": "src/data/courseData.ts → s07-02-support-levels → questions[1]",
+    "programme": [
+      "Уровни поддержки и распределение обязанностей.",
+      "Организация службы поддержки.",
+      "Каналы приёма обращений."
+    ],
+    "learningOutcome": "Карточка готова к работе или передаче без повторного опроса пользователя.",
+    "explanationSlideIds": [
+      "s07-02-support-levels-Q02-theory",
+      "s07-02-support-levels-Q02-term",
+      "s07-02-support-levels-Q02-example",
+      "s07-02-support-levels-Q02-flow",
+      "s07-02-support-levels-Q02-warning",
+      "s07-02-support-levels-Q02-notebook",
+      "s07-02-support-levels-Q02-distinctions"
+    ],
+    "testIds": [
+      "s07-02-support-levels-Q02-T01",
+      "s07-02-support-levels-Q02-T02",
+      "s07-02-support-levels-Q02-T03",
+      "s07-02-support-levels-Q02-T04"
+    ],
+    "slideIds": [
+      "s07-02-support-levels-Q02-theory",
+      "s07-02-support-levels-Q02-term",
+      "s07-02-support-levels-Q02-example",
+      "s07-02-support-levels-Q02-flow",
+      "s07-02-support-levels-Q02-warning",
+      "s07-02-support-levels-Q02-notebook",
+      "s07-02-support-levels-Q02-distinctions",
+      "s07-02-support-levels-Q02-test-1",
+      "s07-02-support-levels-Q02-test-2",
+      "s07-02-support-levels-Q02-test-3",
+      "s07-02-support-levels-Q02-test-4"
+    ],
+    "practice": "Service Desk — служба поддержки",
+    "sourceId": "desk"
+  },
+  {
+    "lectureId": "s07-02-support-levels",
+    "questionId": "s07-02-support-levels-Q03",
+    "title": "Вторая линия L2",
+    "source": "src/data/courseData.ts → s07-02-support-levels → questions[2]",
+    "programme": [
+      "Уровни поддержки и распределение обязанностей.",
+      "Организация службы поддержки.",
+      "Каналы приёма обращений."
+    ],
+    "learningOutcome": "Каждая гипотеза подтверждена или исключена отдельным свидетельством.",
+    "explanationSlideIds": [
+      "s07-02-support-levels-Q03-theory",
+      "s07-02-support-levels-Q03-term",
+      "s07-02-support-levels-Q03-example",
+      "s07-02-support-levels-Q03-flow",
+      "s07-02-support-levels-Q03-warning",
+      "s07-02-support-levels-Q03-notebook",
+      "s07-02-support-levels-Q03-distinctions"
+    ],
+    "testIds": [
+      "s07-02-support-levels-Q03-T01",
+      "s07-02-support-levels-Q03-T02",
+      "s07-02-support-levels-Q03-T03",
+      "s07-02-support-levels-Q03-T04"
+    ],
+    "slideIds": [
+      "s07-02-support-levels-Q03-theory",
+      "s07-02-support-levels-Q03-term",
+      "s07-02-support-levels-Q03-example",
+      "s07-02-support-levels-Q03-flow",
+      "s07-02-support-levels-Q03-warning",
+      "s07-02-support-levels-Q03-notebook",
+      "s07-02-support-levels-Q03-distinctions",
+      "s07-02-support-levels-Q03-test-1",
+      "s07-02-support-levels-Q03-test-2",
+      "s07-02-support-levels-Q03-test-3",
+      "s07-02-support-levels-Q03-test-4"
+    ],
+    "practice": "Service Desk — служба поддержки",
+    "sourceId": "desk"
+  },
+  {
+    "lectureId": "s07-02-support-levels",
+    "questionId": "s07-02-support-levels-Q04",
+    "title": "Третья линия L3",
+    "source": "src/data/courseData.ts → s07-02-support-levels → questions[3]",
+    "programme": [
+      "Уровни поддержки и распределение обязанностей.",
+      "Организация службы поддержки.",
+      "Каналы приёма обращений."
+    ],
+    "learningOutcome": "L3 воспроизводит дефект и связывает исправление с исходным инцидентом.",
+    "explanationSlideIds": [
+      "s07-02-support-levels-Q04-theory",
+      "s07-02-support-levels-Q04-term",
+      "s07-02-support-levels-Q04-example",
+      "s07-02-support-levels-Q04-flow",
+      "s07-02-support-levels-Q04-warning",
+      "s07-02-support-levels-Q04-notebook",
+      "s07-02-support-levels-Q04-distinctions"
+    ],
+    "testIds": [
+      "s07-02-support-levels-Q04-T01",
+      "s07-02-support-levels-Q04-T02",
+      "s07-02-support-levels-Q04-T03",
+      "s07-02-support-levels-Q04-T04"
+    ],
+    "slideIds": [
+      "s07-02-support-levels-Q04-theory",
+      "s07-02-support-levels-Q04-term",
+      "s07-02-support-levels-Q04-example",
+      "s07-02-support-levels-Q04-flow",
+      "s07-02-support-levels-Q04-warning",
+      "s07-02-support-levels-Q04-notebook",
+      "s07-02-support-levels-Q04-distinctions",
+      "s07-02-support-levels-Q04-test-1",
+      "s07-02-support-levels-Q04-test-2",
+      "s07-02-support-levels-Q04-test-3",
+      "s07-02-support-levels-Q04-test-4"
+    ],
+    "practice": "Service Desk — служба поддержки",
+    "sourceId": "desk"
+  },
+  {
+    "lectureId": "s07-02-support-levels",
+    "questionId": "s07-02-support-levels-Q05",
+    "title": "Маршрутизация по типу и влиянию",
+    "source": "src/data/courseData.ts → s07-02-support-levels → questions[4]",
+    "programme": [
+      "Уровни поддержки и распределение обязанностей.",
+      "Организация службы поддержки.",
+      "Каналы приёма обращений."
+    ],
+    "learningOutcome": "Тестовые обращения попадают в ожидаемую очередь и получают владельца.",
+    "explanationSlideIds": [
+      "s07-02-support-levels-Q05-theory",
+      "s07-02-support-levels-Q05-term",
+      "s07-02-support-levels-Q05-example",
+      "s07-02-support-levels-Q05-flow",
+      "s07-02-support-levels-Q05-warning",
+      "s07-02-support-levels-Q05-notebook",
+      "s07-02-support-levels-Q05-distinctions"
+    ],
+    "testIds": [
+      "s07-02-support-levels-Q05-T01",
+      "s07-02-support-levels-Q05-T02",
+      "s07-02-support-levels-Q05-T03",
+      "s07-02-support-levels-Q05-T04"
+    ],
+    "slideIds": [
+      "s07-02-support-levels-Q05-theory",
+      "s07-02-support-levels-Q05-term",
+      "s07-02-support-levels-Q05-example",
+      "s07-02-support-levels-Q05-flow",
+      "s07-02-support-levels-Q05-warning",
+      "s07-02-support-levels-Q05-notebook",
+      "s07-02-support-levels-Q05-distinctions",
+      "s07-02-support-levels-Q05-test-1",
+      "s07-02-support-levels-Q05-test-2",
+      "s07-02-support-levels-Q05-test-3",
+      "s07-02-support-levels-Q05-test-4"
+    ],
+    "practice": "Service Desk — служба поддержки",
+    "sourceId": "desk"
+  },
+  {
+    "lectureId": "s07-02-support-levels",
+    "questionId": "s07-02-support-levels-Q06",
+    "title": "Каналы приёма",
+    "source": "src/data/courseData.ts → s07-02-support-levels → questions[5]",
+    "programme": [
+      "Уровни поддержки и распределение обязанностей.",
+      "Организация службы поддержки.",
+      "Каналы приёма обращений."
+    ],
+    "learningOutcome": "Для каждого канала известны назначение, обязательные поля и время контроля.",
+    "explanationSlideIds": [
+      "s07-02-support-levels-Q06-theory",
+      "s07-02-support-levels-Q06-term",
+      "s07-02-support-levels-Q06-example",
+      "s07-02-support-levels-Q06-flow",
+      "s07-02-support-levels-Q06-warning",
+      "s07-02-support-levels-Q06-notebook",
+      "s07-02-support-levels-Q06-distinctions"
+    ],
+    "testIds": [
+      "s07-02-support-levels-Q06-T01",
+      "s07-02-support-levels-Q06-T02",
+      "s07-02-support-levels-Q06-T03",
+      "s07-02-support-levels-Q06-T04"
+    ],
+    "slideIds": [
+      "s07-02-support-levels-Q06-theory",
+      "s07-02-support-levels-Q06-term",
+      "s07-02-support-levels-Q06-example",
+      "s07-02-support-levels-Q06-flow",
+      "s07-02-support-levels-Q06-warning",
+      "s07-02-support-levels-Q06-notebook",
+      "s07-02-support-levels-Q06-distinctions",
+      "s07-02-support-levels-Q06-test-1",
+      "s07-02-support-levels-Q06-test-2",
+      "s07-02-support-levels-Q06-test-3",
+      "s07-02-support-levels-Q06-test-4"
+    ],
+    "practice": "Service Desk — служба поддержки",
+    "sourceId": "desk"
+  },
+  {
+    "lectureId": "s07-02-support-levels",
+    "questionId": "s07-02-support-levels-Q07",
+    "title": "Организация смены и очереди",
+    "source": "src/data/courseData.ts → s07-02-support-levels → questions[6]",
+    "programme": [
+      "Уровни поддержки и распределение обязанностей.",
+      "Организация службы поддержки.",
+      "Каналы приёма обращений."
+    ],
+    "learningOutcome": "Новая смена понимает три ближайших действия без устного восстановления истории.",
+    "explanationSlideIds": [
+      "s07-02-support-levels-Q07-theory",
+      "s07-02-support-levels-Q07-term",
+      "s07-02-support-levels-Q07-example",
+      "s07-02-support-levels-Q07-flow",
+      "s07-02-support-levels-Q07-warning",
+      "s07-02-support-levels-Q07-notebook",
+      "s07-02-support-levels-Q07-distinctions"
+    ],
+    "testIds": [
+      "s07-02-support-levels-Q07-T01",
+      "s07-02-support-levels-Q07-T02",
+      "s07-02-support-levels-Q07-T03",
+      "s07-02-support-levels-Q07-T04"
+    ],
+    "slideIds": [
+      "s07-02-support-levels-Q07-theory",
+      "s07-02-support-levels-Q07-term",
+      "s07-02-support-levels-Q07-example",
+      "s07-02-support-levels-Q07-flow",
+      "s07-02-support-levels-Q07-warning",
+      "s07-02-support-levels-Q07-notebook",
+      "s07-02-support-levels-Q07-distinctions",
+      "s07-02-support-levels-Q07-test-1",
+      "s07-02-support-levels-Q07-test-2",
+      "s07-02-support-levels-Q07-test-3",
+      "s07-02-support-levels-Q07-test-4"
+    ],
+    "practice": "Service Desk — служба поддержки",
+    "sourceId": "desk"
+  },
+  {
+    "lectureId": "s07-02-support-levels",
+    "questionId": "s07-02-support-levels-Q08",
+    "title": "Качество передачи между уровнями",
+    "source": "src/data/courseData.ts → s07-02-support-levels → questions[7]",
+    "programme": [
+      "Уровни поддержки и распределение обязанностей.",
+      "Организация службы поддержки.",
+      "Каналы приёма обращений."
+    ],
+    "learningOutcome": "Адресат начинает целевую проверку, а пользователь знает срок следующего сообщения.",
+    "explanationSlideIds": [
+      "s07-02-support-levels-Q08-theory",
+      "s07-02-support-levels-Q08-term",
+      "s07-02-support-levels-Q08-example",
+      "s07-02-support-levels-Q08-flow",
+      "s07-02-support-levels-Q08-warning",
+      "s07-02-support-levels-Q08-notebook",
+      "s07-02-support-levels-Q08-distinctions"
+    ],
+    "testIds": [
+      "s07-02-support-levels-Q08-T01",
+      "s07-02-support-levels-Q08-T02",
+      "s07-02-support-levels-Q08-T03",
+      "s07-02-support-levels-Q08-T04"
+    ],
+    "slideIds": [
+      "s07-02-support-levels-Q08-theory",
+      "s07-02-support-levels-Q08-term",
+      "s07-02-support-levels-Q08-example",
+      "s07-02-support-levels-Q08-flow",
+      "s07-02-support-levels-Q08-warning",
+      "s07-02-support-levels-Q08-notebook",
+      "s07-02-support-levels-Q08-distinctions",
+      "s07-02-support-levels-Q08-test-1",
+      "s07-02-support-levels-Q08-test-2",
+      "s07-02-support-levels-Q08-test-3",
+      "s07-02-support-levels-Q08-test-4"
+    ],
+    "practice": "Service Desk — служба поддержки",
+    "sourceId": "desk"
+  },
+  {
+    "lectureId": "s07-03-sla",
+    "questionId": "s07-03-sla-Q01",
+    "title": "Услуга и сторона соглашения",
+    "source": "src/data/courseData.ts → s07-03-sla → questions[0]",
+    "programme": [
+      "Показатели SLA.",
+      "Время реакции и восстановления.",
+      "Приоритеты и последствия нарушения."
+    ],
+    "learningOutcome": "Из соглашения ясно, какая услуга и для кого оценивается.",
+    "explanationSlideIds": [
+      "s07-03-sla-Q01-theory",
+      "s07-03-sla-Q01-term",
+      "s07-03-sla-Q01-example",
+      "s07-03-sla-Q01-flow",
+      "s07-03-sla-Q01-warning",
+      "s07-03-sla-Q01-notebook",
+      "s07-03-sla-Q01-distinctions"
+    ],
+    "testIds": [
+      "s07-03-sla-Q01-T01",
+      "s07-03-sla-Q01-T02",
+      "s07-03-sla-Q01-T03",
+      "s07-03-sla-Q01-T04"
+    ],
+    "slideIds": [
+      "s07-03-sla-Q01-theory",
+      "s07-03-sla-Q01-term",
+      "s07-03-sla-Q01-example",
+      "s07-03-sla-Q01-flow",
+      "s07-03-sla-Q01-warning",
+      "s07-03-sla-Q01-notebook",
+      "s07-03-sla-Q01-distinctions",
+      "s07-03-sla-Q01-test-1",
+      "s07-03-sla-Q01-test-2",
+      "s07-03-sla-Q01-test-3",
+      "s07-03-sla-Q01-test-4"
+    ],
+    "practice": "Service Level Management — управление уровнем услуг",
+    "sourceId": "sla"
+  },
+  {
+    "lectureId": "s07-03-sla",
+    "questionId": "s07-03-sla-Q02",
+    "title": "Окно обслуживания и календарь",
+    "source": "src/data/courseData.ts → s07-03-sla → questions[1]",
+    "programme": [
+      "Показатели SLA.",
+      "Время реакции и восстановления.",
+      "Приоритеты и последствия нарушения."
+    ],
+    "learningOutcome": "Одинаковые отметки дают одинаковое расчётное время у двух проверяющих.",
+    "explanationSlideIds": [
+      "s07-03-sla-Q02-theory",
+      "s07-03-sla-Q02-term",
+      "s07-03-sla-Q02-example",
+      "s07-03-sla-Q02-flow",
+      "s07-03-sla-Q02-warning",
+      "s07-03-sla-Q02-notebook",
+      "s07-03-sla-Q02-distinctions"
+    ],
+    "testIds": [
+      "s07-03-sla-Q02-T01",
+      "s07-03-sla-Q02-T02",
+      "s07-03-sla-Q02-T03",
+      "s07-03-sla-Q02-T04"
+    ],
+    "slideIds": [
+      "s07-03-sla-Q02-theory",
+      "s07-03-sla-Q02-term",
+      "s07-03-sla-Q02-example",
+      "s07-03-sla-Q02-flow",
+      "s07-03-sla-Q02-warning",
+      "s07-03-sla-Q02-notebook",
+      "s07-03-sla-Q02-distinctions",
+      "s07-03-sla-Q02-test-1",
+      "s07-03-sla-Q02-test-2",
+      "s07-03-sla-Q02-test-3",
+      "s07-03-sla-Q02-test-4"
+    ],
+    "practice": "Service Level Management — управление уровнем услуг",
+    "sourceId": "sla"
+  },
+  {
+    "lectureId": "s07-03-sla",
+    "questionId": "s07-03-sla-Q03",
+    "title": "Влияние и срочность",
+    "source": "src/data/courseData.ts → s07-03-sla → questions[2]",
+    "programme": [
+      "Показатели SLA.",
+      "Время реакции и восстановления.",
+      "Приоритеты и последствия нарушения."
+    ],
+    "learningOutcome": "Приоритет воспроизводится по тем же исходным фактам.",
+    "explanationSlideIds": [
+      "s07-03-sla-Q03-theory",
+      "s07-03-sla-Q03-term",
+      "s07-03-sla-Q03-example",
+      "s07-03-sla-Q03-flow",
+      "s07-03-sla-Q03-warning",
+      "s07-03-sla-Q03-notebook",
+      "s07-03-sla-Q03-distinctions"
+    ],
+    "testIds": [
+      "s07-03-sla-Q03-T01",
+      "s07-03-sla-Q03-T02",
+      "s07-03-sla-Q03-T03",
+      "s07-03-sla-Q03-T04"
+    ],
+    "slideIds": [
+      "s07-03-sla-Q03-theory",
+      "s07-03-sla-Q03-term",
+      "s07-03-sla-Q03-example",
+      "s07-03-sla-Q03-flow",
+      "s07-03-sla-Q03-warning",
+      "s07-03-sla-Q03-notebook",
+      "s07-03-sla-Q03-distinctions",
+      "s07-03-sla-Q03-test-1",
+      "s07-03-sla-Q03-test-2",
+      "s07-03-sla-Q03-test-3",
+      "s07-03-sla-Q03-test-4"
+    ],
+    "practice": "Service Level Management — управление уровнем услуг",
+    "sourceId": "sla"
+  },
+  {
+    "lectureId": "s07-03-sla",
+    "questionId": "s07-03-sla-Q04",
+    "title": "Матрица приоритетов",
+    "source": "src/data/courseData.ts → s07-03-sla → questions[3]",
+    "programme": [
+      "Показатели SLA.",
+      "Время реакции и восстановления.",
+      "Приоритеты и последствия нарушения."
+    ],
+    "learningOutcome": "Каждое обращение получает один приоритет без ручной подгонки.",
+    "explanationSlideIds": [
+      "s07-03-sla-Q04-theory",
+      "s07-03-sla-Q04-term",
+      "s07-03-sla-Q04-example",
+      "s07-03-sla-Q04-flow",
+      "s07-03-sla-Q04-warning",
+      "s07-03-sla-Q04-notebook",
+      "s07-03-sla-Q04-distinctions"
+    ],
+    "testIds": [
+      "s07-03-sla-Q04-T01",
+      "s07-03-sla-Q04-T02",
+      "s07-03-sla-Q04-T03",
+      "s07-03-sla-Q04-T04"
+    ],
+    "slideIds": [
+      "s07-03-sla-Q04-theory",
+      "s07-03-sla-Q04-term",
+      "s07-03-sla-Q04-example",
+      "s07-03-sla-Q04-flow",
+      "s07-03-sla-Q04-warning",
+      "s07-03-sla-Q04-notebook",
+      "s07-03-sla-Q04-distinctions",
+      "s07-03-sla-Q04-test-1",
+      "s07-03-sla-Q04-test-2",
+      "s07-03-sla-Q04-test-3",
+      "s07-03-sla-Q04-test-4"
+    ],
+    "practice": "Service Level Management — управление уровнем услуг",
+    "sourceId": "sla"
+  },
+  {
+    "lectureId": "s07-03-sla",
+    "questionId": "s07-03-sla-Q05",
+    "title": "Время реакции",
+    "source": "src/data/courseData.ts → s07-03-sla → questions[4]",
+    "programme": [
+      "Показатели SLA.",
+      "Время реакции и восстановления.",
+      "Приоритеты и последствия нарушения."
+    ],
+    "learningOutcome": "В журнале есть начало, подтверждение принятия и рассчитанный интервал.",
+    "explanationSlideIds": [
+      "s07-03-sla-Q05-theory",
+      "s07-03-sla-Q05-term",
+      "s07-03-sla-Q05-example",
+      "s07-03-sla-Q05-flow",
+      "s07-03-sla-Q05-warning",
+      "s07-03-sla-Q05-notebook",
+      "s07-03-sla-Q05-distinctions"
+    ],
+    "testIds": [
+      "s07-03-sla-Q05-T01",
+      "s07-03-sla-Q05-T02",
+      "s07-03-sla-Q05-T03",
+      "s07-03-sla-Q05-T04"
+    ],
+    "slideIds": [
+      "s07-03-sla-Q05-theory",
+      "s07-03-sla-Q05-term",
+      "s07-03-sla-Q05-example",
+      "s07-03-sla-Q05-flow",
+      "s07-03-sla-Q05-warning",
+      "s07-03-sla-Q05-notebook",
+      "s07-03-sla-Q05-distinctions",
+      "s07-03-sla-Q05-test-1",
+      "s07-03-sla-Q05-test-2",
+      "s07-03-sla-Q05-test-3",
+      "s07-03-sla-Q05-test-4"
+    ],
+    "practice": "Service Level Management — управление уровнем услуг",
+    "sourceId": "sla"
+  },
+  {
+    "lectureId": "s07-03-sla",
+    "questionId": "s07-03-sla-Q06",
+    "title": "Время восстановления",
+    "source": "src/data/courseData.ts → s07-03-sla → questions[5]",
+    "programme": [
+      "Показатели SLA.",
+      "Время реакции и восстановления.",
+      "Приоритеты и последствия нарушения."
+    ],
+    "learningOutcome": "Пользовательский сценарий успешен, а метрики стабильны в контрольном окне.",
+    "explanationSlideIds": [
+      "s07-03-sla-Q06-theory",
+      "s07-03-sla-Q06-term",
+      "s07-03-sla-Q06-example",
+      "s07-03-sla-Q06-flow",
+      "s07-03-sla-Q06-warning",
+      "s07-03-sla-Q06-notebook",
+      "s07-03-sla-Q06-distinctions"
+    ],
+    "testIds": [
+      "s07-03-sla-Q06-T01",
+      "s07-03-sla-Q06-T02",
+      "s07-03-sla-Q06-T03",
+      "s07-03-sla-Q06-T04"
+    ],
+    "slideIds": [
+      "s07-03-sla-Q06-theory",
+      "s07-03-sla-Q06-term",
+      "s07-03-sla-Q06-example",
+      "s07-03-sla-Q06-flow",
+      "s07-03-sla-Q06-warning",
+      "s07-03-sla-Q06-notebook",
+      "s07-03-sla-Q06-distinctions",
+      "s07-03-sla-Q06-test-1",
+      "s07-03-sla-Q06-test-2",
+      "s07-03-sla-Q06-test-3",
+      "s07-03-sla-Q06-test-4"
+    ],
+    "practice": "Service Level Management — управление уровнем услуг",
+    "sourceId": "sla"
+  },
+  {
+    "lectureId": "s07-03-sla",
+    "questionId": "s07-03-sla-Q07",
+    "title": "Исключения и остановка часов",
+    "source": "src/data/courseData.ts → s07-03-sla → questions[6]",
+    "programme": [
+      "Показатели SLA.",
+      "Время реакции и восстановления.",
+      "Приоритеты и последствия нарушения."
+    ],
+    "learningOutcome": "Из отчёта видны основание и точная длительность исключённого периода.",
+    "explanationSlideIds": [
+      "s07-03-sla-Q07-theory",
+      "s07-03-sla-Q07-term",
+      "s07-03-sla-Q07-example",
+      "s07-03-sla-Q07-flow",
+      "s07-03-sla-Q07-warning",
+      "s07-03-sla-Q07-notebook",
+      "s07-03-sla-Q07-distinctions"
+    ],
+    "testIds": [
+      "s07-03-sla-Q07-T01",
+      "s07-03-sla-Q07-T02",
+      "s07-03-sla-Q07-T03",
+      "s07-03-sla-Q07-T04"
+    ],
+    "slideIds": [
+      "s07-03-sla-Q07-theory",
+      "s07-03-sla-Q07-term",
+      "s07-03-sla-Q07-example",
+      "s07-03-sla-Q07-flow",
+      "s07-03-sla-Q07-warning",
+      "s07-03-sla-Q07-notebook",
+      "s07-03-sla-Q07-distinctions",
+      "s07-03-sla-Q07-test-1",
+      "s07-03-sla-Q07-test-2",
+      "s07-03-sla-Q07-test-3",
+      "s07-03-sla-Q07-test-4"
+    ],
+    "practice": "Service Level Management — управление уровнем услуг",
+    "sourceId": "sla"
+  },
+  {
+    "lectureId": "s07-03-sla",
+    "questionId": "s07-03-sla-Q08",
+    "title": "Нарушение и улучшение SLA",
+    "source": "src/data/courseData.ts → s07-03-sla → questions[7]",
+    "programme": [
+      "Показатели SLA.",
+      "Время реакции и восстановления.",
+      "Приоритеты и последствия нарушения."
+    ],
+    "learningOutcome": "Расчёт повторяем, исключения обоснованы, эффект меры виден в следующем отчёте.",
+    "explanationSlideIds": [
+      "s07-03-sla-Q08-theory",
+      "s07-03-sla-Q08-term",
+      "s07-03-sla-Q08-example",
+      "s07-03-sla-Q08-flow",
+      "s07-03-sla-Q08-warning",
+      "s07-03-sla-Q08-notebook",
+      "s07-03-sla-Q08-distinctions"
+    ],
+    "testIds": [
+      "s07-03-sla-Q08-T01",
+      "s07-03-sla-Q08-T02",
+      "s07-03-sla-Q08-T03",
+      "s07-03-sla-Q08-T04"
+    ],
+    "slideIds": [
+      "s07-03-sla-Q08-theory",
+      "s07-03-sla-Q08-term",
+      "s07-03-sla-Q08-example",
+      "s07-03-sla-Q08-flow",
+      "s07-03-sla-Q08-warning",
+      "s07-03-sla-Q08-notebook",
+      "s07-03-sla-Q08-distinctions",
+      "s07-03-sla-Q08-test-1",
+      "s07-03-sla-Q08-test-2",
+      "s07-03-sla-Q08-test-3",
+      "s07-03-sla-Q08-test-4"
+    ],
+    "practice": "Service Level Management — управление уровнем услуг",
+    "sourceId": "sla"
+  },
+  {
+    "lectureId": "s07-04-ticket-flow",
+    "questionId": "s07-04-ticket-flow-Q01",
+    "title": "Первичный контакт",
+    "source": "src/data/courseData.ts → s07-04-ticket-flow → questions[0]",
+    "programme": [
+      "Приём и регистрация обращения.",
+      "Классификация, приоритет и исполнитель.",
+      "Инцидент, запрос на обслуживание и дефект."
+    ],
+    "learningOutcome": "В карточке различимы исходное сообщение и вывод специалиста.",
+    "explanationSlideIds": [
+      "s07-04-ticket-flow-Q01-theory",
+      "s07-04-ticket-flow-Q01-term",
+      "s07-04-ticket-flow-Q01-example",
+      "s07-04-ticket-flow-Q01-flow",
+      "s07-04-ticket-flow-Q01-warning",
+      "s07-04-ticket-flow-Q01-notebook",
+      "s07-04-ticket-flow-Q01-distinctions"
+    ],
+    "testIds": [
+      "s07-04-ticket-flow-Q01-T01",
+      "s07-04-ticket-flow-Q01-T02",
+      "s07-04-ticket-flow-Q01-T03",
+      "s07-04-ticket-flow-Q01-T04"
+    ],
+    "slideIds": [
+      "s07-04-ticket-flow-Q01-theory",
+      "s07-04-ticket-flow-Q01-term",
+      "s07-04-ticket-flow-Q01-example",
+      "s07-04-ticket-flow-Q01-flow",
+      "s07-04-ticket-flow-Q01-warning",
+      "s07-04-ticket-flow-Q01-notebook",
+      "s07-04-ticket-flow-Q01-distinctions",
+      "s07-04-ticket-flow-Q01-test-1",
+      "s07-04-ticket-flow-Q01-test-2",
+      "s07-04-ticket-flow-Q01-test-3",
+      "s07-04-ticket-flow-Q01-test-4"
+    ],
+    "practice": "Incident Management и Service Request Management",
+    "sourceId": "incident"
+  },
+  {
+    "lectureId": "s07-04-ticket-flow",
+    "questionId": "s07-04-ticket-flow-Q02",
+    "title": "Регистрационная карточка",
+    "source": "src/data/courseData.ts → s07-04-ticket-flow → questions[1]",
+    "programme": [
+      "Приём и регистрация обращения.",
+      "Классификация, приоритет и исполнитель.",
+      "Инцидент, запрос на обслуживание и дефект."
+    ],
+    "learningOutcome": "По номеру восстанавливаются автор, время, контекст и связанные записи.",
+    "explanationSlideIds": [
+      "s07-04-ticket-flow-Q02-theory",
+      "s07-04-ticket-flow-Q02-term",
+      "s07-04-ticket-flow-Q02-example",
+      "s07-04-ticket-flow-Q02-flow",
+      "s07-04-ticket-flow-Q02-warning",
+      "s07-04-ticket-flow-Q02-notebook",
+      "s07-04-ticket-flow-Q02-distinctions"
+    ],
+    "testIds": [
+      "s07-04-ticket-flow-Q02-T01",
+      "s07-04-ticket-flow-Q02-T02",
+      "s07-04-ticket-flow-Q02-T03",
+      "s07-04-ticket-flow-Q02-T04"
+    ],
+    "slideIds": [
+      "s07-04-ticket-flow-Q02-theory",
+      "s07-04-ticket-flow-Q02-term",
+      "s07-04-ticket-flow-Q02-example",
+      "s07-04-ticket-flow-Q02-flow",
+      "s07-04-ticket-flow-Q02-warning",
+      "s07-04-ticket-flow-Q02-notebook",
+      "s07-04-ticket-flow-Q02-distinctions",
+      "s07-04-ticket-flow-Q02-test-1",
+      "s07-04-ticket-flow-Q02-test-2",
+      "s07-04-ticket-flow-Q02-test-3",
+      "s07-04-ticket-flow-Q02-test-4"
+    ],
+    "practice": "Incident Management и Service Request Management",
+    "sourceId": "incident"
+  },
+  {
+    "lectureId": "s07-04-ticket-flow",
+    "questionId": "s07-04-ticket-flow-Q03",
+    "title": "Инцидент как нарушение услуги",
+    "source": "src/data/courseData.ts → s07-04-ticket-flow → questions[2]",
+    "programme": [
+      "Приём и регистрация обращения.",
+      "Классификация, приоритет и исполнитель.",
+      "Инцидент, запрос на обслуживание и дефект."
+    ],
+    "learningOutcome": "Карточка отражает пользовательское влияние и цель восстановления.",
+    "explanationSlideIds": [
+      "s07-04-ticket-flow-Q03-theory",
+      "s07-04-ticket-flow-Q03-term",
+      "s07-04-ticket-flow-Q03-example",
+      "s07-04-ticket-flow-Q03-flow",
+      "s07-04-ticket-flow-Q03-warning",
+      "s07-04-ticket-flow-Q03-notebook",
+      "s07-04-ticket-flow-Q03-distinctions"
+    ],
+    "testIds": [
+      "s07-04-ticket-flow-Q03-T01",
+      "s07-04-ticket-flow-Q03-T02",
+      "s07-04-ticket-flow-Q03-T03",
+      "s07-04-ticket-flow-Q03-T04"
+    ],
+    "slideIds": [
+      "s07-04-ticket-flow-Q03-theory",
+      "s07-04-ticket-flow-Q03-term",
+      "s07-04-ticket-flow-Q03-example",
+      "s07-04-ticket-flow-Q03-flow",
+      "s07-04-ticket-flow-Q03-warning",
+      "s07-04-ticket-flow-Q03-notebook",
+      "s07-04-ticket-flow-Q03-distinctions",
+      "s07-04-ticket-flow-Q03-test-1",
+      "s07-04-ticket-flow-Q03-test-2",
+      "s07-04-ticket-flow-Q03-test-3",
+      "s07-04-ticket-flow-Q03-test-4"
+    ],
+    "practice": "Incident Management и Service Request Management",
+    "sourceId": "incident"
+  },
+  {
+    "lectureId": "s07-04-ticket-flow",
+    "questionId": "s07-04-ticket-flow-Q04",
+    "title": "Запрос на обслуживание",
+    "source": "src/data/courseData.ts → s07-04-ticket-flow → questions[3]",
+    "programme": [
+      "Приём и регистрация обращения.",
+      "Классификация, приоритет и исполнитель.",
+      "Инцидент, запрос на обслуживание и дефект."
+    ],
+    "learningOutcome": "Роль выдана в заданном объёме, срок и согласование сохранены.",
+    "explanationSlideIds": [
+      "s07-04-ticket-flow-Q04-theory",
+      "s07-04-ticket-flow-Q04-term",
+      "s07-04-ticket-flow-Q04-example",
+      "s07-04-ticket-flow-Q04-flow",
+      "s07-04-ticket-flow-Q04-warning",
+      "s07-04-ticket-flow-Q04-notebook",
+      "s07-04-ticket-flow-Q04-distinctions"
+    ],
+    "testIds": [
+      "s07-04-ticket-flow-Q04-T01",
+      "s07-04-ticket-flow-Q04-T02",
+      "s07-04-ticket-flow-Q04-T03",
+      "s07-04-ticket-flow-Q04-T04"
+    ],
+    "slideIds": [
+      "s07-04-ticket-flow-Q04-theory",
+      "s07-04-ticket-flow-Q04-term",
+      "s07-04-ticket-flow-Q04-example",
+      "s07-04-ticket-flow-Q04-flow",
+      "s07-04-ticket-flow-Q04-warning",
+      "s07-04-ticket-flow-Q04-notebook",
+      "s07-04-ticket-flow-Q04-distinctions",
+      "s07-04-ticket-flow-Q04-test-1",
+      "s07-04-ticket-flow-Q04-test-2",
+      "s07-04-ticket-flow-Q04-test-3",
+      "s07-04-ticket-flow-Q04-test-4"
+    ],
+    "practice": "Incident Management и Service Request Management",
+    "sourceId": "incident"
+  },
+  {
+    "lectureId": "s07-04-ticket-flow",
+    "questionId": "s07-04-ticket-flow-Q05",
+    "title": "Дефект продукта",
+    "source": "src/data/courseData.ts → s07-04-ticket-flow → questions[4]",
+    "programme": [
+      "Приём и регистрация обращения.",
+      "Классификация, приоритет и исполнитель.",
+      "Инцидент, запрос на обслуживание и дефект."
+    ],
+    "learningOutcome": "Исправление проверено в указанной версии и не меняет историю инцидента.",
+    "explanationSlideIds": [
+      "s07-04-ticket-flow-Q05-theory",
+      "s07-04-ticket-flow-Q05-term",
+      "s07-04-ticket-flow-Q05-example",
+      "s07-04-ticket-flow-Q05-flow",
+      "s07-04-ticket-flow-Q05-warning",
+      "s07-04-ticket-flow-Q05-notebook",
+      "s07-04-ticket-flow-Q05-distinctions"
+    ],
+    "testIds": [
+      "s07-04-ticket-flow-Q05-T01",
+      "s07-04-ticket-flow-Q05-T02",
+      "s07-04-ticket-flow-Q05-T03",
+      "s07-04-ticket-flow-Q05-T04"
+    ],
+    "slideIds": [
+      "s07-04-ticket-flow-Q05-theory",
+      "s07-04-ticket-flow-Q05-term",
+      "s07-04-ticket-flow-Q05-example",
+      "s07-04-ticket-flow-Q05-flow",
+      "s07-04-ticket-flow-Q05-warning",
+      "s07-04-ticket-flow-Q05-notebook",
+      "s07-04-ticket-flow-Q05-distinctions",
+      "s07-04-ticket-flow-Q05-test-1",
+      "s07-04-ticket-flow-Q05-test-2",
+      "s07-04-ticket-flow-Q05-test-3",
+      "s07-04-ticket-flow-Q05-test-4"
+    ],
+    "practice": "Incident Management и Service Request Management",
+    "sourceId": "incident"
+  },
+  {
+    "lectureId": "s07-04-ticket-flow",
+    "questionId": "s07-04-ticket-flow-Q06",
+    "title": "Категория и приоритет",
+    "source": "src/data/courseData.ts → s07-04-ticket-flow → questions[5]",
+    "programme": [
+      "Приём и регистрация обращения.",
+      "Классификация, приоритет и исполнитель.",
+      "Инцидент, запрос на обслуживание и дефект."
+    ],
+    "learningOutcome": "Категория помогает назначить группу, а приоритет подтверждается фактами влияния.",
+    "explanationSlideIds": [
+      "s07-04-ticket-flow-Q06-theory",
+      "s07-04-ticket-flow-Q06-term",
+      "s07-04-ticket-flow-Q06-example",
+      "s07-04-ticket-flow-Q06-flow",
+      "s07-04-ticket-flow-Q06-warning",
+      "s07-04-ticket-flow-Q06-notebook",
+      "s07-04-ticket-flow-Q06-distinctions"
+    ],
+    "testIds": [
+      "s07-04-ticket-flow-Q06-T01",
+      "s07-04-ticket-flow-Q06-T02",
+      "s07-04-ticket-flow-Q06-T03",
+      "s07-04-ticket-flow-Q06-T04"
+    ],
+    "slideIds": [
+      "s07-04-ticket-flow-Q06-theory",
+      "s07-04-ticket-flow-Q06-term",
+      "s07-04-ticket-flow-Q06-example",
+      "s07-04-ticket-flow-Q06-flow",
+      "s07-04-ticket-flow-Q06-warning",
+      "s07-04-ticket-flow-Q06-notebook",
+      "s07-04-ticket-flow-Q06-distinctions",
+      "s07-04-ticket-flow-Q06-test-1",
+      "s07-04-ticket-flow-Q06-test-2",
+      "s07-04-ticket-flow-Q06-test-3",
+      "s07-04-ticket-flow-Q06-test-4"
+    ],
+    "practice": "Incident Management и Service Request Management",
+    "sourceId": "incident"
+  },
+  {
+    "lectureId": "s07-04-ticket-flow",
+    "questionId": "s07-04-ticket-flow-Q07",
+    "title": "Назначение исполнителя",
+    "source": "src/data/courseData.ts → s07-04-ticket-flow → questions[6]",
+    "programme": [
+      "Приём и регистрация обращения.",
+      "Классификация, приоритет и исполнитель.",
+      "Инцидент, запрос на обслуживание и дефект."
+    ],
+    "learningOutcome": "У каждой открытой записи есть текущий владелец и ближайшее действие.",
+    "explanationSlideIds": [
+      "s07-04-ticket-flow-Q07-theory",
+      "s07-04-ticket-flow-Q07-term",
+      "s07-04-ticket-flow-Q07-example",
+      "s07-04-ticket-flow-Q07-flow",
+      "s07-04-ticket-flow-Q07-warning",
+      "s07-04-ticket-flow-Q07-notebook",
+      "s07-04-ticket-flow-Q07-distinctions"
+    ],
+    "testIds": [
+      "s07-04-ticket-flow-Q07-T01",
+      "s07-04-ticket-flow-Q07-T02",
+      "s07-04-ticket-flow-Q07-T03",
+      "s07-04-ticket-flow-Q07-T04"
+    ],
+    "slideIds": [
+      "s07-04-ticket-flow-Q07-theory",
+      "s07-04-ticket-flow-Q07-term",
+      "s07-04-ticket-flow-Q07-example",
+      "s07-04-ticket-flow-Q07-flow",
+      "s07-04-ticket-flow-Q07-warning",
+      "s07-04-ticket-flow-Q07-notebook",
+      "s07-04-ticket-flow-Q07-distinctions",
+      "s07-04-ticket-flow-Q07-test-1",
+      "s07-04-ticket-flow-Q07-test-2",
+      "s07-04-ticket-flow-Q07-test-3",
+      "s07-04-ticket-flow-Q07-test-4"
+    ],
+    "practice": "Incident Management и Service Request Management",
+    "sourceId": "incident"
+  },
+  {
+    "lectureId": "s07-04-ticket-flow",
+    "questionId": "s07-04-ticket-flow-Q08",
+    "title": "Закрытие с подтверждением",
+    "source": "src/data/courseData.ts → s07-04-ticket-flow → questions[7]",
+    "programme": [
+      "Приём и регистрация обращения.",
+      "Классификация, приоритет и исполнитель.",
+      "Инцидент, запрос на обслуживание и дефект."
+    ],
+    "learningOutcome": "Наблюдаемый симптом устранён, результат подтверждён, повторное открытие отслеживается.",
+    "explanationSlideIds": [
+      "s07-04-ticket-flow-Q08-theory",
+      "s07-04-ticket-flow-Q08-term",
+      "s07-04-ticket-flow-Q08-example",
+      "s07-04-ticket-flow-Q08-flow",
+      "s07-04-ticket-flow-Q08-warning",
+      "s07-04-ticket-flow-Q08-notebook",
+      "s07-04-ticket-flow-Q08-distinctions"
+    ],
+    "testIds": [
+      "s07-04-ticket-flow-Q08-T01",
+      "s07-04-ticket-flow-Q08-T02",
+      "s07-04-ticket-flow-Q08-T03",
+      "s07-04-ticket-flow-Q08-T04"
+    ],
+    "slideIds": [
+      "s07-04-ticket-flow-Q08-theory",
+      "s07-04-ticket-flow-Q08-term",
+      "s07-04-ticket-flow-Q08-example",
+      "s07-04-ticket-flow-Q08-flow",
+      "s07-04-ticket-flow-Q08-warning",
+      "s07-04-ticket-flow-Q08-notebook",
+      "s07-04-ticket-flow-Q08-distinctions",
+      "s07-04-ticket-flow-Q08-test-1",
+      "s07-04-ticket-flow-Q08-test-2",
+      "s07-04-ticket-flow-Q08-test-3",
+      "s07-04-ticket-flow-Q08-test-4"
+    ],
+    "practice": "Incident Management и Service Request Management",
+    "sourceId": "incident"
+  },
+  {
+    "lectureId": "s07-05-reproduction",
+    "questionId": "s07-05-reproduction-Q01",
+    "title": "Симптом без диагноза",
+    "source": "src/data/courseData.ts → s07-05-reproduction → questions[0]",
+    "programme": [
+      "Уточняющие вопросы.",
+      "Сведения об окружении.",
+      "Минимальный сценарий воспроизведения."
+    ],
+    "learningOutcome": "Другой специалист отличает подтверждённые данные от версии объяснения.",
+    "explanationSlideIds": [
+      "s07-05-reproduction-Q01-theory",
+      "s07-05-reproduction-Q01-term",
+      "s07-05-reproduction-Q01-example",
+      "s07-05-reproduction-Q01-flow",
+      "s07-05-reproduction-Q01-warning",
+      "s07-05-reproduction-Q01-notebook",
+      "s07-05-reproduction-Q01-distinctions"
+    ],
+    "testIds": [
+      "s07-05-reproduction-Q01-T01",
+      "s07-05-reproduction-Q01-T02",
+      "s07-05-reproduction-Q01-T03",
+      "s07-05-reproduction-Q01-T04"
+    ],
+    "slideIds": [
+      "s07-05-reproduction-Q01-theory",
+      "s07-05-reproduction-Q01-term",
+      "s07-05-reproduction-Q01-example",
+      "s07-05-reproduction-Q01-flow",
+      "s07-05-reproduction-Q01-warning",
+      "s07-05-reproduction-Q01-notebook",
+      "s07-05-reproduction-Q01-distinctions",
+      "s07-05-reproduction-Q01-test-1",
+      "s07-05-reproduction-Q01-test-2",
+      "s07-05-reproduction-Q01-test-3",
+      "s07-05-reproduction-Q01-test-4"
+    ],
+    "practice": "Диагностика инцидентов и управление проблемами",
+    "sourceId": "problem"
+  },
+  {
+    "lectureId": "s07-05-reproduction",
+    "questionId": "s07-05-reproduction-Q02",
+    "title": "Уточняющие вопросы",
+    "source": "src/data/courseData.ts → s07-05-reproduction → questions[1]",
+    "programme": [
+      "Уточняющие вопросы.",
+      "Сведения об окружении.",
+      "Минимальный сценарий воспроизведения."
+    ],
+    "learningOutcome": "Каждый ответ исключает гипотезу или добавляет условие сценария.",
+    "explanationSlideIds": [
+      "s07-05-reproduction-Q02-theory",
+      "s07-05-reproduction-Q02-term",
+      "s07-05-reproduction-Q02-example",
+      "s07-05-reproduction-Q02-flow",
+      "s07-05-reproduction-Q02-warning",
+      "s07-05-reproduction-Q02-notebook",
+      "s07-05-reproduction-Q02-distinctions"
+    ],
+    "testIds": [
+      "s07-05-reproduction-Q02-T01",
+      "s07-05-reproduction-Q02-T02",
+      "s07-05-reproduction-Q02-T03",
+      "s07-05-reproduction-Q02-T04"
+    ],
+    "slideIds": [
+      "s07-05-reproduction-Q02-theory",
+      "s07-05-reproduction-Q02-term",
+      "s07-05-reproduction-Q02-example",
+      "s07-05-reproduction-Q02-flow",
+      "s07-05-reproduction-Q02-warning",
+      "s07-05-reproduction-Q02-notebook",
+      "s07-05-reproduction-Q02-distinctions",
+      "s07-05-reproduction-Q02-test-1",
+      "s07-05-reproduction-Q02-test-2",
+      "s07-05-reproduction-Q02-test-3",
+      "s07-05-reproduction-Q02-test-4"
+    ],
+    "practice": "Диагностика инцидентов и управление проблемами",
+    "sourceId": "problem"
+  },
+  {
+    "lectureId": "s07-05-reproduction",
+    "questionId": "s07-05-reproduction-Q03",
+    "title": "Описание окружения",
+    "source": "src/data/courseData.ts → s07-05-reproduction → questions[2]",
+    "programme": [
+      "Уточняющие вопросы.",
+      "Сведения об окружении.",
+      "Минимальный сценарий воспроизведения."
+    ],
+    "learningOutcome": "Среду можно восстановить на стенде без дополнительных уточнений.",
+    "explanationSlideIds": [
+      "s07-05-reproduction-Q03-theory",
+      "s07-05-reproduction-Q03-term",
+      "s07-05-reproduction-Q03-example",
+      "s07-05-reproduction-Q03-flow",
+      "s07-05-reproduction-Q03-warning",
+      "s07-05-reproduction-Q03-notebook",
+      "s07-05-reproduction-Q03-distinctions"
+    ],
+    "testIds": [
+      "s07-05-reproduction-Q03-T01",
+      "s07-05-reproduction-Q03-T02",
+      "s07-05-reproduction-Q03-T03",
+      "s07-05-reproduction-Q03-T04"
+    ],
+    "slideIds": [
+      "s07-05-reproduction-Q03-theory",
+      "s07-05-reproduction-Q03-term",
+      "s07-05-reproduction-Q03-example",
+      "s07-05-reproduction-Q03-flow",
+      "s07-05-reproduction-Q03-warning",
+      "s07-05-reproduction-Q03-notebook",
+      "s07-05-reproduction-Q03-distinctions",
+      "s07-05-reproduction-Q03-test-1",
+      "s07-05-reproduction-Q03-test-2",
+      "s07-05-reproduction-Q03-test-3",
+      "s07-05-reproduction-Q03-test-4"
+    ],
+    "practice": "Диагностика инцидентов и управление проблемами",
+    "sourceId": "problem"
+  },
+  {
+    "lectureId": "s07-05-reproduction",
+    "questionId": "s07-05-reproduction-Q04",
+    "title": "Предусловия и тестовые данные",
+    "source": "src/data/courseData.ts → s07-05-reproduction → questions[3]",
+    "programme": [
+      "Уточняющие вопросы.",
+      "Сведения об окружении.",
+      "Минимальный сценарий воспроизведения."
+    ],
+    "learningOutcome": "Начальное состояние и файл доступны команде и дают одинаковый результат.",
+    "explanationSlideIds": [
+      "s07-05-reproduction-Q04-theory",
+      "s07-05-reproduction-Q04-term",
+      "s07-05-reproduction-Q04-example",
+      "s07-05-reproduction-Q04-flow",
+      "s07-05-reproduction-Q04-warning",
+      "s07-05-reproduction-Q04-notebook",
+      "s07-05-reproduction-Q04-distinctions"
+    ],
+    "testIds": [
+      "s07-05-reproduction-Q04-T01",
+      "s07-05-reproduction-Q04-T02",
+      "s07-05-reproduction-Q04-T03",
+      "s07-05-reproduction-Q04-T04"
+    ],
+    "slideIds": [
+      "s07-05-reproduction-Q04-theory",
+      "s07-05-reproduction-Q04-term",
+      "s07-05-reproduction-Q04-example",
+      "s07-05-reproduction-Q04-flow",
+      "s07-05-reproduction-Q04-warning",
+      "s07-05-reproduction-Q04-notebook",
+      "s07-05-reproduction-Q04-distinctions",
+      "s07-05-reproduction-Q04-test-1",
+      "s07-05-reproduction-Q04-test-2",
+      "s07-05-reproduction-Q04-test-3",
+      "s07-05-reproduction-Q04-test-4"
+    ],
+    "practice": "Диагностика инцидентов и управление проблемами",
+    "sourceId": "problem"
+  },
+  {
+    "lectureId": "s07-05-reproduction",
+    "questionId": "s07-05-reproduction-Q05",
+    "title": "Шаги воспроизведения",
+    "source": "src/data/courseData.ts → s07-05-reproduction → questions[4]",
+    "programme": [
+      "Уточняющие вопросы.",
+      "Сведения об окружении.",
+      "Минимальный сценарий воспроизведения."
+    ],
+    "learningOutcome": "Новый участник выполняет шаги без устной подсказки.",
+    "explanationSlideIds": [
+      "s07-05-reproduction-Q05-theory",
+      "s07-05-reproduction-Q05-term",
+      "s07-05-reproduction-Q05-example",
+      "s07-05-reproduction-Q05-flow",
+      "s07-05-reproduction-Q05-warning",
+      "s07-05-reproduction-Q05-notebook",
+      "s07-05-reproduction-Q05-distinctions"
+    ],
+    "testIds": [
+      "s07-05-reproduction-Q05-T01",
+      "s07-05-reproduction-Q05-T02",
+      "s07-05-reproduction-Q05-T03",
+      "s07-05-reproduction-Q05-T04"
+    ],
+    "slideIds": [
+      "s07-05-reproduction-Q05-theory",
+      "s07-05-reproduction-Q05-term",
+      "s07-05-reproduction-Q05-example",
+      "s07-05-reproduction-Q05-flow",
+      "s07-05-reproduction-Q05-warning",
+      "s07-05-reproduction-Q05-notebook",
+      "s07-05-reproduction-Q05-distinctions",
+      "s07-05-reproduction-Q05-test-1",
+      "s07-05-reproduction-Q05-test-2",
+      "s07-05-reproduction-Q05-test-3",
+      "s07-05-reproduction-Q05-test-4"
+    ],
+    "practice": "Диагностика инцидентов и управление проблемами",
+    "sourceId": "problem"
+  },
+  {
+    "lectureId": "s07-05-reproduction",
+    "questionId": "s07-05-reproduction-Q06",
+    "title": "Ожидаемый и фактический результат",
+    "source": "src/data/courseData.ts → s07-05-reproduction → questions[5]",
+    "programme": [
+      "Уточняющие вопросы.",
+      "Сведения об окружении.",
+      "Минимальный сценарий воспроизведения."
+    ],
+    "learningOutcome": "Различие измеримо и подтверждается сохранённым событием.",
+    "explanationSlideIds": [
+      "s07-05-reproduction-Q06-theory",
+      "s07-05-reproduction-Q06-term",
+      "s07-05-reproduction-Q06-example",
+      "s07-05-reproduction-Q06-flow",
+      "s07-05-reproduction-Q06-warning",
+      "s07-05-reproduction-Q06-notebook",
+      "s07-05-reproduction-Q06-distinctions"
+    ],
+    "testIds": [
+      "s07-05-reproduction-Q06-T01",
+      "s07-05-reproduction-Q06-T02",
+      "s07-05-reproduction-Q06-T03",
+      "s07-05-reproduction-Q06-T04"
+    ],
+    "slideIds": [
+      "s07-05-reproduction-Q06-theory",
+      "s07-05-reproduction-Q06-term",
+      "s07-05-reproduction-Q06-example",
+      "s07-05-reproduction-Q06-flow",
+      "s07-05-reproduction-Q06-warning",
+      "s07-05-reproduction-Q06-notebook",
+      "s07-05-reproduction-Q06-distinctions",
+      "s07-05-reproduction-Q06-test-1",
+      "s07-05-reproduction-Q06-test-2",
+      "s07-05-reproduction-Q06-test-3",
+      "s07-05-reproduction-Q06-test-4"
+    ],
+    "practice": "Диагностика инцидентов и управление проблемами",
+    "sourceId": "problem"
+  },
+  {
+    "lectureId": "s07-05-reproduction",
+    "questionId": "s07-05-reproduction-Q07",
+    "title": "Минимизация сценария",
+    "source": "src/data/courseData.ts → s07-05-reproduction → questions[6]",
+    "programme": [
+      "Уточняющие вопросы.",
+      "Сведения об окружении.",
+      "Минимальный сценарий воспроизведения."
+    ],
+    "learningOutcome": "Каждый оставшийся элемент обоснован контрольным прогоном.",
+    "explanationSlideIds": [
+      "s07-05-reproduction-Q07-theory",
+      "s07-05-reproduction-Q07-term",
+      "s07-05-reproduction-Q07-example",
+      "s07-05-reproduction-Q07-flow",
+      "s07-05-reproduction-Q07-warning",
+      "s07-05-reproduction-Q07-notebook",
+      "s07-05-reproduction-Q07-distinctions"
+    ],
+    "testIds": [
+      "s07-05-reproduction-Q07-T01",
+      "s07-05-reproduction-Q07-T02",
+      "s07-05-reproduction-Q07-T03",
+      "s07-05-reproduction-Q07-T04"
+    ],
+    "slideIds": [
+      "s07-05-reproduction-Q07-theory",
+      "s07-05-reproduction-Q07-term",
+      "s07-05-reproduction-Q07-example",
+      "s07-05-reproduction-Q07-flow",
+      "s07-05-reproduction-Q07-warning",
+      "s07-05-reproduction-Q07-notebook",
+      "s07-05-reproduction-Q07-distinctions",
+      "s07-05-reproduction-Q07-test-1",
+      "s07-05-reproduction-Q07-test-2",
+      "s07-05-reproduction-Q07-test-3",
+      "s07-05-reproduction-Q07-test-4"
+    ],
+    "practice": "Диагностика инцидентов и управление проблемами",
+    "sourceId": "problem"
+  },
+  {
+    "lectureId": "s07-05-reproduction",
+    "questionId": "s07-05-reproduction-Q08",
+    "title": "Пакет доказательств",
+    "source": "src/data/courseData.ts → s07-05-reproduction → questions[7]",
+    "programme": [
+      "Уточняющие вопросы.",
+      "Сведения об окружении.",
+      "Минимальный сценарий воспроизведения."
+    ],
+    "learningOutcome": "Получатель повторяет симптом и понимает происхождение каждого файла.",
+    "explanationSlideIds": [
+      "s07-05-reproduction-Q08-theory",
+      "s07-05-reproduction-Q08-term",
+      "s07-05-reproduction-Q08-example",
+      "s07-05-reproduction-Q08-flow",
+      "s07-05-reproduction-Q08-warning",
+      "s07-05-reproduction-Q08-notebook",
+      "s07-05-reproduction-Q08-distinctions"
+    ],
+    "testIds": [
+      "s07-05-reproduction-Q08-T01",
+      "s07-05-reproduction-Q08-T02",
+      "s07-05-reproduction-Q08-T03",
+      "s07-05-reproduction-Q08-T04"
+    ],
+    "slideIds": [
+      "s07-05-reproduction-Q08-theory",
+      "s07-05-reproduction-Q08-term",
+      "s07-05-reproduction-Q08-example",
+      "s07-05-reproduction-Q08-flow",
+      "s07-05-reproduction-Q08-warning",
+      "s07-05-reproduction-Q08-notebook",
+      "s07-05-reproduction-Q08-distinctions",
+      "s07-05-reproduction-Q08-test-1",
+      "s07-05-reproduction-Q08-test-2",
+      "s07-05-reproduction-Q08-test-3",
+      "s07-05-reproduction-Q08-test-4"
+    ],
+    "practice": "Диагностика инцидентов и управление проблемами",
+    "sourceId": "problem"
+  },
+  {
+    "lectureId": "s07-06-escalation",
+    "questionId": "s07-06-escalation-Q01",
+    "title": "Функциональная эскалация",
+    "source": "src/data/courseData.ts → s07-06-escalation → questions[0]",
+    "programme": [
+      "Основания для эскалации.",
+      "Адресат и состав сведений.",
+      "Типовые ошибки передачи."
+    ],
+    "learningOutcome": "Адресат выбран по конкретной задаче и полномочию.",
+    "explanationSlideIds": [
+      "s07-06-escalation-Q01-theory",
+      "s07-06-escalation-Q01-term",
+      "s07-06-escalation-Q01-example",
+      "s07-06-escalation-Q01-flow",
+      "s07-06-escalation-Q01-warning",
+      "s07-06-escalation-Q01-notebook",
+      "s07-06-escalation-Q01-distinctions"
+    ],
+    "testIds": [
+      "s07-06-escalation-Q01-T01",
+      "s07-06-escalation-Q01-T02",
+      "s07-06-escalation-Q01-T03",
+      "s07-06-escalation-Q01-T04"
+    ],
+    "slideIds": [
+      "s07-06-escalation-Q01-theory",
+      "s07-06-escalation-Q01-term",
+      "s07-06-escalation-Q01-example",
+      "s07-06-escalation-Q01-flow",
+      "s07-06-escalation-Q01-warning",
+      "s07-06-escalation-Q01-notebook",
+      "s07-06-escalation-Q01-distinctions",
+      "s07-06-escalation-Q01-test-1",
+      "s07-06-escalation-Q01-test-2",
+      "s07-06-escalation-Q01-test-3",
+      "s07-06-escalation-Q01-test-4"
+    ],
+    "practice": "Service Desk и координация восстановления",
+    "sourceId": "desk"
+  },
+  {
+    "lectureId": "s07-06-escalation",
+    "questionId": "s07-06-escalation-Q02",
+    "title": "Иерархическая эскалация",
+    "source": "src/data/courseData.ts → s07-06-escalation → questions[1]",
+    "programme": [
+      "Основания для эскалации.",
+      "Адресат и состав сведений.",
+      "Типовые ошибки передачи."
+    ],
+    "learningOutcome": "После уведомления есть управленческое решение, а технический владелец сохраняется.",
+    "explanationSlideIds": [
+      "s07-06-escalation-Q02-theory",
+      "s07-06-escalation-Q02-term",
+      "s07-06-escalation-Q02-example",
+      "s07-06-escalation-Q02-flow",
+      "s07-06-escalation-Q02-warning",
+      "s07-06-escalation-Q02-notebook",
+      "s07-06-escalation-Q02-distinctions"
+    ],
+    "testIds": [
+      "s07-06-escalation-Q02-T01",
+      "s07-06-escalation-Q02-T02",
+      "s07-06-escalation-Q02-T03",
+      "s07-06-escalation-Q02-T04"
+    ],
+    "slideIds": [
+      "s07-06-escalation-Q02-theory",
+      "s07-06-escalation-Q02-term",
+      "s07-06-escalation-Q02-example",
+      "s07-06-escalation-Q02-flow",
+      "s07-06-escalation-Q02-warning",
+      "s07-06-escalation-Q02-notebook",
+      "s07-06-escalation-Q02-distinctions",
+      "s07-06-escalation-Q02-test-1",
+      "s07-06-escalation-Q02-test-2",
+      "s07-06-escalation-Q02-test-3",
+      "s07-06-escalation-Q02-test-4"
+    ],
+    "practice": "Service Desk и координация восстановления",
+    "sourceId": "desk"
+  },
+  {
+    "lectureId": "s07-06-escalation",
+    "questionId": "s07-06-escalation-Q03",
+    "title": "Основание передачи",
+    "source": "src/data/courseData.ts → s07-06-escalation → questions[2]",
+    "programme": [
+      "Основания для эскалации.",
+      "Адресат и состав сведений.",
+      "Типовые ошибки передачи."
+    ],
+    "learningOutcome": "Основание проверяется по истории обращения.",
+    "explanationSlideIds": [
+      "s07-06-escalation-Q03-theory",
+      "s07-06-escalation-Q03-term",
+      "s07-06-escalation-Q03-example",
+      "s07-06-escalation-Q03-flow",
+      "s07-06-escalation-Q03-warning",
+      "s07-06-escalation-Q03-notebook",
+      "s07-06-escalation-Q03-distinctions"
+    ],
+    "testIds": [
+      "s07-06-escalation-Q03-T01",
+      "s07-06-escalation-Q03-T02",
+      "s07-06-escalation-Q03-T03",
+      "s07-06-escalation-Q03-T04"
+    ],
+    "slideIds": [
+      "s07-06-escalation-Q03-theory",
+      "s07-06-escalation-Q03-term",
+      "s07-06-escalation-Q03-example",
+      "s07-06-escalation-Q03-flow",
+      "s07-06-escalation-Q03-warning",
+      "s07-06-escalation-Q03-notebook",
+      "s07-06-escalation-Q03-distinctions",
+      "s07-06-escalation-Q03-test-1",
+      "s07-06-escalation-Q03-test-2",
+      "s07-06-escalation-Q03-test-3",
+      "s07-06-escalation-Q03-test-4"
+    ],
+    "practice": "Service Desk и координация восстановления",
+    "sourceId": "desk"
+  },
+  {
+    "lectureId": "s07-06-escalation",
+    "questionId": "s07-06-escalation-Q04",
+    "title": "Выбор адресата",
+    "source": "src/data/courseData.ts → s07-06-escalation → questions[3]",
+    "programme": [
+      "Основания для эскалации.",
+      "Адресат и состав сведений.",
+      "Типовые ошибки передачи."
+    ],
+    "learningOutcome": "Одна группа приняла задачу и подтвердила следующий срок.",
+    "explanationSlideIds": [
+      "s07-06-escalation-Q04-theory",
+      "s07-06-escalation-Q04-term",
+      "s07-06-escalation-Q04-example",
+      "s07-06-escalation-Q04-flow",
+      "s07-06-escalation-Q04-warning",
+      "s07-06-escalation-Q04-notebook",
+      "s07-06-escalation-Q04-distinctions"
+    ],
+    "testIds": [
+      "s07-06-escalation-Q04-T01",
+      "s07-06-escalation-Q04-T02",
+      "s07-06-escalation-Q04-T03",
+      "s07-06-escalation-Q04-T04"
+    ],
+    "slideIds": [
+      "s07-06-escalation-Q04-theory",
+      "s07-06-escalation-Q04-term",
+      "s07-06-escalation-Q04-example",
+      "s07-06-escalation-Q04-flow",
+      "s07-06-escalation-Q04-warning",
+      "s07-06-escalation-Q04-notebook",
+      "s07-06-escalation-Q04-distinctions",
+      "s07-06-escalation-Q04-test-1",
+      "s07-06-escalation-Q04-test-2",
+      "s07-06-escalation-Q04-test-3",
+      "s07-06-escalation-Q04-test-4"
+    ],
+    "practice": "Service Desk и координация восстановления",
+    "sourceId": "desk"
+  },
+  {
+    "lectureId": "s07-06-escalation",
+    "questionId": "s07-06-escalation-Q05",
+    "title": "Состав пакета",
+    "source": "src/data/courseData.ts → s07-06-escalation → questions[4]",
+    "programme": [
+      "Основания для эскалации.",
+      "Адресат и состав сведений.",
+      "Типовые ошибки передачи."
+    ],
+    "learningOutcome": "Адресат начинает целевую проверку без повторного опроса.",
+    "explanationSlideIds": [
+      "s07-06-escalation-Q05-theory",
+      "s07-06-escalation-Q05-term",
+      "s07-06-escalation-Q05-example",
+      "s07-06-escalation-Q05-flow",
+      "s07-06-escalation-Q05-warning",
+      "s07-06-escalation-Q05-notebook",
+      "s07-06-escalation-Q05-distinctions"
+    ],
+    "testIds": [
+      "s07-06-escalation-Q05-T01",
+      "s07-06-escalation-Q05-T02",
+      "s07-06-escalation-Q05-T03",
+      "s07-06-escalation-Q05-T04"
+    ],
+    "slideIds": [
+      "s07-06-escalation-Q05-theory",
+      "s07-06-escalation-Q05-term",
+      "s07-06-escalation-Q05-example",
+      "s07-06-escalation-Q05-flow",
+      "s07-06-escalation-Q05-warning",
+      "s07-06-escalation-Q05-notebook",
+      "s07-06-escalation-Q05-distinctions",
+      "s07-06-escalation-Q05-test-1",
+      "s07-06-escalation-Q05-test-2",
+      "s07-06-escalation-Q05-test-3",
+      "s07-06-escalation-Q05-test-4"
+    ],
+    "practice": "Service Desk и координация восстановления",
+    "sourceId": "desk"
+  },
+  {
+    "lectureId": "s07-06-escalation",
+    "questionId": "s07-06-escalation-Q06",
+    "title": "Владелец и коммуникация",
+    "source": "src/data/courseData.ts → s07-06-escalation → questions[5]",
+    "programme": [
+      "Основания для эскалации.",
+      "Адресат и состав сведений.",
+      "Типовые ошибки передачи."
+    ],
+    "learningOutcome": "В любой момент видны текущая работа и следующий контакт.",
+    "explanationSlideIds": [
+      "s07-06-escalation-Q06-theory",
+      "s07-06-escalation-Q06-term",
+      "s07-06-escalation-Q06-example",
+      "s07-06-escalation-Q06-flow",
+      "s07-06-escalation-Q06-warning",
+      "s07-06-escalation-Q06-notebook",
+      "s07-06-escalation-Q06-distinctions"
+    ],
+    "testIds": [
+      "s07-06-escalation-Q06-T01",
+      "s07-06-escalation-Q06-T02",
+      "s07-06-escalation-Q06-T03",
+      "s07-06-escalation-Q06-T04"
+    ],
+    "slideIds": [
+      "s07-06-escalation-Q06-theory",
+      "s07-06-escalation-Q06-term",
+      "s07-06-escalation-Q06-example",
+      "s07-06-escalation-Q06-flow",
+      "s07-06-escalation-Q06-warning",
+      "s07-06-escalation-Q06-notebook",
+      "s07-06-escalation-Q06-distinctions",
+      "s07-06-escalation-Q06-test-1",
+      "s07-06-escalation-Q06-test-2",
+      "s07-06-escalation-Q06-test-3",
+      "s07-06-escalation-Q06-test-4"
+    ],
+    "practice": "Service Desk и координация восстановления",
+    "sourceId": "desk"
+  },
+  {
+    "lectureId": "s07-06-escalation",
+    "questionId": "s07-06-escalation-Q07",
+    "title": "Ошибки при передаче",
+    "source": "src/data/courseData.ts → s07-06-escalation → questions[6]",
+    "programme": [
+      "Основания для эскалации.",
+      "Адресат и состав сведений.",
+      "Типовые ошибки передачи."
+    ],
+    "learningOutcome": "Пакет достаточен для проверки и не раскрывает лишнюю информацию.",
+    "explanationSlideIds": [
+      "s07-06-escalation-Q07-theory",
+      "s07-06-escalation-Q07-term",
+      "s07-06-escalation-Q07-example",
+      "s07-06-escalation-Q07-flow",
+      "s07-06-escalation-Q07-warning",
+      "s07-06-escalation-Q07-notebook",
+      "s07-06-escalation-Q07-distinctions"
+    ],
+    "testIds": [
+      "s07-06-escalation-Q07-T01",
+      "s07-06-escalation-Q07-T02",
+      "s07-06-escalation-Q07-T03",
+      "s07-06-escalation-Q07-T04"
+    ],
+    "slideIds": [
+      "s07-06-escalation-Q07-theory",
+      "s07-06-escalation-Q07-term",
+      "s07-06-escalation-Q07-example",
+      "s07-06-escalation-Q07-flow",
+      "s07-06-escalation-Q07-warning",
+      "s07-06-escalation-Q07-notebook",
+      "s07-06-escalation-Q07-distinctions",
+      "s07-06-escalation-Q07-test-1",
+      "s07-06-escalation-Q07-test-2",
+      "s07-06-escalation-Q07-test-3",
+      "s07-06-escalation-Q07-test-4"
+    ],
+    "practice": "Service Desk и координация восстановления",
+    "sourceId": "desk"
+  },
+  {
+    "lectureId": "s07-06-escalation",
+    "questionId": "s07-06-escalation-Q08",
+    "title": "Обратная связь после решения",
+    "source": "src/data/courseData.ts → s07-06-escalation → questions[7]",
+    "programme": [
+      "Основания для эскалации.",
+      "Адресат и состав сведений.",
+      "Типовые ошибки передачи."
+    ],
+    "learningOutcome": "Следующий аналогичный случай решается быстрее по обновлённой инструкции.",
+    "explanationSlideIds": [
+      "s07-06-escalation-Q08-theory",
+      "s07-06-escalation-Q08-term",
+      "s07-06-escalation-Q08-example",
+      "s07-06-escalation-Q08-flow",
+      "s07-06-escalation-Q08-warning",
+      "s07-06-escalation-Q08-notebook",
+      "s07-06-escalation-Q08-distinctions"
+    ],
+    "testIds": [
+      "s07-06-escalation-Q08-T01",
+      "s07-06-escalation-Q08-T02",
+      "s07-06-escalation-Q08-T03",
+      "s07-06-escalation-Q08-T04"
+    ],
+    "slideIds": [
+      "s07-06-escalation-Q08-theory",
+      "s07-06-escalation-Q08-term",
+      "s07-06-escalation-Q08-example",
+      "s07-06-escalation-Q08-flow",
+      "s07-06-escalation-Q08-warning",
+      "s07-06-escalation-Q08-notebook",
+      "s07-06-escalation-Q08-distinctions",
+      "s07-06-escalation-Q08-test-1",
+      "s07-06-escalation-Q08-test-2",
+      "s07-06-escalation-Q08-test-3",
+      "s07-06-escalation-Q08-test-4"
+    ],
+    "practice": "Service Desk и координация восстановления",
+    "sourceId": "desk"
+  },
+  {
+    "lectureId": "s07-07-knowledge-base",
+    "questionId": "s07-07-knowledge-base-Q01",
+    "title": "Назначение базы знаний",
+    "source": "src/data/courseData.ts → s07-07-knowledge-base → questions[0]",
+    "programme": [
+      "Типовые решения.",
+      "Структура статьи.",
+      "Поддержание базы знаний в актуальном состоянии."
+    ],
+    "learningOutcome": "По заголовку и аннотации понятно, кому и когда нужна статья.",
+    "explanationSlideIds": [
+      "s07-07-knowledge-base-Q01-theory",
+      "s07-07-knowledge-base-Q01-term",
+      "s07-07-knowledge-base-Q01-example",
+      "s07-07-knowledge-base-Q01-flow",
+      "s07-07-knowledge-base-Q01-warning",
+      "s07-07-knowledge-base-Q01-notebook",
+      "s07-07-knowledge-base-Q01-distinctions"
+    ],
+    "testIds": [
+      "s07-07-knowledge-base-Q01-T01",
+      "s07-07-knowledge-base-Q01-T02",
+      "s07-07-knowledge-base-Q01-T03",
+      "s07-07-knowledge-base-Q01-T04"
+    ],
+    "slideIds": [
+      "s07-07-knowledge-base-Q01-theory",
+      "s07-07-knowledge-base-Q01-term",
+      "s07-07-knowledge-base-Q01-example",
+      "s07-07-knowledge-base-Q01-flow",
+      "s07-07-knowledge-base-Q01-warning",
+      "s07-07-knowledge-base-Q01-notebook",
+      "s07-07-knowledge-base-Q01-distinctions",
+      "s07-07-knowledge-base-Q01-test-1",
+      "s07-07-knowledge-base-Q01-test-2",
+      "s07-07-knowledge-base-Q01-test-3",
+      "s07-07-knowledge-base-Q01-test-4"
+    ],
+    "practice": "Knowledge Management — управление знаниями",
+    "sourceId": "overview"
+  },
+  {
+    "lectureId": "s07-07-knowledge-base",
+    "questionId": "s07-07-knowledge-base-Q02",
+    "title": "Тип статьи",
+    "source": "src/data/courseData.ts → s07-07-knowledge-base → questions[1]",
+    "programme": [
+      "Типовые решения.",
+      "Структура статьи.",
+      "Поддержание базы знаний в актуальном состоянии."
+    ],
+    "learningOutcome": "Структура соответствует заявленному результату.",
+    "explanationSlideIds": [
+      "s07-07-knowledge-base-Q02-theory",
+      "s07-07-knowledge-base-Q02-term",
+      "s07-07-knowledge-base-Q02-example",
+      "s07-07-knowledge-base-Q02-flow",
+      "s07-07-knowledge-base-Q02-warning",
+      "s07-07-knowledge-base-Q02-notebook",
+      "s07-07-knowledge-base-Q02-distinctions"
+    ],
+    "testIds": [
+      "s07-07-knowledge-base-Q02-T01",
+      "s07-07-knowledge-base-Q02-T02",
+      "s07-07-knowledge-base-Q02-T03",
+      "s07-07-knowledge-base-Q02-T04"
+    ],
+    "slideIds": [
+      "s07-07-knowledge-base-Q02-theory",
+      "s07-07-knowledge-base-Q02-term",
+      "s07-07-knowledge-base-Q02-example",
+      "s07-07-knowledge-base-Q02-flow",
+      "s07-07-knowledge-base-Q02-warning",
+      "s07-07-knowledge-base-Q02-notebook",
+      "s07-07-knowledge-base-Q02-distinctions",
+      "s07-07-knowledge-base-Q02-test-1",
+      "s07-07-knowledge-base-Q02-test-2",
+      "s07-07-knowledge-base-Q02-test-3",
+      "s07-07-knowledge-base-Q02-test-4"
+    ],
+    "practice": "Knowledge Management — управление знаниями",
+    "sourceId": "overview"
+  },
+  {
+    "lectureId": "s07-07-knowledge-base",
+    "questionId": "s07-07-knowledge-base-Q03",
+    "title": "Заголовок и симптом",
+    "source": "src/data/courseData.ts → s07-07-knowledge-base → questions[2]",
+    "programme": [
+      "Типовые решения.",
+      "Структура статьи.",
+      "Поддержание базы знаний в актуальном состоянии."
+    ],
+    "learningOutcome": "Поиск по 503 и очереди выводит нужный материал.",
+    "explanationSlideIds": [
+      "s07-07-knowledge-base-Q03-theory",
+      "s07-07-knowledge-base-Q03-term",
+      "s07-07-knowledge-base-Q03-example",
+      "s07-07-knowledge-base-Q03-flow",
+      "s07-07-knowledge-base-Q03-warning",
+      "s07-07-knowledge-base-Q03-notebook",
+      "s07-07-knowledge-base-Q03-distinctions"
+    ],
+    "testIds": [
+      "s07-07-knowledge-base-Q03-T01",
+      "s07-07-knowledge-base-Q03-T02",
+      "s07-07-knowledge-base-Q03-T03",
+      "s07-07-knowledge-base-Q03-T04"
+    ],
+    "slideIds": [
+      "s07-07-knowledge-base-Q03-theory",
+      "s07-07-knowledge-base-Q03-term",
+      "s07-07-knowledge-base-Q03-example",
+      "s07-07-knowledge-base-Q03-flow",
+      "s07-07-knowledge-base-Q03-warning",
+      "s07-07-knowledge-base-Q03-notebook",
+      "s07-07-knowledge-base-Q03-distinctions",
+      "s07-07-knowledge-base-Q03-test-1",
+      "s07-07-knowledge-base-Q03-test-2",
+      "s07-07-knowledge-base-Q03-test-3",
+      "s07-07-knowledge-base-Q03-test-4"
+    ],
+    "practice": "Knowledge Management — управление знаниями",
+    "sourceId": "overview"
+  },
+  {
+    "lectureId": "s07-07-knowledge-base",
+    "questionId": "s07-07-knowledge-base-Q04",
+    "title": "Область применения",
+    "source": "src/data/courseData.ts → s07-07-knowledge-base → questions[3]",
+    "programme": [
+      "Типовые решения.",
+      "Структура статьи.",
+      "Поддержание базы знаний в актуальном состоянии."
+    ],
+    "learningOutcome": "Читатель может решить, применять статью или эскалировать.",
+    "explanationSlideIds": [
+      "s07-07-knowledge-base-Q04-theory",
+      "s07-07-knowledge-base-Q04-term",
+      "s07-07-knowledge-base-Q04-example",
+      "s07-07-knowledge-base-Q04-flow",
+      "s07-07-knowledge-base-Q04-warning",
+      "s07-07-knowledge-base-Q04-notebook",
+      "s07-07-knowledge-base-Q04-distinctions"
+    ],
+    "testIds": [
+      "s07-07-knowledge-base-Q04-T01",
+      "s07-07-knowledge-base-Q04-T02",
+      "s07-07-knowledge-base-Q04-T03",
+      "s07-07-knowledge-base-Q04-T04"
+    ],
+    "slideIds": [
+      "s07-07-knowledge-base-Q04-theory",
+      "s07-07-knowledge-base-Q04-term",
+      "s07-07-knowledge-base-Q04-example",
+      "s07-07-knowledge-base-Q04-flow",
+      "s07-07-knowledge-base-Q04-warning",
+      "s07-07-knowledge-base-Q04-notebook",
+      "s07-07-knowledge-base-Q04-distinctions",
+      "s07-07-knowledge-base-Q04-test-1",
+      "s07-07-knowledge-base-Q04-test-2",
+      "s07-07-knowledge-base-Q04-test-3",
+      "s07-07-knowledge-base-Q04-test-4"
+    ],
+    "practice": "Knowledge Management — управление знаниями",
+    "sourceId": "overview"
+  },
+  {
+    "lectureId": "s07-07-knowledge-base",
+    "questionId": "s07-07-knowledge-base-Q05",
+    "title": "Шаги и свидетельства",
+    "source": "src/data/courseData.ts → s07-07-knowledge-base → questions[4]",
+    "programme": [
+      "Типовые решения.",
+      "Структура статьи.",
+      "Поддержание базы знаний в актуальном состоянии."
+    ],
+    "learningOutcome": "Исполнитель замечает отклонение до следующего шага.",
+    "explanationSlideIds": [
+      "s07-07-knowledge-base-Q05-theory",
+      "s07-07-knowledge-base-Q05-term",
+      "s07-07-knowledge-base-Q05-example",
+      "s07-07-knowledge-base-Q05-flow",
+      "s07-07-knowledge-base-Q05-warning",
+      "s07-07-knowledge-base-Q05-notebook",
+      "s07-07-knowledge-base-Q05-distinctions"
+    ],
+    "testIds": [
+      "s07-07-knowledge-base-Q05-T01",
+      "s07-07-knowledge-base-Q05-T02",
+      "s07-07-knowledge-base-Q05-T03",
+      "s07-07-knowledge-base-Q05-T04"
+    ],
+    "slideIds": [
+      "s07-07-knowledge-base-Q05-theory",
+      "s07-07-knowledge-base-Q05-term",
+      "s07-07-knowledge-base-Q05-example",
+      "s07-07-knowledge-base-Q05-flow",
+      "s07-07-knowledge-base-Q05-warning",
+      "s07-07-knowledge-base-Q05-notebook",
+      "s07-07-knowledge-base-Q05-distinctions",
+      "s07-07-knowledge-base-Q05-test-1",
+      "s07-07-knowledge-base-Q05-test-2",
+      "s07-07-knowledge-base-Q05-test-3",
+      "s07-07-knowledge-base-Q05-test-4"
+    ],
+    "practice": "Knowledge Management — управление знаниями",
+    "sourceId": "overview"
+  },
+  {
+    "lectureId": "s07-07-knowledge-base",
+    "questionId": "s07-07-knowledge-base-Q06",
+    "title": "Проверка и откат",
+    "source": "src/data/courseData.ts → s07-07-knowledge-base → questions[5]",
+    "programme": [
+      "Типовые решения.",
+      "Структура статьи.",
+      "Поддержание базы знаний в актуальном состоянии."
+    ],
+    "learningOutcome": "Есть успешный сценарий и заранее проверенный обратный путь.",
+    "explanationSlideIds": [
+      "s07-07-knowledge-base-Q06-theory",
+      "s07-07-knowledge-base-Q06-term",
+      "s07-07-knowledge-base-Q06-example",
+      "s07-07-knowledge-base-Q06-flow",
+      "s07-07-knowledge-base-Q06-warning",
+      "s07-07-knowledge-base-Q06-notebook",
+      "s07-07-knowledge-base-Q06-distinctions"
+    ],
+    "testIds": [
+      "s07-07-knowledge-base-Q06-T01",
+      "s07-07-knowledge-base-Q06-T02",
+      "s07-07-knowledge-base-Q06-T03",
+      "s07-07-knowledge-base-Q06-T04"
+    ],
+    "slideIds": [
+      "s07-07-knowledge-base-Q06-theory",
+      "s07-07-knowledge-base-Q06-term",
+      "s07-07-knowledge-base-Q06-example",
+      "s07-07-knowledge-base-Q06-flow",
+      "s07-07-knowledge-base-Q06-warning",
+      "s07-07-knowledge-base-Q06-notebook",
+      "s07-07-knowledge-base-Q06-distinctions",
+      "s07-07-knowledge-base-Q06-test-1",
+      "s07-07-knowledge-base-Q06-test-2",
+      "s07-07-knowledge-base-Q06-test-3",
+      "s07-07-knowledge-base-Q06-test-4"
+    ],
+    "practice": "Knowledge Management — управление знаниями",
+    "sourceId": "overview"
+  },
+  {
+    "lectureId": "s07-07-knowledge-base",
+    "questionId": "s07-07-knowledge-base-Q07",
+    "title": "Публикация и рецензирование",
+    "source": "src/data/courseData.ts → s07-07-knowledge-base → questions[6]",
+    "programme": [
+      "Типовые решения.",
+      "Структура статьи.",
+      "Поддержание базы знаний в актуальном состоянии."
+    ],
+    "learningOutcome": "Версия статьи имеет автора, рецензента и результат прогона.",
+    "explanationSlideIds": [
+      "s07-07-knowledge-base-Q07-theory",
+      "s07-07-knowledge-base-Q07-term",
+      "s07-07-knowledge-base-Q07-example",
+      "s07-07-knowledge-base-Q07-flow",
+      "s07-07-knowledge-base-Q07-warning",
+      "s07-07-knowledge-base-Q07-notebook",
+      "s07-07-knowledge-base-Q07-distinctions"
+    ],
+    "testIds": [
+      "s07-07-knowledge-base-Q07-T01",
+      "s07-07-knowledge-base-Q07-T02",
+      "s07-07-knowledge-base-Q07-T03",
+      "s07-07-knowledge-base-Q07-T04"
+    ],
+    "slideIds": [
+      "s07-07-knowledge-base-Q07-theory",
+      "s07-07-knowledge-base-Q07-term",
+      "s07-07-knowledge-base-Q07-example",
+      "s07-07-knowledge-base-Q07-flow",
+      "s07-07-knowledge-base-Q07-warning",
+      "s07-07-knowledge-base-Q07-notebook",
+      "s07-07-knowledge-base-Q07-distinctions",
+      "s07-07-knowledge-base-Q07-test-1",
+      "s07-07-knowledge-base-Q07-test-2",
+      "s07-07-knowledge-base-Q07-test-3",
+      "s07-07-knowledge-base-Q07-test-4"
+    ],
+    "practice": "Knowledge Management — управление знаниями",
+    "sourceId": "overview"
+  },
+  {
+    "lectureId": "s07-07-knowledge-base",
+    "questionId": "s07-07-knowledge-base-Q08",
+    "title": "Актуальность и метрики",
+    "source": "src/data/courseData.ts → s07-07-knowledge-base → questions[7]",
+    "programme": [
+      "Типовые решения.",
+      "Структура статьи.",
+      "Поддержание базы знаний в актуальном состоянии."
+    ],
+    "learningOutcome": "Пользователь видит текущий статус, а владелец получает сигнал о проблемной статье.",
+    "explanationSlideIds": [
+      "s07-07-knowledge-base-Q08-theory",
+      "s07-07-knowledge-base-Q08-term",
+      "s07-07-knowledge-base-Q08-example",
+      "s07-07-knowledge-base-Q08-flow",
+      "s07-07-knowledge-base-Q08-warning",
+      "s07-07-knowledge-base-Q08-notebook",
+      "s07-07-knowledge-base-Q08-distinctions"
+    ],
+    "testIds": [
+      "s07-07-knowledge-base-Q08-T01",
+      "s07-07-knowledge-base-Q08-T02",
+      "s07-07-knowledge-base-Q08-T03",
+      "s07-07-knowledge-base-Q08-T04"
+    ],
+    "slideIds": [
+      "s07-07-knowledge-base-Q08-theory",
+      "s07-07-knowledge-base-Q08-term",
+      "s07-07-knowledge-base-Q08-example",
+      "s07-07-knowledge-base-Q08-flow",
+      "s07-07-knowledge-base-Q08-warning",
+      "s07-07-knowledge-base-Q08-notebook",
+      "s07-07-knowledge-base-Q08-distinctions",
+      "s07-07-knowledge-base-Q08-test-1",
+      "s07-07-knowledge-base-Q08-test-2",
+      "s07-07-knowledge-base-Q08-test-3",
+      "s07-07-knowledge-base-Q08-test-4"
+    ],
+    "practice": "Knowledge Management — управление знаниями",
+    "sourceId": "overview"
+  },
+  {
+    "lectureId": "s07-08-update-regulation",
+    "questionId": "s07-08-update-regulation-Q01",
+    "title": "Цель и состав релиза",
+    "source": "src/data/courseData.ts → s07-08-update-regulation → questions[0]",
+    "programme": [
+      "Подготовка обновления.",
+      "Окно обновления.",
+      "Порядок отката.",
+      "Уведомление пользователей."
+    ],
+    "learningOutcome": "Хэш пакета и список изменений совпадают с утверждённой версией.",
+    "explanationSlideIds": [
+      "s07-08-update-regulation-Q01-theory",
+      "s07-08-update-regulation-Q01-term",
+      "s07-08-update-regulation-Q01-example",
+      "s07-08-update-regulation-Q01-flow",
+      "s07-08-update-regulation-Q01-warning",
+      "s07-08-update-regulation-Q01-notebook",
+      "s07-08-update-regulation-Q01-distinctions"
+    ],
+    "testIds": [
+      "s07-08-update-regulation-Q01-T01",
+      "s07-08-update-regulation-Q01-T02",
+      "s07-08-update-regulation-Q01-T03",
+      "s07-08-update-regulation-Q01-T04"
+    ],
+    "slideIds": [
+      "s07-08-update-regulation-Q01-theory",
+      "s07-08-update-regulation-Q01-term",
+      "s07-08-update-regulation-Q01-example",
+      "s07-08-update-regulation-Q01-flow",
+      "s07-08-update-regulation-Q01-warning",
+      "s07-08-update-regulation-Q01-notebook",
+      "s07-08-update-regulation-Q01-distinctions",
+      "s07-08-update-regulation-Q01-test-1",
+      "s07-08-update-regulation-Q01-test-2",
+      "s07-08-update-regulation-Q01-test-3",
+      "s07-08-update-regulation-Q01-test-4"
+    ],
+    "practice": "Release Management, Deployment Management и Change Enablement",
+    "sourceId": "change"
+  },
+  {
+    "lectureId": "s07-08-update-regulation",
+    "questionId": "s07-08-update-regulation-Q02",
+    "title": "Готовность среды",
+    "source": "src/data/courseData.ts → s07-08-update-regulation → questions[1]",
+    "programme": [
+      "Подготовка обновления.",
+      "Окно обновления.",
+      "Порядок отката.",
+      "Уведомление пользователей."
+    ],
+    "learningOutcome": "Чек-лист подписан, блокирующих отклонений нет.",
+    "explanationSlideIds": [
+      "s07-08-update-regulation-Q02-theory",
+      "s07-08-update-regulation-Q02-term",
+      "s07-08-update-regulation-Q02-example",
+      "s07-08-update-regulation-Q02-flow",
+      "s07-08-update-regulation-Q02-warning",
+      "s07-08-update-regulation-Q02-notebook",
+      "s07-08-update-regulation-Q02-distinctions"
+    ],
+    "testIds": [
+      "s07-08-update-regulation-Q02-T01",
+      "s07-08-update-regulation-Q02-T02",
+      "s07-08-update-regulation-Q02-T03",
+      "s07-08-update-regulation-Q02-T04"
+    ],
+    "slideIds": [
+      "s07-08-update-regulation-Q02-theory",
+      "s07-08-update-regulation-Q02-term",
+      "s07-08-update-regulation-Q02-example",
+      "s07-08-update-regulation-Q02-flow",
+      "s07-08-update-regulation-Q02-warning",
+      "s07-08-update-regulation-Q02-notebook",
+      "s07-08-update-regulation-Q02-distinctions",
+      "s07-08-update-regulation-Q02-test-1",
+      "s07-08-update-regulation-Q02-test-2",
+      "s07-08-update-regulation-Q02-test-3",
+      "s07-08-update-regulation-Q02-test-4"
+    ],
+    "practice": "Release Management, Deployment Management и Change Enablement",
+    "sourceId": "change"
+  },
+  {
+    "lectureId": "s07-08-update-regulation",
+    "questionId": "s07-08-update-regulation-Q03",
+    "title": "План коммуникации",
+    "source": "src/data/courseData.ts → s07-08-update-regulation → questions[2]",
+    "programme": [
+      "Подготовка обновления.",
+      "Окно обновления.",
+      "Порядок отката.",
+      "Уведомление пользователей."
+    ],
+    "learningOutcome": "Адресаты знают окно, влияние, статус и завершение.",
+    "explanationSlideIds": [
+      "s07-08-update-regulation-Q03-theory",
+      "s07-08-update-regulation-Q03-term",
+      "s07-08-update-regulation-Q03-example",
+      "s07-08-update-regulation-Q03-flow",
+      "s07-08-update-regulation-Q03-warning",
+      "s07-08-update-regulation-Q03-notebook",
+      "s07-08-update-regulation-Q03-distinctions"
+    ],
+    "testIds": [
+      "s07-08-update-regulation-Q03-T01",
+      "s07-08-update-regulation-Q03-T02",
+      "s07-08-update-regulation-Q03-T03",
+      "s07-08-update-regulation-Q03-T04"
+    ],
+    "slideIds": [
+      "s07-08-update-regulation-Q03-theory",
+      "s07-08-update-regulation-Q03-term",
+      "s07-08-update-regulation-Q03-example",
+      "s07-08-update-regulation-Q03-flow",
+      "s07-08-update-regulation-Q03-warning",
+      "s07-08-update-regulation-Q03-notebook",
+      "s07-08-update-regulation-Q03-distinctions",
+      "s07-08-update-regulation-Q03-test-1",
+      "s07-08-update-regulation-Q03-test-2",
+      "s07-08-update-regulation-Q03-test-3",
+      "s07-08-update-regulation-Q03-test-4"
+    ],
+    "practice": "Release Management, Deployment Management и Change Enablement",
+    "sourceId": "change"
+  },
+  {
+    "lectureId": "s07-08-update-regulation",
+    "questionId": "s07-08-update-regulation-Q04",
+    "title": "Резервная точка",
+    "source": "src/data/courseData.ts → s07-08-update-regulation → questions[3]",
+    "programme": [
+      "Подготовка обновления.",
+      "Окно обновления.",
+      "Порядок отката.",
+      "Уведомление пользователей."
+    ],
+    "learningOutcome": "Копия читается, идентифицирована и связана с версией до релиза.",
+    "explanationSlideIds": [
+      "s07-08-update-regulation-Q04-theory",
+      "s07-08-update-regulation-Q04-term",
+      "s07-08-update-regulation-Q04-example",
+      "s07-08-update-regulation-Q04-flow",
+      "s07-08-update-regulation-Q04-warning",
+      "s07-08-update-regulation-Q04-notebook",
+      "s07-08-update-regulation-Q04-distinctions"
+    ],
+    "testIds": [
+      "s07-08-update-regulation-Q04-T01",
+      "s07-08-update-regulation-Q04-T02",
+      "s07-08-update-regulation-Q04-T03",
+      "s07-08-update-regulation-Q04-T04"
+    ],
+    "slideIds": [
+      "s07-08-update-regulation-Q04-theory",
+      "s07-08-update-regulation-Q04-term",
+      "s07-08-update-regulation-Q04-example",
+      "s07-08-update-regulation-Q04-flow",
+      "s07-08-update-regulation-Q04-warning",
+      "s07-08-update-regulation-Q04-notebook",
+      "s07-08-update-regulation-Q04-distinctions",
+      "s07-08-update-regulation-Q04-test-1",
+      "s07-08-update-regulation-Q04-test-2",
+      "s07-08-update-regulation-Q04-test-3",
+      "s07-08-update-regulation-Q04-test-4"
+    ],
+    "practice": "Release Management, Deployment Management и Change Enablement",
+    "sourceId": "change"
+  },
+  {
+    "lectureId": "s07-08-update-regulation",
+    "questionId": "s07-08-update-regulation-Q05",
+    "title": "Последовательность установки",
+    "source": "src/data/courseData.ts → s07-08-update-regulation → questions[4]",
+    "programme": [
+      "Подготовка обновления.",
+      "Окно обновления.",
+      "Порядок отката.",
+      "Уведомление пользователей."
+    ],
+    "learningOutcome": "Фактические действия сопоставимы с планом и имеют результаты.",
+    "explanationSlideIds": [
+      "s07-08-update-regulation-Q05-theory",
+      "s07-08-update-regulation-Q05-term",
+      "s07-08-update-regulation-Q05-example",
+      "s07-08-update-regulation-Q05-flow",
+      "s07-08-update-regulation-Q05-warning",
+      "s07-08-update-regulation-Q05-notebook",
+      "s07-08-update-regulation-Q05-distinctions"
+    ],
+    "testIds": [
+      "s07-08-update-regulation-Q05-T01",
+      "s07-08-update-regulation-Q05-T02",
+      "s07-08-update-regulation-Q05-T03",
+      "s07-08-update-regulation-Q05-T04"
+    ],
+    "slideIds": [
+      "s07-08-update-regulation-Q05-theory",
+      "s07-08-update-regulation-Q05-term",
+      "s07-08-update-regulation-Q05-example",
+      "s07-08-update-regulation-Q05-flow",
+      "s07-08-update-regulation-Q05-warning",
+      "s07-08-update-regulation-Q05-notebook",
+      "s07-08-update-regulation-Q05-distinctions",
+      "s07-08-update-regulation-Q05-test-1",
+      "s07-08-update-regulation-Q05-test-2",
+      "s07-08-update-regulation-Q05-test-3",
+      "s07-08-update-regulation-Q05-test-4"
+    ],
+    "practice": "Release Management, Deployment Management и Change Enablement",
+    "sourceId": "change"
+  },
+  {
+    "lectureId": "s07-08-update-regulation",
+    "questionId": "s07-08-update-regulation-Q06",
+    "title": "Проверка после обновления",
+    "source": "src/data/courseData.ts → s07-08-update-regulation → questions[5]",
+    "programme": [
+      "Подготовка обновления.",
+      "Окно обновления.",
+      "Порядок отката.",
+      "Уведомление пользователей."
+    ],
+    "learningOutcome": "Критические функции и ключевые метрики соответствуют порогам.",
+    "explanationSlideIds": [
+      "s07-08-update-regulation-Q06-theory",
+      "s07-08-update-regulation-Q06-term",
+      "s07-08-update-regulation-Q06-example",
+      "s07-08-update-regulation-Q06-flow",
+      "s07-08-update-regulation-Q06-warning",
+      "s07-08-update-regulation-Q06-notebook",
+      "s07-08-update-regulation-Q06-distinctions"
+    ],
+    "testIds": [
+      "s07-08-update-regulation-Q06-T01",
+      "s07-08-update-regulation-Q06-T02",
+      "s07-08-update-regulation-Q06-T03",
+      "s07-08-update-regulation-Q06-T04"
+    ],
+    "slideIds": [
+      "s07-08-update-regulation-Q06-theory",
+      "s07-08-update-regulation-Q06-term",
+      "s07-08-update-regulation-Q06-example",
+      "s07-08-update-regulation-Q06-flow",
+      "s07-08-update-regulation-Q06-warning",
+      "s07-08-update-regulation-Q06-notebook",
+      "s07-08-update-regulation-Q06-distinctions",
+      "s07-08-update-regulation-Q06-test-1",
+      "s07-08-update-regulation-Q06-test-2",
+      "s07-08-update-regulation-Q06-test-3",
+      "s07-08-update-regulation-Q06-test-4"
+    ],
+    "practice": "Release Management, Deployment Management и Change Enablement",
+    "sourceId": "change"
+  },
+  {
+    "lectureId": "s07-08-update-regulation",
+    "questionId": "s07-08-update-regulation-Q07",
+    "title": "Критерии и порядок отката",
+    "source": "src/data/courseData.ts → s07-08-update-regulation → questions[6]",
+    "programme": [
+      "Подготовка обновления.",
+      "Окно обновления.",
+      "Порядок отката.",
+      "Уведомление пользователей."
+    ],
+    "learningOutcome": "Учебный откат выполнен по инструкции и вернул контрольную операцию.",
+    "explanationSlideIds": [
+      "s07-08-update-regulation-Q07-theory",
+      "s07-08-update-regulation-Q07-term",
+      "s07-08-update-regulation-Q07-example",
+      "s07-08-update-regulation-Q07-flow",
+      "s07-08-update-regulation-Q07-warning",
+      "s07-08-update-regulation-Q07-notebook",
+      "s07-08-update-regulation-Q07-distinctions"
+    ],
+    "testIds": [
+      "s07-08-update-regulation-Q07-T01",
+      "s07-08-update-regulation-Q07-T02",
+      "s07-08-update-regulation-Q07-T03",
+      "s07-08-update-regulation-Q07-T04"
+    ],
+    "slideIds": [
+      "s07-08-update-regulation-Q07-theory",
+      "s07-08-update-regulation-Q07-term",
+      "s07-08-update-regulation-Q07-example",
+      "s07-08-update-regulation-Q07-flow",
+      "s07-08-update-regulation-Q07-warning",
+      "s07-08-update-regulation-Q07-notebook",
+      "s07-08-update-regulation-Q07-distinctions",
+      "s07-08-update-regulation-Q07-test-1",
+      "s07-08-update-regulation-Q07-test-2",
+      "s07-08-update-regulation-Q07-test-3",
+      "s07-08-update-regulation-Q07-test-4"
+    ],
+    "practice": "Release Management, Deployment Management и Change Enablement",
+    "sourceId": "change"
+  },
+  {
+    "lectureId": "s07-08-update-regulation",
+    "questionId": "s07-08-update-regulation-Q08",
+    "title": "Закрытие окна и отчёт",
+    "source": "src/data/courseData.ts → s07-08-update-regulation → questions[7]",
+    "programme": [
+      "Подготовка обновления.",
+      "Окно обновления.",
+      "Порядок отката.",
+      "Уведомление пользователей."
+    ],
+    "learningOutcome": "Версия, доказательства и открытые вопросы доступны следующей смене.",
+    "explanationSlideIds": [
+      "s07-08-update-regulation-Q08-theory",
+      "s07-08-update-regulation-Q08-term",
+      "s07-08-update-regulation-Q08-example",
+      "s07-08-update-regulation-Q08-flow",
+      "s07-08-update-regulation-Q08-warning",
+      "s07-08-update-regulation-Q08-notebook",
+      "s07-08-update-regulation-Q08-distinctions"
+    ],
+    "testIds": [
+      "s07-08-update-regulation-Q08-T01",
+      "s07-08-update-regulation-Q08-T02",
+      "s07-08-update-regulation-Q08-T03",
+      "s07-08-update-regulation-Q08-T04"
+    ],
+    "slideIds": [
+      "s07-08-update-regulation-Q08-theory",
+      "s07-08-update-regulation-Q08-term",
+      "s07-08-update-regulation-Q08-example",
+      "s07-08-update-regulation-Q08-flow",
+      "s07-08-update-regulation-Q08-warning",
+      "s07-08-update-regulation-Q08-notebook",
+      "s07-08-update-regulation-Q08-distinctions",
+      "s07-08-update-regulation-Q08-test-1",
+      "s07-08-update-regulation-Q08-test-2",
+      "s07-08-update-regulation-Q08-test-3",
+      "s07-08-update-regulation-Q08-test-4"
+    ],
+    "practice": "Release Management, Deployment Management и Change Enablement",
+    "sourceId": "change"
+  },
+  {
+    "lectureId": "s07-09-change-management",
+    "questionId": "s07-09-change-management-Q01",
+    "title": "Ценность изменения",
+    "source": "src/data/courseData.ts → s07-09-change-management → questions[0]",
+    "programme": [
+      "Заявка на изменение.",
+      "Оценка влияния и согласование.",
+      "Внедрение и проверка результата."
+    ],
+    "learningOutcome": "После внедрения можно проверить заявленный эффект.",
+    "explanationSlideIds": [
+      "s07-09-change-management-Q01-theory",
+      "s07-09-change-management-Q01-term",
+      "s07-09-change-management-Q01-example",
+      "s07-09-change-management-Q01-flow",
+      "s07-09-change-management-Q01-warning",
+      "s07-09-change-management-Q01-notebook",
+      "s07-09-change-management-Q01-distinctions"
+    ],
+    "testIds": [
+      "s07-09-change-management-Q01-T01",
+      "s07-09-change-management-Q01-T02",
+      "s07-09-change-management-Q01-T03",
+      "s07-09-change-management-Q01-T04"
+    ],
+    "slideIds": [
+      "s07-09-change-management-Q01-theory",
+      "s07-09-change-management-Q01-term",
+      "s07-09-change-management-Q01-example",
+      "s07-09-change-management-Q01-flow",
+      "s07-09-change-management-Q01-warning",
+      "s07-09-change-management-Q01-notebook",
+      "s07-09-change-management-Q01-distinctions",
+      "s07-09-change-management-Q01-test-1",
+      "s07-09-change-management-Q01-test-2",
+      "s07-09-change-management-Q01-test-3",
+      "s07-09-change-management-Q01-test-4"
+    ],
+    "practice": "Change Enablement — обеспечение изменений",
+    "sourceId": "change"
+  },
+  {
+    "lectureId": "s07-09-change-management",
+    "questionId": "s07-09-change-management-Q02",
+    "title": "Тип изменения",
+    "source": "src/data/courseData.ts → s07-09-change-management → questions[1]",
+    "programme": [
+      "Заявка на изменение.",
+      "Оценка влияния и согласование.",
+      "Внедрение и проверка результата."
+    ],
+    "learningOutcome": "Тип подтверждён критериями и соответствует процедуре.",
+    "explanationSlideIds": [
+      "s07-09-change-management-Q02-theory",
+      "s07-09-change-management-Q02-term",
+      "s07-09-change-management-Q02-example",
+      "s07-09-change-management-Q02-flow",
+      "s07-09-change-management-Q02-warning",
+      "s07-09-change-management-Q02-notebook",
+      "s07-09-change-management-Q02-distinctions"
+    ],
+    "testIds": [
+      "s07-09-change-management-Q02-T01",
+      "s07-09-change-management-Q02-T02",
+      "s07-09-change-management-Q02-T03",
+      "s07-09-change-management-Q02-T04"
+    ],
+    "slideIds": [
+      "s07-09-change-management-Q02-theory",
+      "s07-09-change-management-Q02-term",
+      "s07-09-change-management-Q02-example",
+      "s07-09-change-management-Q02-flow",
+      "s07-09-change-management-Q02-warning",
+      "s07-09-change-management-Q02-notebook",
+      "s07-09-change-management-Q02-distinctions",
+      "s07-09-change-management-Q02-test-1",
+      "s07-09-change-management-Q02-test-2",
+      "s07-09-change-management-Q02-test-3",
+      "s07-09-change-management-Q02-test-4"
+    ],
+    "practice": "Change Enablement — обеспечение изменений",
+    "sourceId": "change"
+  },
+  {
+    "lectureId": "s07-09-change-management",
+    "questionId": "s07-09-change-management-Q03",
+    "title": "Полнота заявки",
+    "source": "src/data/courseData.ts → s07-09-change-management → questions[2]",
+    "programme": [
+      "Заявка на изменение.",
+      "Оценка влияния и согласование.",
+      "Внедрение и проверка результата."
+    ],
+    "learningOutcome": "Согласующий видит весь риск и способ контроля в одной записи.",
+    "explanationSlideIds": [
+      "s07-09-change-management-Q03-theory",
+      "s07-09-change-management-Q03-term",
+      "s07-09-change-management-Q03-example",
+      "s07-09-change-management-Q03-flow",
+      "s07-09-change-management-Q03-warning",
+      "s07-09-change-management-Q03-notebook",
+      "s07-09-change-management-Q03-distinctions"
+    ],
+    "testIds": [
+      "s07-09-change-management-Q03-T01",
+      "s07-09-change-management-Q03-T02",
+      "s07-09-change-management-Q03-T03",
+      "s07-09-change-management-Q03-T04"
+    ],
+    "slideIds": [
+      "s07-09-change-management-Q03-theory",
+      "s07-09-change-management-Q03-term",
+      "s07-09-change-management-Q03-example",
+      "s07-09-change-management-Q03-flow",
+      "s07-09-change-management-Q03-warning",
+      "s07-09-change-management-Q03-notebook",
+      "s07-09-change-management-Q03-distinctions",
+      "s07-09-change-management-Q03-test-1",
+      "s07-09-change-management-Q03-test-2",
+      "s07-09-change-management-Q03-test-3",
+      "s07-09-change-management-Q03-test-4"
+    ],
+    "practice": "Change Enablement — обеспечение изменений",
+    "sourceId": "change"
+  },
+  {
+    "lectureId": "s07-09-change-management",
+    "questionId": "s07-09-change-management-Q04",
+    "title": "Оценка влияния",
+    "source": "src/data/courseData.ts → s07-09-change-management → questions[3]",
+    "programme": [
+      "Заявка на изменение.",
+      "Оценка влияния и согласование.",
+      "Внедрение и проверка результата."
+    ],
+    "learningOutcome": "Все затронутые услуги и группы связаны с планом действий.",
+    "explanationSlideIds": [
+      "s07-09-change-management-Q04-theory",
+      "s07-09-change-management-Q04-term",
+      "s07-09-change-management-Q04-example",
+      "s07-09-change-management-Q04-flow",
+      "s07-09-change-management-Q04-warning",
+      "s07-09-change-management-Q04-notebook",
+      "s07-09-change-management-Q04-distinctions"
+    ],
+    "testIds": [
+      "s07-09-change-management-Q04-T01",
+      "s07-09-change-management-Q04-T02",
+      "s07-09-change-management-Q04-T03",
+      "s07-09-change-management-Q04-T04"
+    ],
+    "slideIds": [
+      "s07-09-change-management-Q04-theory",
+      "s07-09-change-management-Q04-term",
+      "s07-09-change-management-Q04-example",
+      "s07-09-change-management-Q04-flow",
+      "s07-09-change-management-Q04-warning",
+      "s07-09-change-management-Q04-notebook",
+      "s07-09-change-management-Q04-distinctions",
+      "s07-09-change-management-Q04-test-1",
+      "s07-09-change-management-Q04-test-2",
+      "s07-09-change-management-Q04-test-3",
+      "s07-09-change-management-Q04-test-4"
+    ],
+    "practice": "Change Enablement — обеспечение изменений",
+    "sourceId": "change"
+  },
+  {
+    "lectureId": "s07-09-change-management",
+    "questionId": "s07-09-change-management-Q05",
+    "title": "Оценка риска",
+    "source": "src/data/courseData.ts → s07-09-change-management → questions[4]",
+    "programme": [
+      "Заявка на изменение.",
+      "Оценка влияния и согласование.",
+      "Внедрение и проверка результата."
+    ],
+    "learningOutcome": "Каждый риск имеет владельца и проверяемый контроль.",
+    "explanationSlideIds": [
+      "s07-09-change-management-Q05-theory",
+      "s07-09-change-management-Q05-term",
+      "s07-09-change-management-Q05-example",
+      "s07-09-change-management-Q05-flow",
+      "s07-09-change-management-Q05-warning",
+      "s07-09-change-management-Q05-notebook",
+      "s07-09-change-management-Q05-distinctions"
+    ],
+    "testIds": [
+      "s07-09-change-management-Q05-T01",
+      "s07-09-change-management-Q05-T02",
+      "s07-09-change-management-Q05-T03",
+      "s07-09-change-management-Q05-T04"
+    ],
+    "slideIds": [
+      "s07-09-change-management-Q05-theory",
+      "s07-09-change-management-Q05-term",
+      "s07-09-change-management-Q05-example",
+      "s07-09-change-management-Q05-flow",
+      "s07-09-change-management-Q05-warning",
+      "s07-09-change-management-Q05-notebook",
+      "s07-09-change-management-Q05-distinctions",
+      "s07-09-change-management-Q05-test-1",
+      "s07-09-change-management-Q05-test-2",
+      "s07-09-change-management-Q05-test-3",
+      "s07-09-change-management-Q05-test-4"
+    ],
+    "practice": "Change Enablement — обеспечение изменений",
+    "sourceId": "change"
+  },
+  {
+    "lectureId": "s07-09-change-management",
+    "questionId": "s07-09-change-management-Q06",
+    "title": "Согласование решения",
+    "source": "src/data/courseData.ts → s07-09-change-management → questions[5]",
+    "programme": [
+      "Заявка на изменение.",
+      "Оценка влияния и согласование.",
+      "Внедрение и проверка результата."
+    ],
+    "learningOutcome": "Есть явное решение, дата и условия каждого участника.",
+    "explanationSlideIds": [
+      "s07-09-change-management-Q06-theory",
+      "s07-09-change-management-Q06-term",
+      "s07-09-change-management-Q06-example",
+      "s07-09-change-management-Q06-flow",
+      "s07-09-change-management-Q06-warning",
+      "s07-09-change-management-Q06-notebook",
+      "s07-09-change-management-Q06-distinctions"
+    ],
+    "testIds": [
+      "s07-09-change-management-Q06-T01",
+      "s07-09-change-management-Q06-T02",
+      "s07-09-change-management-Q06-T03",
+      "s07-09-change-management-Q06-T04"
+    ],
+    "slideIds": [
+      "s07-09-change-management-Q06-theory",
+      "s07-09-change-management-Q06-term",
+      "s07-09-change-management-Q06-example",
+      "s07-09-change-management-Q06-flow",
+      "s07-09-change-management-Q06-warning",
+      "s07-09-change-management-Q06-notebook",
+      "s07-09-change-management-Q06-distinctions",
+      "s07-09-change-management-Q06-test-1",
+      "s07-09-change-management-Q06-test-2",
+      "s07-09-change-management-Q06-test-3",
+      "s07-09-change-management-Q06-test-4"
+    ],
+    "practice": "Change Enablement — обеспечение изменений",
+    "sourceId": "change"
+  },
+  {
+    "lectureId": "s07-09-change-management",
+    "questionId": "s07-09-change-management-Q07",
+    "title": "Внедрение и наблюдение",
+    "source": "src/data/courseData.ts → s07-09-change-management → questions[6]",
+    "programme": [
+      "Заявка на изменение.",
+      "Оценка влияния и согласование.",
+      "Внедрение и проверка результата."
+    ],
+    "learningOutcome": "Протокол объясняет каждое отличие и итоговое решение.",
+    "explanationSlideIds": [
+      "s07-09-change-management-Q07-theory",
+      "s07-09-change-management-Q07-term",
+      "s07-09-change-management-Q07-example",
+      "s07-09-change-management-Q07-flow",
+      "s07-09-change-management-Q07-warning",
+      "s07-09-change-management-Q07-notebook",
+      "s07-09-change-management-Q07-distinctions"
+    ],
+    "testIds": [
+      "s07-09-change-management-Q07-T01",
+      "s07-09-change-management-Q07-T02",
+      "s07-09-change-management-Q07-T03",
+      "s07-09-change-management-Q07-T04"
+    ],
+    "slideIds": [
+      "s07-09-change-management-Q07-theory",
+      "s07-09-change-management-Q07-term",
+      "s07-09-change-management-Q07-example",
+      "s07-09-change-management-Q07-flow",
+      "s07-09-change-management-Q07-warning",
+      "s07-09-change-management-Q07-notebook",
+      "s07-09-change-management-Q07-distinctions",
+      "s07-09-change-management-Q07-test-1",
+      "s07-09-change-management-Q07-test-2",
+      "s07-09-change-management-Q07-test-3",
+      "s07-09-change-management-Q07-test-4"
+    ],
+    "practice": "Change Enablement — обеспечение изменений",
+    "sourceId": "change"
+  },
+  {
+    "lectureId": "s07-09-change-management",
+    "questionId": "s07-09-change-management-Q08",
+    "title": "Проверка и разбор изменения",
+    "source": "src/data/courseData.ts → s07-09-change-management → questions[7]",
+    "programme": [
+      "Заявка на изменение.",
+      "Оценка влияния и согласование.",
+      "Внедрение и проверка результата."
+    ],
+    "learningOutcome": "Ценность подтверждена данными, а уроки внесены в следующий план.",
+    "explanationSlideIds": [
+      "s07-09-change-management-Q08-theory",
+      "s07-09-change-management-Q08-term",
+      "s07-09-change-management-Q08-example",
+      "s07-09-change-management-Q08-flow",
+      "s07-09-change-management-Q08-warning",
+      "s07-09-change-management-Q08-notebook",
+      "s07-09-change-management-Q08-distinctions"
+    ],
+    "testIds": [
+      "s07-09-change-management-Q08-T01",
+      "s07-09-change-management-Q08-T02",
+      "s07-09-change-management-Q08-T03",
+      "s07-09-change-management-Q08-T04"
+    ],
+    "slideIds": [
+      "s07-09-change-management-Q08-theory",
+      "s07-09-change-management-Q08-term",
+      "s07-09-change-management-Q08-example",
+      "s07-09-change-management-Q08-flow",
+      "s07-09-change-management-Q08-warning",
+      "s07-09-change-management-Q08-notebook",
+      "s07-09-change-management-Q08-distinctions",
+      "s07-09-change-management-Q08-test-1",
+      "s07-09-change-management-Q08-test-2",
+      "s07-09-change-management-Q08-test-3",
+      "s07-09-change-management-Q08-test-4"
+    ],
+    "practice": "Change Enablement — обеспечение изменений",
+    "sourceId": "change"
+  },
+  {
+    "lectureId": "s07-10-backup-restore",
+    "questionId": "s07-10-backup-restore-Q01",
+    "title": "Состав защищаемых данных",
+    "source": "src/data/courseData.ts → s07-10-backup-restore → questions[0]",
+    "programme": [
+      "Состав копируемых данных.",
+      "Периодичность и ответственные.",
+      "Порядок проверки и восстановления."
+    ],
+    "learningOutcome": "После восстановления сквозная заявка содержит запись и вложение.",
+    "explanationSlideIds": [
+      "s07-10-backup-restore-Q01-theory",
+      "s07-10-backup-restore-Q01-term",
+      "s07-10-backup-restore-Q01-example",
+      "s07-10-backup-restore-Q01-flow",
+      "s07-10-backup-restore-Q01-warning",
+      "s07-10-backup-restore-Q01-notebook",
+      "s07-10-backup-restore-Q01-distinctions"
+    ],
+    "testIds": [
+      "s07-10-backup-restore-Q01-T01",
+      "s07-10-backup-restore-Q01-T02",
+      "s07-10-backup-restore-Q01-T03",
+      "s07-10-backup-restore-Q01-T04"
+    ],
+    "slideIds": [
+      "s07-10-backup-restore-Q01-theory",
+      "s07-10-backup-restore-Q01-term",
+      "s07-10-backup-restore-Q01-example",
+      "s07-10-backup-restore-Q01-flow",
+      "s07-10-backup-restore-Q01-warning",
+      "s07-10-backup-restore-Q01-notebook",
+      "s07-10-backup-restore-Q01-distinctions",
+      "s07-10-backup-restore-Q01-test-1",
+      "s07-10-backup-restore-Q01-test-2",
+      "s07-10-backup-restore-Q01-test-3",
+      "s07-10-backup-restore-Q01-test-4"
+    ],
+    "practice": "Непрерывность услуг и проверяемое восстановление",
+    "sourceId": "overview"
+  },
+  {
+    "lectureId": "s07-10-backup-restore",
+    "questionId": "s07-10-backup-restore-Q02",
+    "title": "Цель RPO",
+    "source": "src/data/courseData.ts → s07-10-backup-restore → questions[1]",
+    "programme": [
+      "Состав копируемых данных.",
+      "Периодичность и ответственные.",
+      "Порядок проверки и восстановления."
+    ],
+    "learningOutcome": "Сценарий отказа показывает потерю не больше согласованного интервала.",
+    "explanationSlideIds": [
+      "s07-10-backup-restore-Q02-theory",
+      "s07-10-backup-restore-Q02-term",
+      "s07-10-backup-restore-Q02-example",
+      "s07-10-backup-restore-Q02-flow",
+      "s07-10-backup-restore-Q02-warning",
+      "s07-10-backup-restore-Q02-notebook",
+      "s07-10-backup-restore-Q02-distinctions"
+    ],
+    "testIds": [
+      "s07-10-backup-restore-Q02-T01",
+      "s07-10-backup-restore-Q02-T02",
+      "s07-10-backup-restore-Q02-T03",
+      "s07-10-backup-restore-Q02-T04"
+    ],
+    "slideIds": [
+      "s07-10-backup-restore-Q02-theory",
+      "s07-10-backup-restore-Q02-term",
+      "s07-10-backup-restore-Q02-example",
+      "s07-10-backup-restore-Q02-flow",
+      "s07-10-backup-restore-Q02-warning",
+      "s07-10-backup-restore-Q02-notebook",
+      "s07-10-backup-restore-Q02-distinctions",
+      "s07-10-backup-restore-Q02-test-1",
+      "s07-10-backup-restore-Q02-test-2",
+      "s07-10-backup-restore-Q02-test-3",
+      "s07-10-backup-restore-Q02-test-4"
+    ],
+    "practice": "Непрерывность услуг и проверяемое восстановление",
+    "sourceId": "overview"
+  },
+  {
+    "lectureId": "s07-10-backup-restore",
+    "questionId": "s07-10-backup-restore-Q03",
+    "title": "Цель RTO",
+    "source": "src/data/courseData.ts → s07-10-backup-restore → questions[2]",
+    "programme": [
+      "Состав копируемых данных.",
+      "Периодичность и ответственные.",
+      "Порядок проверки и восстановления."
+    ],
+    "learningOutcome": "Полный учебный сценарий завершается в пределах цели.",
+    "explanationSlideIds": [
+      "s07-10-backup-restore-Q03-theory",
+      "s07-10-backup-restore-Q03-term",
+      "s07-10-backup-restore-Q03-example",
+      "s07-10-backup-restore-Q03-flow",
+      "s07-10-backup-restore-Q03-warning",
+      "s07-10-backup-restore-Q03-notebook",
+      "s07-10-backup-restore-Q03-distinctions"
+    ],
+    "testIds": [
+      "s07-10-backup-restore-Q03-T01",
+      "s07-10-backup-restore-Q03-T02",
+      "s07-10-backup-restore-Q03-T03",
+      "s07-10-backup-restore-Q03-T04"
+    ],
+    "slideIds": [
+      "s07-10-backup-restore-Q03-theory",
+      "s07-10-backup-restore-Q03-term",
+      "s07-10-backup-restore-Q03-example",
+      "s07-10-backup-restore-Q03-flow",
+      "s07-10-backup-restore-Q03-warning",
+      "s07-10-backup-restore-Q03-notebook",
+      "s07-10-backup-restore-Q03-distinctions",
+      "s07-10-backup-restore-Q03-test-1",
+      "s07-10-backup-restore-Q03-test-2",
+      "s07-10-backup-restore-Q03-test-3",
+      "s07-10-backup-restore-Q03-test-4"
+    ],
+    "practice": "Непрерывность услуг и проверяемое восстановление",
+    "sourceId": "overview"
+  },
+  {
+    "lectureId": "s07-10-backup-restore",
+    "questionId": "s07-10-backup-restore-Q04",
+    "title": "Полная и инкрементальная копия",
+    "source": "src/data/courseData.ts → s07-10-backup-restore → questions[3]",
+    "programme": [
+      "Состав копируемых данных.",
+      "Периодичность и ответственные.",
+      "Порядок проверки и восстановления."
+    ],
+    "learningOutcome": "Тест собирает выбранную точку из полного набора и нужных приращений.",
+    "explanationSlideIds": [
+      "s07-10-backup-restore-Q04-theory",
+      "s07-10-backup-restore-Q04-term",
+      "s07-10-backup-restore-Q04-example",
+      "s07-10-backup-restore-Q04-flow",
+      "s07-10-backup-restore-Q04-warning",
+      "s07-10-backup-restore-Q04-notebook",
+      "s07-10-backup-restore-Q04-distinctions"
+    ],
+    "testIds": [
+      "s07-10-backup-restore-Q04-T01",
+      "s07-10-backup-restore-Q04-T02",
+      "s07-10-backup-restore-Q04-T03",
+      "s07-10-backup-restore-Q04-T04"
+    ],
+    "slideIds": [
+      "s07-10-backup-restore-Q04-theory",
+      "s07-10-backup-restore-Q04-term",
+      "s07-10-backup-restore-Q04-example",
+      "s07-10-backup-restore-Q04-flow",
+      "s07-10-backup-restore-Q04-warning",
+      "s07-10-backup-restore-Q04-notebook",
+      "s07-10-backup-restore-Q04-distinctions",
+      "s07-10-backup-restore-Q04-test-1",
+      "s07-10-backup-restore-Q04-test-2",
+      "s07-10-backup-restore-Q04-test-3",
+      "s07-10-backup-restore-Q04-test-4"
+    ],
+    "practice": "Непрерывность услуг и проверяемое восстановление",
+    "sourceId": "overview"
+  },
+  {
+    "lectureId": "s07-10-backup-restore",
+    "questionId": "s07-10-backup-restore-Q05",
+    "title": "Расписание и хранение",
+    "source": "src/data/courseData.ts → s07-10-backup-restore → questions[4]",
+    "programme": [
+      "Состав копируемых данных.",
+      "Периодичность и ответственные.",
+      "Порядок проверки и восстановления."
+    ],
+    "learningOutcome": "Удаление рабочей записи не уничтожает защищённую точку восстановления.",
+    "explanationSlideIds": [
+      "s07-10-backup-restore-Q05-theory",
+      "s07-10-backup-restore-Q05-term",
+      "s07-10-backup-restore-Q05-example",
+      "s07-10-backup-restore-Q05-flow",
+      "s07-10-backup-restore-Q05-warning",
+      "s07-10-backup-restore-Q05-notebook",
+      "s07-10-backup-restore-Q05-distinctions"
+    ],
+    "testIds": [
+      "s07-10-backup-restore-Q05-T01",
+      "s07-10-backup-restore-Q05-T02",
+      "s07-10-backup-restore-Q05-T03",
+      "s07-10-backup-restore-Q05-T04"
+    ],
+    "slideIds": [
+      "s07-10-backup-restore-Q05-theory",
+      "s07-10-backup-restore-Q05-term",
+      "s07-10-backup-restore-Q05-example",
+      "s07-10-backup-restore-Q05-flow",
+      "s07-10-backup-restore-Q05-warning",
+      "s07-10-backup-restore-Q05-notebook",
+      "s07-10-backup-restore-Q05-distinctions",
+      "s07-10-backup-restore-Q05-test-1",
+      "s07-10-backup-restore-Q05-test-2",
+      "s07-10-backup-restore-Q05-test-3",
+      "s07-10-backup-restore-Q05-test-4"
+    ],
+    "practice": "Непрерывность услуг и проверяемое восстановление",
+    "sourceId": "overview"
+  },
+  {
+    "lectureId": "s07-10-backup-restore",
+    "questionId": "s07-10-backup-restore-Q06",
+    "title": "Защита и ответственность",
+    "source": "src/data/courseData.ts → s07-10-backup-restore → questions[5]",
+    "programme": [
+      "Состав копируемых данных.",
+      "Периодичность и ответственные.",
+      "Порядок проверки и восстановления."
+    ],
+    "learningOutcome": "Доступ проверен, действия записаны, секреты отделены.",
+    "explanationSlideIds": [
+      "s07-10-backup-restore-Q06-theory",
+      "s07-10-backup-restore-Q06-term",
+      "s07-10-backup-restore-Q06-example",
+      "s07-10-backup-restore-Q06-flow",
+      "s07-10-backup-restore-Q06-warning",
+      "s07-10-backup-restore-Q06-notebook",
+      "s07-10-backup-restore-Q06-distinctions"
+    ],
+    "testIds": [
+      "s07-10-backup-restore-Q06-T01",
+      "s07-10-backup-restore-Q06-T02",
+      "s07-10-backup-restore-Q06-T03",
+      "s07-10-backup-restore-Q06-T04"
+    ],
+    "slideIds": [
+      "s07-10-backup-restore-Q06-theory",
+      "s07-10-backup-restore-Q06-term",
+      "s07-10-backup-restore-Q06-example",
+      "s07-10-backup-restore-Q06-flow",
+      "s07-10-backup-restore-Q06-warning",
+      "s07-10-backup-restore-Q06-notebook",
+      "s07-10-backup-restore-Q06-distinctions",
+      "s07-10-backup-restore-Q06-test-1",
+      "s07-10-backup-restore-Q06-test-2",
+      "s07-10-backup-restore-Q06-test-3",
+      "s07-10-backup-restore-Q06-test-4"
+    ],
+    "practice": "Непрерывность услуг и проверяемое восстановление",
+    "sourceId": "overview"
+  },
+  {
+    "lectureId": "s07-10-backup-restore",
+    "questionId": "s07-10-backup-restore-Q07",
+    "title": "Контроль задания копирования",
+    "source": "src/data/courseData.ts → s07-10-backup-restore → questions[6]",
+    "programme": [
+      "Состав копируемых данных.",
+      "Периодичность и ответственные.",
+      "Порядок проверки и восстановления."
+    ],
+    "learningOutcome": "Отклонение размера или возраста создаёт обращение до отказа.",
+    "explanationSlideIds": [
+      "s07-10-backup-restore-Q07-theory",
+      "s07-10-backup-restore-Q07-term",
+      "s07-10-backup-restore-Q07-example",
+      "s07-10-backup-restore-Q07-flow",
+      "s07-10-backup-restore-Q07-warning",
+      "s07-10-backup-restore-Q07-notebook",
+      "s07-10-backup-restore-Q07-distinctions"
+    ],
+    "testIds": [
+      "s07-10-backup-restore-Q07-T01",
+      "s07-10-backup-restore-Q07-T02",
+      "s07-10-backup-restore-Q07-T03",
+      "s07-10-backup-restore-Q07-T04"
+    ],
+    "slideIds": [
+      "s07-10-backup-restore-Q07-theory",
+      "s07-10-backup-restore-Q07-term",
+      "s07-10-backup-restore-Q07-example",
+      "s07-10-backup-restore-Q07-flow",
+      "s07-10-backup-restore-Q07-warning",
+      "s07-10-backup-restore-Q07-notebook",
+      "s07-10-backup-restore-Q07-distinctions",
+      "s07-10-backup-restore-Q07-test-1",
+      "s07-10-backup-restore-Q07-test-2",
+      "s07-10-backup-restore-Q07-test-3",
+      "s07-10-backup-restore-Q07-test-4"
+    ],
+    "practice": "Непрерывность услуг и проверяемое восстановление",
+    "sourceId": "overview"
+  },
+  {
+    "lectureId": "s07-10-backup-restore",
+    "questionId": "s07-10-backup-restore-Q08",
+    "title": "Учебное восстановление",
+    "source": "src/data/courseData.ts → s07-10-backup-restore → questions[7]",
+    "programme": [
+      "Состав копируемых данных.",
+      "Периодичность и ответственные.",
+      "Порядок проверки и восстановления."
+    ],
+    "learningOutcome": "Восстановлена работоспособная услуга, RPO и RTO подтверждены фактом.",
+    "explanationSlideIds": [
+      "s07-10-backup-restore-Q08-theory",
+      "s07-10-backup-restore-Q08-term",
+      "s07-10-backup-restore-Q08-example",
+      "s07-10-backup-restore-Q08-flow",
+      "s07-10-backup-restore-Q08-warning",
+      "s07-10-backup-restore-Q08-notebook",
+      "s07-10-backup-restore-Q08-distinctions"
+    ],
+    "testIds": [
+      "s07-10-backup-restore-Q08-T01",
+      "s07-10-backup-restore-Q08-T02",
+      "s07-10-backup-restore-Q08-T03",
+      "s07-10-backup-restore-Q08-T04"
+    ],
+    "slideIds": [
+      "s07-10-backup-restore-Q08-theory",
+      "s07-10-backup-restore-Q08-term",
+      "s07-10-backup-restore-Q08-example",
+      "s07-10-backup-restore-Q08-flow",
+      "s07-10-backup-restore-Q08-warning",
+      "s07-10-backup-restore-Q08-notebook",
+      "s07-10-backup-restore-Q08-distinctions",
+      "s07-10-backup-restore-Q08-test-1",
+      "s07-10-backup-restore-Q08-test-2",
+      "s07-10-backup-restore-Q08-test-3",
+      "s07-10-backup-restore-Q08-test-4"
+    ],
+    "practice": "Непрерывность услуг и проверяемое восстановление",
+    "sourceId": "overview"
+  },
+  {
+    "lectureId": "s08-01-failure-response",
+    "questionId": "s08-01-failure-response-Q01",
+    "title": "Отказ и деградация",
+    "source": "src/data/courseData.ts → s08-01-failure-response → questions[0]",
+    "programme": [
+      "Классификация отказа по последствиям.",
+      "Порядок действий.",
+      "Оповещение заинтересованных сторон."
+    ],
+    "learningOutcome": "Классификация подтверждается пользовательской проверкой.",
+    "explanationSlideIds": [
+      "s08-01-failure-response-Q01-theory",
+      "s08-01-failure-response-Q01-term",
+      "s08-01-failure-response-Q01-example",
+      "s08-01-failure-response-Q01-flow",
+      "s08-01-failure-response-Q01-warning",
+      "s08-01-failure-response-Q01-notebook",
+      "s08-01-failure-response-Q01-distinctions"
+    ],
+    "testIds": [
+      "s08-01-failure-response-Q01-T01",
+      "s08-01-failure-response-Q01-T02",
+      "s08-01-failure-response-Q01-T03",
+      "s08-01-failure-response-Q01-T04"
+    ],
+    "slideIds": [
+      "s08-01-failure-response-Q01-theory",
+      "s08-01-failure-response-Q01-term",
+      "s08-01-failure-response-Q01-example",
+      "s08-01-failure-response-Q01-flow",
+      "s08-01-failure-response-Q01-warning",
+      "s08-01-failure-response-Q01-notebook",
+      "s08-01-failure-response-Q01-distinctions",
+      "s08-01-failure-response-Q01-test-1",
+      "s08-01-failure-response-Q01-test-2",
+      "s08-01-failure-response-Q01-test-3",
+      "s08-01-failure-response-Q01-test-4"
+    ],
+    "practice": "Incident Management — управление инцидентами",
+    "sourceId": "incident"
+  },
+  {
+    "lectureId": "s08-01-failure-response",
+    "questionId": "s08-01-failure-response-Q02",
+    "title": "Масштаб последствий",
+    "source": "src/data/courseData.ts → s08-01-failure-response → questions[1]",
+    "programme": [
+      "Классификация отказа по последствиям.",
+      "Порядок действий.",
+      "Оповещение заинтересованных сторон."
+    ],
+    "learningOutcome": "Приоритет обоснован текущими фактами и временем их подтверждения.",
+    "explanationSlideIds": [
+      "s08-01-failure-response-Q02-theory",
+      "s08-01-failure-response-Q02-term",
+      "s08-01-failure-response-Q02-example",
+      "s08-01-failure-response-Q02-flow",
+      "s08-01-failure-response-Q02-warning",
+      "s08-01-failure-response-Q02-notebook",
+      "s08-01-failure-response-Q02-distinctions"
+    ],
+    "testIds": [
+      "s08-01-failure-response-Q02-T01",
+      "s08-01-failure-response-Q02-T02",
+      "s08-01-failure-response-Q02-T03",
+      "s08-01-failure-response-Q02-T04"
+    ],
+    "slideIds": [
+      "s08-01-failure-response-Q02-theory",
+      "s08-01-failure-response-Q02-term",
+      "s08-01-failure-response-Q02-example",
+      "s08-01-failure-response-Q02-flow",
+      "s08-01-failure-response-Q02-warning",
+      "s08-01-failure-response-Q02-notebook",
+      "s08-01-failure-response-Q02-distinctions",
+      "s08-01-failure-response-Q02-test-1",
+      "s08-01-failure-response-Q02-test-2",
+      "s08-01-failure-response-Q02-test-3",
+      "s08-01-failure-response-Q02-test-4"
+    ],
+    "practice": "Incident Management — управление инцидентами",
+    "sourceId": "incident"
+  },
+  {
+    "lectureId": "s08-01-failure-response",
+    "questionId": "s08-01-failure-response-Q03",
+    "title": "Подтверждение события",
+    "source": "src/data/courseData.ts → s08-01-failure-response → questions[2]",
+    "programme": [
+      "Классификация отказа по последствиям.",
+      "Порядок действий.",
+      "Оповещение заинтересованных сторон."
+    ],
+    "learningOutcome": "Есть два независимых свидетельства одного события.",
+    "explanationSlideIds": [
+      "s08-01-failure-response-Q03-theory",
+      "s08-01-failure-response-Q03-term",
+      "s08-01-failure-response-Q03-example",
+      "s08-01-failure-response-Q03-flow",
+      "s08-01-failure-response-Q03-warning",
+      "s08-01-failure-response-Q03-notebook",
+      "s08-01-failure-response-Q03-distinctions"
+    ],
+    "testIds": [
+      "s08-01-failure-response-Q03-T01",
+      "s08-01-failure-response-Q03-T02",
+      "s08-01-failure-response-Q03-T03",
+      "s08-01-failure-response-Q03-T04"
+    ],
+    "slideIds": [
+      "s08-01-failure-response-Q03-theory",
+      "s08-01-failure-response-Q03-term",
+      "s08-01-failure-response-Q03-example",
+      "s08-01-failure-response-Q03-flow",
+      "s08-01-failure-response-Q03-warning",
+      "s08-01-failure-response-Q03-notebook",
+      "s08-01-failure-response-Q03-distinctions",
+      "s08-01-failure-response-Q03-test-1",
+      "s08-01-failure-response-Q03-test-2",
+      "s08-01-failure-response-Q03-test-3",
+      "s08-01-failure-response-Q03-test-4"
+    ],
+    "practice": "Incident Management — управление инцидентами",
+    "sourceId": "incident"
+  },
+  {
+    "lectureId": "s08-01-failure-response",
+    "questionId": "s08-01-failure-response-Q04",
+    "title": "Роли аварийной команды",
+    "source": "src/data/courseData.ts → s08-01-failure-response → questions[3]",
+    "programme": [
+      "Классификация отказа по последствиям.",
+      "Порядок действий.",
+      "Оповещение заинтересованных сторон."
+    ],
+    "learningOutcome": "Каждый поток имеет владельца и не дублирует другой.",
+    "explanationSlideIds": [
+      "s08-01-failure-response-Q04-theory",
+      "s08-01-failure-response-Q04-term",
+      "s08-01-failure-response-Q04-example",
+      "s08-01-failure-response-Q04-flow",
+      "s08-01-failure-response-Q04-warning",
+      "s08-01-failure-response-Q04-notebook",
+      "s08-01-failure-response-Q04-distinctions"
+    ],
+    "testIds": [
+      "s08-01-failure-response-Q04-T01",
+      "s08-01-failure-response-Q04-T02",
+      "s08-01-failure-response-Q04-T03",
+      "s08-01-failure-response-Q04-T04"
+    ],
+    "slideIds": [
+      "s08-01-failure-response-Q04-theory",
+      "s08-01-failure-response-Q04-term",
+      "s08-01-failure-response-Q04-example",
+      "s08-01-failure-response-Q04-flow",
+      "s08-01-failure-response-Q04-warning",
+      "s08-01-failure-response-Q04-notebook",
+      "s08-01-failure-response-Q04-distinctions",
+      "s08-01-failure-response-Q04-test-1",
+      "s08-01-failure-response-Q04-test-2",
+      "s08-01-failure-response-Q04-test-3",
+      "s08-01-failure-response-Q04-test-4"
+    ],
+    "practice": "Incident Management — управление инцидентами",
+    "sourceId": "incident"
+  },
+  {
+    "lectureId": "s08-01-failure-response",
+    "questionId": "s08-01-failure-response-Q05",
+    "title": "Стабилизация",
+    "source": "src/data/courseData.ts → s08-01-failure-response → questions[4]",
+    "programme": [
+      "Классификация отказа по последствиям.",
+      "Порядок действий.",
+      "Оповещение заинтересованных сторон."
+    ],
+    "learningOutcome": "Влияние снижается, а новые риски контролируются.",
+    "explanationSlideIds": [
+      "s08-01-failure-response-Q05-theory",
+      "s08-01-failure-response-Q05-term",
+      "s08-01-failure-response-Q05-example",
+      "s08-01-failure-response-Q05-flow",
+      "s08-01-failure-response-Q05-warning",
+      "s08-01-failure-response-Q05-notebook",
+      "s08-01-failure-response-Q05-distinctions"
+    ],
+    "testIds": [
+      "s08-01-failure-response-Q05-T01",
+      "s08-01-failure-response-Q05-T02",
+      "s08-01-failure-response-Q05-T03",
+      "s08-01-failure-response-Q05-T04"
+    ],
+    "slideIds": [
+      "s08-01-failure-response-Q05-theory",
+      "s08-01-failure-response-Q05-term",
+      "s08-01-failure-response-Q05-example",
+      "s08-01-failure-response-Q05-flow",
+      "s08-01-failure-response-Q05-warning",
+      "s08-01-failure-response-Q05-notebook",
+      "s08-01-failure-response-Q05-distinctions",
+      "s08-01-failure-response-Q05-test-1",
+      "s08-01-failure-response-Q05-test-2",
+      "s08-01-failure-response-Q05-test-3",
+      "s08-01-failure-response-Q05-test-4"
+    ],
+    "practice": "Incident Management — управление инцидентами",
+    "sourceId": "incident"
+  },
+  {
+    "lectureId": "s08-01-failure-response",
+    "questionId": "s08-01-failure-response-Q06",
+    "title": "Оповещение заинтересованных сторон",
+    "source": "src/data/courseData.ts → s08-01-failure-response → questions[5]",
+    "programme": [
+      "Классификация отказа по последствиям.",
+      "Порядок действий.",
+      "Оповещение заинтересованных сторон."
+    ],
+    "learningOutcome": "Все адресаты видят одинаковый статус и время следующей связи.",
+    "explanationSlideIds": [
+      "s08-01-failure-response-Q06-theory",
+      "s08-01-failure-response-Q06-term",
+      "s08-01-failure-response-Q06-example",
+      "s08-01-failure-response-Q06-flow",
+      "s08-01-failure-response-Q06-warning",
+      "s08-01-failure-response-Q06-notebook",
+      "s08-01-failure-response-Q06-distinctions"
+    ],
+    "testIds": [
+      "s08-01-failure-response-Q06-T01",
+      "s08-01-failure-response-Q06-T02",
+      "s08-01-failure-response-Q06-T03",
+      "s08-01-failure-response-Q06-T04"
+    ],
+    "slideIds": [
+      "s08-01-failure-response-Q06-theory",
+      "s08-01-failure-response-Q06-term",
+      "s08-01-failure-response-Q06-example",
+      "s08-01-failure-response-Q06-flow",
+      "s08-01-failure-response-Q06-warning",
+      "s08-01-failure-response-Q06-notebook",
+      "s08-01-failure-response-Q06-distinctions",
+      "s08-01-failure-response-Q06-test-1",
+      "s08-01-failure-response-Q06-test-2",
+      "s08-01-failure-response-Q06-test-3",
+      "s08-01-failure-response-Q06-test-4"
+    ],
+    "practice": "Incident Management — управление инцидентами",
+    "sourceId": "incident"
+  },
+  {
+    "lectureId": "s08-01-failure-response",
+    "questionId": "s08-01-failure-response-Q07",
+    "title": "Подтверждение восстановления",
+    "source": "src/data/courseData.ts → s08-01-failure-response → questions[6]",
+    "programme": [
+      "Классификация отказа по последствиям.",
+      "Порядок действий.",
+      "Оповещение заинтересованных сторон."
+    ],
+    "learningOutcome": "Пользовательский и технический критерии выполнены в контрольном окне.",
+    "explanationSlideIds": [
+      "s08-01-failure-response-Q07-theory",
+      "s08-01-failure-response-Q07-term",
+      "s08-01-failure-response-Q07-example",
+      "s08-01-failure-response-Q07-flow",
+      "s08-01-failure-response-Q07-warning",
+      "s08-01-failure-response-Q07-notebook",
+      "s08-01-failure-response-Q07-distinctions"
+    ],
+    "testIds": [
+      "s08-01-failure-response-Q07-T01",
+      "s08-01-failure-response-Q07-T02",
+      "s08-01-failure-response-Q07-T03",
+      "s08-01-failure-response-Q07-T04"
+    ],
+    "slideIds": [
+      "s08-01-failure-response-Q07-theory",
+      "s08-01-failure-response-Q07-term",
+      "s08-01-failure-response-Q07-example",
+      "s08-01-failure-response-Q07-flow",
+      "s08-01-failure-response-Q07-warning",
+      "s08-01-failure-response-Q07-notebook",
+      "s08-01-failure-response-Q07-distinctions",
+      "s08-01-failure-response-Q07-test-1",
+      "s08-01-failure-response-Q07-test-2",
+      "s08-01-failure-response-Q07-test-3",
+      "s08-01-failure-response-Q07-test-4"
+    ],
+    "practice": "Incident Management — управление инцидентами",
+    "sourceId": "incident"
+  },
+  {
+    "lectureId": "s08-01-failure-response",
+    "questionId": "s08-01-failure-response-Q08",
+    "title": "Переход к разбору",
+    "source": "src/data/courseData.ts → s08-01-failure-response → questions[7]",
+    "programme": [
+      "Классификация отказа по последствиям.",
+      "Порядок действий.",
+      "Оповещение заинтересованных сторон."
+    ],
+    "learningOutcome": "Разбор начинается с целостной временной шкалы и источников.",
+    "explanationSlideIds": [
+      "s08-01-failure-response-Q08-theory",
+      "s08-01-failure-response-Q08-term",
+      "s08-01-failure-response-Q08-example",
+      "s08-01-failure-response-Q08-flow",
+      "s08-01-failure-response-Q08-warning",
+      "s08-01-failure-response-Q08-notebook",
+      "s08-01-failure-response-Q08-distinctions"
+    ],
+    "testIds": [
+      "s08-01-failure-response-Q08-T01",
+      "s08-01-failure-response-Q08-T02",
+      "s08-01-failure-response-Q08-T03",
+      "s08-01-failure-response-Q08-T04"
+    ],
+    "slideIds": [
+      "s08-01-failure-response-Q08-theory",
+      "s08-01-failure-response-Q08-term",
+      "s08-01-failure-response-Q08-example",
+      "s08-01-failure-response-Q08-flow",
+      "s08-01-failure-response-Q08-warning",
+      "s08-01-failure-response-Q08-notebook",
+      "s08-01-failure-response-Q08-distinctions",
+      "s08-01-failure-response-Q08-test-1",
+      "s08-01-failure-response-Q08-test-2",
+      "s08-01-failure-response-Q08-test-3",
+      "s08-01-failure-response-Q08-test-4"
+    ],
+    "practice": "Incident Management — управление инцидентами",
+    "sourceId": "incident"
+  },
+  {
+    "lectureId": "s08-02-error-collection",
+    "questionId": "s08-02-error-collection-Q01",
+    "title": "Обращение пользователя как источник",
+    "source": "src/data/courseData.ts → s08-02-error-collection → questions[0]",
+    "programme": [
+      "Источники сведений.",
+      "Журналы приложения и сообщения об ошибках.",
+      "Организация сбора."
+    ],
+    "learningOutcome": "Факт обращения связан с конкретным сценарием и временем.",
+    "explanationSlideIds": [
+      "s08-02-error-collection-Q01-theory",
+      "s08-02-error-collection-Q01-term",
+      "s08-02-error-collection-Q01-example",
+      "s08-02-error-collection-Q01-flow",
+      "s08-02-error-collection-Q01-warning",
+      "s08-02-error-collection-Q01-notebook",
+      "s08-02-error-collection-Q01-distinctions"
+    ],
+    "testIds": [
+      "s08-02-error-collection-Q01-T01",
+      "s08-02-error-collection-Q01-T02",
+      "s08-02-error-collection-Q01-T03",
+      "s08-02-error-collection-Q01-T04"
+    ],
+    "slideIds": [
+      "s08-02-error-collection-Q01-theory",
+      "s08-02-error-collection-Q01-term",
+      "s08-02-error-collection-Q01-example",
+      "s08-02-error-collection-Q01-flow",
+      "s08-02-error-collection-Q01-warning",
+      "s08-02-error-collection-Q01-notebook",
+      "s08-02-error-collection-Q01-distinctions",
+      "s08-02-error-collection-Q01-test-1",
+      "s08-02-error-collection-Q01-test-2",
+      "s08-02-error-collection-Q01-test-3",
+      "s08-02-error-collection-Q01-test-4"
+    ],
+    "practice": "Monitoring and Event Management — мониторинг и события",
+    "sourceId": "monitoring"
+  },
+  {
+    "lectureId": "s08-02-error-collection",
+    "questionId": "s08-02-error-collection-Q02",
+    "title": "Сообщение интерфейса",
+    "source": "src/data/courseData.ts → s08-02-error-collection → questions[1]",
+    "programme": [
+      "Источники сведений.",
+      "Журналы приложения и сообщения об ошибках.",
+      "Организация сбора."
+    ],
+    "learningOutcome": "Сообщение можно сопоставить с серверной записью.",
+    "explanationSlideIds": [
+      "s08-02-error-collection-Q02-theory",
+      "s08-02-error-collection-Q02-term",
+      "s08-02-error-collection-Q02-example",
+      "s08-02-error-collection-Q02-flow",
+      "s08-02-error-collection-Q02-warning",
+      "s08-02-error-collection-Q02-notebook",
+      "s08-02-error-collection-Q02-distinctions"
+    ],
+    "testIds": [
+      "s08-02-error-collection-Q02-T01",
+      "s08-02-error-collection-Q02-T02",
+      "s08-02-error-collection-Q02-T03",
+      "s08-02-error-collection-Q02-T04"
+    ],
+    "slideIds": [
+      "s08-02-error-collection-Q02-theory",
+      "s08-02-error-collection-Q02-term",
+      "s08-02-error-collection-Q02-example",
+      "s08-02-error-collection-Q02-flow",
+      "s08-02-error-collection-Q02-warning",
+      "s08-02-error-collection-Q02-notebook",
+      "s08-02-error-collection-Q02-distinctions",
+      "s08-02-error-collection-Q02-test-1",
+      "s08-02-error-collection-Q02-test-2",
+      "s08-02-error-collection-Q02-test-3",
+      "s08-02-error-collection-Q02-test-4"
+    ],
+    "practice": "Monitoring and Event Management — мониторинг и события",
+    "sourceId": "monitoring"
+  },
+  {
+    "lectureId": "s08-02-error-collection",
+    "questionId": "s08-02-error-collection-Q03",
+    "title": "Журнал приложения",
+    "source": "src/data/courseData.ts → s08-02-error-collection → questions[2]",
+    "programme": [
+      "Источники сведений.",
+      "Журналы приложения и сообщения об ошибках.",
+      "Организация сбора."
+    ],
+    "learningOutcome": "Набор компактен и объясняет выбранную гипотезу.",
+    "explanationSlideIds": [
+      "s08-02-error-collection-Q03-theory",
+      "s08-02-error-collection-Q03-term",
+      "s08-02-error-collection-Q03-example",
+      "s08-02-error-collection-Q03-flow",
+      "s08-02-error-collection-Q03-warning",
+      "s08-02-error-collection-Q03-notebook",
+      "s08-02-error-collection-Q03-distinctions"
+    ],
+    "testIds": [
+      "s08-02-error-collection-Q03-T01",
+      "s08-02-error-collection-Q03-T02",
+      "s08-02-error-collection-Q03-T03",
+      "s08-02-error-collection-Q03-T04"
+    ],
+    "slideIds": [
+      "s08-02-error-collection-Q03-theory",
+      "s08-02-error-collection-Q03-term",
+      "s08-02-error-collection-Q03-example",
+      "s08-02-error-collection-Q03-flow",
+      "s08-02-error-collection-Q03-warning",
+      "s08-02-error-collection-Q03-notebook",
+      "s08-02-error-collection-Q03-distinctions",
+      "s08-02-error-collection-Q03-test-1",
+      "s08-02-error-collection-Q03-test-2",
+      "s08-02-error-collection-Q03-test-3",
+      "s08-02-error-collection-Q03-test-4"
+    ],
+    "practice": "Monitoring and Event Management — мониторинг и события",
+    "sourceId": "monitoring"
+  },
+  {
+    "lectureId": "s08-02-error-collection",
+    "questionId": "s08-02-error-collection-Q04",
+    "title": "Системные события",
+    "source": "src/data/courseData.ts → s08-02-error-collection → questions[3]",
+    "programme": [
+      "Источники сведений.",
+      "Журналы приложения и сообщения об ошибках.",
+      "Организация сбора."
+    ],
+    "learningOutcome": "Системное событие временно и логически связано с поведением компонента.",
+    "explanationSlideIds": [
+      "s08-02-error-collection-Q04-theory",
+      "s08-02-error-collection-Q04-term",
+      "s08-02-error-collection-Q04-example",
+      "s08-02-error-collection-Q04-flow",
+      "s08-02-error-collection-Q04-warning",
+      "s08-02-error-collection-Q04-notebook",
+      "s08-02-error-collection-Q04-distinctions"
+    ],
+    "testIds": [
+      "s08-02-error-collection-Q04-T01",
+      "s08-02-error-collection-Q04-T02",
+      "s08-02-error-collection-Q04-T03",
+      "s08-02-error-collection-Q04-T04"
+    ],
+    "slideIds": [
+      "s08-02-error-collection-Q04-theory",
+      "s08-02-error-collection-Q04-term",
+      "s08-02-error-collection-Q04-example",
+      "s08-02-error-collection-Q04-flow",
+      "s08-02-error-collection-Q04-warning",
+      "s08-02-error-collection-Q04-notebook",
+      "s08-02-error-collection-Q04-distinctions",
+      "s08-02-error-collection-Q04-test-1",
+      "s08-02-error-collection-Q04-test-2",
+      "s08-02-error-collection-Q04-test-3",
+      "s08-02-error-collection-Q04-test-4"
+    ],
+    "practice": "Monitoring and Event Management — мониторинг и события",
+    "sourceId": "monitoring"
+  },
+  {
+    "lectureId": "s08-02-error-collection",
+    "questionId": "s08-02-error-collection-Q05",
+    "title": "Метрики и динамика",
+    "source": "src/data/courseData.ts → s08-02-error-collection → questions[4]",
+    "programme": [
+      "Источники сведений.",
+      "Журналы приложения и сообщения об ошибках.",
+      "Организация сбора."
+    ],
+    "learningOutcome": "Тенденция подтверждает один механизм и исключает альтернативу.",
+    "explanationSlideIds": [
+      "s08-02-error-collection-Q05-theory",
+      "s08-02-error-collection-Q05-term",
+      "s08-02-error-collection-Q05-example",
+      "s08-02-error-collection-Q05-flow",
+      "s08-02-error-collection-Q05-warning",
+      "s08-02-error-collection-Q05-notebook",
+      "s08-02-error-collection-Q05-distinctions"
+    ],
+    "testIds": [
+      "s08-02-error-collection-Q05-T01",
+      "s08-02-error-collection-Q05-T02",
+      "s08-02-error-collection-Q05-T03",
+      "s08-02-error-collection-Q05-T04"
+    ],
+    "slideIds": [
+      "s08-02-error-collection-Q05-theory",
+      "s08-02-error-collection-Q05-term",
+      "s08-02-error-collection-Q05-example",
+      "s08-02-error-collection-Q05-flow",
+      "s08-02-error-collection-Q05-warning",
+      "s08-02-error-collection-Q05-notebook",
+      "s08-02-error-collection-Q05-distinctions",
+      "s08-02-error-collection-Q05-test-1",
+      "s08-02-error-collection-Q05-test-2",
+      "s08-02-error-collection-Q05-test-3",
+      "s08-02-error-collection-Q05-test-4"
+    ],
+    "practice": "Monitoring and Event Management — мониторинг и события",
+    "sourceId": "monitoring"
+  },
+  {
+    "lectureId": "s08-02-error-collection",
+    "questionId": "s08-02-error-collection-Q06",
+    "title": "Корреляция источников",
+    "source": "src/data/courseData.ts → s08-02-error-collection → questions[5]",
+    "programme": [
+      "Источники сведений.",
+      "Журналы приложения и сообщения об ошибках.",
+      "Организация сбора."
+    ],
+    "learningOutcome": "Хронология не содержит противоречащих временных переходов.",
+    "explanationSlideIds": [
+      "s08-02-error-collection-Q06-theory",
+      "s08-02-error-collection-Q06-term",
+      "s08-02-error-collection-Q06-example",
+      "s08-02-error-collection-Q06-flow",
+      "s08-02-error-collection-Q06-warning",
+      "s08-02-error-collection-Q06-notebook",
+      "s08-02-error-collection-Q06-distinctions"
+    ],
+    "testIds": [
+      "s08-02-error-collection-Q06-T01",
+      "s08-02-error-collection-Q06-T02",
+      "s08-02-error-collection-Q06-T03",
+      "s08-02-error-collection-Q06-T04"
+    ],
+    "slideIds": [
+      "s08-02-error-collection-Q06-theory",
+      "s08-02-error-collection-Q06-term",
+      "s08-02-error-collection-Q06-example",
+      "s08-02-error-collection-Q06-flow",
+      "s08-02-error-collection-Q06-warning",
+      "s08-02-error-collection-Q06-notebook",
+      "s08-02-error-collection-Q06-distinctions",
+      "s08-02-error-collection-Q06-test-1",
+      "s08-02-error-collection-Q06-test-2",
+      "s08-02-error-collection-Q06-test-3",
+      "s08-02-error-collection-Q06-test-4"
+    ],
+    "practice": "Monitoring and Event Management — мониторинг и события",
+    "sourceId": "monitoring"
+  },
+  {
+    "lectureId": "s08-02-error-collection",
+    "questionId": "s08-02-error-collection-Q07",
+    "title": "Безопасность журналов",
+    "source": "src/data/courseData.ts → s08-02-error-collection → questions[6]",
+    "programme": [
+      "Источники сведений.",
+      "Журналы приложения и сообщения об ошибках.",
+      "Организация сбора."
+    ],
+    "learningOutcome": "Секрет не найден, а корреляция сохраняется.",
+    "explanationSlideIds": [
+      "s08-02-error-collection-Q07-theory",
+      "s08-02-error-collection-Q07-term",
+      "s08-02-error-collection-Q07-example",
+      "s08-02-error-collection-Q07-flow",
+      "s08-02-error-collection-Q07-warning",
+      "s08-02-error-collection-Q07-notebook",
+      "s08-02-error-collection-Q07-distinctions"
+    ],
+    "testIds": [
+      "s08-02-error-collection-Q07-T01",
+      "s08-02-error-collection-Q07-T02",
+      "s08-02-error-collection-Q07-T03",
+      "s08-02-error-collection-Q07-T04"
+    ],
+    "slideIds": [
+      "s08-02-error-collection-Q07-theory",
+      "s08-02-error-collection-Q07-term",
+      "s08-02-error-collection-Q07-example",
+      "s08-02-error-collection-Q07-flow",
+      "s08-02-error-collection-Q07-warning",
+      "s08-02-error-collection-Q07-notebook",
+      "s08-02-error-collection-Q07-distinctions",
+      "s08-02-error-collection-Q07-test-1",
+      "s08-02-error-collection-Q07-test-2",
+      "s08-02-error-collection-Q07-test-3",
+      "s08-02-error-collection-Q07-test-4"
+    ],
+    "practice": "Monitoring and Event Management — мониторинг и события",
+    "sourceId": "monitoring"
+  },
+  {
+    "lectureId": "s08-02-error-collection",
+    "questionId": "s08-02-error-collection-Q08",
+    "title": "Организация сбора",
+    "source": "src/data/courseData.ts → s08-02-error-collection → questions[7]",
+    "programme": [
+      "Источники сведений.",
+      "Журналы приложения и сообщения об ошибках.",
+      "Организация сбора."
+    ],
+    "learningOutcome": "Тестовое событие проходит весь путь и находится по requestId.",
+    "explanationSlideIds": [
+      "s08-02-error-collection-Q08-theory",
+      "s08-02-error-collection-Q08-term",
+      "s08-02-error-collection-Q08-example",
+      "s08-02-error-collection-Q08-flow",
+      "s08-02-error-collection-Q08-warning",
+      "s08-02-error-collection-Q08-notebook",
+      "s08-02-error-collection-Q08-distinctions"
+    ],
+    "testIds": [
+      "s08-02-error-collection-Q08-T01",
+      "s08-02-error-collection-Q08-T02",
+      "s08-02-error-collection-Q08-T03",
+      "s08-02-error-collection-Q08-T04"
+    ],
+    "slideIds": [
+      "s08-02-error-collection-Q08-theory",
+      "s08-02-error-collection-Q08-term",
+      "s08-02-error-collection-Q08-example",
+      "s08-02-error-collection-Q08-flow",
+      "s08-02-error-collection-Q08-warning",
+      "s08-02-error-collection-Q08-notebook",
+      "s08-02-error-collection-Q08-distinctions",
+      "s08-02-error-collection-Q08-test-1",
+      "s08-02-error-collection-Q08-test-2",
+      "s08-02-error-collection-Q08-test-3",
+      "s08-02-error-collection-Q08-test-4"
+    ],
+    "practice": "Monitoring and Event Management — мониторинг и события",
+    "sourceId": "monitoring"
+  },
+  {
+    "lectureId": "s08-03-layer-localization",
+    "questionId": "s08-03-layer-localization-Q01",
+    "title": "Модель пяти слоёв",
+    "source": "src/data/courseData.ts → s08-03-layer-localization → questions[0]",
+    "programme": [
+      "Рабочее место, сеть, приложение, сервер и база данных.",
+      "Порядок последовательной проверки."
+    ],
+    "learningOutcome": "Каждый слой имеет наблюдаемый вход и выход.",
+    "explanationSlideIds": [
+      "s08-03-layer-localization-Q01-theory",
+      "s08-03-layer-localization-Q01-term",
+      "s08-03-layer-localization-Q01-example",
+      "s08-03-layer-localization-Q01-flow",
+      "s08-03-layer-localization-Q01-warning",
+      "s08-03-layer-localization-Q01-notebook",
+      "s08-03-layer-localization-Q01-distinctions"
+    ],
+    "testIds": [
+      "s08-03-layer-localization-Q01-T01",
+      "s08-03-layer-localization-Q01-T02",
+      "s08-03-layer-localization-Q01-T03",
+      "s08-03-layer-localization-Q01-T04"
+    ],
+    "slideIds": [
+      "s08-03-layer-localization-Q01-theory",
+      "s08-03-layer-localization-Q01-term",
+      "s08-03-layer-localization-Q01-example",
+      "s08-03-layer-localization-Q01-flow",
+      "s08-03-layer-localization-Q01-warning",
+      "s08-03-layer-localization-Q01-notebook",
+      "s08-03-layer-localization-Q01-distinctions",
+      "s08-03-layer-localization-Q01-test-1",
+      "s08-03-layer-localization-Q01-test-2",
+      "s08-03-layer-localization-Q01-test-3",
+      "s08-03-layer-localization-Q01-test-4"
+    ],
+    "practice": "Incident Management и Service Configuration Management",
+    "sourceId": "configuration"
+  },
+  {
+    "lectureId": "s08-03-layer-localization",
+    "questionId": "s08-03-layer-localization-Q02",
+    "title": "Рабочее место",
+    "source": "src/data/courseData.ts → s08-03-layer-localization → questions[1]",
+    "programme": [
+      "Рабочее место, сеть, приложение, сервер и база данных.",
+      "Порядок последовательной проверки."
+    ],
+    "learningOutcome": "Симптом подтверждён вне исходного устройства.",
+    "explanationSlideIds": [
+      "s08-03-layer-localization-Q02-theory",
+      "s08-03-layer-localization-Q02-term",
+      "s08-03-layer-localization-Q02-example",
+      "s08-03-layer-localization-Q02-flow",
+      "s08-03-layer-localization-Q02-warning",
+      "s08-03-layer-localization-Q02-notebook",
+      "s08-03-layer-localization-Q02-distinctions"
+    ],
+    "testIds": [
+      "s08-03-layer-localization-Q02-T01",
+      "s08-03-layer-localization-Q02-T02",
+      "s08-03-layer-localization-Q02-T03",
+      "s08-03-layer-localization-Q02-T04"
+    ],
+    "slideIds": [
+      "s08-03-layer-localization-Q02-theory",
+      "s08-03-layer-localization-Q02-term",
+      "s08-03-layer-localization-Q02-example",
+      "s08-03-layer-localization-Q02-flow",
+      "s08-03-layer-localization-Q02-warning",
+      "s08-03-layer-localization-Q02-notebook",
+      "s08-03-layer-localization-Q02-distinctions",
+      "s08-03-layer-localization-Q02-test-1",
+      "s08-03-layer-localization-Q02-test-2",
+      "s08-03-layer-localization-Q02-test-3",
+      "s08-03-layer-localization-Q02-test-4"
+    ],
+    "practice": "Incident Management и Service Configuration Management",
+    "sourceId": "configuration"
+  },
+  {
+    "lectureId": "s08-03-layer-localization",
+    "questionId": "s08-03-layer-localization-Q03",
+    "title": "Сетевой слой",
+    "source": "src/data/courseData.ts → s08-03-layer-localization → questions[2]",
+    "programme": [
+      "Рабочее место, сеть, приложение, сервер и база данных.",
+      "Порядок последовательной проверки."
+    ],
+    "learningOutcome": "Запрос достигает шлюза, поэтому область поиска сужается дальше.",
+    "explanationSlideIds": [
+      "s08-03-layer-localization-Q03-theory",
+      "s08-03-layer-localization-Q03-term",
+      "s08-03-layer-localization-Q03-example",
+      "s08-03-layer-localization-Q03-flow",
+      "s08-03-layer-localization-Q03-warning",
+      "s08-03-layer-localization-Q03-notebook",
+      "s08-03-layer-localization-Q03-distinctions"
+    ],
+    "testIds": [
+      "s08-03-layer-localization-Q03-T01",
+      "s08-03-layer-localization-Q03-T02",
+      "s08-03-layer-localization-Q03-T03",
+      "s08-03-layer-localization-Q03-T04"
+    ],
+    "slideIds": [
+      "s08-03-layer-localization-Q03-theory",
+      "s08-03-layer-localization-Q03-term",
+      "s08-03-layer-localization-Q03-example",
+      "s08-03-layer-localization-Q03-flow",
+      "s08-03-layer-localization-Q03-warning",
+      "s08-03-layer-localization-Q03-notebook",
+      "s08-03-layer-localization-Q03-distinctions",
+      "s08-03-layer-localization-Q03-test-1",
+      "s08-03-layer-localization-Q03-test-2",
+      "s08-03-layer-localization-Q03-test-3",
+      "s08-03-layer-localization-Q03-test-4"
+    ],
+    "practice": "Incident Management и Service Configuration Management",
+    "sourceId": "configuration"
+  },
+  {
+    "lectureId": "s08-03-layer-localization",
+    "questionId": "s08-03-layer-localization-Q04",
+    "title": "Слой приложения",
+    "source": "src/data/courseData.ts → s08-03-layer-localization → questions[3]",
+    "programme": [
+      "Рабочее место, сеть, приложение, сервер и база данных.",
+      "Порядок последовательной проверки."
+    ],
+    "learningOutcome": "Признаки показывают конкретный разрыв в обработке.",
+    "explanationSlideIds": [
+      "s08-03-layer-localization-Q04-theory",
+      "s08-03-layer-localization-Q04-term",
+      "s08-03-layer-localization-Q04-example",
+      "s08-03-layer-localization-Q04-flow",
+      "s08-03-layer-localization-Q04-warning",
+      "s08-03-layer-localization-Q04-notebook",
+      "s08-03-layer-localization-Q04-distinctions"
+    ],
+    "testIds": [
+      "s08-03-layer-localization-Q04-T01",
+      "s08-03-layer-localization-Q04-T02",
+      "s08-03-layer-localization-Q04-T03",
+      "s08-03-layer-localization-Q04-T04"
+    ],
+    "slideIds": [
+      "s08-03-layer-localization-Q04-theory",
+      "s08-03-layer-localization-Q04-term",
+      "s08-03-layer-localization-Q04-example",
+      "s08-03-layer-localization-Q04-flow",
+      "s08-03-layer-localization-Q04-warning",
+      "s08-03-layer-localization-Q04-notebook",
+      "s08-03-layer-localization-Q04-distinctions",
+      "s08-03-layer-localization-Q04-test-1",
+      "s08-03-layer-localization-Q04-test-2",
+      "s08-03-layer-localization-Q04-test-3",
+      "s08-03-layer-localization-Q04-test-4"
+    ],
+    "practice": "Incident Management и Service Configuration Management",
+    "sourceId": "configuration"
+  },
+  {
+    "lectureId": "s08-03-layer-localization",
+    "questionId": "s08-03-layer-localization-Q05",
+    "title": "Серверный слой",
+    "source": "src/data/courseData.ts → s08-03-layer-localization → questions[4]",
+    "programme": [
+      "Рабочее место, сеть, приложение, сервер и база данных.",
+      "Порядок последовательной проверки."
+    ],
+    "learningOutcome": "Ресурсы достаточны, но вывод ограничен уровнем сервера.",
+    "explanationSlideIds": [
+      "s08-03-layer-localization-Q05-theory",
+      "s08-03-layer-localization-Q05-term",
+      "s08-03-layer-localization-Q05-example",
+      "s08-03-layer-localization-Q05-flow",
+      "s08-03-layer-localization-Q05-warning",
+      "s08-03-layer-localization-Q05-notebook",
+      "s08-03-layer-localization-Q05-distinctions"
+    ],
+    "testIds": [
+      "s08-03-layer-localization-Q05-T01",
+      "s08-03-layer-localization-Q05-T02",
+      "s08-03-layer-localization-Q05-T03",
+      "s08-03-layer-localization-Q05-T04"
+    ],
+    "slideIds": [
+      "s08-03-layer-localization-Q05-theory",
+      "s08-03-layer-localization-Q05-term",
+      "s08-03-layer-localization-Q05-example",
+      "s08-03-layer-localization-Q05-flow",
+      "s08-03-layer-localization-Q05-warning",
+      "s08-03-layer-localization-Q05-notebook",
+      "s08-03-layer-localization-Q05-distinctions",
+      "s08-03-layer-localization-Q05-test-1",
+      "s08-03-layer-localization-Q05-test-2",
+      "s08-03-layer-localization-Q05-test-3",
+      "s08-03-layer-localization-Q05-test-4"
+    ],
+    "practice": "Incident Management и Service Configuration Management",
+    "sourceId": "configuration"
+  },
+  {
+    "lectureId": "s08-03-layer-localization",
+    "questionId": "s08-03-layer-localization-Q06",
+    "title": "Слой базы данных",
+    "source": "src/data/courseData.ts → s08-03-layer-localization → questions[5]",
+    "programme": [
+      "Рабочее место, сеть, приложение, сервер и база данных.",
+      "Порядок последовательной проверки."
+    ],
+    "learningOutcome": "БД отвечает в пределах порога и не является местом разрыва.",
+    "explanationSlideIds": [
+      "s08-03-layer-localization-Q06-theory",
+      "s08-03-layer-localization-Q06-term",
+      "s08-03-layer-localization-Q06-example",
+      "s08-03-layer-localization-Q06-flow",
+      "s08-03-layer-localization-Q06-warning",
+      "s08-03-layer-localization-Q06-notebook",
+      "s08-03-layer-localization-Q06-distinctions"
+    ],
+    "testIds": [
+      "s08-03-layer-localization-Q06-T01",
+      "s08-03-layer-localization-Q06-T02",
+      "s08-03-layer-localization-Q06-T03",
+      "s08-03-layer-localization-Q06-T04"
+    ],
+    "slideIds": [
+      "s08-03-layer-localization-Q06-theory",
+      "s08-03-layer-localization-Q06-term",
+      "s08-03-layer-localization-Q06-example",
+      "s08-03-layer-localization-Q06-flow",
+      "s08-03-layer-localization-Q06-warning",
+      "s08-03-layer-localization-Q06-notebook",
+      "s08-03-layer-localization-Q06-distinctions",
+      "s08-03-layer-localization-Q06-test-1",
+      "s08-03-layer-localization-Q06-test-2",
+      "s08-03-layer-localization-Q06-test-3",
+      "s08-03-layer-localization-Q06-test-4"
+    ],
+    "practice": "Incident Management и Service Configuration Management",
+    "sourceId": "configuration"
+  },
+  {
+    "lectureId": "s08-03-layer-localization",
+    "questionId": "s08-03-layer-localization-Q07",
+    "title": "Проверка гипотезы приложения",
+    "source": "src/data/courseData.ts → s08-03-layer-localization → questions[6]",
+    "programme": [
+      "Рабочее место, сеть, приложение, сервер и база данных.",
+      "Порядок последовательной проверки."
+    ],
+    "learningOutcome": "Результат совпал с прогнозом и повторился в контрольном прогоне.",
+    "explanationSlideIds": [
+      "s08-03-layer-localization-Q07-theory",
+      "s08-03-layer-localization-Q07-term",
+      "s08-03-layer-localization-Q07-example",
+      "s08-03-layer-localization-Q07-flow",
+      "s08-03-layer-localization-Q07-warning",
+      "s08-03-layer-localization-Q07-notebook",
+      "s08-03-layer-localization-Q07-distinctions"
+    ],
+    "testIds": [
+      "s08-03-layer-localization-Q07-T01",
+      "s08-03-layer-localization-Q07-T02",
+      "s08-03-layer-localization-Q07-T03",
+      "s08-03-layer-localization-Q07-T04"
+    ],
+    "slideIds": [
+      "s08-03-layer-localization-Q07-theory",
+      "s08-03-layer-localization-Q07-term",
+      "s08-03-layer-localization-Q07-example",
+      "s08-03-layer-localization-Q07-flow",
+      "s08-03-layer-localization-Q07-warning",
+      "s08-03-layer-localization-Q07-notebook",
+      "s08-03-layer-localization-Q07-distinctions",
+      "s08-03-layer-localization-Q07-test-1",
+      "s08-03-layer-localization-Q07-test-2",
+      "s08-03-layer-localization-Q07-test-3",
+      "s08-03-layer-localization-Q07-test-4"
+    ],
+    "practice": "Incident Management и Service Configuration Management",
+    "sourceId": "configuration"
+  },
+  {
+    "lectureId": "s08-03-layer-localization",
+    "questionId": "s08-03-layer-localization-Q08",
+    "title": "Фиксация локализации",
+    "source": "src/data/courseData.ts → s08-03-layer-localization → questions[7]",
+    "programme": [
+      "Рабочее место, сеть, приложение, сервер и база данных.",
+      "Порядок последовательной проверки."
+    ],
+    "learningOutcome": "Независимый специалист повторяет логику от симптома к слою.",
+    "explanationSlideIds": [
+      "s08-03-layer-localization-Q08-theory",
+      "s08-03-layer-localization-Q08-term",
+      "s08-03-layer-localization-Q08-example",
+      "s08-03-layer-localization-Q08-flow",
+      "s08-03-layer-localization-Q08-warning",
+      "s08-03-layer-localization-Q08-notebook",
+      "s08-03-layer-localization-Q08-distinctions"
+    ],
+    "testIds": [
+      "s08-03-layer-localization-Q08-T01",
+      "s08-03-layer-localization-Q08-T02",
+      "s08-03-layer-localization-Q08-T03",
+      "s08-03-layer-localization-Q08-T04"
+    ],
+    "slideIds": [
+      "s08-03-layer-localization-Q08-theory",
+      "s08-03-layer-localization-Q08-term",
+      "s08-03-layer-localization-Q08-example",
+      "s08-03-layer-localization-Q08-flow",
+      "s08-03-layer-localization-Q08-warning",
+      "s08-03-layer-localization-Q08-notebook",
+      "s08-03-layer-localization-Q08-distinctions",
+      "s08-03-layer-localization-Q08-test-1",
+      "s08-03-layer-localization-Q08-test-2",
+      "s08-03-layer-localization-Q08-test-3",
+      "s08-03-layer-localization-Q08-test-4"
+    ],
+    "practice": "Incident Management и Service Configuration Management",
+    "sourceId": "configuration"
+  },
+  {
+    "lectureId": "s08-04-postmortem",
+    "questionId": "s08-04-postmortem-Q01",
+    "title": "Цель разбора",
+    "source": "src/data/courseData.ts → s08-04-postmortem → questions[0]",
+    "programme": [
+      "Хронология событий.",
+      "Причина и меры предотвращения.",
+      "Отчёт об отказе."
+    ],
+    "learningOutcome": "Итог содержит изменения системы и процесса, а не личные оценки.",
+    "explanationSlideIds": [
+      "s08-04-postmortem-Q01-theory",
+      "s08-04-postmortem-Q01-term",
+      "s08-04-postmortem-Q01-example",
+      "s08-04-postmortem-Q01-flow",
+      "s08-04-postmortem-Q01-warning",
+      "s08-04-postmortem-Q01-notebook",
+      "s08-04-postmortem-Q01-distinctions"
+    ],
+    "testIds": [
+      "s08-04-postmortem-Q01-T01",
+      "s08-04-postmortem-Q01-T02",
+      "s08-04-postmortem-Q01-T03",
+      "s08-04-postmortem-Q01-T04"
+    ],
+    "slideIds": [
+      "s08-04-postmortem-Q01-theory",
+      "s08-04-postmortem-Q01-term",
+      "s08-04-postmortem-Q01-example",
+      "s08-04-postmortem-Q01-flow",
+      "s08-04-postmortem-Q01-warning",
+      "s08-04-postmortem-Q01-notebook",
+      "s08-04-postmortem-Q01-distinctions",
+      "s08-04-postmortem-Q01-test-1",
+      "s08-04-postmortem-Q01-test-2",
+      "s08-04-postmortem-Q01-test-3",
+      "s08-04-postmortem-Q01-test-4"
+    ],
+    "practice": "Problem Management и Continual Improvement",
+    "sourceId": "problem"
+  },
+  {
+    "lectureId": "s08-04-postmortem",
+    "questionId": "s08-04-postmortem-Q02",
+    "title": "Границы события",
+    "source": "src/data/courseData.ts → s08-04-postmortem → questions[1]",
+    "programme": [
+      "Хронология событий.",
+      "Причина и меры предотвращения.",
+      "Отчёт об отказе."
+    ],
+    "learningOutcome": "Все интервалы рассчитываются из одной шкалы.",
+    "explanationSlideIds": [
+      "s08-04-postmortem-Q02-theory",
+      "s08-04-postmortem-Q02-term",
+      "s08-04-postmortem-Q02-example",
+      "s08-04-postmortem-Q02-flow",
+      "s08-04-postmortem-Q02-warning",
+      "s08-04-postmortem-Q02-notebook",
+      "s08-04-postmortem-Q02-distinctions"
+    ],
+    "testIds": [
+      "s08-04-postmortem-Q02-T01",
+      "s08-04-postmortem-Q02-T02",
+      "s08-04-postmortem-Q02-T03",
+      "s08-04-postmortem-Q02-T04"
+    ],
+    "slideIds": [
+      "s08-04-postmortem-Q02-theory",
+      "s08-04-postmortem-Q02-term",
+      "s08-04-postmortem-Q02-example",
+      "s08-04-postmortem-Q02-flow",
+      "s08-04-postmortem-Q02-warning",
+      "s08-04-postmortem-Q02-notebook",
+      "s08-04-postmortem-Q02-distinctions",
+      "s08-04-postmortem-Q02-test-1",
+      "s08-04-postmortem-Q02-test-2",
+      "s08-04-postmortem-Q02-test-3",
+      "s08-04-postmortem-Q02-test-4"
+    ],
+    "practice": "Problem Management и Continual Improvement",
+    "sourceId": "problem"
+  },
+  {
+    "lectureId": "s08-04-postmortem",
+    "questionId": "s08-04-postmortem-Q03",
+    "title": "Хронология из свидетельств",
+    "source": "src/data/courseData.ts → s08-04-postmortem → questions[2]",
+    "programme": [
+      "Хронология событий.",
+      "Причина и меры предотвращения.",
+      "Отчёт об отказе."
+    ],
+    "learningOutcome": "Каждая строка имеет источник или отметку «не подтверждено».",
+    "explanationSlideIds": [
+      "s08-04-postmortem-Q03-theory",
+      "s08-04-postmortem-Q03-term",
+      "s08-04-postmortem-Q03-example",
+      "s08-04-postmortem-Q03-flow",
+      "s08-04-postmortem-Q03-warning",
+      "s08-04-postmortem-Q03-notebook",
+      "s08-04-postmortem-Q03-distinctions"
+    ],
+    "testIds": [
+      "s08-04-postmortem-Q03-T01",
+      "s08-04-postmortem-Q03-T02",
+      "s08-04-postmortem-Q03-T03",
+      "s08-04-postmortem-Q03-T04"
+    ],
+    "slideIds": [
+      "s08-04-postmortem-Q03-theory",
+      "s08-04-postmortem-Q03-term",
+      "s08-04-postmortem-Q03-example",
+      "s08-04-postmortem-Q03-flow",
+      "s08-04-postmortem-Q03-warning",
+      "s08-04-postmortem-Q03-notebook",
+      "s08-04-postmortem-Q03-distinctions",
+      "s08-04-postmortem-Q03-test-1",
+      "s08-04-postmortem-Q03-test-2",
+      "s08-04-postmortem-Q03-test-3",
+      "s08-04-postmortem-Q03-test-4"
+    ],
+    "practice": "Problem Management и Continual Improvement",
+    "sourceId": "problem"
+  },
+  {
+    "lectureId": "s08-04-postmortem",
+    "questionId": "s08-04-postmortem-Q04",
+    "title": "Непосредственная причина",
+    "source": "src/data/courseData.ts → s08-04-postmortem → questions[3]",
+    "programme": [
+      "Хронология событий.",
+      "Причина и меры предотвращения.",
+      "Отчёт об отказе."
+    ],
+    "learningOutcome": "Причина предсказывает наблюдения и подтверждается контрольным опытом.",
+    "explanationSlideIds": [
+      "s08-04-postmortem-Q04-theory",
+      "s08-04-postmortem-Q04-term",
+      "s08-04-postmortem-Q04-example",
+      "s08-04-postmortem-Q04-flow",
+      "s08-04-postmortem-Q04-warning",
+      "s08-04-postmortem-Q04-notebook",
+      "s08-04-postmortem-Q04-distinctions"
+    ],
+    "testIds": [
+      "s08-04-postmortem-Q04-T01",
+      "s08-04-postmortem-Q04-T02",
+      "s08-04-postmortem-Q04-T03",
+      "s08-04-postmortem-Q04-T04"
+    ],
+    "slideIds": [
+      "s08-04-postmortem-Q04-theory",
+      "s08-04-postmortem-Q04-term",
+      "s08-04-postmortem-Q04-example",
+      "s08-04-postmortem-Q04-flow",
+      "s08-04-postmortem-Q04-warning",
+      "s08-04-postmortem-Q04-notebook",
+      "s08-04-postmortem-Q04-distinctions",
+      "s08-04-postmortem-Q04-test-1",
+      "s08-04-postmortem-Q04-test-2",
+      "s08-04-postmortem-Q04-test-3",
+      "s08-04-postmortem-Q04-test-4"
+    ],
+    "practice": "Problem Management и Continual Improvement",
+    "sourceId": "problem"
+  },
+  {
+    "lectureId": "s08-04-postmortem",
+    "questionId": "s08-04-postmortem-Q05",
+    "title": "Способствующие условия",
+    "source": "src/data/courseData.ts → s08-04-postmortem → questions[4]",
+    "programme": [
+      "Хронология событий.",
+      "Причина и меры предотвращения.",
+      "Отчёт об отказе."
+    ],
+    "learningOutcome": "Для каждого условия показано, как оно повлияло на событие.",
+    "explanationSlideIds": [
+      "s08-04-postmortem-Q05-theory",
+      "s08-04-postmortem-Q05-term",
+      "s08-04-postmortem-Q05-example",
+      "s08-04-postmortem-Q05-flow",
+      "s08-04-postmortem-Q05-warning",
+      "s08-04-postmortem-Q05-notebook",
+      "s08-04-postmortem-Q05-distinctions"
+    ],
+    "testIds": [
+      "s08-04-postmortem-Q05-T01",
+      "s08-04-postmortem-Q05-T02",
+      "s08-04-postmortem-Q05-T03",
+      "s08-04-postmortem-Q05-T04"
+    ],
+    "slideIds": [
+      "s08-04-postmortem-Q05-theory",
+      "s08-04-postmortem-Q05-term",
+      "s08-04-postmortem-Q05-example",
+      "s08-04-postmortem-Q05-flow",
+      "s08-04-postmortem-Q05-warning",
+      "s08-04-postmortem-Q05-notebook",
+      "s08-04-postmortem-Q05-distinctions",
+      "s08-04-postmortem-Q05-test-1",
+      "s08-04-postmortem-Q05-test-2",
+      "s08-04-postmortem-Q05-test-3",
+      "s08-04-postmortem-Q05-test-4"
+    ],
+    "practice": "Problem Management и Continual Improvement",
+    "sourceId": "problem"
+  },
+  {
+    "lectureId": "s08-04-postmortem",
+    "questionId": "s08-04-postmortem-Q06",
+    "title": "Оценка влияния",
+    "source": "src/data/courseData.ts → s08-04-postmortem → questions[5]",
+    "programme": [
+      "Хронология событий.",
+      "Причина и меры предотвращения.",
+      "Отчёт об отказе."
+    ],
+    "learningOutcome": "Числа имеют источник и временную границу.",
+    "explanationSlideIds": [
+      "s08-04-postmortem-Q06-theory",
+      "s08-04-postmortem-Q06-term",
+      "s08-04-postmortem-Q06-example",
+      "s08-04-postmortem-Q06-flow",
+      "s08-04-postmortem-Q06-warning",
+      "s08-04-postmortem-Q06-notebook",
+      "s08-04-postmortem-Q06-distinctions"
+    ],
+    "testIds": [
+      "s08-04-postmortem-Q06-T01",
+      "s08-04-postmortem-Q06-T02",
+      "s08-04-postmortem-Q06-T03",
+      "s08-04-postmortem-Q06-T04"
+    ],
+    "slideIds": [
+      "s08-04-postmortem-Q06-theory",
+      "s08-04-postmortem-Q06-term",
+      "s08-04-postmortem-Q06-example",
+      "s08-04-postmortem-Q06-flow",
+      "s08-04-postmortem-Q06-warning",
+      "s08-04-postmortem-Q06-notebook",
+      "s08-04-postmortem-Q06-distinctions",
+      "s08-04-postmortem-Q06-test-1",
+      "s08-04-postmortem-Q06-test-2",
+      "s08-04-postmortem-Q06-test-3",
+      "s08-04-postmortem-Q06-test-4"
+    ],
+    "practice": "Problem Management и Continual Improvement",
+    "sourceId": "problem"
+  },
+  {
+    "lectureId": "s08-04-postmortem",
+    "questionId": "s08-04-postmortem-Q07",
+    "title": "Предупреждающие действия",
+    "source": "src/data/courseData.ts → s08-04-postmortem → questions[6]",
+    "programme": [
+      "Хронология событий.",
+      "Причина и меры предотвращения.",
+      "Отчёт об отказе."
+    ],
+    "learningOutcome": "Тест показывает, что мера обнаруживает повторяемое условие до пользователей.",
+    "explanationSlideIds": [
+      "s08-04-postmortem-Q07-theory",
+      "s08-04-postmortem-Q07-term",
+      "s08-04-postmortem-Q07-example",
+      "s08-04-postmortem-Q07-flow",
+      "s08-04-postmortem-Q07-warning",
+      "s08-04-postmortem-Q07-notebook",
+      "s08-04-postmortem-Q07-distinctions"
+    ],
+    "testIds": [
+      "s08-04-postmortem-Q07-T01",
+      "s08-04-postmortem-Q07-T02",
+      "s08-04-postmortem-Q07-T03",
+      "s08-04-postmortem-Q07-T04"
+    ],
+    "slideIds": [
+      "s08-04-postmortem-Q07-theory",
+      "s08-04-postmortem-Q07-term",
+      "s08-04-postmortem-Q07-example",
+      "s08-04-postmortem-Q07-flow",
+      "s08-04-postmortem-Q07-warning",
+      "s08-04-postmortem-Q07-notebook",
+      "s08-04-postmortem-Q07-distinctions",
+      "s08-04-postmortem-Q07-test-1",
+      "s08-04-postmortem-Q07-test-2",
+      "s08-04-postmortem-Q07-test-3",
+      "s08-04-postmortem-Q07-test-4"
+    ],
+    "practice": "Problem Management и Continual Improvement",
+    "sourceId": "problem"
+  },
+  {
+    "lectureId": "s08-04-postmortem",
+    "questionId": "s08-04-postmortem-Q08",
+    "title": "Отчёт и контроль выполнения",
+    "source": "src/data/courseData.ts → s08-04-postmortem → questions[7]",
+    "programme": [
+      "Хронология событий.",
+      "Причина и меры предотвращения.",
+      "Отчёт об отказе."
+    ],
+    "learningOutcome": "Каждое действие имеет доказательство и результат повторной проверки.",
+    "explanationSlideIds": [
+      "s08-04-postmortem-Q08-theory",
+      "s08-04-postmortem-Q08-term",
+      "s08-04-postmortem-Q08-example",
+      "s08-04-postmortem-Q08-flow",
+      "s08-04-postmortem-Q08-warning",
+      "s08-04-postmortem-Q08-notebook",
+      "s08-04-postmortem-Q08-distinctions"
+    ],
+    "testIds": [
+      "s08-04-postmortem-Q08-T01",
+      "s08-04-postmortem-Q08-T02",
+      "s08-04-postmortem-Q08-T03",
+      "s08-04-postmortem-Q08-T04"
+    ],
+    "slideIds": [
+      "s08-04-postmortem-Q08-theory",
+      "s08-04-postmortem-Q08-term",
+      "s08-04-postmortem-Q08-example",
+      "s08-04-postmortem-Q08-flow",
+      "s08-04-postmortem-Q08-warning",
+      "s08-04-postmortem-Q08-notebook",
+      "s08-04-postmortem-Q08-distinctions",
+      "s08-04-postmortem-Q08-test-1",
+      "s08-04-postmortem-Q08-test-2",
+      "s08-04-postmortem-Q08-test-3",
+      "s08-04-postmortem-Q08-test-4"
+    ],
+    "practice": "Problem Management и Continual Improvement",
+    "sourceId": "problem"
+  },
+  {
+    "lectureId": "s08-05-hardware-maintenance",
+    "questionId": "s08-05-hardware-maintenance-Q01",
+    "title": "Единица учёта оборудования",
+    "source": "src/data/courseData.ts → s08-05-hardware-maintenance → questions[0]",
+    "programme": [
+      "Плановое техническое обслуживание.",
+      "Учёт оборудования и его состояния."
+    ],
+    "learningOutcome": "Актив находится и связывается с затронутой услугой.",
+    "explanationSlideIds": [
+      "s08-05-hardware-maintenance-Q01-theory",
+      "s08-05-hardware-maintenance-Q01-term",
+      "s08-05-hardware-maintenance-Q01-example",
+      "s08-05-hardware-maintenance-Q01-flow",
+      "s08-05-hardware-maintenance-Q01-warning",
+      "s08-05-hardware-maintenance-Q01-notebook",
+      "s08-05-hardware-maintenance-Q01-distinctions"
+    ],
+    "testIds": [
+      "s08-05-hardware-maintenance-Q01-T01",
+      "s08-05-hardware-maintenance-Q01-T02",
+      "s08-05-hardware-maintenance-Q01-T03",
+      "s08-05-hardware-maintenance-Q01-T04"
+    ],
+    "slideIds": [
+      "s08-05-hardware-maintenance-Q01-theory",
+      "s08-05-hardware-maintenance-Q01-term",
+      "s08-05-hardware-maintenance-Q01-example",
+      "s08-05-hardware-maintenance-Q01-flow",
+      "s08-05-hardware-maintenance-Q01-warning",
+      "s08-05-hardware-maintenance-Q01-notebook",
+      "s08-05-hardware-maintenance-Q01-distinctions",
+      "s08-05-hardware-maintenance-Q01-test-1",
+      "s08-05-hardware-maintenance-Q01-test-2",
+      "s08-05-hardware-maintenance-Q01-test-3",
+      "s08-05-hardware-maintenance-Q01-test-4"
+    ],
+    "practice": "IT Asset Management и Service Configuration Management",
+    "sourceId": "configuration"
+  },
+  {
+    "lectureId": "s08-05-hardware-maintenance",
+    "questionId": "s08-05-hardware-maintenance-Q02",
+    "title": "Конфигурация и зависимости",
+    "source": "src/data/courseData.ts → s08-05-hardware-maintenance → questions[1]",
+    "programme": [
+      "Плановое техническое обслуживание.",
+      "Учёт оборудования и его состояния."
+    ],
+    "learningOutcome": "Карточка позволяет оценить влияние остановки.",
+    "explanationSlideIds": [
+      "s08-05-hardware-maintenance-Q02-theory",
+      "s08-05-hardware-maintenance-Q02-term",
+      "s08-05-hardware-maintenance-Q02-example",
+      "s08-05-hardware-maintenance-Q02-flow",
+      "s08-05-hardware-maintenance-Q02-warning",
+      "s08-05-hardware-maintenance-Q02-notebook",
+      "s08-05-hardware-maintenance-Q02-distinctions"
+    ],
+    "testIds": [
+      "s08-05-hardware-maintenance-Q02-T01",
+      "s08-05-hardware-maintenance-Q02-T02",
+      "s08-05-hardware-maintenance-Q02-T03",
+      "s08-05-hardware-maintenance-Q02-T04"
+    ],
+    "slideIds": [
+      "s08-05-hardware-maintenance-Q02-theory",
+      "s08-05-hardware-maintenance-Q02-term",
+      "s08-05-hardware-maintenance-Q02-example",
+      "s08-05-hardware-maintenance-Q02-flow",
+      "s08-05-hardware-maintenance-Q02-warning",
+      "s08-05-hardware-maintenance-Q02-notebook",
+      "s08-05-hardware-maintenance-Q02-distinctions",
+      "s08-05-hardware-maintenance-Q02-test-1",
+      "s08-05-hardware-maintenance-Q02-test-2",
+      "s08-05-hardware-maintenance-Q02-test-3",
+      "s08-05-hardware-maintenance-Q02-test-4"
+    ],
+    "practice": "IT Asset Management и Service Configuration Management",
+    "sourceId": "configuration"
+  },
+  {
+    "lectureId": "s08-05-hardware-maintenance",
+    "questionId": "s08-05-hardware-maintenance-Q03",
+    "title": "Показатели состояния",
+    "source": "src/data/courseData.ts → s08-05-hardware-maintenance → questions[2]",
+    "programme": [
+      "Плановое техническое обслуживание.",
+      "Учёт оборудования и его состояния."
+    ],
+    "learningOutcome": "Динамика и пороги приводят к заранее заданному решению.",
+    "explanationSlideIds": [
+      "s08-05-hardware-maintenance-Q03-theory",
+      "s08-05-hardware-maintenance-Q03-term",
+      "s08-05-hardware-maintenance-Q03-example",
+      "s08-05-hardware-maintenance-Q03-flow",
+      "s08-05-hardware-maintenance-Q03-warning",
+      "s08-05-hardware-maintenance-Q03-notebook",
+      "s08-05-hardware-maintenance-Q03-distinctions"
+    ],
+    "testIds": [
+      "s08-05-hardware-maintenance-Q03-T01",
+      "s08-05-hardware-maintenance-Q03-T02",
+      "s08-05-hardware-maintenance-Q03-T03",
+      "s08-05-hardware-maintenance-Q03-T04"
+    ],
+    "slideIds": [
+      "s08-05-hardware-maintenance-Q03-theory",
+      "s08-05-hardware-maintenance-Q03-term",
+      "s08-05-hardware-maintenance-Q03-example",
+      "s08-05-hardware-maintenance-Q03-flow",
+      "s08-05-hardware-maintenance-Q03-warning",
+      "s08-05-hardware-maintenance-Q03-notebook",
+      "s08-05-hardware-maintenance-Q03-distinctions",
+      "s08-05-hardware-maintenance-Q03-test-1",
+      "s08-05-hardware-maintenance-Q03-test-2",
+      "s08-05-hardware-maintenance-Q03-test-3",
+      "s08-05-hardware-maintenance-Q03-test-4"
+    ],
+    "practice": "IT Asset Management и Service Configuration Management",
+    "sourceId": "configuration"
+  },
+  {
+    "lectureId": "s08-05-hardware-maintenance",
+    "questionId": "s08-05-hardware-maintenance-Q04",
+    "title": "Планирование обслуживания",
+    "source": "src/data/courseData.ts → s08-05-hardware-maintenance → questions[3]",
+    "programme": [
+      "Плановое техническое обслуживание.",
+      "Учёт оборудования и его состояния."
+    ],
+    "learningOutcome": "Каждая работа связана с риском и критерием результата.",
+    "explanationSlideIds": [
+      "s08-05-hardware-maintenance-Q04-theory",
+      "s08-05-hardware-maintenance-Q04-term",
+      "s08-05-hardware-maintenance-Q04-example",
+      "s08-05-hardware-maintenance-Q04-flow",
+      "s08-05-hardware-maintenance-Q04-warning",
+      "s08-05-hardware-maintenance-Q04-notebook",
+      "s08-05-hardware-maintenance-Q04-distinctions"
+    ],
+    "testIds": [
+      "s08-05-hardware-maintenance-Q04-T01",
+      "s08-05-hardware-maintenance-Q04-T02",
+      "s08-05-hardware-maintenance-Q04-T03",
+      "s08-05-hardware-maintenance-Q04-T04"
+    ],
+    "slideIds": [
+      "s08-05-hardware-maintenance-Q04-theory",
+      "s08-05-hardware-maintenance-Q04-term",
+      "s08-05-hardware-maintenance-Q04-example",
+      "s08-05-hardware-maintenance-Q04-flow",
+      "s08-05-hardware-maintenance-Q04-warning",
+      "s08-05-hardware-maintenance-Q04-notebook",
+      "s08-05-hardware-maintenance-Q04-distinctions",
+      "s08-05-hardware-maintenance-Q04-test-1",
+      "s08-05-hardware-maintenance-Q04-test-2",
+      "s08-05-hardware-maintenance-Q04-test-3",
+      "s08-05-hardware-maintenance-Q04-test-4"
+    ],
+    "practice": "IT Asset Management и Service Configuration Management",
+    "sourceId": "configuration"
+  },
+  {
+    "lectureId": "s08-05-hardware-maintenance",
+    "questionId": "s08-05-hardware-maintenance-Q05",
+    "title": "Доступность и безопасность окна",
+    "source": "src/data/courseData.ts → s08-05-hardware-maintenance → questions[4]",
+    "programme": [
+      "Плановое техническое обслуживание.",
+      "Учёт оборудования и его состояния."
+    ],
+    "learningOutcome": "Услуга продолжает работать, а инженер имеет безопасные условия.",
+    "explanationSlideIds": [
+      "s08-05-hardware-maintenance-Q05-theory",
+      "s08-05-hardware-maintenance-Q05-term",
+      "s08-05-hardware-maintenance-Q05-example",
+      "s08-05-hardware-maintenance-Q05-flow",
+      "s08-05-hardware-maintenance-Q05-warning",
+      "s08-05-hardware-maintenance-Q05-notebook",
+      "s08-05-hardware-maintenance-Q05-distinctions"
+    ],
+    "testIds": [
+      "s08-05-hardware-maintenance-Q05-T01",
+      "s08-05-hardware-maintenance-Q05-T02",
+      "s08-05-hardware-maintenance-Q05-T03",
+      "s08-05-hardware-maintenance-Q05-T04"
+    ],
+    "slideIds": [
+      "s08-05-hardware-maintenance-Q05-theory",
+      "s08-05-hardware-maintenance-Q05-term",
+      "s08-05-hardware-maintenance-Q05-example",
+      "s08-05-hardware-maintenance-Q05-flow",
+      "s08-05-hardware-maintenance-Q05-warning",
+      "s08-05-hardware-maintenance-Q05-notebook",
+      "s08-05-hardware-maintenance-Q05-distinctions",
+      "s08-05-hardware-maintenance-Q05-test-1",
+      "s08-05-hardware-maintenance-Q05-test-2",
+      "s08-05-hardware-maintenance-Q05-test-3",
+      "s08-05-hardware-maintenance-Q05-test-4"
+    ],
+    "practice": "IT Asset Management и Service Configuration Management",
+    "sourceId": "configuration"
+  },
+  {
+    "lectureId": "s08-05-hardware-maintenance",
+    "questionId": "s08-05-hardware-maintenance-Q06",
+    "title": "Работы с сервером и накопителями",
+    "source": "src/data/courseData.ts → s08-05-hardware-maintenance → questions[5]",
+    "programme": [
+      "Плановое техническое обслуживание.",
+      "Учёт оборудования и его состояния."
+    ],
+    "learningOutcome": "Оборудование собрано, ошибки отсутствуют, температура снизилась.",
+    "explanationSlideIds": [
+      "s08-05-hardware-maintenance-Q06-theory",
+      "s08-05-hardware-maintenance-Q06-term",
+      "s08-05-hardware-maintenance-Q06-example",
+      "s08-05-hardware-maintenance-Q06-flow",
+      "s08-05-hardware-maintenance-Q06-warning",
+      "s08-05-hardware-maintenance-Q06-notebook",
+      "s08-05-hardware-maintenance-Q06-distinctions"
+    ],
+    "testIds": [
+      "s08-05-hardware-maintenance-Q06-T01",
+      "s08-05-hardware-maintenance-Q06-T02",
+      "s08-05-hardware-maintenance-Q06-T03",
+      "s08-05-hardware-maintenance-Q06-T04"
+    ],
+    "slideIds": [
+      "s08-05-hardware-maintenance-Q06-theory",
+      "s08-05-hardware-maintenance-Q06-term",
+      "s08-05-hardware-maintenance-Q06-example",
+      "s08-05-hardware-maintenance-Q06-flow",
+      "s08-05-hardware-maintenance-Q06-warning",
+      "s08-05-hardware-maintenance-Q06-notebook",
+      "s08-05-hardware-maintenance-Q06-distinctions",
+      "s08-05-hardware-maintenance-Q06-test-1",
+      "s08-05-hardware-maintenance-Q06-test-2",
+      "s08-05-hardware-maintenance-Q06-test-3",
+      "s08-05-hardware-maintenance-Q06-test-4"
+    ],
+    "practice": "IT Asset Management и Service Configuration Management",
+    "sourceId": "configuration"
+  },
+  {
+    "lectureId": "s08-05-hardware-maintenance",
+    "questionId": "s08-05-hardware-maintenance-Q07",
+    "title": "Питание, сеть и климат",
+    "source": "src/data/courseData.ts → s08-05-hardware-maintenance → questions[6]",
+    "programme": [
+      "Плановое техническое обслуживание.",
+      "Учёт оборудования и его состояния."
+    ],
+    "learningOutcome": "Каждая зависимость проверена без потери доступности услуги.",
+    "explanationSlideIds": [
+      "s08-05-hardware-maintenance-Q07-theory",
+      "s08-05-hardware-maintenance-Q07-term",
+      "s08-05-hardware-maintenance-Q07-example",
+      "s08-05-hardware-maintenance-Q07-flow",
+      "s08-05-hardware-maintenance-Q07-warning",
+      "s08-05-hardware-maintenance-Q07-notebook",
+      "s08-05-hardware-maintenance-Q07-distinctions"
+    ],
+    "testIds": [
+      "s08-05-hardware-maintenance-Q07-T01",
+      "s08-05-hardware-maintenance-Q07-T02",
+      "s08-05-hardware-maintenance-Q07-T03",
+      "s08-05-hardware-maintenance-Q07-T04"
+    ],
+    "slideIds": [
+      "s08-05-hardware-maintenance-Q07-theory",
+      "s08-05-hardware-maintenance-Q07-term",
+      "s08-05-hardware-maintenance-Q07-example",
+      "s08-05-hardware-maintenance-Q07-flow",
+      "s08-05-hardware-maintenance-Q07-warning",
+      "s08-05-hardware-maintenance-Q07-notebook",
+      "s08-05-hardware-maintenance-Q07-distinctions",
+      "s08-05-hardware-maintenance-Q07-test-1",
+      "s08-05-hardware-maintenance-Q07-test-2",
+      "s08-05-hardware-maintenance-Q07-test-3",
+      "s08-05-hardware-maintenance-Q07-test-4"
+    ],
+    "practice": "IT Asset Management и Service Configuration Management",
+    "sourceId": "configuration"
+  },
+  {
+    "lectureId": "s08-05-hardware-maintenance",
+    "questionId": "s08-05-hardware-maintenance-Q08",
+    "title": "Возврат в работу и история",
+    "source": "src/data/courseData.ts → s08-05-hardware-maintenance → questions[7]",
+    "programme": [
+      "Плановое техническое обслуживание.",
+      "Учёт оборудования и его состояния."
+    ],
+    "learningOutcome": "Услуга работает, показатели в норме, история и следующий контроль сохранены.",
+    "explanationSlideIds": [
+      "s08-05-hardware-maintenance-Q08-theory",
+      "s08-05-hardware-maintenance-Q08-term",
+      "s08-05-hardware-maintenance-Q08-example",
+      "s08-05-hardware-maintenance-Q08-flow",
+      "s08-05-hardware-maintenance-Q08-warning",
+      "s08-05-hardware-maintenance-Q08-notebook",
+      "s08-05-hardware-maintenance-Q08-distinctions"
+    ],
+    "testIds": [
+      "s08-05-hardware-maintenance-Q08-T01",
+      "s08-05-hardware-maintenance-Q08-T02",
+      "s08-05-hardware-maintenance-Q08-T03",
+      "s08-05-hardware-maintenance-Q08-T04"
+    ],
+    "slideIds": [
+      "s08-05-hardware-maintenance-Q08-theory",
+      "s08-05-hardware-maintenance-Q08-term",
+      "s08-05-hardware-maintenance-Q08-example",
+      "s08-05-hardware-maintenance-Q08-flow",
+      "s08-05-hardware-maintenance-Q08-warning",
+      "s08-05-hardware-maintenance-Q08-notebook",
+      "s08-05-hardware-maintenance-Q08-distinctions",
+      "s08-05-hardware-maintenance-Q08-test-1",
+      "s08-05-hardware-maintenance-Q08-test-2",
+      "s08-05-hardware-maintenance-Q08-test-3",
+      "s08-05-hardware-maintenance-Q08-test-4"
+    ],
+    "practice": "IT Asset Management и Service Configuration Management",
+    "sourceId": "configuration"
+  }
+]

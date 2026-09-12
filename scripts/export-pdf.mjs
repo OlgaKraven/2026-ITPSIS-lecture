@@ -1,89 +1,21 @@
-import { spawn } from 'node:child_process'
-import { mkdir, readFile } from 'node:fs/promises'
-import fs from 'node:fs'
-import path from 'node:path'
-import { chromium } from '@playwright/test'
-import { PDFDocument } from 'pdf-lib'
-
-const basePath = '/2026-ITPSIS-lecture/'
-const port = 5294
-const source = await readFile(path.resolve('src', 'data', 'courseData.ts'), 'utf8')
-const allTopics = [...source.matchAll(/id:\s*'(s\d{2}-[^']+)'/g)].map((match) => match[1])
-const args = process.argv.slice(2)
-const valueAfter = (flag) => {
-  const index = args.indexOf(flag)
-  return index >= 0 ? args[index + 1] : undefined
-}
-const requestedTopic = valueAfter('--topic')
-const requestedVariant = valueAfter('--variant')
-if (requestedTopic && !allTopics.includes(requestedTopic)) throw new Error(`Unknown topic: ${requestedTopic}`)
-if (requestedVariant && !['student', 'teacher'].includes(requestedVariant)) throw new Error(`Unknown variant: ${requestedVariant}`)
-const topics = requestedTopic ? [requestedTopic] : allTopics
-const variants = requestedVariant ? [requestedVariant] : ['student', 'teacher']
-if (!fs.existsSync(path.resolve('dist', 'index.html'))) throw new Error('dist is missing. Run npm run build first.')
-
-const profilePath = path.resolve('config', 'teacher-profile.json')
-let profile = { fullName: '', position: '', organizationUnit: '' }
-if (fs.existsSync(profilePath)) profile = JSON.parse(await readFile(profilePath, 'utf8'))
-
-const viteBin = path.resolve('node_modules', 'vite', 'bin', 'vite.js')
-const server = spawn(process.execPath, [viteBin, 'preview', '--host', '127.0.0.1', '--port', String(port), '--strictPort'], {
-  cwd: process.cwd(),
-  stdio: ['ignore', 'pipe', 'pipe'],
-  windowsHide: true,
-})
-let serverLog = ''
-server.stdout.on('data', (chunk) => { serverLog += chunk.toString() })
-server.stderr.on('data', (chunk) => { serverLog += chunk.toString() })
-
-const baseUrl = `http://127.0.0.1:${port}${basePath}`
-const waitForServer = async () => {
-  for (let attempt = 0; attempt < 80; attempt += 1) {
-    try {
-      const response = await fetch(baseUrl)
-      if (response.ok) return
-    } catch {
-      // The preview server may still be starting.
-    }
-    await new Promise((resolve) => setTimeout(resolve, 250))
+import {mkdir,readFile,writeFile} from 'node:fs/promises';
+import {spawn} from 'node:child_process';
+import {chromium} from '@playwright/test';
+const course=JSON.parse(await readFile('public/course.json','utf8'));
+const port=5294,base=`http://127.0.0.1:${port}/2026-ITPSIS-lecture/`;
+const server=spawn(process.execPath,['node_modules/vite/bin/vite.js','preview','--host','127.0.0.1','--port',String(port),'--strictPort'],{stdio:'pipe',windowsHide:true});
+let browser;
+try{
+  let ready=false;for(let i=0;i<80;i++){try{if((await fetch(base)).ok){ready=true;break}}catch{}await new Promise(r=>setTimeout(r,250));}if(!ready)throw Error('Не запущен preview');
+  browser=await chromium.launch({channel:process.env.BROWSER_CHANNEL||'chrome',headless:true});
+  const page=await browser.newPage({viewport:{width:1600,height:900}});
+  const out=process.env.PDF_OUTPUT_DIR||'outputs/pdf';await mkdir(out,{recursive:true});const result=[];
+  for(const l of course.lectures){
+    await page.goto(`${base}?mode=print&scope=${l.id}`);await page.locator('.print-page').last().waitFor();
+    await page.evaluate(async()=>{await document.fonts.ready;await Promise.all([...document.images].map(i=>i.decode().catch(()=>{})));});
+    if(await page.locator('.print-page').count()!==l.slides.length)throw Error('Неполная печать '+l.id);
+    await page.pdf({path:`${out}/${l.id}.pdf`,preferCSSPageSize:true,printBackground:true});
+    result.push({id:l.id,pages:l.slides.length,path:`${out}/${l.id}.pdf`});
   }
-  throw new Error(`Preview server did not start. ${serverLog}`)
-}
-let browser
-try {
-  await waitForServer()
-  browser = await chromium.launch({ headless: true })
-  const context = await browser.newContext({ viewport: { width: 1600, height: 900 } })
-  await context.addInitScript(({ key, value }) => {
-    localStorage.setItem(key, JSON.stringify(value))
-  }, { key: 'itpsis.teacherProfile', value: profile })
-  const page = await context.newPage()
-  await page.emulateMedia({ media: 'print', reducedMotion: 'reduce' })
-
-  for (const topic of topics) {
-    for (const variant of variants) {
-      const url = `${baseUrl}print?topic=${encodeURIComponent(topic)}&variant=${variant}`
-      await page.goto(url, { waitUntil: 'networkidle' })
-      await page.waitForFunction(() => document.body.dataset.printReady === 'true', undefined, { timeout: 60_000 })
-      const pageElements = await page.locator('.print-page').count()
-      if (pageElements !== 85) throw new Error(`${topic}/${variant}: DOM has ${pageElements} pages`)
-      const outputDir = path.resolve('outputs', 'pdf', variant)
-      await mkdir(outputDir, { recursive: true })
-      const outputPath = path.join(outputDir, `${topic}.pdf`)
-      await page.pdf({
-        path: outputPath,
-        printBackground: true,
-        preferCSSPageSize: true,
-        displayHeaderFooter: false,
-        tagged: true,
-        outline: true,
-      })
-      const pdf = await PDFDocument.load(await readFile(outputPath))
-      if (pdf.getPageCount() !== 85) throw new Error(`${topic}/${variant}: PDF has ${pdf.getPageCount()} pages`)
-      console.log(`Exported ${variant}: ${topic} — 85 pages`)
-    }
-  }
-} finally {
-  await browser?.close()
-  server.kill()
-}
+  await writeFile('reports/pdf-export.json',JSON.stringify({contentVersion:course.contentVersion,files:result},null,2)+'\n');console.log(`Сохранено ${result.length} ученических PDF из рендерера сайта.`);
+}finally{await browser?.close();server.kill();}

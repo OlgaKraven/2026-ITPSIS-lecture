@@ -1,0 +1,839 @@
+[
+  {
+    "term": "Сопровождение",
+    "definition": "Управляемое поддержание и изменение действующей системы.",
+    "mainLectureId": "s07-01-support-lifecycle",
+    "mainSlideId": "s07-01-support-lifecycle-Q01-term",
+    "applications": []
+  },
+  {
+    "term": "Практика",
+    "definition": "Совокупность ресурсов организации для выполнения работы и достижения цели.",
+    "mainLectureId": "s07-01-support-lifecycle",
+    "mainSlideId": "s07-01-support-lifecycle-Q02-term",
+    "applications": []
+  },
+  {
+    "term": "Владелец услуги",
+    "definition": "Роль, отвечающая за управление конкретной услугой и её результатами.",
+    "mainLectureId": "s07-01-support-lifecycle",
+    "mainSlideId": "s07-01-support-lifecycle-Q03-term",
+    "applications": []
+  },
+  {
+    "term": "Инцидент",
+    "definition": "Незапланированное прерывание услуги или снижение её качества.",
+    "mainLectureId": "s07-01-support-lifecycle",
+    "mainSlideId": "s07-01-support-lifecycle-Q04-term",
+    "applications": [
+      {
+        "lectureId": "s07-04-ticket-flow",
+        "slideId": "s07-04-ticket-flow-Q03-term",
+        "questionId": "s07-04-ticket-flow-Q03"
+      }
+    ]
+  },
+  {
+    "term": "Каталог услуг",
+    "definition": "Согласованная информация о доступных услугах и условиях их предоставления.",
+    "mainLectureId": "s07-01-support-lifecycle",
+    "mainSlideId": "s07-01-support-lifecycle-Q05-term",
+    "applications": []
+  },
+  {
+    "term": "Область сопровождения",
+    "definition": "Согласованный перечень включённых работ и исключений.",
+    "mainLectureId": "s07-01-support-lifecycle",
+    "mainSlideId": "s07-01-support-lifecycle-Q06-term",
+    "applications": []
+  },
+  {
+    "term": "SLA",
+    "definition": "Документированное соглашение об услуге и ожидаемом уровне её предоставления.",
+    "mainLectureId": "s07-01-support-lifecycle",
+    "mainSlideId": "s07-01-support-lifecycle-Q07-term",
+    "applications": [
+      {
+        "lectureId": "s07-03-sla",
+        "slideId": "s07-03-sla-Q01-term",
+        "questionId": "s07-03-sla-Q01"
+      }
+    ]
+  },
+  {
+    "term": "Постоянное улучшение",
+    "definition": "Последовательное изменение услуг и практик на основании целей и обратной связи.",
+    "mainLectureId": "s07-01-support-lifecycle",
+    "mainSlideId": "s07-01-support-lifecycle-Q08-term",
+    "applications": []
+  },
+  {
+    "term": "Service Desk",
+    "definition": "Точка контакта поставщика услуг с пользователями.",
+    "mainLectureId": "s07-02-support-levels",
+    "mainSlideId": "s07-02-support-levels-Q01-term",
+    "applications": []
+  },
+  {
+    "term": "L1",
+    "definition": "Первая линия приёма обращений и применения разрешённых типовых решений.",
+    "mainLectureId": "s07-02-support-levels",
+    "mainSlideId": "s07-02-support-levels-Q02-term",
+    "applications": []
+  },
+  {
+    "term": "L2",
+    "definition": "Линия углублённой диагностики в пределах назначенных полномочий.",
+    "mainLectureId": "s07-02-support-levels",
+    "mainSlideId": "s07-02-support-levels-Q03-term",
+    "applications": []
+  },
+  {
+    "term": "L3",
+    "definition": "Экспертная линия, включая разработчика или поставщика продукта.",
+    "mainLectureId": "s07-02-support-levels",
+    "mainSlideId": "s07-02-support-levels-Q04-term",
+    "applications": []
+  },
+  {
+    "term": "Маршрутизация",
+    "definition": "Выбор очереди и исполнителя по типу работы и необходимым компетенциям.",
+    "mainLectureId": "s07-02-support-levels",
+    "mainSlideId": "s07-02-support-levels-Q05-term",
+    "applications": []
+  },
+  {
+    "term": "Канал",
+    "definition": "Способ поступления обращения в службу поддержки.",
+    "mainLectureId": "s07-02-support-levels",
+    "mainSlideId": "s07-02-support-levels-Q06-term",
+    "applications": []
+  },
+  {
+    "term": "Очередь",
+    "definition": "Упорядоченный набор обращений, ожидающих действий назначенной команды.",
+    "mainLectureId": "s07-02-support-levels",
+    "mainSlideId": "s07-02-support-levels-Q07-term",
+    "applications": []
+  },
+  {
+    "term": "Передача",
+    "definition": "Подтверждённое принятие работы другой ответственной ролью.",
+    "mainLectureId": "s07-02-support-levels",
+    "mainSlideId": "s07-02-support-levels-Q08-term",
+    "applications": []
+  },
+  {
+    "term": "Окно обслуживания",
+    "definition": "Интервал календаря, в котором действует оговорённое обслуживание.",
+    "mainLectureId": "s07-03-sla",
+    "mainSlideId": "s07-03-sla-Q02-term",
+    "applications": [
+      {
+        "lectureId": "s08-05-hardware-maintenance",
+        "slideId": "s08-05-hardware-maintenance-Q05-term",
+        "questionId": "s08-05-hardware-maintenance-Q05"
+      }
+    ]
+  },
+  {
+    "term": "Срочность",
+    "definition": "Мера того, насколько быстро требуется действие до существенного ущерба.",
+    "mainLectureId": "s07-03-sla",
+    "mainSlideId": "s07-03-sla-Q03-term",
+    "applications": []
+  },
+  {
+    "term": "Приоритет",
+    "definition": "Относительная важность выполнения работы в согласованной очереди.",
+    "mainLectureId": "s07-03-sla",
+    "mainSlideId": "s07-03-sla-Q04-term",
+    "applications": []
+  },
+  {
+    "term": "Время реакции",
+    "definition": "Измеренный интервал до согласованного события начала содержательной обработки.",
+    "mainLectureId": "s07-03-sla",
+    "mainSlideId": "s07-03-sla-Q05-term",
+    "applications": []
+  },
+  {
+    "term": "Время восстановления",
+    "definition": "Интервал до подтверждённого возвращения согласованной функции услуги.",
+    "mainLectureId": "s07-03-sla",
+    "mainSlideId": "s07-03-sla-Q06-term",
+    "applications": []
+  },
+  {
+    "term": "Пауза SLA",
+    "definition": "Исключение интервала из учёта по заранее согласованному правилу.",
+    "mainLectureId": "s07-03-sla",
+    "mainSlideId": "s07-03-sla-Q07-term",
+    "applications": []
+  },
+  {
+    "term": "Нарушение SLA",
+    "definition": "Несоответствие фактического результата согласованной цели.",
+    "mainLectureId": "s07-03-sla",
+    "mainSlideId": "s07-03-sla-Q08-term",
+    "applications": []
+  },
+  {
+    "term": "Симптом",
+    "definition": "Наблюдаемое проявление затруднения, ещё не объясняющее причину.",
+    "mainLectureId": "s07-04-ticket-flow",
+    "mainSlideId": "s07-04-ticket-flow-Q01-term",
+    "applications": []
+  },
+  {
+    "term": "Карточка обращения",
+    "definition": "Учётная запись с контекстом, состоянием и ответственностью за работу.",
+    "mainLectureId": "s07-04-ticket-flow",
+    "mainSlideId": "s07-04-ticket-flow-Q02-term",
+    "applications": []
+  },
+  {
+    "term": "Запрос на обслуживание",
+    "definition": "Пользовательский запрос на заранее согласованное обычное действие.",
+    "mainLectureId": "s07-04-ticket-flow",
+    "mainSlideId": "s07-04-ticket-flow-Q04-term",
+    "applications": []
+  },
+  {
+    "term": "Дефект",
+    "definition": "Недостаток продукта, из-за которого он не соответствует ожидаемому поведению.",
+    "mainLectureId": "s07-04-ticket-flow",
+    "mainSlideId": "s07-04-ticket-flow-Q05-term",
+    "applications": []
+  },
+  {
+    "term": "Категория",
+    "definition": "Признак группировки обращений по выбранному предметному основанию.",
+    "mainLectureId": "s07-04-ticket-flow",
+    "mainSlideId": "s07-04-ticket-flow-Q06-term",
+    "applications": []
+  },
+  {
+    "term": "Исполнитель",
+    "definition": "Роль или специалист, принявший конкретную работу в своих полномочиях.",
+    "mainLectureId": "s07-04-ticket-flow",
+    "mainSlideId": "s07-04-ticket-flow-Q07-term",
+    "applications": []
+  },
+  {
+    "term": "Подтверждение восстановления",
+    "definition": "Свидетельство успешного выполнения ранее нарушенной функции.",
+    "mainLectureId": "s07-04-ticket-flow",
+    "mainSlideId": "s07-04-ticket-flow-Q08-term",
+    "applications": []
+  },
+  {
+    "term": "Гипотеза",
+    "definition": "Проверяемое предположение о причине наблюдаемого поведения.",
+    "mainLectureId": "s07-05-reproduction",
+    "mainSlideId": "s07-05-reproduction-Q01-term",
+    "applications": []
+  },
+  {
+    "term": "Уточняющий вопрос",
+    "definition": "Вопрос, сокращающий неопределённость условий и масштаба нарушения.",
+    "mainLectureId": "s07-05-reproduction",
+    "mainSlideId": "s07-05-reproduction-Q02-term",
+    "applications": []
+  },
+  {
+    "term": "Окружение",
+    "definition": "Набор версий и условий, в которых наблюдается поведение системы.",
+    "mainLectureId": "s07-05-reproduction",
+    "mainSlideId": "s07-05-reproduction-Q03-term",
+    "applications": []
+  },
+  {
+    "term": "Предусловие",
+    "definition": "Состояние, которое должно выполняться до первого шага сценария.",
+    "mainLectureId": "s07-05-reproduction",
+    "mainSlideId": "s07-05-reproduction-Q04-term",
+    "applications": []
+  },
+  {
+    "term": "Сценарий воспроизведения",
+    "definition": "Последовательность конкретных действий для получения наблюдаемого результата.",
+    "mainLectureId": "s07-05-reproduction",
+    "mainSlideId": "s07-05-reproduction-Q05-term",
+    "applications": []
+  },
+  {
+    "term": "Ожидаемый результат",
+    "definition": "Поведение, которое должно наблюдаться при выполнении условий сценария.",
+    "mainLectureId": "s07-05-reproduction",
+    "mainSlideId": "s07-05-reproduction-Q06-term",
+    "applications": []
+  },
+  {
+    "term": "Минимальный сценарий",
+    "definition": "Воспроизводящий ошибку набор шагов без необязательных действий.",
+    "mainLectureId": "s07-05-reproduction",
+    "mainSlideId": "s07-05-reproduction-Q07-term",
+    "applications": []
+  },
+  {
+    "term": "Пакет доказательств",
+    "definition": "Связанный набор условий, наблюдений и результатов диагностических проверок.",
+    "mainLectureId": "s07-05-reproduction",
+    "mainSlideId": "s07-05-reproduction-Q08-term",
+    "applications": []
+  },
+  {
+    "term": "Функциональная эскалация",
+    "definition": "Привлечение роли с необходимой компетенцией для выполнения работы.",
+    "mainLectureId": "s07-06-escalation",
+    "mainSlideId": "s07-06-escalation-Q01-term",
+    "applications": []
+  },
+  {
+    "term": "Иерархическая эскалация",
+    "definition": "Привлечение управленческой роли для решения вопроса полномочий или ресурсов.",
+    "mainLectureId": "s07-06-escalation",
+    "mainSlideId": "s07-06-escalation-Q02-term",
+    "applications": []
+  },
+  {
+    "term": "Основание эскалации",
+    "definition": "Зафиксированное условие, требующее привлечения другой роли.",
+    "mainLectureId": "s07-06-escalation",
+    "mainSlideId": "s07-06-escalation-Q03-term",
+    "applications": []
+  },
+  {
+    "term": "Адресат",
+    "definition": "Команда или роль, способная принять требуемое решение.",
+    "mainLectureId": "s07-06-escalation",
+    "mainSlideId": "s07-06-escalation-Q04-term",
+    "applications": []
+  },
+  {
+    "term": "Контекст передачи",
+    "definition": "Сведения, позволяющие продолжить работу без повторного сбора исходных фактов.",
+    "mainLectureId": "s07-06-escalation",
+    "mainSlideId": "s07-06-escalation-Q05-term",
+    "applications": []
+  },
+  {
+    "term": "Владелец обращения",
+    "definition": "Роль, координирующая движение обращения и сообщения о результате.",
+    "mainLectureId": "s07-06-escalation",
+    "mainSlideId": "s07-06-escalation-Q06-term",
+    "applications": []
+  },
+  {
+    "term": "Подтверждение принятия",
+    "definition": "Явное свидетельство того, что адресат принял переданную работу.",
+    "mainLectureId": "s07-06-escalation",
+    "mainSlideId": "s07-06-escalation-Q07-term",
+    "applications": []
+  },
+  {
+    "term": "Обратная связь",
+    "definition": "Возвращаемая информация о решении, проверке и применимых знаниях.",
+    "mainLectureId": "s07-06-escalation",
+    "mainSlideId": "s07-06-escalation-Q08-term",
+    "applications": []
+  },
+  {
+    "term": "База знаний",
+    "definition": "Организованный набор доступных для повторного применения проверенных сведений.",
+    "mainLectureId": "s07-07-knowledge-base",
+    "mainSlideId": "s07-07-knowledge-base-Q01-term",
+    "applications": []
+  },
+  {
+    "term": "Обходное решение",
+    "definition": "Способ уменьшить влияние инцидента без окончательного устранения причины.",
+    "mainLectureId": "s07-07-knowledge-base",
+    "mainSlideId": "s07-07-knowledge-base-Q02-term",
+    "applications": []
+  },
+  {
+    "term": "Симптом статьи",
+    "definition": "Наблюдаемый признак, по которому пользователь ищет подходящее знание.",
+    "mainLectureId": "s07-07-knowledge-base",
+    "mainSlideId": "s07-07-knowledge-base-Q03-term",
+    "applications": []
+  },
+  {
+    "term": "Область применения",
+    "definition": "Условия и версии, при которых инструкция проверена и допустима.",
+    "mainLectureId": "s07-07-knowledge-base",
+    "mainSlideId": "s07-07-knowledge-base-Q04-term",
+    "applications": []
+  },
+  {
+    "term": "Свидетельство",
+    "definition": "Наблюдаемый результат, подтверждающий выполнение конкретного шага.",
+    "mainLectureId": "s07-07-knowledge-base",
+    "mainSlideId": "s07-07-knowledge-base-Q05-term",
+    "applications": []
+  },
+  {
+    "term": "Откат",
+    "definition": "Возврат к заранее определённому безопасному состоянию после неуспеха изменения.",
+    "mainLectureId": "s07-07-knowledge-base",
+    "mainSlideId": "s07-07-knowledge-base-Q06-term",
+    "applications": []
+  },
+  {
+    "term": "Рецензирование",
+    "definition": "Независимая проверка содержания перед разрешённым использованием.",
+    "mainLectureId": "s07-07-knowledge-base",
+    "mainSlideId": "s07-07-knowledge-base-Q07-term",
+    "applications": []
+  },
+  {
+    "term": "Актуальность",
+    "definition": "Соответствие знания текущим условиям и подтверждённым результатам применения.",
+    "mainLectureId": "s07-07-knowledge-base",
+    "mainSlideId": "s07-07-knowledge-base-Q08-term",
+    "applications": []
+  },
+  {
+    "term": "Релиз",
+    "definition": "Версия или набор изменений, подготовленных для предоставления пользователям.",
+    "mainLectureId": "s07-08-update-regulation",
+    "mainSlideId": "s07-08-update-regulation-Q01-term",
+    "applications": []
+  },
+  {
+    "term": "Готовность среды",
+    "definition": "Подтверждённое соответствие среды требованиям планируемого развёртывания.",
+    "mainLectureId": "s07-08-update-regulation",
+    "mainSlideId": "s07-08-update-regulation-Q02-term",
+    "applications": []
+  },
+  {
+    "term": "План коммуникации",
+    "definition": "Согласованные адресаты, содержание и моменты сообщений об изменении.",
+    "mainLectureId": "s07-08-update-regulation",
+    "mainSlideId": "s07-08-update-regulation-Q03-term",
+    "applications": []
+  },
+  {
+    "term": "Точка возврата",
+    "definition": "Сохранённое и проверенное состояние, к которому возможен безопасный откат.",
+    "mainLectureId": "s07-08-update-regulation",
+    "mainSlideId": "s07-08-update-regulation-Q04-term",
+    "applications": []
+  },
+  {
+    "term": "Развёртывание",
+    "definition": "Перенос компонентов или изменений в выбранную среду.",
+    "mainLectureId": "s07-08-update-regulation",
+    "mainSlideId": "s07-08-update-regulation-Q05-term",
+    "applications": []
+  },
+  {
+    "term": "Контрольная операция",
+    "definition": "Пользовательское действие для проверки результата технической работы.",
+    "mainLectureId": "s07-08-update-regulation",
+    "mainSlideId": "s07-08-update-regulation-Q06-term",
+    "applications": []
+  },
+  {
+    "term": "Критерий отката",
+    "definition": "Заранее определённое условие прекращения внедрения и запуска возврата.",
+    "mainLectureId": "s07-08-update-regulation",
+    "mainSlideId": "s07-08-update-regulation-Q07-term",
+    "applications": []
+  },
+  {
+    "term": "Отчёт об обновлении",
+    "definition": "Запись фактических действий, отклонений и подтверждённого результата релиза.",
+    "mainLectureId": "s07-08-update-regulation",
+    "mainSlideId": "s07-08-update-regulation-Q08-term",
+    "applications": []
+  },
+  {
+    "term": "Ценность изменения",
+    "definition": "Ожидаемое улучшение результата для заинтересованных сторон.",
+    "mainLectureId": "s07-09-change-management",
+    "mainSlideId": "s07-09-change-management-Q01-term",
+    "applications": []
+  },
+  {
+    "term": "Стандартное изменение",
+    "definition": "Низкорисковое, понятное и заранее разрешённое изменение по установленной процедуре.",
+    "mainLectureId": "s07-09-change-management",
+    "mainSlideId": "s07-09-change-management-Q02-term",
+    "applications": []
+  },
+  {
+    "term": "Заявка на изменение",
+    "definition": "Запись предлагаемого изменения с обоснованием, влиянием и планом выполнения.",
+    "mainLectureId": "s07-09-change-management",
+    "mainSlideId": "s07-09-change-management-Q03-term",
+    "applications": []
+  },
+  {
+    "term": "Влияние изменения",
+    "definition": "Возможное воздействие изменения на услуги, пользователей и зависимости.",
+    "mainLectureId": "s07-09-change-management",
+    "mainSlideId": "s07-09-change-management-Q04-term",
+    "applications": []
+  },
+  {
+    "term": "Риск",
+    "definition": "Неопределённое событие с возможными последствиями для цели.",
+    "mainLectureId": "s07-09-change-management",
+    "mainSlideId": "s07-09-change-management-Q05-term",
+    "applications": []
+  },
+  {
+    "term": "Полномочие на изменение",
+    "definition": "Право принять решение о выполнении изменения в заданных границах.",
+    "mainLectureId": "s07-09-change-management",
+    "mainSlideId": "s07-09-change-management-Q06-term",
+    "applications": []
+  },
+  {
+    "term": "Наблюдение после внедрения",
+    "definition": "Контроль показателей и пользовательских функций после выполнения изменения.",
+    "mainLectureId": "s07-09-change-management",
+    "mainSlideId": "s07-09-change-management-Q07-term",
+    "applications": []
+  },
+  {
+    "term": "Разбор изменения",
+    "definition": "Оценка достижения цели, отклонений и улучшений после выполнения.",
+    "mainLectureId": "s07-09-change-management",
+    "mainSlideId": "s07-09-change-management-Q08-term",
+    "applications": []
+  },
+  {
+    "term": "Набор восстановления",
+    "definition": "Согласованный состав данных и компонентов для возврата работоспособной услуги.",
+    "mainLectureId": "s07-10-backup-restore",
+    "mainSlideId": "s07-10-backup-restore-Q01-term",
+    "applications": []
+  },
+  {
+    "term": "RPO",
+    "definition": "Целевая допустимая глубина потери данных, выраженная временем.",
+    "mainLectureId": "s07-10-backup-restore",
+    "mainSlideId": "s07-10-backup-restore-Q02-term",
+    "applications": []
+  },
+  {
+    "term": "RTO",
+    "definition": "Целевое время восстановления после нарушения в определённых условиях.",
+    "mainLectureId": "s07-10-backup-restore",
+    "mainSlideId": "s07-10-backup-restore-Q03-term",
+    "applications": []
+  },
+  {
+    "term": "Инкрементальная копия",
+    "definition": "Копия изменений относительно предыдущей точки выбранной цепочки.",
+    "mainLectureId": "s07-10-backup-restore",
+    "mainSlideId": "s07-10-backup-restore-Q04-term",
+    "applications": []
+  },
+  {
+    "term": "Срок хранения",
+    "definition": "Период сохранения пригодной копии по установленным требованиям.",
+    "mainLectureId": "s07-10-backup-restore",
+    "mainSlideId": "s07-10-backup-restore-Q05-term",
+    "applications": []
+  },
+  {
+    "term": "Разделение полномочий",
+    "definition": "Распределение критических действий между ролями для ограничения риска.",
+    "mainLectureId": "s07-10-backup-restore",
+    "mainSlideId": "s07-10-backup-restore-Q06-term",
+    "applications": []
+  },
+  {
+    "term": "Пригодность копии",
+    "definition": "Подтверждённая возможность использовать копию для восстановления.",
+    "mainLectureId": "s07-10-backup-restore",
+    "mainSlideId": "s07-10-backup-restore-Q07-term",
+    "applications": []
+  },
+  {
+    "term": "Проверка восстановления",
+    "definition": "Практический возврат данных и функции с измерением результата.",
+    "mainLectureId": "s07-10-backup-restore",
+    "mainSlideId": "s07-10-backup-restore-Q08-term",
+    "applications": []
+  },
+  {
+    "term": "Деградация",
+    "definition": "Снижение качества услуги при сохранении части её функций.",
+    "mainLectureId": "s08-01-failure-response",
+    "mainSlideId": "s08-01-failure-response-Q01-term",
+    "applications": []
+  },
+  {
+    "term": "Влияние",
+    "definition": "Масштаб и значимость последствий нарушения для услуги и пользователей.",
+    "mainLectureId": "s08-01-failure-response",
+    "mainSlideId": "s08-01-failure-response-Q02-term",
+    "applications": []
+  },
+  {
+    "term": "Событие",
+    "definition": "Наблюдаемое изменение состояния, значимое для управления компонентом или услугой.",
+    "mainLectureId": "s08-01-failure-response",
+    "mainSlideId": "s08-01-failure-response-Q03-term",
+    "applications": []
+  },
+  {
+    "term": "Координатор инцидента",
+    "definition": "Роль, согласующая действия участников и коммуникацию при восстановлении.",
+    "mainLectureId": "s08-01-failure-response",
+    "mainSlideId": "s08-01-failure-response-Q04-term",
+    "applications": []
+  },
+  {
+    "term": "Стабилизация",
+    "definition": "Действия для ограничения воздействия и предотвращения ухудшения состояния.",
+    "mainLectureId": "s08-01-failure-response",
+    "mainSlideId": "s08-01-failure-response-Q05-term",
+    "applications": []
+  },
+  {
+    "term": "Статусное сообщение",
+    "definition": "Краткое подтверждённое описание влияния, действий и следующего обновления.",
+    "mainLectureId": "s08-01-failure-response",
+    "mainSlideId": "s08-01-failure-response-Q06-term",
+    "applications": []
+  },
+  {
+    "term": "Восстановление услуги",
+    "definition": "Возвращение согласованной функции и качества после нарушения.",
+    "mainLectureId": "s08-01-failure-response",
+    "mainSlideId": "s08-01-failure-response-Q07-term",
+    "applications": []
+  },
+  {
+    "term": "Запись проблемы",
+    "definition": "Запись работы с действительной или потенциальной причиной инцидентов.",
+    "mainLectureId": "s08-01-failure-response",
+    "mainSlideId": "s08-01-failure-response-Q08-term",
+    "applications": []
+  },
+  {
+    "term": "Обращение",
+    "definition": "Сообщение пользователя о потребности или затруднении при работе с услугой.",
+    "mainLectureId": "s08-02-error-collection",
+    "mainSlideId": "s08-02-error-collection-Q01-term",
+    "applications": []
+  },
+  {
+    "term": "Идентификатор запроса",
+    "definition": "Значение для связывания следов одной операции между компонентами.",
+    "mainLectureId": "s08-02-error-collection",
+    "mainSlideId": "s08-02-error-collection-Q02-term",
+    "applications": []
+  },
+  {
+    "term": "Журнал приложения",
+    "definition": "Последовательность записей о событиях работы программного компонента.",
+    "mainLectureId": "s08-02-error-collection",
+    "mainSlideId": "s08-02-error-collection-Q03-term",
+    "applications": []
+  },
+  {
+    "term": "Системное событие",
+    "definition": "Изменение состояния операционной системы или инфраструктурного компонента.",
+    "mainLectureId": "s08-02-error-collection",
+    "mainSlideId": "s08-02-error-collection-Q04-term",
+    "applications": []
+  },
+  {
+    "term": "Метрика",
+    "definition": "Числовое измерение состояния или поведения за указанный период.",
+    "mainLectureId": "s08-02-error-collection",
+    "mainSlideId": "s08-02-error-collection-Q05-term",
+    "applications": []
+  },
+  {
+    "term": "Корреляция",
+    "definition": "Установление связи наблюдений по общим признакам и времени.",
+    "mainLectureId": "s08-02-error-collection",
+    "mainSlideId": "s08-02-error-collection-Q06-term",
+    "applications": []
+  },
+  {
+    "term": "Маскирование",
+    "definition": "Замена чувствительных значений безопасным представлением.",
+    "mainLectureId": "s08-02-error-collection",
+    "mainSlideId": "s08-02-error-collection-Q07-term",
+    "applications": []
+  },
+  {
+    "term": "Политика сбора",
+    "definition": "Правила источников, хранения, доступа и реакции на собираемые события.",
+    "mainLectureId": "s08-02-error-collection",
+    "mainSlideId": "s08-02-error-collection-Q08-term",
+    "applications": []
+  },
+  {
+    "term": "Слой",
+    "definition": "Учебная группа компонентов с общей ролью в выполнении операции.",
+    "mainLectureId": "s08-03-layer-localization",
+    "mainSlideId": "s08-03-layer-localization-Q01-term",
+    "applications": []
+  },
+  {
+    "term": "Контрольное рабочее место",
+    "definition": "Независимое окружение для сравнения поведения клиентской операции.",
+    "mainLectureId": "s08-03-layer-localization",
+    "mainSlideId": "s08-03-layer-localization-Q02-term",
+    "applications": []
+  },
+  {
+    "term": "Сетевая доступность",
+    "definition": "Возможность взаимодействия по нужному протоколу и маршруту.",
+    "mainLectureId": "s08-03-layer-localization",
+    "mainSlideId": "s08-03-layer-localization-Q03-term",
+    "applications": []
+  },
+  {
+    "term": "Прикладная ошибка",
+    "definition": "Нарушение выполнения логики программного компонента.",
+    "mainLectureId": "s08-03-layer-localization",
+    "mainSlideId": "s08-03-layer-localization-Q04-term",
+    "applications": []
+  },
+  {
+    "term": "Ресурс сервера",
+    "definition": "Вычислительная или системная возможность, используемая приложением.",
+    "mainLectureId": "s08-03-layer-localization",
+    "mainSlideId": "s08-03-layer-localization-Q05-term",
+    "applications": []
+  },
+  {
+    "term": "Доступность базы данных",
+    "definition": "Возможность выполнить требуемую операцию с данными в заданных условиях.",
+    "mainLectureId": "s08-03-layer-localization",
+    "mainSlideId": "s08-03-layer-localization-Q06-term",
+    "applications": []
+  },
+  {
+    "term": "Контрольный эксперимент",
+    "definition": "Проверка гипотезы с известным изменением одного существенного условия.",
+    "mainLectureId": "s08-03-layer-localization",
+    "mainSlideId": "s08-03-layer-localization-Q07-term",
+    "applications": []
+  },
+  {
+    "term": "Локализация",
+    "definition": "Обоснованное сужение области нарушения до проверяемого компонента или связи.",
+    "mainLectureId": "s08-03-layer-localization",
+    "mainSlideId": "s08-03-layer-localization-Q08-term",
+    "applications": []
+  },
+  {
+    "term": "Разбор отказа",
+    "definition": "Исследование механизма нарушения и возможностей предотвратить его повторение.",
+    "mainLectureId": "s08-04-postmortem",
+    "mainSlideId": "s08-04-postmortem-Q01-term",
+    "applications": []
+  },
+  {
+    "term": "Границы инцидента",
+    "definition": "Определённые начало, конец, затронутая услуга и область последствий.",
+    "mainLectureId": "s08-04-postmortem",
+    "mainSlideId": "s08-04-postmortem-Q02-term",
+    "applications": []
+  },
+  {
+    "term": "Хронология",
+    "definition": "Упорядоченные события с временными отметками и источниками.",
+    "mainLectureId": "s08-04-postmortem",
+    "mainSlideId": "s08-04-postmortem-Q03-term",
+    "applications": []
+  },
+  {
+    "term": "Причина",
+    "definition": "Фактор или механизм, объясняющий возникновение нарушения.",
+    "mainLectureId": "s08-04-postmortem",
+    "mainSlideId": "s08-04-postmortem-Q04-term",
+    "applications": []
+  },
+  {
+    "term": "Способствующее условие",
+    "definition": "Обстоятельство, увеличившее вероятность или тяжесть нарушения.",
+    "mainLectureId": "s08-04-postmortem",
+    "mainSlideId": "s08-04-postmortem-Q05-term",
+    "applications": []
+  },
+  {
+    "term": "Воздействие",
+    "definition": "Фактические последствия нарушения для пользователей и работы организации.",
+    "mainLectureId": "s08-04-postmortem",
+    "mainSlideId": "s08-04-postmortem-Q06-term",
+    "applications": []
+  },
+  {
+    "term": "Предупреждающее действие",
+    "definition": "Изменение, уменьшающее вероятность или последствия будущего нарушения.",
+    "mainLectureId": "s08-04-postmortem",
+    "mainSlideId": "s08-04-postmortem-Q07-term",
+    "applications": []
+  },
+  {
+    "term": "Контроль эффекта",
+    "definition": "Проверка того, улучшило ли выполненное действие целевой результат.",
+    "mainLectureId": "s08-04-postmortem",
+    "mainSlideId": "s08-04-postmortem-Q08-term",
+    "applications": []
+  },
+  {
+    "term": "Актив",
+    "definition": "Ресурс, имеющий ценность и требующий управления.",
+    "mainLectureId": "s08-05-hardware-maintenance",
+    "mainSlideId": "s08-05-hardware-maintenance-Q01-term",
+    "applications": []
+  },
+  {
+    "term": "Конфигурационная единица",
+    "definition": "Компонент, которым необходимо управлять для предоставления услуги.",
+    "mainLectureId": "s08-05-hardware-maintenance",
+    "mainSlideId": "s08-05-hardware-maintenance-Q02-term",
+    "applications": []
+  },
+  {
+    "term": "Базовая линия",
+    "definition": "Зафиксированное состояние показателей для последующего сравнения.",
+    "mainLectureId": "s08-05-hardware-maintenance",
+    "mainSlideId": "s08-05-hardware-maintenance-Q03-term",
+    "applications": []
+  },
+  {
+    "term": "План обслуживания",
+    "definition": "Перечень работ, оснований, сроков и критериев результата для оборудования.",
+    "mainLectureId": "s08-05-hardware-maintenance",
+    "mainSlideId": "s08-05-hardware-maintenance-Q04-term",
+    "applications": []
+  },
+  {
+    "term": "Техническое обслуживание",
+    "definition": "Работы по поддержанию установленного состояния оборудования.",
+    "mainLectureId": "s08-05-hardware-maintenance",
+    "mainSlideId": "s08-05-hardware-maintenance-Q06-term",
+    "applications": []
+  },
+  {
+    "term": "Резервный путь",
+    "definition": "Альтернативная зависимость, сохраняющая функцию при недоступности основного пути.",
+    "mainLectureId": "s08-05-hardware-maintenance",
+    "mainSlideId": "s08-05-hardware-maintenance-Q07-term",
+    "applications": []
+  },
+  {
+    "term": "История обслуживания",
+    "definition": "Запись выполненных работ и измерений для последующих решений.",
+    "mainLectureId": "s08-05-hardware-maintenance",
+    "mainSlideId": "s08-05-hardware-maintenance-Q08-term",
+    "applications": []
+  }
+]
