@@ -38,6 +38,8 @@ jobs:
       - name: Build
         run: npm run build
       - name: Browser tests
+        run: npx playwright install --with-deps chrome
+      - name: Production browser checks
         run: npm run test:e2e
       - name: Configure Pages
         uses: actions/configure-pages@v6

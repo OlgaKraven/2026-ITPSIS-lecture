@@ -7,8 +7,12 @@ tmp/
 public/qr/trzbd-materials.png
 public/brand/mascot/trzbd-database-rhino*
 public/qr/okfks-materials.png
-public/og.png
 config/teacher-profile.json
 .env
 .env.*
 !.env.example
+
+private/
+.playwright-cli/
+.playwright/
+output/playwright/
