@@ -4,78 +4,77 @@
     {
       "id": "s07-01-support-lifecycle",
       "pages": 115,
-      "status": "passed"
+      "path": "public/pdf/s07-01-support-lifecycle.pdf"
     },
     {
       "id": "s07-02-support-levels",
       "pages": 115,
-      "status": "passed"
+      "path": "public/pdf/s07-02-support-levels.pdf"
     },
     {
       "id": "s07-03-sla",
       "pages": 115,
-      "status": "passed"
+      "path": "public/pdf/s07-03-sla.pdf"
     },
     {
       "id": "s07-04-ticket-flow",
       "pages": 114,
-      "status": "passed"
+      "path": "public/pdf/s07-04-ticket-flow.pdf"
     },
     {
       "id": "s07-05-reproduction",
       "pages": 115,
-      "status": "passed"
+      "path": "public/pdf/s07-05-reproduction.pdf"
     },
     {
       "id": "s07-06-escalation",
       "pages": 115,
-      "status": "passed"
+      "path": "public/pdf/s07-06-escalation.pdf"
     },
     {
       "id": "s07-07-knowledge-base",
       "pages": 115,
-      "status": "passed"
+      "path": "public/pdf/s07-07-knowledge-base.pdf"
     },
     {
       "id": "s07-08-update-regulation",
       "pages": 115,
-      "status": "passed"
+      "path": "public/pdf/s07-08-update-regulation.pdf"
     },
     {
       "id": "s07-09-change-management",
       "pages": 115,
-      "status": "passed"
+      "path": "public/pdf/s07-09-change-management.pdf"
     },
     {
       "id": "s07-10-backup-restore",
       "pages": 115,
-      "status": "passed"
+      "path": "public/pdf/s07-10-backup-restore.pdf"
     },
     {
       "id": "s08-01-failure-response",
       "pages": 115,
-      "status": "passed"
+      "path": "public/pdf/s08-01-failure-response.pdf"
     },
     {
       "id": "s08-02-error-collection",
       "pages": 114,
-      "status": "passed"
+      "path": "public/pdf/s08-02-error-collection.pdf"
     },
     {
       "id": "s08-03-layer-localization",
       "pages": 115,
-      "status": "passed"
+      "path": "public/pdf/s08-03-layer-localization.pdf"
     },
     {
       "id": "s08-04-postmortem",
       "pages": 115,
-      "status": "passed"
+      "path": "public/pdf/s08-04-postmortem.pdf"
     },
     {
       "id": "s08-05-hardware-maintenance",
       "pages": 115,
-      "status": "passed"
+      "path": "public/pdf/s08-05-hardware-maintenance.pdf"
     }
-  ],
-  "checks": "Число, порядок, весь основной текст, варианты и условия заданий, 16:9, отсутствие интерфейса и приватного маркера. Визуальный просмотр учитывается отдельно."
+  ]
 }

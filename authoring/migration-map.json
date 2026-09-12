@@ -708,7 +708,7 @@
     "lectureId": "s07-01-support-lifecycle",
     "oldSlide": 2,
     "targetSlideIds": [
-      "s07-01-support-lifecycle-plan-a"
+      "s07-01-support-lifecycle-agenda"
     ],
     "action": "отредактирована",
     "reason": "Содержание включено в введение, маршрут или источники; повторяющиеся служебные страницы объединены."
@@ -772,7 +772,7 @@
     "lectureId": "s07-01-support-lifecycle",
     "oldSlide": 9,
     "targetSlideIds": [
-      "s07-01-support-lifecycle-plan-a"
+      "s07-01-support-lifecycle-agenda"
     ],
     "action": "отредактирована",
     "reason": "Содержание включено в введение, маршрут или источники; повторяющиеся служебные страницы объединены."
@@ -1790,7 +1790,7 @@
     "lectureId": "s07-02-support-levels",
     "oldSlide": 2,
     "targetSlideIds": [
-      "s07-02-support-levels-plan-a"
+      "s07-02-support-levels-agenda"
     ],
     "action": "отредактирована",
     "reason": "Содержание включено в введение, маршрут или источники; повторяющиеся служебные страницы объединены."
@@ -1854,7 +1854,7 @@
     "lectureId": "s07-02-support-levels",
     "oldSlide": 9,
     "targetSlideIds": [
-      "s07-02-support-levels-plan-a"
+      "s07-02-support-levels-agenda"
     ],
     "action": "отредактирована",
     "reason": "Содержание включено в введение, маршрут или источники; повторяющиеся служебные страницы объединены."
@@ -2872,7 +2872,7 @@
     "lectureId": "s07-03-sla",
     "oldSlide": 2,
     "targetSlideIds": [
-      "s07-03-sla-plan-a"
+      "s07-03-sla-agenda"
     ],
     "action": "отредактирована",
     "reason": "Содержание включено в введение, маршрут или источники; повторяющиеся служебные страницы объединены."
@@ -2936,7 +2936,7 @@
     "lectureId": "s07-03-sla",
     "oldSlide": 9,
     "targetSlideIds": [
-      "s07-03-sla-plan-a"
+      "s07-03-sla-agenda"
     ],
     "action": "отредактирована",
     "reason": "Содержание включено в введение, маршрут или источники; повторяющиеся служебные страницы объединены."
@@ -3954,7 +3954,7 @@
     "lectureId": "s07-04-ticket-flow",
     "oldSlide": 2,
     "targetSlideIds": [
-      "s07-04-ticket-flow-plan-a"
+      "s07-04-ticket-flow-agenda"
     ],
     "action": "отредактирована",
     "reason": "Содержание включено в введение, маршрут или источники; повторяющиеся служебные страницы объединены."
@@ -4018,7 +4018,7 @@
     "lectureId": "s07-04-ticket-flow",
     "oldSlide": 9,
     "targetSlideIds": [
-      "s07-04-ticket-flow-plan-a"
+      "s07-04-ticket-flow-agenda"
     ],
     "action": "отредактирована",
     "reason": "Содержание включено в введение, маршрут или источники; повторяющиеся служебные страницы объединены."
@@ -5035,7 +5035,7 @@
     "lectureId": "s07-05-reproduction",
     "oldSlide": 2,
     "targetSlideIds": [
-      "s07-05-reproduction-plan-a"
+      "s07-05-reproduction-agenda"
     ],
     "action": "отредактирована",
     "reason": "Содержание включено в введение, маршрут или источники; повторяющиеся служебные страницы объединены."
@@ -5099,7 +5099,7 @@
     "lectureId": "s07-05-reproduction",
     "oldSlide": 9,
     "targetSlideIds": [
-      "s07-05-reproduction-plan-a"
+      "s07-05-reproduction-agenda"
     ],
     "action": "отредактирована",
     "reason": "Содержание включено в введение, маршрут или источники; повторяющиеся служебные страницы объединены."
@@ -6117,7 +6117,7 @@
     "lectureId": "s07-06-escalation",
     "oldSlide": 2,
     "targetSlideIds": [
-      "s07-06-escalation-plan-a"
+      "s07-06-escalation-agenda"
     ],
     "action": "отредактирована",
     "reason": "Содержание включено в введение, маршрут или источники; повторяющиеся служебные страницы объединены."
@@ -6181,7 +6181,7 @@
     "lectureId": "s07-06-escalation",
     "oldSlide": 9,
     "targetSlideIds": [
-      "s07-06-escalation-plan-a"
+      "s07-06-escalation-agenda"
     ],
     "action": "отредактирована",
     "reason": "Содержание включено в введение, маршрут или источники; повторяющиеся служебные страницы объединены."
@@ -7199,7 +7199,7 @@
     "lectureId": "s07-07-knowledge-base",
     "oldSlide": 2,
     "targetSlideIds": [
-      "s07-07-knowledge-base-plan-a"
+      "s07-07-knowledge-base-agenda"
     ],
     "action": "отредактирована",
     "reason": "Содержание включено в введение, маршрут или источники; повторяющиеся служебные страницы объединены."
@@ -7263,7 +7263,7 @@
     "lectureId": "s07-07-knowledge-base",
     "oldSlide": 9,
     "targetSlideIds": [
-      "s07-07-knowledge-base-plan-a"
+      "s07-07-knowledge-base-agenda"
     ],
     "action": "отредактирована",
     "reason": "Содержание включено в введение, маршрут или источники; повторяющиеся служебные страницы объединены."
@@ -8281,7 +8281,7 @@
     "lectureId": "s07-08-update-regulation",
     "oldSlide": 2,
     "targetSlideIds": [
-      "s07-08-update-regulation-plan-a"
+      "s07-08-update-regulation-agenda"
     ],
     "action": "отредактирована",
     "reason": "Содержание включено в введение, маршрут или источники; повторяющиеся служебные страницы объединены."
@@ -8345,7 +8345,7 @@
     "lectureId": "s07-08-update-regulation",
     "oldSlide": 9,
     "targetSlideIds": [
-      "s07-08-update-regulation-plan-a"
+      "s07-08-update-regulation-agenda"
     ],
     "action": "отредактирована",
     "reason": "Содержание включено в введение, маршрут или источники; повторяющиеся служебные страницы объединены."
@@ -9363,7 +9363,7 @@
     "lectureId": "s07-09-change-management",
     "oldSlide": 2,
     "targetSlideIds": [
-      "s07-09-change-management-plan-a"
+      "s07-09-change-management-agenda"
     ],
     "action": "отредактирована",
     "reason": "Содержание включено в введение, маршрут или источники; повторяющиеся служебные страницы объединены."
@@ -9427,7 +9427,7 @@
     "lectureId": "s07-09-change-management",
     "oldSlide": 9,
     "targetSlideIds": [
-      "s07-09-change-management-plan-a"
+      "s07-09-change-management-agenda"
     ],
     "action": "отредактирована",
     "reason": "Содержание включено в введение, маршрут или источники; повторяющиеся служебные страницы объединены."
@@ -10445,7 +10445,7 @@
     "lectureId": "s07-10-backup-restore",
     "oldSlide": 2,
     "targetSlideIds": [
-      "s07-10-backup-restore-plan-a"
+      "s07-10-backup-restore-agenda"
     ],
     "action": "отредактирована",
     "reason": "Содержание включено в введение, маршрут или источники; повторяющиеся служебные страницы объединены."
@@ -10509,7 +10509,7 @@
     "lectureId": "s07-10-backup-restore",
     "oldSlide": 9,
     "targetSlideIds": [
-      "s07-10-backup-restore-plan-a"
+      "s07-10-backup-restore-agenda"
     ],
     "action": "отредактирована",
     "reason": "Содержание включено в введение, маршрут или источники; повторяющиеся служебные страницы объединены."
@@ -11527,7 +11527,7 @@
     "lectureId": "s08-01-failure-response",
     "oldSlide": 2,
     "targetSlideIds": [
-      "s08-01-failure-response-plan-a"
+      "s08-01-failure-response-agenda"
     ],
     "action": "отредактирована",
     "reason": "Содержание включено в введение, маршрут или источники; повторяющиеся служебные страницы объединены."
@@ -11591,7 +11591,7 @@
     "lectureId": "s08-01-failure-response",
     "oldSlide": 9,
     "targetSlideIds": [
-      "s08-01-failure-response-plan-a"
+      "s08-01-failure-response-agenda"
     ],
     "action": "отредактирована",
     "reason": "Содержание включено в введение, маршрут или источники; повторяющиеся служебные страницы объединены."
@@ -12609,7 +12609,7 @@
     "lectureId": "s08-02-error-collection",
     "oldSlide": 2,
     "targetSlideIds": [
-      "s08-02-error-collection-plan-a"
+      "s08-02-error-collection-agenda"
     ],
     "action": "отредактирована",
     "reason": "Содержание включено в введение, маршрут или источники; повторяющиеся служебные страницы объединены."
@@ -12673,7 +12673,7 @@
     "lectureId": "s08-02-error-collection",
     "oldSlide": 9,
     "targetSlideIds": [
-      "s08-02-error-collection-plan-a"
+      "s08-02-error-collection-agenda"
     ],
     "action": "отредактирована",
     "reason": "Содержание включено в введение, маршрут или источники; повторяющиеся служебные страницы объединены."
@@ -13690,7 +13690,7 @@
     "lectureId": "s08-03-layer-localization",
     "oldSlide": 2,
     "targetSlideIds": [
-      "s08-03-layer-localization-plan-a"
+      "s08-03-layer-localization-agenda"
     ],
     "action": "отредактирована",
     "reason": "Содержание включено в введение, маршрут или источники; повторяющиеся служебные страницы объединены."
@@ -13754,7 +13754,7 @@
     "lectureId": "s08-03-layer-localization",
     "oldSlide": 9,
     "targetSlideIds": [
-      "s08-03-layer-localization-plan-a"
+      "s08-03-layer-localization-agenda"
     ],
     "action": "отредактирована",
     "reason": "Содержание включено в введение, маршрут или источники; повторяющиеся служебные страницы объединены."
@@ -14772,7 +14772,7 @@
     "lectureId": "s08-04-postmortem",
     "oldSlide": 2,
     "targetSlideIds": [
-      "s08-04-postmortem-plan-a"
+      "s08-04-postmortem-agenda"
     ],
     "action": "отредактирована",
     "reason": "Содержание включено в введение, маршрут или источники; повторяющиеся служебные страницы объединены."
@@ -14836,7 +14836,7 @@
     "lectureId": "s08-04-postmortem",
     "oldSlide": 9,
     "targetSlideIds": [
-      "s08-04-postmortem-plan-a"
+      "s08-04-postmortem-agenda"
     ],
     "action": "отредактирована",
     "reason": "Содержание включено в введение, маршрут или источники; повторяющиеся служебные страницы объединены."
@@ -15854,7 +15854,7 @@
     "lectureId": "s08-05-hardware-maintenance",
     "oldSlide": 2,
     "targetSlideIds": [
-      "s08-05-hardware-maintenance-plan-a"
+      "s08-05-hardware-maintenance-agenda"
     ],
     "action": "отредактирована",
     "reason": "Содержание включено в введение, маршрут или источники; повторяющиеся служебные страницы объединены."
@@ -15918,7 +15918,7 @@
     "lectureId": "s08-05-hardware-maintenance",
     "oldSlide": 9,
     "targetSlideIds": [
-      "s08-05-hardware-maintenance-plan-a"
+      "s08-05-hardware-maintenance-agenda"
     ],
     "action": "отредактирована",
     "reason": "Содержание включено в введение, маршрут или источники; повторяющиеся служебные страницы объединены."

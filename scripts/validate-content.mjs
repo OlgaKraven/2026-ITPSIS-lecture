@@ -14,6 +14,7 @@ for(const [i,l]of c.lectures.entries()){
   assert.deepEqual(l.slides.slice(1,4).map(s=>s.readingGroup),['primary','primary','additional']);
   assert.equal(l.slides.at(-1).kind,'questions');assert.equal(l.slides.filter(s=>s.kind==='section').length,8);
   assert.equal(l.slides[5].kind,'agenda');assert.equal(l.slides.filter(s=>s.kind==='agenda').length,1);
+  assert.ok(!l.slides.some(s=>/-plan-[ab]$/.test(s.id)||s.title.startsWith('Учебные вопросы:')),l.id+': дубли карты темы');
   assert.ok(c.topicArrow);assert.ok(c.literature.primary.length);assert.equal(c.materialsUrl,original.course.materialsUrl);
   const qs=map.filter(q=>q.lectureId===l.id);assert.deepEqual(qs.map(q=>q.title),original.topics[i].questions.map(q=>q.title));
   const old=migration.filter(m=>m.lectureId===l.id);assert.equal(new Set(old.map(m=>m.oldSlide)).size,85);
