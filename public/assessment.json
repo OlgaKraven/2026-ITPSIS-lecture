@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "courseId": "itpsis",
-  "contentVersion": "2026-09-12-itil-1",
+  "contentVersion": "2026-09-12-itil-2",
   "mode": "autonomous-educational",
   "notice": "Учебная самопроверка. Ключи технически доступны в файлах сайта. Это не защищённый экзамен.",
   "keys": {

@@ -26,6 +26,7 @@
       "s07-01-support-lifecycle-Q01-T04"
     ],
     "slideIds": [
+      "s07-01-support-lifecycle-Q01-section",
       "s07-01-support-lifecycle-Q01-theory",
       "s07-01-support-lifecycle-Q01-term",
       "s07-01-support-lifecycle-Q01-example",
@@ -68,6 +69,7 @@
       "s07-01-support-lifecycle-Q02-T04"
     ],
     "slideIds": [
+      "s07-01-support-lifecycle-Q02-section",
       "s07-01-support-lifecycle-Q02-theory",
       "s07-01-support-lifecycle-Q02-term",
       "s07-01-support-lifecycle-Q02-example",
@@ -110,6 +112,7 @@
       "s07-01-support-lifecycle-Q03-T04"
     ],
     "slideIds": [
+      "s07-01-support-lifecycle-Q03-section",
       "s07-01-support-lifecycle-Q03-theory",
       "s07-01-support-lifecycle-Q03-term",
       "s07-01-support-lifecycle-Q03-example",
@@ -152,6 +155,7 @@
       "s07-01-support-lifecycle-Q04-T04"
     ],
     "slideIds": [
+      "s07-01-support-lifecycle-Q04-section",
       "s07-01-support-lifecycle-Q04-theory",
       "s07-01-support-lifecycle-Q04-term",
       "s07-01-support-lifecycle-Q04-example",
@@ -194,6 +198,7 @@
       "s07-01-support-lifecycle-Q05-T04"
     ],
     "slideIds": [
+      "s07-01-support-lifecycle-Q05-section",
       "s07-01-support-lifecycle-Q05-theory",
       "s07-01-support-lifecycle-Q05-term",
       "s07-01-support-lifecycle-Q05-example",
@@ -236,6 +241,7 @@
       "s07-01-support-lifecycle-Q06-T04"
     ],
     "slideIds": [
+      "s07-01-support-lifecycle-Q06-section",
       "s07-01-support-lifecycle-Q06-theory",
       "s07-01-support-lifecycle-Q06-term",
       "s07-01-support-lifecycle-Q06-example",
@@ -278,6 +284,7 @@
       "s07-01-support-lifecycle-Q07-T04"
     ],
     "slideIds": [
+      "s07-01-support-lifecycle-Q07-section",
       "s07-01-support-lifecycle-Q07-theory",
       "s07-01-support-lifecycle-Q07-term",
       "s07-01-support-lifecycle-Q07-example",
@@ -320,6 +327,7 @@
       "s07-01-support-lifecycle-Q08-T04"
     ],
     "slideIds": [
+      "s07-01-support-lifecycle-Q08-section",
       "s07-01-support-lifecycle-Q08-theory",
       "s07-01-support-lifecycle-Q08-term",
       "s07-01-support-lifecycle-Q08-example",
@@ -362,6 +370,7 @@
       "s07-02-support-levels-Q01-T04"
     ],
     "slideIds": [
+      "s07-02-support-levels-Q01-section",
       "s07-02-support-levels-Q01-theory",
       "s07-02-support-levels-Q01-term",
       "s07-02-support-levels-Q01-example",
@@ -404,6 +413,7 @@
       "s07-02-support-levels-Q02-T04"
     ],
     "slideIds": [
+      "s07-02-support-levels-Q02-section",
       "s07-02-support-levels-Q02-theory",
       "s07-02-support-levels-Q02-term",
       "s07-02-support-levels-Q02-example",
@@ -446,6 +456,7 @@
       "s07-02-support-levels-Q03-T04"
     ],
     "slideIds": [
+      "s07-02-support-levels-Q03-section",
       "s07-02-support-levels-Q03-theory",
       "s07-02-support-levels-Q03-term",
       "s07-02-support-levels-Q03-example",
@@ -488,6 +499,7 @@
       "s07-02-support-levels-Q04-T04"
     ],
     "slideIds": [
+      "s07-02-support-levels-Q04-section",
       "s07-02-support-levels-Q04-theory",
       "s07-02-support-levels-Q04-term",
       "s07-02-support-levels-Q04-example",
@@ -530,6 +542,7 @@
       "s07-02-support-levels-Q05-T04"
     ],
     "slideIds": [
+      "s07-02-support-levels-Q05-section",
       "s07-02-support-levels-Q05-theory",
       "s07-02-support-levels-Q05-term",
       "s07-02-support-levels-Q05-example",
@@ -572,6 +585,7 @@
       "s07-02-support-levels-Q06-T04"
     ],
     "slideIds": [
+      "s07-02-support-levels-Q06-section",
       "s07-02-support-levels-Q06-theory",
       "s07-02-support-levels-Q06-term",
       "s07-02-support-levels-Q06-example",
@@ -614,6 +628,7 @@
       "s07-02-support-levels-Q07-T04"
     ],
     "slideIds": [
+      "s07-02-support-levels-Q07-section",
       "s07-02-support-levels-Q07-theory",
       "s07-02-support-levels-Q07-term",
       "s07-02-support-levels-Q07-example",
@@ -656,6 +671,7 @@
       "s07-02-support-levels-Q08-T04"
     ],
     "slideIds": [
+      "s07-02-support-levels-Q08-section",
       "s07-02-support-levels-Q08-theory",
       "s07-02-support-levels-Q08-term",
       "s07-02-support-levels-Q08-example",
@@ -698,6 +714,7 @@
       "s07-03-sla-Q01-T04"
     ],
     "slideIds": [
+      "s07-03-sla-Q01-section",
       "s07-03-sla-Q01-theory",
       "s07-03-sla-Q01-term",
       "s07-03-sla-Q01-example",
@@ -740,6 +757,7 @@
       "s07-03-sla-Q02-T04"
     ],
     "slideIds": [
+      "s07-03-sla-Q02-section",
       "s07-03-sla-Q02-theory",
       "s07-03-sla-Q02-term",
       "s07-03-sla-Q02-example",
@@ -782,6 +800,7 @@
       "s07-03-sla-Q03-T04"
     ],
     "slideIds": [
+      "s07-03-sla-Q03-section",
       "s07-03-sla-Q03-theory",
       "s07-03-sla-Q03-term",
       "s07-03-sla-Q03-example",
@@ -824,6 +843,7 @@
       "s07-03-sla-Q04-T04"
     ],
     "slideIds": [
+      "s07-03-sla-Q04-section",
       "s07-03-sla-Q04-theory",
       "s07-03-sla-Q04-term",
       "s07-03-sla-Q04-example",
@@ -866,6 +886,7 @@
       "s07-03-sla-Q05-T04"
     ],
     "slideIds": [
+      "s07-03-sla-Q05-section",
       "s07-03-sla-Q05-theory",
       "s07-03-sla-Q05-term",
       "s07-03-sla-Q05-example",
@@ -908,6 +929,7 @@
       "s07-03-sla-Q06-T04"
     ],
     "slideIds": [
+      "s07-03-sla-Q06-section",
       "s07-03-sla-Q06-theory",
       "s07-03-sla-Q06-term",
       "s07-03-sla-Q06-example",
@@ -950,6 +972,7 @@
       "s07-03-sla-Q07-T04"
     ],
     "slideIds": [
+      "s07-03-sla-Q07-section",
       "s07-03-sla-Q07-theory",
       "s07-03-sla-Q07-term",
       "s07-03-sla-Q07-example",
@@ -992,6 +1015,7 @@
       "s07-03-sla-Q08-T04"
     ],
     "slideIds": [
+      "s07-03-sla-Q08-section",
       "s07-03-sla-Q08-theory",
       "s07-03-sla-Q08-term",
       "s07-03-sla-Q08-example",
@@ -1034,6 +1058,7 @@
       "s07-04-ticket-flow-Q01-T04"
     ],
     "slideIds": [
+      "s07-04-ticket-flow-Q01-section",
       "s07-04-ticket-flow-Q01-theory",
       "s07-04-ticket-flow-Q01-term",
       "s07-04-ticket-flow-Q01-example",
@@ -1076,6 +1101,7 @@
       "s07-04-ticket-flow-Q02-T04"
     ],
     "slideIds": [
+      "s07-04-ticket-flow-Q02-section",
       "s07-04-ticket-flow-Q02-theory",
       "s07-04-ticket-flow-Q02-term",
       "s07-04-ticket-flow-Q02-example",
@@ -1118,6 +1144,7 @@
       "s07-04-ticket-flow-Q03-T04"
     ],
     "slideIds": [
+      "s07-04-ticket-flow-Q03-section",
       "s07-04-ticket-flow-Q03-theory",
       "s07-04-ticket-flow-Q03-term",
       "s07-04-ticket-flow-Q03-example",
@@ -1160,6 +1187,7 @@
       "s07-04-ticket-flow-Q04-T04"
     ],
     "slideIds": [
+      "s07-04-ticket-flow-Q04-section",
       "s07-04-ticket-flow-Q04-theory",
       "s07-04-ticket-flow-Q04-term",
       "s07-04-ticket-flow-Q04-example",
@@ -1202,6 +1230,7 @@
       "s07-04-ticket-flow-Q05-T04"
     ],
     "slideIds": [
+      "s07-04-ticket-flow-Q05-section",
       "s07-04-ticket-flow-Q05-theory",
       "s07-04-ticket-flow-Q05-term",
       "s07-04-ticket-flow-Q05-example",
@@ -1244,6 +1273,7 @@
       "s07-04-ticket-flow-Q06-T04"
     ],
     "slideIds": [
+      "s07-04-ticket-flow-Q06-section",
       "s07-04-ticket-flow-Q06-theory",
       "s07-04-ticket-flow-Q06-term",
       "s07-04-ticket-flow-Q06-example",
@@ -1286,6 +1316,7 @@
       "s07-04-ticket-flow-Q07-T04"
     ],
     "slideIds": [
+      "s07-04-ticket-flow-Q07-section",
       "s07-04-ticket-flow-Q07-theory",
       "s07-04-ticket-flow-Q07-term",
       "s07-04-ticket-flow-Q07-example",
@@ -1328,6 +1359,7 @@
       "s07-04-ticket-flow-Q08-T04"
     ],
     "slideIds": [
+      "s07-04-ticket-flow-Q08-section",
       "s07-04-ticket-flow-Q08-theory",
       "s07-04-ticket-flow-Q08-term",
       "s07-04-ticket-flow-Q08-example",
@@ -1370,6 +1402,7 @@
       "s07-05-reproduction-Q01-T04"
     ],
     "slideIds": [
+      "s07-05-reproduction-Q01-section",
       "s07-05-reproduction-Q01-theory",
       "s07-05-reproduction-Q01-term",
       "s07-05-reproduction-Q01-example",
@@ -1412,6 +1445,7 @@
       "s07-05-reproduction-Q02-T04"
     ],
     "slideIds": [
+      "s07-05-reproduction-Q02-section",
       "s07-05-reproduction-Q02-theory",
       "s07-05-reproduction-Q02-term",
       "s07-05-reproduction-Q02-example",
@@ -1454,6 +1488,7 @@
       "s07-05-reproduction-Q03-T04"
     ],
     "slideIds": [
+      "s07-05-reproduction-Q03-section",
       "s07-05-reproduction-Q03-theory",
       "s07-05-reproduction-Q03-term",
       "s07-05-reproduction-Q03-example",
@@ -1496,6 +1531,7 @@
       "s07-05-reproduction-Q04-T04"
     ],
     "slideIds": [
+      "s07-05-reproduction-Q04-section",
       "s07-05-reproduction-Q04-theory",
       "s07-05-reproduction-Q04-term",
       "s07-05-reproduction-Q04-example",
@@ -1538,6 +1574,7 @@
       "s07-05-reproduction-Q05-T04"
     ],
     "slideIds": [
+      "s07-05-reproduction-Q05-section",
       "s07-05-reproduction-Q05-theory",
       "s07-05-reproduction-Q05-term",
       "s07-05-reproduction-Q05-example",
@@ -1580,6 +1617,7 @@
       "s07-05-reproduction-Q06-T04"
     ],
     "slideIds": [
+      "s07-05-reproduction-Q06-section",
       "s07-05-reproduction-Q06-theory",
       "s07-05-reproduction-Q06-term",
       "s07-05-reproduction-Q06-example",
@@ -1622,6 +1660,7 @@
       "s07-05-reproduction-Q07-T04"
     ],
     "slideIds": [
+      "s07-05-reproduction-Q07-section",
       "s07-05-reproduction-Q07-theory",
       "s07-05-reproduction-Q07-term",
       "s07-05-reproduction-Q07-example",
@@ -1664,6 +1703,7 @@
       "s07-05-reproduction-Q08-T04"
     ],
     "slideIds": [
+      "s07-05-reproduction-Q08-section",
       "s07-05-reproduction-Q08-theory",
       "s07-05-reproduction-Q08-term",
       "s07-05-reproduction-Q08-example",
@@ -1706,6 +1746,7 @@
       "s07-06-escalation-Q01-T04"
     ],
     "slideIds": [
+      "s07-06-escalation-Q01-section",
       "s07-06-escalation-Q01-theory",
       "s07-06-escalation-Q01-term",
       "s07-06-escalation-Q01-example",
@@ -1748,6 +1789,7 @@
       "s07-06-escalation-Q02-T04"
     ],
     "slideIds": [
+      "s07-06-escalation-Q02-section",
       "s07-06-escalation-Q02-theory",
       "s07-06-escalation-Q02-term",
       "s07-06-escalation-Q02-example",
@@ -1790,6 +1832,7 @@
       "s07-06-escalation-Q03-T04"
     ],
     "slideIds": [
+      "s07-06-escalation-Q03-section",
       "s07-06-escalation-Q03-theory",
       "s07-06-escalation-Q03-term",
       "s07-06-escalation-Q03-example",
@@ -1832,6 +1875,7 @@
       "s07-06-escalation-Q04-T04"
     ],
     "slideIds": [
+      "s07-06-escalation-Q04-section",
       "s07-06-escalation-Q04-theory",
       "s07-06-escalation-Q04-term",
       "s07-06-escalation-Q04-example",
@@ -1874,6 +1918,7 @@
       "s07-06-escalation-Q05-T04"
     ],
     "slideIds": [
+      "s07-06-escalation-Q05-section",
       "s07-06-escalation-Q05-theory",
       "s07-06-escalation-Q05-term",
       "s07-06-escalation-Q05-example",
@@ -1916,6 +1961,7 @@
       "s07-06-escalation-Q06-T04"
     ],
     "slideIds": [
+      "s07-06-escalation-Q06-section",
       "s07-06-escalation-Q06-theory",
       "s07-06-escalation-Q06-term",
       "s07-06-escalation-Q06-example",
@@ -1958,6 +2004,7 @@
       "s07-06-escalation-Q07-T04"
     ],
     "slideIds": [
+      "s07-06-escalation-Q07-section",
       "s07-06-escalation-Q07-theory",
       "s07-06-escalation-Q07-term",
       "s07-06-escalation-Q07-example",
@@ -2000,6 +2047,7 @@
       "s07-06-escalation-Q08-T04"
     ],
     "slideIds": [
+      "s07-06-escalation-Q08-section",
       "s07-06-escalation-Q08-theory",
       "s07-06-escalation-Q08-term",
       "s07-06-escalation-Q08-example",
@@ -2042,6 +2090,7 @@
       "s07-07-knowledge-base-Q01-T04"
     ],
     "slideIds": [
+      "s07-07-knowledge-base-Q01-section",
       "s07-07-knowledge-base-Q01-theory",
       "s07-07-knowledge-base-Q01-term",
       "s07-07-knowledge-base-Q01-example",
@@ -2084,6 +2133,7 @@
       "s07-07-knowledge-base-Q02-T04"
     ],
     "slideIds": [
+      "s07-07-knowledge-base-Q02-section",
       "s07-07-knowledge-base-Q02-theory",
       "s07-07-knowledge-base-Q02-term",
       "s07-07-knowledge-base-Q02-example",
@@ -2126,6 +2176,7 @@
       "s07-07-knowledge-base-Q03-T04"
     ],
     "slideIds": [
+      "s07-07-knowledge-base-Q03-section",
       "s07-07-knowledge-base-Q03-theory",
       "s07-07-knowledge-base-Q03-term",
       "s07-07-knowledge-base-Q03-example",
@@ -2168,6 +2219,7 @@
       "s07-07-knowledge-base-Q04-T04"
     ],
     "slideIds": [
+      "s07-07-knowledge-base-Q04-section",
       "s07-07-knowledge-base-Q04-theory",
       "s07-07-knowledge-base-Q04-term",
       "s07-07-knowledge-base-Q04-example",
@@ -2210,6 +2262,7 @@
       "s07-07-knowledge-base-Q05-T04"
     ],
     "slideIds": [
+      "s07-07-knowledge-base-Q05-section",
       "s07-07-knowledge-base-Q05-theory",
       "s07-07-knowledge-base-Q05-term",
       "s07-07-knowledge-base-Q05-example",
@@ -2252,6 +2305,7 @@
       "s07-07-knowledge-base-Q06-T04"
     ],
     "slideIds": [
+      "s07-07-knowledge-base-Q06-section",
       "s07-07-knowledge-base-Q06-theory",
       "s07-07-knowledge-base-Q06-term",
       "s07-07-knowledge-base-Q06-example",
@@ -2294,6 +2348,7 @@
       "s07-07-knowledge-base-Q07-T04"
     ],
     "slideIds": [
+      "s07-07-knowledge-base-Q07-section",
       "s07-07-knowledge-base-Q07-theory",
       "s07-07-knowledge-base-Q07-term",
       "s07-07-knowledge-base-Q07-example",
@@ -2336,6 +2391,7 @@
       "s07-07-knowledge-base-Q08-T04"
     ],
     "slideIds": [
+      "s07-07-knowledge-base-Q08-section",
       "s07-07-knowledge-base-Q08-theory",
       "s07-07-knowledge-base-Q08-term",
       "s07-07-knowledge-base-Q08-example",
@@ -2379,6 +2435,7 @@
       "s07-08-update-regulation-Q01-T04"
     ],
     "slideIds": [
+      "s07-08-update-regulation-Q01-section",
       "s07-08-update-regulation-Q01-theory",
       "s07-08-update-regulation-Q01-term",
       "s07-08-update-regulation-Q01-example",
@@ -2422,6 +2479,7 @@
       "s07-08-update-regulation-Q02-T04"
     ],
     "slideIds": [
+      "s07-08-update-regulation-Q02-section",
       "s07-08-update-regulation-Q02-theory",
       "s07-08-update-regulation-Q02-term",
       "s07-08-update-regulation-Q02-example",
@@ -2465,6 +2523,7 @@
       "s07-08-update-regulation-Q03-T04"
     ],
     "slideIds": [
+      "s07-08-update-regulation-Q03-section",
       "s07-08-update-regulation-Q03-theory",
       "s07-08-update-regulation-Q03-term",
       "s07-08-update-regulation-Q03-example",
@@ -2508,6 +2567,7 @@
       "s07-08-update-regulation-Q04-T04"
     ],
     "slideIds": [
+      "s07-08-update-regulation-Q04-section",
       "s07-08-update-regulation-Q04-theory",
       "s07-08-update-regulation-Q04-term",
       "s07-08-update-regulation-Q04-example",
@@ -2551,6 +2611,7 @@
       "s07-08-update-regulation-Q05-T04"
     ],
     "slideIds": [
+      "s07-08-update-regulation-Q05-section",
       "s07-08-update-regulation-Q05-theory",
       "s07-08-update-regulation-Q05-term",
       "s07-08-update-regulation-Q05-example",
@@ -2594,6 +2655,7 @@
       "s07-08-update-regulation-Q06-T04"
     ],
     "slideIds": [
+      "s07-08-update-regulation-Q06-section",
       "s07-08-update-regulation-Q06-theory",
       "s07-08-update-regulation-Q06-term",
       "s07-08-update-regulation-Q06-example",
@@ -2637,6 +2699,7 @@
       "s07-08-update-regulation-Q07-T04"
     ],
     "slideIds": [
+      "s07-08-update-regulation-Q07-section",
       "s07-08-update-regulation-Q07-theory",
       "s07-08-update-regulation-Q07-term",
       "s07-08-update-regulation-Q07-example",
@@ -2680,6 +2743,7 @@
       "s07-08-update-regulation-Q08-T04"
     ],
     "slideIds": [
+      "s07-08-update-regulation-Q08-section",
       "s07-08-update-regulation-Q08-theory",
       "s07-08-update-regulation-Q08-term",
       "s07-08-update-regulation-Q08-example",
@@ -2722,6 +2786,7 @@
       "s07-09-change-management-Q01-T04"
     ],
     "slideIds": [
+      "s07-09-change-management-Q01-section",
       "s07-09-change-management-Q01-theory",
       "s07-09-change-management-Q01-term",
       "s07-09-change-management-Q01-example",
@@ -2764,6 +2829,7 @@
       "s07-09-change-management-Q02-T04"
     ],
     "slideIds": [
+      "s07-09-change-management-Q02-section",
       "s07-09-change-management-Q02-theory",
       "s07-09-change-management-Q02-term",
       "s07-09-change-management-Q02-example",
@@ -2806,6 +2872,7 @@
       "s07-09-change-management-Q03-T04"
     ],
     "slideIds": [
+      "s07-09-change-management-Q03-section",
       "s07-09-change-management-Q03-theory",
       "s07-09-change-management-Q03-term",
       "s07-09-change-management-Q03-example",
@@ -2848,6 +2915,7 @@
       "s07-09-change-management-Q04-T04"
     ],
     "slideIds": [
+      "s07-09-change-management-Q04-section",
       "s07-09-change-management-Q04-theory",
       "s07-09-change-management-Q04-term",
       "s07-09-change-management-Q04-example",
@@ -2890,6 +2958,7 @@
       "s07-09-change-management-Q05-T04"
     ],
     "slideIds": [
+      "s07-09-change-management-Q05-section",
       "s07-09-change-management-Q05-theory",
       "s07-09-change-management-Q05-term",
       "s07-09-change-management-Q05-example",
@@ -2932,6 +3001,7 @@
       "s07-09-change-management-Q06-T04"
     ],
     "slideIds": [
+      "s07-09-change-management-Q06-section",
       "s07-09-change-management-Q06-theory",
       "s07-09-change-management-Q06-term",
       "s07-09-change-management-Q06-example",
@@ -2974,6 +3044,7 @@
       "s07-09-change-management-Q07-T04"
     ],
     "slideIds": [
+      "s07-09-change-management-Q07-section",
       "s07-09-change-management-Q07-theory",
       "s07-09-change-management-Q07-term",
       "s07-09-change-management-Q07-example",
@@ -3016,6 +3087,7 @@
       "s07-09-change-management-Q08-T04"
     ],
     "slideIds": [
+      "s07-09-change-management-Q08-section",
       "s07-09-change-management-Q08-theory",
       "s07-09-change-management-Q08-term",
       "s07-09-change-management-Q08-example",
@@ -3058,6 +3130,7 @@
       "s07-10-backup-restore-Q01-T04"
     ],
     "slideIds": [
+      "s07-10-backup-restore-Q01-section",
       "s07-10-backup-restore-Q01-theory",
       "s07-10-backup-restore-Q01-term",
       "s07-10-backup-restore-Q01-example",
@@ -3100,6 +3173,7 @@
       "s07-10-backup-restore-Q02-T04"
     ],
     "slideIds": [
+      "s07-10-backup-restore-Q02-section",
       "s07-10-backup-restore-Q02-theory",
       "s07-10-backup-restore-Q02-term",
       "s07-10-backup-restore-Q02-example",
@@ -3142,6 +3216,7 @@
       "s07-10-backup-restore-Q03-T04"
     ],
     "slideIds": [
+      "s07-10-backup-restore-Q03-section",
       "s07-10-backup-restore-Q03-theory",
       "s07-10-backup-restore-Q03-term",
       "s07-10-backup-restore-Q03-example",
@@ -3184,6 +3259,7 @@
       "s07-10-backup-restore-Q04-T04"
     ],
     "slideIds": [
+      "s07-10-backup-restore-Q04-section",
       "s07-10-backup-restore-Q04-theory",
       "s07-10-backup-restore-Q04-term",
       "s07-10-backup-restore-Q04-example",
@@ -3226,6 +3302,7 @@
       "s07-10-backup-restore-Q05-T04"
     ],
     "slideIds": [
+      "s07-10-backup-restore-Q05-section",
       "s07-10-backup-restore-Q05-theory",
       "s07-10-backup-restore-Q05-term",
       "s07-10-backup-restore-Q05-example",
@@ -3268,6 +3345,7 @@
       "s07-10-backup-restore-Q06-T04"
     ],
     "slideIds": [
+      "s07-10-backup-restore-Q06-section",
       "s07-10-backup-restore-Q06-theory",
       "s07-10-backup-restore-Q06-term",
       "s07-10-backup-restore-Q06-example",
@@ -3310,6 +3388,7 @@
       "s07-10-backup-restore-Q07-T04"
     ],
     "slideIds": [
+      "s07-10-backup-restore-Q07-section",
       "s07-10-backup-restore-Q07-theory",
       "s07-10-backup-restore-Q07-term",
       "s07-10-backup-restore-Q07-example",
@@ -3352,6 +3431,7 @@
       "s07-10-backup-restore-Q08-T04"
     ],
     "slideIds": [
+      "s07-10-backup-restore-Q08-section",
       "s07-10-backup-restore-Q08-theory",
       "s07-10-backup-restore-Q08-term",
       "s07-10-backup-restore-Q08-example",
@@ -3394,6 +3474,7 @@
       "s08-01-failure-response-Q01-T04"
     ],
     "slideIds": [
+      "s08-01-failure-response-Q01-section",
       "s08-01-failure-response-Q01-theory",
       "s08-01-failure-response-Q01-term",
       "s08-01-failure-response-Q01-example",
@@ -3436,6 +3517,7 @@
       "s08-01-failure-response-Q02-T04"
     ],
     "slideIds": [
+      "s08-01-failure-response-Q02-section",
       "s08-01-failure-response-Q02-theory",
       "s08-01-failure-response-Q02-term",
       "s08-01-failure-response-Q02-example",
@@ -3478,6 +3560,7 @@
       "s08-01-failure-response-Q03-T04"
     ],
     "slideIds": [
+      "s08-01-failure-response-Q03-section",
       "s08-01-failure-response-Q03-theory",
       "s08-01-failure-response-Q03-term",
       "s08-01-failure-response-Q03-example",
@@ -3520,6 +3603,7 @@
       "s08-01-failure-response-Q04-T04"
     ],
     "slideIds": [
+      "s08-01-failure-response-Q04-section",
       "s08-01-failure-response-Q04-theory",
       "s08-01-failure-response-Q04-term",
       "s08-01-failure-response-Q04-example",
@@ -3562,6 +3646,7 @@
       "s08-01-failure-response-Q05-T04"
     ],
     "slideIds": [
+      "s08-01-failure-response-Q05-section",
       "s08-01-failure-response-Q05-theory",
       "s08-01-failure-response-Q05-term",
       "s08-01-failure-response-Q05-example",
@@ -3604,6 +3689,7 @@
       "s08-01-failure-response-Q06-T04"
     ],
     "slideIds": [
+      "s08-01-failure-response-Q06-section",
       "s08-01-failure-response-Q06-theory",
       "s08-01-failure-response-Q06-term",
       "s08-01-failure-response-Q06-example",
@@ -3646,6 +3732,7 @@
       "s08-01-failure-response-Q07-T04"
     ],
     "slideIds": [
+      "s08-01-failure-response-Q07-section",
       "s08-01-failure-response-Q07-theory",
       "s08-01-failure-response-Q07-term",
       "s08-01-failure-response-Q07-example",
@@ -3688,6 +3775,7 @@
       "s08-01-failure-response-Q08-T04"
     ],
     "slideIds": [
+      "s08-01-failure-response-Q08-section",
       "s08-01-failure-response-Q08-theory",
       "s08-01-failure-response-Q08-term",
       "s08-01-failure-response-Q08-example",
@@ -3730,6 +3818,7 @@
       "s08-02-error-collection-Q01-T04"
     ],
     "slideIds": [
+      "s08-02-error-collection-Q01-section",
       "s08-02-error-collection-Q01-theory",
       "s08-02-error-collection-Q01-term",
       "s08-02-error-collection-Q01-example",
@@ -3772,6 +3861,7 @@
       "s08-02-error-collection-Q02-T04"
     ],
     "slideIds": [
+      "s08-02-error-collection-Q02-section",
       "s08-02-error-collection-Q02-theory",
       "s08-02-error-collection-Q02-term",
       "s08-02-error-collection-Q02-example",
@@ -3814,6 +3904,7 @@
       "s08-02-error-collection-Q03-T04"
     ],
     "slideIds": [
+      "s08-02-error-collection-Q03-section",
       "s08-02-error-collection-Q03-theory",
       "s08-02-error-collection-Q03-term",
       "s08-02-error-collection-Q03-example",
@@ -3856,6 +3947,7 @@
       "s08-02-error-collection-Q04-T04"
     ],
     "slideIds": [
+      "s08-02-error-collection-Q04-section",
       "s08-02-error-collection-Q04-theory",
       "s08-02-error-collection-Q04-term",
       "s08-02-error-collection-Q04-example",
@@ -3898,6 +3990,7 @@
       "s08-02-error-collection-Q05-T04"
     ],
     "slideIds": [
+      "s08-02-error-collection-Q05-section",
       "s08-02-error-collection-Q05-theory",
       "s08-02-error-collection-Q05-term",
       "s08-02-error-collection-Q05-example",
@@ -3940,6 +4033,7 @@
       "s08-02-error-collection-Q06-T04"
     ],
     "slideIds": [
+      "s08-02-error-collection-Q06-section",
       "s08-02-error-collection-Q06-theory",
       "s08-02-error-collection-Q06-term",
       "s08-02-error-collection-Q06-example",
@@ -3982,6 +4076,7 @@
       "s08-02-error-collection-Q07-T04"
     ],
     "slideIds": [
+      "s08-02-error-collection-Q07-section",
       "s08-02-error-collection-Q07-theory",
       "s08-02-error-collection-Q07-term",
       "s08-02-error-collection-Q07-example",
@@ -4024,6 +4119,7 @@
       "s08-02-error-collection-Q08-T04"
     ],
     "slideIds": [
+      "s08-02-error-collection-Q08-section",
       "s08-02-error-collection-Q08-theory",
       "s08-02-error-collection-Q08-term",
       "s08-02-error-collection-Q08-example",
@@ -4065,6 +4161,7 @@
       "s08-03-layer-localization-Q01-T04"
     ],
     "slideIds": [
+      "s08-03-layer-localization-Q01-section",
       "s08-03-layer-localization-Q01-theory",
       "s08-03-layer-localization-Q01-term",
       "s08-03-layer-localization-Q01-example",
@@ -4106,6 +4203,7 @@
       "s08-03-layer-localization-Q02-T04"
     ],
     "slideIds": [
+      "s08-03-layer-localization-Q02-section",
       "s08-03-layer-localization-Q02-theory",
       "s08-03-layer-localization-Q02-term",
       "s08-03-layer-localization-Q02-example",
@@ -4147,6 +4245,7 @@
       "s08-03-layer-localization-Q03-T04"
     ],
     "slideIds": [
+      "s08-03-layer-localization-Q03-section",
       "s08-03-layer-localization-Q03-theory",
       "s08-03-layer-localization-Q03-term",
       "s08-03-layer-localization-Q03-example",
@@ -4188,6 +4287,7 @@
       "s08-03-layer-localization-Q04-T04"
     ],
     "slideIds": [
+      "s08-03-layer-localization-Q04-section",
       "s08-03-layer-localization-Q04-theory",
       "s08-03-layer-localization-Q04-term",
       "s08-03-layer-localization-Q04-example",
@@ -4229,6 +4329,7 @@
       "s08-03-layer-localization-Q05-T04"
     ],
     "slideIds": [
+      "s08-03-layer-localization-Q05-section",
       "s08-03-layer-localization-Q05-theory",
       "s08-03-layer-localization-Q05-term",
       "s08-03-layer-localization-Q05-example",
@@ -4270,6 +4371,7 @@
       "s08-03-layer-localization-Q06-T04"
     ],
     "slideIds": [
+      "s08-03-layer-localization-Q06-section",
       "s08-03-layer-localization-Q06-theory",
       "s08-03-layer-localization-Q06-term",
       "s08-03-layer-localization-Q06-example",
@@ -4311,6 +4413,7 @@
       "s08-03-layer-localization-Q07-T04"
     ],
     "slideIds": [
+      "s08-03-layer-localization-Q07-section",
       "s08-03-layer-localization-Q07-theory",
       "s08-03-layer-localization-Q07-term",
       "s08-03-layer-localization-Q07-example",
@@ -4352,6 +4455,7 @@
       "s08-03-layer-localization-Q08-T04"
     ],
     "slideIds": [
+      "s08-03-layer-localization-Q08-section",
       "s08-03-layer-localization-Q08-theory",
       "s08-03-layer-localization-Q08-term",
       "s08-03-layer-localization-Q08-example",
@@ -4394,6 +4498,7 @@
       "s08-04-postmortem-Q01-T04"
     ],
     "slideIds": [
+      "s08-04-postmortem-Q01-section",
       "s08-04-postmortem-Q01-theory",
       "s08-04-postmortem-Q01-term",
       "s08-04-postmortem-Q01-example",
@@ -4436,6 +4541,7 @@
       "s08-04-postmortem-Q02-T04"
     ],
     "slideIds": [
+      "s08-04-postmortem-Q02-section",
       "s08-04-postmortem-Q02-theory",
       "s08-04-postmortem-Q02-term",
       "s08-04-postmortem-Q02-example",
@@ -4478,6 +4584,7 @@
       "s08-04-postmortem-Q03-T04"
     ],
     "slideIds": [
+      "s08-04-postmortem-Q03-section",
       "s08-04-postmortem-Q03-theory",
       "s08-04-postmortem-Q03-term",
       "s08-04-postmortem-Q03-example",
@@ -4520,6 +4627,7 @@
       "s08-04-postmortem-Q04-T04"
     ],
     "slideIds": [
+      "s08-04-postmortem-Q04-section",
       "s08-04-postmortem-Q04-theory",
       "s08-04-postmortem-Q04-term",
       "s08-04-postmortem-Q04-example",
@@ -4562,6 +4670,7 @@
       "s08-04-postmortem-Q05-T04"
     ],
     "slideIds": [
+      "s08-04-postmortem-Q05-section",
       "s08-04-postmortem-Q05-theory",
       "s08-04-postmortem-Q05-term",
       "s08-04-postmortem-Q05-example",
@@ -4604,6 +4713,7 @@
       "s08-04-postmortem-Q06-T04"
     ],
     "slideIds": [
+      "s08-04-postmortem-Q06-section",
       "s08-04-postmortem-Q06-theory",
       "s08-04-postmortem-Q06-term",
       "s08-04-postmortem-Q06-example",
@@ -4646,6 +4756,7 @@
       "s08-04-postmortem-Q07-T04"
     ],
     "slideIds": [
+      "s08-04-postmortem-Q07-section",
       "s08-04-postmortem-Q07-theory",
       "s08-04-postmortem-Q07-term",
       "s08-04-postmortem-Q07-example",
@@ -4688,6 +4799,7 @@
       "s08-04-postmortem-Q08-T04"
     ],
     "slideIds": [
+      "s08-04-postmortem-Q08-section",
       "s08-04-postmortem-Q08-theory",
       "s08-04-postmortem-Q08-term",
       "s08-04-postmortem-Q08-example",
@@ -4729,6 +4841,7 @@
       "s08-05-hardware-maintenance-Q01-T04"
     ],
     "slideIds": [
+      "s08-05-hardware-maintenance-Q01-section",
       "s08-05-hardware-maintenance-Q01-theory",
       "s08-05-hardware-maintenance-Q01-term",
       "s08-05-hardware-maintenance-Q01-example",
@@ -4770,6 +4883,7 @@
       "s08-05-hardware-maintenance-Q02-T04"
     ],
     "slideIds": [
+      "s08-05-hardware-maintenance-Q02-section",
       "s08-05-hardware-maintenance-Q02-theory",
       "s08-05-hardware-maintenance-Q02-term",
       "s08-05-hardware-maintenance-Q02-example",
@@ -4811,6 +4925,7 @@
       "s08-05-hardware-maintenance-Q03-T04"
     ],
     "slideIds": [
+      "s08-05-hardware-maintenance-Q03-section",
       "s08-05-hardware-maintenance-Q03-theory",
       "s08-05-hardware-maintenance-Q03-term",
       "s08-05-hardware-maintenance-Q03-example",
@@ -4852,6 +4967,7 @@
       "s08-05-hardware-maintenance-Q04-T04"
     ],
     "slideIds": [
+      "s08-05-hardware-maintenance-Q04-section",
       "s08-05-hardware-maintenance-Q04-theory",
       "s08-05-hardware-maintenance-Q04-term",
       "s08-05-hardware-maintenance-Q04-example",
@@ -4893,6 +5009,7 @@
       "s08-05-hardware-maintenance-Q05-T04"
     ],
     "slideIds": [
+      "s08-05-hardware-maintenance-Q05-section",
       "s08-05-hardware-maintenance-Q05-theory",
       "s08-05-hardware-maintenance-Q05-term",
       "s08-05-hardware-maintenance-Q05-example",
@@ -4934,6 +5051,7 @@
       "s08-05-hardware-maintenance-Q06-T04"
     ],
     "slideIds": [
+      "s08-05-hardware-maintenance-Q06-section",
       "s08-05-hardware-maintenance-Q06-theory",
       "s08-05-hardware-maintenance-Q06-term",
       "s08-05-hardware-maintenance-Q06-example",
@@ -4975,6 +5093,7 @@
       "s08-05-hardware-maintenance-Q07-T04"
     ],
     "slideIds": [
+      "s08-05-hardware-maintenance-Q07-section",
       "s08-05-hardware-maintenance-Q07-theory",
       "s08-05-hardware-maintenance-Q07-term",
       "s08-05-hardware-maintenance-Q07-example",
@@ -5016,6 +5135,7 @@
       "s08-05-hardware-maintenance-Q08-T04"
     ],
     "slideIds": [
+      "s08-05-hardware-maintenance-Q08-section",
       "s08-05-hardware-maintenance-Q08-theory",
       "s08-05-hardware-maintenance-Q08-term",
       "s08-05-hardware-maintenance-Q08-example",

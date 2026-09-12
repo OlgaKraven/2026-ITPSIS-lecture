@@ -1,0 +1,46 @@
+{
+  "primary": [
+    {
+      "citation": "Алексахин А. Н., Владыко И. Ю., Сибирская Е. В. Программное обеспечение управления проектами / под ред. Е. В. Сибирской. Москва: Университет «Синергия», 2025. 144 с. ISBN 978-5-4257-0670-6.",
+      "url": "https://www.iprbookshop.ru/books/156717/details"
+    },
+    {
+      "citation": "Алексахин А. Н., Вершинина Н. М., Джебилов А. В. и др. Архитектура вычислительных систем и компьютерных сетей / под ред. А. М. Нечаева, Н. М. Вершининой, Е. В. Устинова. Москва: Университет «Синергия», 2025. 436 с. ISBN 978-5-4257-0681-2.",
+      "url": "https://www.iprbookshop.ru/books/156708/details"
+    }
+  ],
+  "additional": [
+    {
+      "citation": "PeopleCert — ITIL: практики и версии",
+      "url": "https://www.peoplecert.org/ITIL-4"
+    },
+    {
+      "citation": "PeopleCert — практики конфигурации, активов и развёртывания",
+      "url": "https://atv.peoplecert.org/itsm-tool-capabilities-and-itil-service-delivery/"
+    },
+    {
+      "citation": "PeopleCert — ITIL 4 Service Level Management",
+      "url": "https://www.peoplecert.org/browse-certifications/it-governance-and-service-management/ITIL-1/itil-4-practitioner-service-level-management-3867"
+    },
+    {
+      "citation": "PeopleCert — ITIL 4 Incident Management",
+      "url": "https://www.peoplecert.org/browse-certifications/it-governance-and-service-management/ITIL-1/itil4-practices-incident-management-3684"
+    },
+    {
+      "citation": "PeopleCert — ITIL 4 Problem Management",
+      "url": "https://www.peoplecert.org/browse-certifications/it-governance-and-service-management/ITIL-1/itil4-practices-problem-management-3688"
+    },
+    {
+      "citation": "PeopleCert — ITIL 4 Change Enablement",
+      "url": "https://www.peoplecert.org/browse-certifications/it-governance-and-service-management/ITIL-1/itil-4-practitioner-change-enablement-3794"
+    },
+    {
+      "citation": "PeopleCert — каталог практик мониторинга и поддержки",
+      "url": "https://www.peoplecert.org/browse-certifications/it-governance-and-service-management"
+    },
+    {
+      "citation": "PeopleCert — вопросы о переходе между версиями ITIL",
+      "url": "https://www.peoplecert.org/help-and-support/faq-itil"
+    }
+  ]
+}
