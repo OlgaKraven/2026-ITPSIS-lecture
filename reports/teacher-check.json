@@ -1,8 +1,9 @@
 {
   "courseId": "itpsis",
-  "contentVersion": "2026-09-12-itil-2",
-  "notes": 1738,
-  "status": "passed",
-  "public": false,
-  "import": "Chrome: полный комплект, успешное сохранение и восстановление"
+  "contentVersion": "2026-09-12-itil-3",
+  "notes": 1753,
+  "fields": 8765,
+  "missingFields": 0,
+  "public": true,
+  "status": "passed"
 }

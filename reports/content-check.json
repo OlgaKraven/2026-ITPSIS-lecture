@@ -2,10 +2,10 @@
   "status": "passed",
   "lectures": 15,
   "questions": 120,
-  "slides": 1738,
+  "slides": 1753,
   "tasks": 480,
   "visuals": 240,
   "scoringCases": 1922,
   "originalSlidesMapped": 1275,
-  "contentVersion": "2026-09-12-itil-2"
+  "contentVersion": "2026-09-12-itil-3"
 }

@@ -1,0 +1,11 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {mergeNotes,validatePublishedNotes} from './publishedNotes.ts';
+const note={script:'Сценарий',preparation:'Подготовка',notebook:'Запись',questions:'Вопросы',answer:'Ответы',estimatedSeconds:60};
+const course={id:'test',contentVersion:'v1'},lecture={slides:[{id:'slide'}]};
+const pack=()=>({schemaVersion:1,courseId:'test',contentVersion:'v1',notes:{slide:{...note}}});
+test('complete publication validates; missing slide or empty field rejected',()=>{assert.equal(validatePublishedNotes(pack(),course,lecture).notes.slide.answer,'Ответы');for(const field of ['script','preparation','notebook','questions','answer']){const p=pack();p.notes.slide[field]=' ';assert.throws(()=>validatePublishedNotes(p,course,lecture));}assert.throws(()=>validatePublishedNotes({...pack(),notes:{}},course,lecture));});
+test('wrong version, unknown IDs and invalid duration rejected',()=>{assert.throws(()=>validatePublishedNotes({...pack(),contentVersion:'v0'},course,lecture));assert.throws(()=>validatePublishedNotes({...pack(),notes:{other:note}},course,lecture));const p=pack();p.notes.slide.estimatedSeconds=-1;assert.throws(()=>validatePublishedNotes(p,course,lecture));});
+test('empty legacy tabs filled while personal nonempty text wins',()=>{const result=mergeNotes({slide:note},{slide:{...note,script:'Личное объяснение',answer:''}},{});assert.equal(result.slide.script,'Личное объяснение');assert.equal(result.slide.answer,'Ответы');});
+test('sparse edits override only edited field, explicit clearing works',()=>{const result=mergeNotes({slide:note},{},{slide:{script:''}});assert.equal(result.slide.script,'');assert.equal(result.slide.answer,'Ответы');assert.equal(result.slide.preparation,'Подготовка');});
+test('saved notes remain usable if publication unavailable',()=>{assert.deepEqual(mergeNotes({},{slide:note},{}).slide,note);assert.equal(mergeNotes({},{slide:note},{slide:{answer:'Личный ответ'}}).slide.answer,'Личный ответ');});
