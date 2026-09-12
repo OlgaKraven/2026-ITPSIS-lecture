@@ -1,0 +1,147 @@
+diff --git a/package-lock.json b/package-lock.json
+index 0c4bed9..8af0200 100644
+--- a/package-lock.json
++++ b/package-lock.json
+@@ -1,12 +1,12 @@
+ {
+   "name": "@olgakraven/lecture-engine",
+-  "version": "0.1.0",
++  "version": "0.1.1-itpsis.1",
+   "lockfileVersion": 3,
+   "requires": true,
+   "packages": {
+     "": {
+       "name": "@olgakraven/lecture-engine",
+-      "version": "0.1.0",
++      "version": "0.1.1-itpsis.1",
+       "dependencies": {
+         "lucide-react": "^1.38.0",
+         "motion": "^13.1.1",
+diff --git a/package.json b/package.json
+index bc6aa4e..ed8eb7e 100644
+--- a/package.json
++++ b/package.json
+@@ -1,7 +1,7 @@
+ {
+   "name": "@olgakraven/lecture-engine",
+   "private": true,
+-  "version": "0.1.0",
++  "version": "0.1.1-itpsis.1",
+   "type": "module",
+   "scripts": {
+     "dev": "vite",
+diff --git a/src/engine/Teaching.tsx b/src/engine/Teaching.tsx
+index 7886dcf..22fb73c 100644
+--- a/src/engine/Teaching.tsx
++++ b/src/engine/Teaching.tsx
+@@ -2,7 +2,8 @@ import {useCallback,useEffect,useRef,useState} from 'react'
+ import {ArrowLeft,ArrowRight,Download,FolderOpen,Maximize,MonitorPlay,MousePointer2,Pause,Play,Square,X} from 'lucide-react'
+ import type {Course,Lecture,Note,Profile,TeacherPack} from './model'
+ import {usePanelLayout} from './PanelLayout'
+-import {emptyNote} from './model'
++import {assetUrl,emptyNote} from './model'
++import {mergeNotes,validatePublishedNotes} from './publishedNotes'
+ import {SlideView} from './SlideView'
+ import {createBus,newer} from './session'
+ import type {PublicState} from './session'
+@@ -30,7 +31,22 @@ function Presenter({course,lecture,base,profile,session,initialSlide,onExit}:Pro
+  const storageKey=`lecture:${base}:${course.id}:private:${course.contentVersion}`
+  const layout=usePanelLayout(`lecture:${base}:${course.id}:panel-layout`)
+  const sessionKey=`lecture-session:${session}`
+- const [notes,setNotes]=useState<Record<string,Note>>(()=>read(storageKey,{}))
++ const [notes]=useState<Record<string,Note>>(()=>Object.assign({},...(course.teacherNotesPreviousVersions||[]).map(v=>read(`lecture:${base}:${course.id}:private:${v}`,{})),read(storageKey,{})))
++ const editsKey=`${storageKey}:edits`
++ const [edits,setEdits]=useState<Record<string,Partial<Note>>>(()=>Object.assign({},...(course.teacherNotesPreviousVersions||[]).map(v=>read(`lecture:${base}:${course.id}:private:${v}:edits`,{})),read(editsKey,{})))
++ const [published,setPublished]=useState<Record<string,Note>>({})
++ const [notesStatus,setNotesStatus]=useState('');const [notesError,setNotesError]=useState(false);const [notesRetry,setNotesRetry]=useState(0)
++ const resolvedNotes=mergeNotes(published,notes,edits)
++ useEffect(()=>{
++  if(!course.teacherNotesUrl)return
++  const controller=new AbortController();setPublished({});setNotesStatus('Загружаем заметки лекции…');setNotesError(false)
++  const url=assetUrl(course.teacherNotesUrl.replace('{lectureId}',encodeURIComponent(lecture.id)),base)
++  fetch(url,{signal:controller.signal}).then(async r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.json()}).then(value=>{
++   const pack=validatePublishedNotes(value,course,lecture);if(controller.signal.aborted)return
++   setPublished(pack.notes);setNotesStatus(`Заметки курса загружены · ${lecture.slides.length} слайдов`)
++  }).catch(()=>{if(!controller.signal.aborted){setNotesError(true);setNotesStatus('Не удалось загрузить заметки курса. Ваши сохранённые записи доступны.')}})
++  return()=>controller.abort()
++ },[course,lecture,base,notesRetry])
+  const [shown,setShown]=useState(()=>read(sessionKey,{slideId:initialSlide,black:false}))
+  const [selected,setSelected]=useState(shown.slideId);const [black,setBlack]=useState(shown.black);const [replay,setReplay]=useState(0)
+  const [pointerEnabled,setPointerEnabled]=useState(false);const [pointer,setPointer]=useState<{x:number;y:number}|null>(null);const [assessment,setAssessment]=useState<Record<string,Attempt>>({});const receiveAssessment=useCallback((value:Record<string,Attempt>)=>setAssessment(value),[])
+@@ -39,7 +55,7 @@ function Presenter({course,lecture,base,profile,session,initialSlide,onExit}:Pro
+  const [timing,setTiming]=useState<{start:number;elapsed:number;paused:boolean}>(()=>read(`${sessionKey}:timer`,{start:Date.now(),elapsed:0,paused:false}));const [now,setNow]=useState(Date.now())
+  const busRef=useRef<ReturnType<typeof createBus>|null>(null);const stateRef=useRef<PublicState>({slideId:shown.slideId,black,animations:true,replay,profile,epoch:Date.now(),sequence:1})
+  const lastAck=useRef(0);const popup=useRef<Window|null>((window as Window&{lectureAudience?:Window|null}).lectureAudience||null);const importRef=useRef<HTMLInputElement>(null)
+- const shownIndex=Math.max(0,lecture.slides.findIndex(s=>s.id===shown.slideId));const selectedSlide=lecture.slides.find(s=>s.id===selected)||lecture.slides[shownIndex];const note=notes[selectedSlide.id]||emptyNote()
++ const shownIndex=Math.max(0,lecture.slides.findIndex(s=>s.id===shown.slideId));const selectedSlide=lecture.slides.find(s=>s.id===selected)||lecture.slides[shownIndex];const note=resolvedNotes[selectedSlide.id]||emptyNote()
+  const change=(id:string)=>{setShown({slideId:id,black});setSelected(id)}
+  const move=(delta:number)=>change(lecture.slides[Math.max(0,Math.min(lecture.slides.length-1,shownIndex+delta))].id)
+  useEffect(()=>{let release:()=>void=()=>{};let cancelled=false;
+@@ -49,12 +65,12 @@ function Presenter({course,lecture,base,profile,session,initialSlide,onExit}:Pro
+  useEffect(()=>{const timer=setInterval(()=>setNow(Date.now()),1000);return()=>clearInterval(timer)},[])
+  useEffect(()=>{save(`${sessionKey}:timer`,timing)},[timing,sessionKey])
+  useEffect(()=>{const key=(e:KeyboardEvent)=>{if((e.target as HTMLElement).closest('input,textarea,select,button,[contenteditable]'))return;if(['ArrowRight','PageDown',' '].includes(e.key)){e.preventDefault();move(1)}if(['ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();move(-1)}if(e.key==='Home')change(lecture.slides[0].id);if(e.key==='End')change(lecture.slides.at(-1)!.id)};window.addEventListener('keydown',key);return()=>window.removeEventListener('keydown',key)},[shownIndex,lecture,black])
+- const update=(value:Partial<Note>)=>{const next={...notes,[selectedSlide.id]:{...note,...value}};setNotes(next);if(!save(storageKey,next))setNotice('Не удалось сохранить заметки в браузере. Скачайте файл заметок.')}
++ const update=(value:Partial<Note>)=>{const next={...edits,[selectedSlide.id]:{...edits[selectedSlide.id],...value}};setEdits(next);if(!save(editsKey,next))setNotice('Не удалось сохранить заметки в браузере. Скачайте файл заметок.')}
+  const elapsed=timing.elapsed+(timing.paused?0:now-timing.start)
+  const toggleTimer=()=>setTiming(t=>t.paused?{...t,start:Date.now(),paused:false}:{start:Date.now(),elapsed:t.elapsed+Date.now()-t.start,paused:true})
+  const reopen=()=>{const u=new URL(location.href);u.search=new URLSearchParams({mode:'audience',lecture:lecture.id,session}).toString();popup.current=window.open(u,`audience-${session}`);busRef.current?.setPeer(popup.current);if(!popup.current)setNotice('Браузер заблокировал окно. Разрешите всплывающие окна и нажмите «Открыть аудиторию» снова.')}
+  const copyAudience=async()=>{const u=new URL(location.href);u.search=new URLSearchParams({mode:'audience',lecture:lecture.id,session}).toString();try{await navigator.clipboard.writeText(u.href);setNotice('Ссылка аудитории скопирована. Откройте её в новой обычной вкладке этого же браузера.')}catch{setNotice(`Ссылка аудитории: ${u.href}`)}}
+- const importNotes=async(file:File)=>{try{const pack=JSON.parse(await file.text()) as TeacherPack;if(pack.schemaVersion!==1||pack.courseId!==course.id||pack.contentVersion!==course.contentVersion||!pack.notes||typeof pack.notes!=='object')throw Error('Файл относится к другому курсу или версии');const allIds=new Set(course.lectures.flatMap(l=>l.slides.map(s=>s.id)));for(const [id,n] of Object.entries(pack.notes)){if(!allIds.has(id)||!n||!['script','preparation','notebook','questions','answer'].every(k=>typeof n[k as keyof Note]==='string')||!Number.isFinite(n.estimatedSeconds)||n.estimatedSeconds<0)throw Error('Некорректные заметки')};const next={...notes,...pack.notes};if(!save(storageKey,next))throw Error('Не удалось сохранить заметки');setNotes(next);setNotice('Заметки загружены и сохранены в этом браузере.')}catch(e){setNotice(String(e))}}
++ const importNotes=async(file:File)=>{try{const pack=JSON.parse(await file.text()) as TeacherPack;if(pack.schemaVersion!==1||pack.courseId!==course.id||pack.contentVersion!==course.contentVersion||!pack.notes||typeof pack.notes!=='object')throw Error('Файл относится к другому курсу или версии');const allIds=new Set(course.lectures.flatMap(l=>l.slides.map(s=>s.id)));for(const [id,n] of Object.entries(pack.notes)){if(!allIds.has(id)||!n||!['script','preparation','notebook','questions','answer'].every(k=>typeof n[k as keyof Note]==='string')||!Number.isFinite(n.estimatedSeconds)||n.estimatedSeconds<0)throw Error('Некорректные заметки')};const next={...edits,...pack.notes};if(!save(editsKey,next))throw Error('Не удалось сохранить заметки');setEdits(next);setNotice('Заметки загружены и сохранены в этом браузере.')}catch(e){setNotice(String(e))}}
+  const end=()=>{busRef.current?.send({type:'END'});popup.current?.close();onExit()}
+  const tabNames={script:'Сценарий',preparation:'Подготовка',notebook:'Запись',questions:'Вопросы',answer:'Ответы'}
+  return <main className="presenter-shell"><AssessmentSync task={lecture.slides[shownIndex].task} onChange={receiveAssessment}/><header className="presenter-header"><div><p className="eyebrow">Панель преподавателя</p><h1>{lecture.title}</h1></div><span className={`connection ${status==='Синхронизировано'?'connected':''}`} role="status">{status}</span><button className="button ghost" onClick={end}><X size={18}/>Завершить</button></header>
+@@ -67,10 +83,11 @@ function Presenter({course,lecture,base,profile,session,initialSlide,onExit}:Pro
+  <div className="timer"><strong>{String(Math.floor(elapsed/60000)).padStart(2,'0')}:{String(Math.floor(elapsed/1000)%60).padStart(2,'0')}</strong><button className="icon-button" aria-label={timing.paused?'Продолжить таймер':'Приостановить таймер'} onClick={toggleTimer}>{timing.paused?<Play size={18}/>:<Pause size={18}/>}</button><span>Ориентир для выбранного слайда: {Math.round(note.estimatedSeconds/60*10)/10} мин</span></div>
+  </section>{layout.separator(0)}<section className="presenter-notes"><div className="notes-heading"><div><p className="eyebrow">{selected!==shown.slideId?'Подготовительный просмотр':'Текущий слайд'}</p><h2>{selectedSlide.title}</h2></div><button className="button ghost" onClick={()=>setEdit(!edit)}>{edit?'Читать':'Редактировать'}</button></div>
+  {selected!==shown.slideId&&<button className="button primary" disabled={!locked} onClick={()=>change(selected)}>Показать аудитории</button>}
++ {notesStatus&&<div className="published-notes-status" role="status">{notesStatus}{notesError&&<button className="text-button" onClick={()=>setNotesRetry(n=>n+1)}>Повторить загрузку заметок</button>}</div>}
+  <div className="note-tabs" role="tablist" aria-label="Разделы заметок">{Object.entries(tabNames).map(([k,v])=><button role="tab" aria-selected={tab===k} className={tab===k?'active':''} key={k} onClick={()=>setTab(k as typeof tab)}>{v}</button>)}</div>
+  <label className="note-font">Размер текста<input type="range" min="16" max="30" value={fontSize} onChange={e=>setFontSize(Number(e.target.value))}/></label>
+  {edit?<textarea className="note-editor" aria-label={`Редактировать: ${tabNames[tab]}`} style={{fontSize}} value={note[tab]} onChange={e=>update({[tab]:e.target.value})} placeholder="Добавьте текст для этого слайда"/>:<div className="note-reader" role="tabpanel" style={{fontSize}}>{note[tab]||<div className="notes-empty"><h3>Заметки ещё не добавлены</h3><p>Загрузите файл сценария или нажмите «Редактировать». Текст сохраняется на этом устройстве и не передаётся в окно аудитории.</p></div>}</div>}
+- <div className="notes-files"><input ref={importRef} type="file" accept=".json,application/json" hidden onChange={e=>{const f=e.target.files?.[0];if(f)void importNotes(f);e.target.value=''}}/><button className="button ghost" onClick={()=>importRef.current?.click()}><FolderOpen size={17}/>Загрузить заметки</button><button className="button ghost" onClick={()=>downloadJson(`${course.id}-teacher-notes.json`,{schemaVersion:1,courseId:course.id,contentVersion:course.contentVersion,notes})}><Download size={17}/>Сохранить заметки</button></div>
++ <div className="notes-files"><input ref={importRef} type="file" accept=".json,application/json" hidden onChange={e=>{const f=e.target.files?.[0];if(f)void importNotes(f);e.target.value=''}}/><button className="button ghost" onClick={()=>importRef.current?.click()}><FolderOpen size={17}/>Загрузить заметки</button><button className="button ghost" onClick={()=>downloadJson(`${course.id}-teacher-notes.json`,{schemaVersion:1,courseId:course.id,contentVersion:course.contentVersion,notes:resolvedNotes})}><Download size={17}/>Сохранить заметки</button></div>
+  <label className="notes-duration">Расчётное время, секунд<input type="number" min="0" value={note.estimatedSeconds} onChange={e=>update({estimatedSeconds:Math.max(0,Number(e.target.value))})}/></label></section>
+  {layout.separator(1)}<aside className="presenter-outline"><label className="search-field"><input placeholder="Найти слайд" aria-label="Найти слайд" value={search} onChange={e=>setSearch(e.target.value)}/></label><ol className="toc-list">{lecture.slides.map((s,i)=>({s,i})).filter(({s})=>s.title.toLowerCase().includes(search.toLowerCase())).map(({s,i})=><li key={s.id}><button aria-current={s.id===selected?'step':undefined} onClick={()=>setSelected(s.id)}><b>{String(i+1).padStart(2,'0')}</b>{s.title}</button></li>)}</ol></aside></div></main>
+ }
+diff --git a/src/engine/model.ts b/src/engine/model.ts
+index 9911fd9..367d90c 100644
+--- a/src/engine/model.ts
++++ b/src/engine/model.ts
+@@ -19,7 +19,7 @@ export type Task = {id:string;type:'single'|'multiple'|'short'|'matching';prompt
+ export type Reading = {citation:string;url?:string}
+ export type Slide = {id:string;kind:'title'|'theory'|'notebook'|'process'|'comparison'|'example'|'warning'|'test'|'summary'|'literature'|'materials'|'section'|'questions'|'agenda';readingGroup?:'primary'|'additional';references?:Reading[];title:string;kicker:string;body?:string;notebook?:string;bullets?:string[];visual?:Visual;steps?:{title:string;text:string}[];columns?:string[];rows?:string[][];task?:Task;source?:string}
+ export type Lecture = {id:string;title:string;sourceTitle:string;semester:number;question:string;slides:Slide[]}
+-export type Course = {schemaVersion:1;contentVersion:string;id:string;code:string;discipline:string;year:string;heroTitle:string;heroAccent:string;slogan:string;mascot:string;mascotAlt:string;logo:string;ornament:string;font:string;materialsUrl:string;topicArrow?:string;literature?:{primary:Reading[];additional:Reading[]};assessment?:{mode:'autonomous';url:string};demo:boolean;semesters:number[];lectures:Lecture[]}
++export type Course = {schemaVersion:1;contentVersion:string;id:string;code:string;discipline:string;year:string;heroTitle:string;heroAccent:string;slogan:string;mascot:string;mascotAlt:string;logo:string;ornament:string;font:string;materialsUrl:string;teacherNotesUrl?:string;teacherNotesPreviousVersions?:string[];topicArrow?:string;literature?:{primary:Reading[];additional:Reading[]};assessment?:{mode:'autonomous';url:string};demo:boolean;semesters:number[];lectures:Lecture[]}
+ export type Note = {script:string;preparation:string;notebook:string;questions:string;answer:string;estimatedSeconds:number}
+ export type TeacherPack = {schemaVersion:1;courseId:string;contentVersion:string;notes:Record<string,Note>}
+ export const emptyNote = ():Note => ({script:'',preparation:'',notebook:'',questions:'',answer:'',estimatedSeconds:120})
+diff --git a/src/engine/publishedNotes.ts b/src/engine/publishedNotes.ts
+new file mode 100644
+index 0000000..f49b293
+--- /dev/null
++++ b/src/engine/publishedNotes.ts
+@@ -0,0 +1,21 @@
++import type {Course,Lecture,Note,TeacherPack} from './model'
++import {emptyNote} from './model'
++
++const fields=['script','preparation','notebook','questions','answer'] as const
++export function validatePublishedNotes(value:unknown,course:Course,lecture:Lecture):TeacherPack {
++ const pack=value as TeacherPack
++ if(!pack||pack.schemaVersion!==1||pack.courseId!==course.id||pack.contentVersion!==course.contentVersion||!pack.notes||typeof pack.notes!=='object')throw Error('Заметки относятся к другому курсу или версии')
++ const ids=new Set(lecture.slides.map(s=>s.id))
++ if(Object.keys(pack.notes).length!==ids.size)throw Error('Комплект заметок лекции неполон')
++ for(const [id,n] of Object.entries(pack.notes))if(!ids.has(id)||!n||!fields.every(k=>typeof n[k]==='string'&&n[k].trim())||!Number.isFinite(n.estimatedSeconds)||n.estimatedSeconds<=0)throw Error('Некорректная или пустая заметка')
++ return pack
++}
++export function mergeNotes(published:Record<string,Note>,legacy:Record<string,Note>,edits:Record<string,Partial<Note>>):Record<string,Note>{
++ const ids=new Set([...Object.keys(published),...Object.keys(legacy),...Object.keys(edits)])
++ return Object.fromEntries([...ids].map(id=>{
++  // Пустые вкладки старого импортированного комплекта дополняются из опубликованного.
++  const prior=Object.fromEntries(Object.entries(legacy[id]||{}).filter(([,v])=>typeof v==='number'||typeof v==='string'&&v.trim()))
++  // Явные новые правки, включая очищенное поле, имеют приоритет.
++  return [id,{...emptyNote(),...published[id],...prior,...edits[id]}]
++ }))
++}

@@ -4,8 +4,8 @@ import {workedResults} from '../authoring/worked-results.mjs';
 const original=JSON.parse(await readFile('authoring/original-course.json','utf8'));
 const sources=JSON.parse(await readFile('authoring/sources.json','utf8'));
 const literature=JSON.parse(await readFile('authoring/literature.json','utf8'));
-const version='2026-09-12-itil-2';
-const course={schemaVersion:1,contentVersion:version,id:'itpsis',code:'МДК.06.02',discipline:'Инженерно-техническая поддержка сопровождения информационных систем',year:'не указан',heroTitle:'Поддержка и сопровождение',heroAccent:'информационных систем',slogan:'Понимать услугу. Находить причины. Восстанавливать работу.',mascot:'brand/mascot/okfks-rhino-catalog.png',mascotAlt:'Носорог — специалист инженерно-технической поддержки',logo:'brand/synergy-logo.png',ornament:'brand/side-ornament.png',font:'fonts/raleway-cyrillic.woff2',materialsUrl:original.course.materialsUrl,topicArrow:'brand/topic-arrow.webp',literature,demo:false,semesters:[7,8],assessment:{mode:'autonomous',url:'assessment.json'},lectures:[]};
+const version='2026-09-12-itil-3';
+const course={schemaVersion:1,contentVersion:version,id:'itpsis',code:'МДК.06.02',discipline:'Инженерно-техническая поддержка сопровождения информационных систем',year:'не указан',heroTitle:'Поддержка и сопровождение',heroAccent:'информационных систем',slogan:'Понимать услугу. Находить причины. Восстанавливать работу.',mascot:'brand/mascot/okfks-rhino-catalog.png',mascotAlt:'Носорог — специалист инженерно-технической поддержки',logo:'brand/synergy-logo.png',ornament:'brand/side-ornament.png',font:'fonts/raleway-cyrillic.woff2',materialsUrl:original.course.materialsUrl,teacherNotesUrl:'teacher-notes/{lectureId}.json',teacherNotesPreviousVersions:['2026-09-12-itil-2'],topicArrow:'brand/topic-arrow.webp',literature,demo:false,semesters:[7,8],assessment:{mode:'autonomous',url:'assessment.json'},lectures:[]};
 const bank={schemaVersion:1,courseId:course.id,contentVersion:version,mode:'autonomous-educational',notice:'Учебная самопроверка. Ключи технически доступны в файлах сайта. Это не защищённый экзамен.',keys:{}};
 const registry=[],mapping=[],glossary=[],questionMap=[];
 const rotate=(a,n)=>[...a.slice(n%a.length),...a.slice(0,n%a.length)];
@@ -20,6 +20,7 @@ for(const [li,t] of original.topics.entries()){
   literature.primary.forEach((reference,i)=>add('literature-'+(i+1),'literature','Основная литература: '+(i+1),{readingGroup:'primary',references:[reference]},'Библиография исходного курса'));
   add('additional-reading','literature','Дополнительная литература',{readingGroup:'additional',references:[{citation:sources.references[c.reference].title,url:sources.references[c.reference].url},{citation:sources.references.versions.title,url:sources.references.versions.url}]},'Открытые материалы PeopleCert · ITIL');
   add('materials','materials','Материалы лекции',{},'Материалы исходного курса');
+  add('agenda','agenda','Вопросы темы',{kicker:'Карта темы'},'Учебные вопросы лекции');
   add('intro','theory','Место темы в сопровождении',{body:t.introduction});
   add('plan-a','theory','Учебные вопросы: первая часть',{bullets:t.questions.slice(0,4).map((q,i)=>`${i+1}. ${q.title}`)});
   add('plan-b','theory','Учебные вопросы: вторая часть',{bullets:t.questions.slice(4).map((q,i)=>`${i+5}. ${q.title}`)});

@@ -1,7 +1,7 @@
 {
   "name": "2026-itpsis-lecture",
   "private": true,
-  "version": "2.1.0",
+  "version": "2.2.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -9,20 +9,22 @@
     "generate:qr": "node scripts/generate-qr.mjs",
     "typecheck": "tsc -b",
     "lint": "oxlint src scripts tests",
-    "test": "vitest run && npm run validate:content && npm run test:session",
+    "test": "vitest run && npm run validate:content && npm run test:session && npm run prepare:notes && node --test vendor/validation/published-notes-check.mjs",
     "compile:content": "node scripts/compile-course.mjs",
     "validate:content": "node scripts/validate-content.mjs",
     "test:session": "node --test vendor/validation/session-check.mjs",
     "check:privacy": "node scripts/check-privacy.mjs",
     "spellcheck": "node scripts/spellcheck.mjs",
-    "build": "npm run validate:content && npm run generate:qr && tsc -b && vite build && npm run check:privacy",
+    "build": "npm run prepare:notes && npm run generate:guide && npm run validate:content && npm run generate:qr && tsc -b && vite build && npm run check:privacy",
     "preview": "vite preview",
     "test:e2e": "playwright test",
     "export:pdf": "node scripts/export-pdf.mjs",
-    "check:pdf": "node scripts/check-pdf.mjs"
+    "check:pdf": "node scripts/check-pdf.mjs",
+    "prepare:notes": "node scripts/prepare-teacher-notes.mjs",
+    "generate:guide": "node scripts/generate-guide.mjs"
   },
   "dependencies": {
-    "@olgakraven/lecture-engine": "file:vendor/olgakraven-lecture-engine-0.1.0-066443f.tgz",
+    "@olgakraven/lecture-engine": "file:vendor/olgakraven-lecture-engine-0.1.1-itpsis.1.tgz",
     "lucide-react": "^1.38.0",
     "motion": "^13.1.1",
     "react": "^19.2.8",

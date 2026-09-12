@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "contentVersion": "2026-09-12-itil-2",
+  "contentVersion": "2026-09-12-itil-3",
   "id": "itpsis",
   "code": "МДК.06.02",
   "discipline": "Инженерно-техническая поддержка сопровождения информационных систем",
@@ -14,6 +14,10 @@
   "ornament": "brand/side-ornament.png",
   "font": "fonts/raleway-cyrillic.woff2",
   "materialsUrl": "https://disk.yandex.ru/d/jfdIENXO7WUADQ",
+  "teacherNotesUrl": "teacher-notes/{lectureId}.json",
+  "teacherNotesPreviousVersions": [
+    "2026-09-12-itil-2"
+  ],
   "topicArrow": "brand/topic-arrow.webp",
   "literature": {
     "primary": [
@@ -138,6 +142,13 @@
           "title": "Материалы лекции",
           "kicker": "Сопровождение информационной системы",
           "source": "Материалы исходного курса"
+        },
+        {
+          "id": "s07-01-support-lifecycle-agenda",
+          "kind": "agenda",
+          "title": "Вопросы темы",
+          "kicker": "Карта темы",
+          "source": "Учебные вопросы лекции"
         },
         {
           "id": "s07-01-support-lifecycle-intro",
@@ -2313,6 +2324,13 @@
           "source": "Материалы исходного курса"
         },
         {
+          "id": "s07-02-support-levels-agenda",
+          "kind": "agenda",
+          "title": "Вопросы темы",
+          "kicker": "Карта темы",
+          "source": "Учебные вопросы лекции"
+        },
+        {
           "id": "s07-02-support-levels-intro",
           "kind": "theory",
           "title": "Место темы в сопровождении",
@@ -4484,6 +4502,13 @@
           "title": "Материалы лекции",
           "kicker": "Соглашение об уровне обслуживания",
           "source": "Материалы исходного курса"
+        },
+        {
+          "id": "s07-03-sla-agenda",
+          "kind": "agenda",
+          "title": "Вопросы темы",
+          "kicker": "Карта темы",
+          "source": "Учебные вопросы лекции"
         },
         {
           "id": "s07-03-sla-intro",
@@ -6660,6 +6685,13 @@
           "source": "Материалы исходного курса"
         },
         {
+          "id": "s07-04-ticket-flow-agenda",
+          "kind": "agenda",
+          "title": "Вопросы темы",
+          "kicker": "Карта темы",
+          "source": "Учебные вопросы лекции"
+        },
+        {
           "id": "s07-04-ticket-flow-intro",
           "kind": "theory",
           "title": "Место темы в сопровождении",
@@ -8819,6 +8851,13 @@
           "title": "Материалы лекции",
           "kicker": "Воспроизведение проблемы",
           "source": "Материалы исходного курса"
+        },
+        {
+          "id": "s07-05-reproduction-agenda",
+          "kind": "agenda",
+          "title": "Вопросы темы",
+          "kicker": "Карта темы",
+          "source": "Учебные вопросы лекции"
         },
         {
           "id": "s07-05-reproduction-intro",
@@ -10997,6 +11036,13 @@
           "source": "Материалы исходного курса"
         },
         {
+          "id": "s07-06-escalation-agenda",
+          "kind": "agenda",
+          "title": "Вопросы темы",
+          "kicker": "Карта темы",
+          "source": "Учебные вопросы лекции"
+        },
+        {
           "id": "s07-06-escalation-intro",
           "kind": "theory",
           "title": "Место темы в сопровождении",
@@ -13169,6 +13215,13 @@
           "title": "Материалы лекции",
           "kicker": "База знаний службы поддержки",
           "source": "Материалы исходного курса"
+        },
+        {
+          "id": "s07-07-knowledge-base-agenda",
+          "kind": "agenda",
+          "title": "Вопросы темы",
+          "kicker": "Карта темы",
+          "source": "Учебные вопросы лекции"
         },
         {
           "id": "s07-07-knowledge-base-intro",
@@ -15345,6 +15398,13 @@
           "source": "Материалы исходного курса"
         },
         {
+          "id": "s07-08-update-regulation-agenda",
+          "kind": "agenda",
+          "title": "Вопросы темы",
+          "kicker": "Карта темы",
+          "source": "Учебные вопросы лекции"
+        },
+        {
           "id": "s07-08-update-regulation-intro",
           "kind": "theory",
           "title": "Место темы в сопровождении",
@@ -17517,6 +17577,13 @@
           "title": "Материалы лекции",
           "kicker": "Управление изменениями",
           "source": "Материалы исходного курса"
+        },
+        {
+          "id": "s07-09-change-management-agenda",
+          "kind": "agenda",
+          "title": "Вопросы темы",
+          "kicker": "Карта темы",
+          "source": "Учебные вопросы лекции"
         },
         {
           "id": "s07-09-change-management-intro",
@@ -19694,6 +19761,13 @@
           "source": "Материалы исходного курса"
         },
         {
+          "id": "s07-10-backup-restore-agenda",
+          "kind": "agenda",
+          "title": "Вопросы темы",
+          "kicker": "Карта темы",
+          "source": "Учебные вопросы лекции"
+        },
+        {
           "id": "s07-10-backup-restore-intro",
           "kind": "theory",
           "title": "Место темы в сопровождении",
@@ -21866,6 +21940,13 @@
           "title": "Материалы лекции",
           "kicker": "Отказ системы и порядок реагирования",
           "source": "Материалы исходного курса"
+        },
+        {
+          "id": "s08-01-failure-response-agenda",
+          "kind": "agenda",
+          "title": "Вопросы темы",
+          "kicker": "Карта темы",
+          "source": "Учебные вопросы лекции"
         },
         {
           "id": "s08-01-failure-response-intro",
@@ -24042,6 +24123,13 @@
           "source": "Материалы исходного курса"
         },
         {
+          "id": "s08-02-error-collection-agenda",
+          "kind": "agenda",
+          "title": "Вопросы темы",
+          "kicker": "Карта темы",
+          "source": "Учебные вопросы лекции"
+        },
+        {
           "id": "s08-02-error-collection-intro",
           "kind": "theory",
           "title": "Место темы в сопровождении",
@@ -26201,6 +26289,13 @@
           "title": "Материалы лекции",
           "kicker": "Локализация отказа по слоям",
           "source": "Материалы исходного курса"
+        },
+        {
+          "id": "s08-03-layer-localization-agenda",
+          "kind": "agenda",
+          "title": "Вопросы темы",
+          "kicker": "Карта темы",
+          "source": "Учебные вопросы лекции"
         },
         {
           "id": "s08-03-layer-localization-intro",
@@ -28377,6 +28472,13 @@
           "source": "Материалы исходного курса"
         },
         {
+          "id": "s08-04-postmortem-agenda",
+          "kind": "agenda",
+          "title": "Вопросы темы",
+          "kicker": "Карта темы",
+          "source": "Учебные вопросы лекции"
+        },
+        {
           "id": "s08-04-postmortem-intro",
           "kind": "theory",
           "title": "Место темы в сопровождении",
@@ -30549,6 +30651,13 @@
           "title": "Материалы лекции",
           "kicker": "Техническое обслуживание оборудования",
           "source": "Материалы исходного курса"
+        },
+        {
+          "id": "s08-05-hardware-maintenance-agenda",
+          "kind": "agenda",
+          "title": "Вопросы темы",
+          "kicker": "Карта темы",
+          "source": "Учебные вопросы лекции"
         },
         {
           "id": "s08-05-hardware-maintenance-intro",
