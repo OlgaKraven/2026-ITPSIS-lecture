@@ -1,27 +1,28 @@
 import { expect, test } from '@playwright/test'
 import { readFileSync } from 'node:fs'
-import type { Course } from '@olgakraven/lecture-engine'
+import type { Course } from '../src/engine'
 const course: Course = JSON.parse(readFileSync('public/course.json', 'utf8'))
 const bank = JSON.parse(readFileSync('public/assessment.json', 'utf8'))
 
 test('catalog, preserved topics, search and semester filters', async ({ page }) => {
   await page.goto('./')
-  await expect(page.locator('.topic-card')).toHaveCount(15)
+  await expect(page.locator('.ok-topic')).toHaveCount(15)
   for (const semester of course.semesters) {
     await page.getByRole('button', { name: `${semester} семестр`, exact: true }).click()
-    await expect(page.locator('.topic-card')).toHaveCount(semester === 7 ? 10 : 5)
+    await expect(page.locator('.ok-topic')).toHaveCount(semester === 7 ? 10 : 5)
   }
   await page.getByRole('button', { name: 'Все темы', exact: true }).click()
-  await page.getByRole('textbox', { name: 'Поиск по темам' }).fill('резервного')
-  await expect(page.locator('.topic-card')).toHaveCount(1)
-  await expect(page.getByRole('link', { name: 'Материалы', exact: true })).toHaveAttribute('href', course.materialsUrl)
+  await page.getByRole('searchbox', { name: 'Поиск по темам курса' }).fill('резервное')
+  await expect(page.locator('.ok-topic')).toHaveCount(1)
+  await page.getByRole('button', { name: 'Материалы — QR-код и ссылка' }).click()
+  await expect(page.getByRole('link', { name: 'Открыть материалы — в новой вкладке' })).toHaveAttribute('href', course.materialsUrl)
 })
 
 test('responsive catalog and slides fit wide, laptop and mobile screens', async ({ page }) => {
   for (const viewport of [{ width: 1920, height: 1080 }, { width: 1366, height: 768 }, { width: 390, height: 844 }, { width: 360, height: 800 }]) {
     await page.setViewportSize(viewport)
     await page.goto('./')
-    await expect(page.locator('.topic-card')).toHaveCount(15)
+    await expect(page.locator('.ok-topic')).toHaveCount(15)
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth + 1)).toBe(true)
     const lecture = course.lectures[0]
     for (const kind of ['title', 'theory', 'notebook', 'process', 'test']) {
@@ -44,8 +45,8 @@ test('legacy links, keyboard navigation, stable IDs and end navigation', async (
   await page.keyboard.press('End')
   await expect(page.getByRole('button', { name: 'Вперёд', exact: true })).toBeDisabled()
   await page.goto('./?topic=unknown&slide=900')
-  await expect(page.locator('.notice')).toContainText('Лекция не найдена')
-  await expect(page.locator('.topic-card')).toHaveCount(15)
+  await expect(page.locator('.ok-notice')).toContainText('Лекция не найдена')
+  await expect(page.locator('.ok-topic')).toHaveCount(15)
 })
 
 test('all print pages fit their regions and have no private notes or attempts', async ({ page }) => {
@@ -93,15 +94,17 @@ test('two windows, independent preview, black screen and audience privacy', asyn
   const l = course.lectures[0]
   await page.goto(`./?lecture=${l.id}&slide=${l.slides[0].id}`)
   const popup = page.waitForEvent('popup')
-  await page.getByRole('button', { name: 'Начать занятие в двух окнах', exact: true }).click()
+  await page.getByRole('button', { name: 'Режим показа', exact: true }).click()
   const audience = await popup
   await expect(audience.locator('.slide-frame')).toHaveAttribute('data-slide-id', l.slides[0].id)
   await page.getByRole('button', { name: 'Вперёд', exact: true }).click()
   await expect(audience.locator('.slide-frame')).toHaveAttribute('data-slide-id', l.slides[1].id)
+  await page.getByRole('button', { name: 'Содержание', exact: true }).click()
   await page.locator('.toc-list button').nth(4).click()
   await expect(audience.locator('.slide-frame')).toHaveAttribute('data-slide-id', l.slides[1].id)
   await page.getByRole('button', { name: 'Показать аудитории', exact: true }).click()
   await expect(audience.locator('.slide-frame')).toHaveAttribute('data-slide-id', l.slides[4].id)
+  await page.getByLabel('Ещё', { exact: true }).click()
   await page.getByRole('button', { name: 'Чёрный экран', exact: true }).click()
   await expect(audience.locator('.black-screen')).toBeVisible()
   await page.getByRole('button', { name: 'Вернуть слайд', exact: true }).click()

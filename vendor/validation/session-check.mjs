@@ -1,7 +1,7 @@
 import {test} from 'node:test'
 import assert from 'node:assert/strict'
-import {validMessage,newer} from './session.ts'
-import {evaluate} from './scoring.ts'
+import {validMessage,newer} from '../../src/engine/session.ts'
+import {evaluate} from '../../src/engine/scoring.ts'
 const scope={session:'one',lecture:'L001',course:'demo',version:'1',base:'/demo/'}
 const state={slideId:'s1',black:false,animations:true,replay:0,profile:{fullName:'',position:'',department:''},epoch:10,sequence:1}
 const message={protocol:1,session:'one',lecture:'L001',course:'demo',version:'1',type:'STATE',state}

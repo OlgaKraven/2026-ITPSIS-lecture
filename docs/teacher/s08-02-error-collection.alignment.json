@@ -1,0 +1,1236 @@
+{
+  "schemaVersion": 1,
+  "courseId": "itpsis",
+  "contentVersion": "2026-10-23-itpsis-5",
+  "sourceKind": "local",
+  "sourceSha256": "aaba319d21607e3520b386cc542c53ed54f17004fa2e5c12424b746d834b03a3",
+  "lectureIds": [
+    "s08-02-error-collection"
+  ],
+  "documents": {
+    "teacher": "s08-02-error-collection.teacher.md",
+    "presenter": "s08-02-error-collection.presenter.md"
+  },
+  "slides": [
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-title",
+      "displayNumber": 1,
+      "title": "Сбор сведений об ошибках",
+      "anchors": {
+        "teacher": "screen-001",
+        "presenter": "screen-001"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-literature-1",
+      "displayNumber": 2,
+      "title": "Основная литература: 1",
+      "anchors": {
+        "teacher": "screen-002",
+        "presenter": "screen-002"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-literature-2",
+      "displayNumber": 3,
+      "title": "Основная литература: 2",
+      "anchors": {
+        "teacher": "screen-003",
+        "presenter": "screen-003"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-additional-reading",
+      "displayNumber": 4,
+      "title": "Дополнительная литература",
+      "anchors": {
+        "teacher": "screen-004",
+        "presenter": "screen-004"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-materials",
+      "displayNumber": 5,
+      "title": "Материалы лекции",
+      "anchors": {
+        "teacher": "screen-005",
+        "presenter": "screen-005"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-agenda",
+      "displayNumber": 6,
+      "title": "Вопросы темы",
+      "anchors": {
+        "teacher": "screen-006",
+        "presenter": "screen-006"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-intro",
+      "displayNumber": 7,
+      "title": "Место темы в сопровождении",
+      "anchors": {
+        "teacher": "screen-007",
+        "presenter": "screen-007"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-case",
+      "displayNumber": 8,
+      "title": "CampusHelp: условия учебной ситуации",
+      "anchors": {
+        "teacher": "screen-008",
+        "presenter": "screen-008"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-facts-1",
+      "displayNumber": 9,
+      "title": "Связанные записи",
+      "anchors": {
+        "teacher": "screen-009",
+        "presenter": "screen-009"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-readiness",
+      "displayNumber": 10,
+      "title": "Исходные знания и результат",
+      "anchors": {
+        "teacher": "screen-010",
+        "presenter": "screen-010"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-itil",
+      "displayNumber": 11,
+      "title": "Как ITIL помогает в этой теме",
+      "anchors": {
+        "teacher": "screen-011",
+        "presenter": "screen-011"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-versions",
+      "displayNumber": 12,
+      "title": "Версии и границы учебных примеров",
+      "anchors": {
+        "teacher": "screen-012",
+        "presenter": "screen-012"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q01-section",
+      "displayNumber": 13,
+      "title": "Обращение пользователя как источник",
+      "anchors": {
+        "teacher": "screen-013",
+        "presenter": "screen-013"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q01-theory",
+      "displayNumber": 14,
+      "title": "Обращение пользователя как источник",
+      "anchors": {
+        "teacher": "screen-014",
+        "presenter": "screen-014"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q01-term",
+      "displayNumber": 15,
+      "title": "Обращение",
+      "anchors": {
+        "teacher": "screen-015",
+        "presenter": "screen-015"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q01-example",
+      "displayNumber": 16,
+      "title": "Разобранный пример",
+      "anchors": {
+        "teacher": "screen-016",
+        "presenter": "screen-016"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q01-flow",
+      "displayNumber": 17,
+      "title": "Обращение пользователя как источник: основания решения",
+      "anchors": {
+        "teacher": "screen-017",
+        "presenter": "screen-017"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q01-warning",
+      "displayNumber": 18,
+      "title": "Где решение становится ошибочным",
+      "anchors": {
+        "teacher": "screen-018",
+        "presenter": "screen-018"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q01-notebook",
+      "displayNumber": 19,
+      "title": "Запишите правило и границу применения",
+      "anchors": {
+        "teacher": "screen-019",
+        "presenter": "screen-019"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q01-distinctions",
+      "displayNumber": 20,
+      "title": "Различайте близкие объекты работы",
+      "anchors": {
+        "teacher": "screen-020",
+        "presenter": "screen-020"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q01-passport",
+      "displayNumber": 21,
+      "title": "Обращение пользователя как источник",
+      "anchors": {
+        "teacher": "screen-021",
+        "presenter": "screen-021"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q01-test-1",
+      "displayNumber": 22,
+      "title": "Обращение пользователя как источник: задание 1",
+      "anchors": {
+        "teacher": "screen-022",
+        "presenter": "screen-022"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q01-test-2",
+      "displayNumber": 23,
+      "title": "Обращение пользователя как источник: задание 2",
+      "anchors": {
+        "teacher": "screen-023",
+        "presenter": "screen-023"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q01-test-3",
+      "displayNumber": 24,
+      "title": "Обращение пользователя как источник: задание 3",
+      "anchors": {
+        "teacher": "screen-024",
+        "presenter": "screen-024"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q01-test-4",
+      "displayNumber": 25,
+      "title": "Обращение пользователя как источник: задание 4",
+      "anchors": {
+        "teacher": "screen-025",
+        "presenter": "screen-025"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q02-section",
+      "displayNumber": 26,
+      "title": "Сообщение интерфейса",
+      "anchors": {
+        "teacher": "screen-026",
+        "presenter": "screen-026"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q02-theory",
+      "displayNumber": 27,
+      "title": "Сообщение интерфейса",
+      "anchors": {
+        "teacher": "screen-027",
+        "presenter": "screen-027"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q02-term",
+      "displayNumber": 28,
+      "title": "Идентификатор запроса",
+      "anchors": {
+        "teacher": "screen-028",
+        "presenter": "screen-028"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q02-example",
+      "displayNumber": 29,
+      "title": "Разобранный пример",
+      "anchors": {
+        "teacher": "screen-029",
+        "presenter": "screen-029"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q02-flow",
+      "displayNumber": 30,
+      "title": "Сообщение интерфейса: основания решения",
+      "anchors": {
+        "teacher": "screen-030",
+        "presenter": "screen-030"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q02-warning",
+      "displayNumber": 31,
+      "title": "Где решение становится ошибочным",
+      "anchors": {
+        "teacher": "screen-031",
+        "presenter": "screen-031"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q02-notebook",
+      "displayNumber": 32,
+      "title": "Запишите правило и границу применения",
+      "anchors": {
+        "teacher": "screen-032",
+        "presenter": "screen-032"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q02-distinctions",
+      "displayNumber": 33,
+      "title": "Различайте близкие объекты работы",
+      "anchors": {
+        "teacher": "screen-033",
+        "presenter": "screen-033"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q02-passport",
+      "displayNumber": 34,
+      "title": "Сообщение интерфейса",
+      "anchors": {
+        "teacher": "screen-034",
+        "presenter": "screen-034"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q02-test-1",
+      "displayNumber": 35,
+      "title": "Сообщение интерфейса: задание 1",
+      "anchors": {
+        "teacher": "screen-035",
+        "presenter": "screen-035"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q02-test-2",
+      "displayNumber": 36,
+      "title": "Сообщение интерфейса: задание 2",
+      "anchors": {
+        "teacher": "screen-036",
+        "presenter": "screen-036"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q02-test-3",
+      "displayNumber": 37,
+      "title": "Сообщение интерфейса: задание 3",
+      "anchors": {
+        "teacher": "screen-037",
+        "presenter": "screen-037"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q02-test-4",
+      "displayNumber": 38,
+      "title": "Сообщение интерфейса: задание 4",
+      "anchors": {
+        "teacher": "screen-038",
+        "presenter": "screen-038"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q03-section",
+      "displayNumber": 39,
+      "title": "Журнал приложения",
+      "anchors": {
+        "teacher": "screen-039",
+        "presenter": "screen-039"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q03-theory",
+      "displayNumber": 40,
+      "title": "Журнал приложения",
+      "anchors": {
+        "teacher": "screen-040",
+        "presenter": "screen-040"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q03-term",
+      "displayNumber": 41,
+      "title": "Журнал приложения",
+      "anchors": {
+        "teacher": "screen-041",
+        "presenter": "screen-041"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q03-example",
+      "displayNumber": 42,
+      "title": "Разобранный пример",
+      "anchors": {
+        "teacher": "screen-042",
+        "presenter": "screen-042"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q03-flow",
+      "displayNumber": 43,
+      "title": "Журнал приложения: основания решения",
+      "anchors": {
+        "teacher": "screen-043",
+        "presenter": "screen-043"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q03-warning",
+      "displayNumber": 44,
+      "title": "Где решение становится ошибочным",
+      "anchors": {
+        "teacher": "screen-044",
+        "presenter": "screen-044"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q03-notebook",
+      "displayNumber": 45,
+      "title": "Запишите правило и границу применения",
+      "anchors": {
+        "teacher": "screen-045",
+        "presenter": "screen-045"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q03-distinctions",
+      "displayNumber": 46,
+      "title": "Различайте близкие объекты работы",
+      "anchors": {
+        "teacher": "screen-046",
+        "presenter": "screen-046"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q03-passport",
+      "displayNumber": 47,
+      "title": "Журнал приложения",
+      "anchors": {
+        "teacher": "screen-047",
+        "presenter": "screen-047"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q03-test-1",
+      "displayNumber": 48,
+      "title": "Журнал приложения: задание 1",
+      "anchors": {
+        "teacher": "screen-048",
+        "presenter": "screen-048"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q03-test-2",
+      "displayNumber": 49,
+      "title": "Журнал приложения: задание 2",
+      "anchors": {
+        "teacher": "screen-049",
+        "presenter": "screen-049"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q03-test-3",
+      "displayNumber": 50,
+      "title": "Журнал приложения: задание 3",
+      "anchors": {
+        "teacher": "screen-050",
+        "presenter": "screen-050"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q03-test-4",
+      "displayNumber": 51,
+      "title": "Журнал приложения: задание 4",
+      "anchors": {
+        "teacher": "screen-051",
+        "presenter": "screen-051"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q04-section",
+      "displayNumber": 52,
+      "title": "Системные события",
+      "anchors": {
+        "teacher": "screen-052",
+        "presenter": "screen-052"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q04-theory",
+      "displayNumber": 53,
+      "title": "Системные события",
+      "anchors": {
+        "teacher": "screen-053",
+        "presenter": "screen-053"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q04-term",
+      "displayNumber": 54,
+      "title": "Системное событие",
+      "anchors": {
+        "teacher": "screen-054",
+        "presenter": "screen-054"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q04-example",
+      "displayNumber": 55,
+      "title": "Разобранный пример",
+      "anchors": {
+        "teacher": "screen-055",
+        "presenter": "screen-055"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q04-flow",
+      "displayNumber": 56,
+      "title": "Системные события: основания решения",
+      "anchors": {
+        "teacher": "screen-056",
+        "presenter": "screen-056"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q04-warning",
+      "displayNumber": 57,
+      "title": "Где решение становится ошибочным",
+      "anchors": {
+        "teacher": "screen-057",
+        "presenter": "screen-057"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q04-notebook",
+      "displayNumber": 58,
+      "title": "Запишите правило и границу применения",
+      "anchors": {
+        "teacher": "screen-058",
+        "presenter": "screen-058"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q04-distinctions",
+      "displayNumber": 59,
+      "title": "Различайте близкие объекты работы",
+      "anchors": {
+        "teacher": "screen-059",
+        "presenter": "screen-059"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q04-passport",
+      "displayNumber": 60,
+      "title": "Системные события",
+      "anchors": {
+        "teacher": "screen-060",
+        "presenter": "screen-060"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q04-test-1",
+      "displayNumber": 61,
+      "title": "Системные события: задание 1",
+      "anchors": {
+        "teacher": "screen-061",
+        "presenter": "screen-061"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q04-test-2",
+      "displayNumber": 62,
+      "title": "Системные события: задание 2",
+      "anchors": {
+        "teacher": "screen-062",
+        "presenter": "screen-062"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q04-test-3",
+      "displayNumber": 63,
+      "title": "Системные события: задание 3",
+      "anchors": {
+        "teacher": "screen-063",
+        "presenter": "screen-063"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q04-test-4",
+      "displayNumber": 64,
+      "title": "Системные события: задание 4",
+      "anchors": {
+        "teacher": "screen-064",
+        "presenter": "screen-064"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q05-section",
+      "displayNumber": 65,
+      "title": "Метрики и динамика",
+      "anchors": {
+        "teacher": "screen-065",
+        "presenter": "screen-065"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q05-theory",
+      "displayNumber": 66,
+      "title": "Метрики и динамика",
+      "anchors": {
+        "teacher": "screen-066",
+        "presenter": "screen-066"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q05-term",
+      "displayNumber": 67,
+      "title": "Метрика",
+      "anchors": {
+        "teacher": "screen-067",
+        "presenter": "screen-067"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q05-example",
+      "displayNumber": 68,
+      "title": "Разобранный пример",
+      "anchors": {
+        "teacher": "screen-068",
+        "presenter": "screen-068"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q05-flow",
+      "displayNumber": 69,
+      "title": "Метрики и динамика: основания решения",
+      "anchors": {
+        "teacher": "screen-069",
+        "presenter": "screen-069"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q05-warning",
+      "displayNumber": 70,
+      "title": "Где решение становится ошибочным",
+      "anchors": {
+        "teacher": "screen-070",
+        "presenter": "screen-070"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q05-notebook",
+      "displayNumber": 71,
+      "title": "Запишите правило и границу применения",
+      "anchors": {
+        "teacher": "screen-071",
+        "presenter": "screen-071"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q05-distinctions",
+      "displayNumber": 72,
+      "title": "Различайте близкие объекты работы",
+      "anchors": {
+        "teacher": "screen-072",
+        "presenter": "screen-072"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q05-passport",
+      "displayNumber": 73,
+      "title": "Метрики и динамика",
+      "anchors": {
+        "teacher": "screen-073",
+        "presenter": "screen-073"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q05-test-1",
+      "displayNumber": 74,
+      "title": "Метрики и динамика: задание 1",
+      "anchors": {
+        "teacher": "screen-074",
+        "presenter": "screen-074"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q05-test-2",
+      "displayNumber": 75,
+      "title": "Метрики и динамика: задание 2",
+      "anchors": {
+        "teacher": "screen-075",
+        "presenter": "screen-075"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q05-test-3",
+      "displayNumber": 76,
+      "title": "Метрики и динамика: задание 3",
+      "anchors": {
+        "teacher": "screen-076",
+        "presenter": "screen-076"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q05-test-4",
+      "displayNumber": 77,
+      "title": "Метрики и динамика: задание 4",
+      "anchors": {
+        "teacher": "screen-077",
+        "presenter": "screen-077"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q06-section",
+      "displayNumber": 78,
+      "title": "Корреляция источников",
+      "anchors": {
+        "teacher": "screen-078",
+        "presenter": "screen-078"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q06-theory",
+      "displayNumber": 79,
+      "title": "Корреляция источников",
+      "anchors": {
+        "teacher": "screen-079",
+        "presenter": "screen-079"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q06-term",
+      "displayNumber": 80,
+      "title": "Корреляция",
+      "anchors": {
+        "teacher": "screen-080",
+        "presenter": "screen-080"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q06-example",
+      "displayNumber": 81,
+      "title": "Разобранный пример",
+      "anchors": {
+        "teacher": "screen-081",
+        "presenter": "screen-081"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q06-flow",
+      "displayNumber": 82,
+      "title": "Корреляция источников: основания решения",
+      "anchors": {
+        "teacher": "screen-082",
+        "presenter": "screen-082"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q06-warning",
+      "displayNumber": 83,
+      "title": "Где решение становится ошибочным",
+      "anchors": {
+        "teacher": "screen-083",
+        "presenter": "screen-083"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q06-notebook",
+      "displayNumber": 84,
+      "title": "Запишите правило и границу применения",
+      "anchors": {
+        "teacher": "screen-084",
+        "presenter": "screen-084"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q06-distinctions",
+      "displayNumber": 85,
+      "title": "Различайте близкие объекты работы",
+      "anchors": {
+        "teacher": "screen-085",
+        "presenter": "screen-085"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q06-passport",
+      "displayNumber": 86,
+      "title": "Корреляция источников",
+      "anchors": {
+        "teacher": "screen-086",
+        "presenter": "screen-086"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q06-test-1",
+      "displayNumber": 87,
+      "title": "Корреляция источников: задание 1",
+      "anchors": {
+        "teacher": "screen-087",
+        "presenter": "screen-087"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q06-test-2",
+      "displayNumber": 88,
+      "title": "Корреляция источников: задание 2",
+      "anchors": {
+        "teacher": "screen-088",
+        "presenter": "screen-088"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q06-test-3",
+      "displayNumber": 89,
+      "title": "Корреляция источников: задание 3",
+      "anchors": {
+        "teacher": "screen-089",
+        "presenter": "screen-089"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q06-test-4",
+      "displayNumber": 90,
+      "title": "Корреляция источников: задание 4",
+      "anchors": {
+        "teacher": "screen-090",
+        "presenter": "screen-090"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q07-section",
+      "displayNumber": 91,
+      "title": "Безопасность журналов",
+      "anchors": {
+        "teacher": "screen-091",
+        "presenter": "screen-091"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q07-theory",
+      "displayNumber": 92,
+      "title": "Безопасность журналов",
+      "anchors": {
+        "teacher": "screen-092",
+        "presenter": "screen-092"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q07-term",
+      "displayNumber": 93,
+      "title": "Маскирование",
+      "anchors": {
+        "teacher": "screen-093",
+        "presenter": "screen-093"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q07-example",
+      "displayNumber": 94,
+      "title": "Разобранный пример",
+      "anchors": {
+        "teacher": "screen-094",
+        "presenter": "screen-094"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q07-flow",
+      "displayNumber": 95,
+      "title": "Безопасность журналов: основания решения",
+      "anchors": {
+        "teacher": "screen-095",
+        "presenter": "screen-095"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q07-warning",
+      "displayNumber": 96,
+      "title": "Где решение становится ошибочным",
+      "anchors": {
+        "teacher": "screen-096",
+        "presenter": "screen-096"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q07-notebook",
+      "displayNumber": 97,
+      "title": "Запишите правило и границу применения",
+      "anchors": {
+        "teacher": "screen-097",
+        "presenter": "screen-097"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q07-distinctions",
+      "displayNumber": 98,
+      "title": "Различайте близкие объекты работы",
+      "anchors": {
+        "teacher": "screen-098",
+        "presenter": "screen-098"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q07-passport",
+      "displayNumber": 99,
+      "title": "Безопасность журналов",
+      "anchors": {
+        "teacher": "screen-099",
+        "presenter": "screen-099"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q07-test-1",
+      "displayNumber": 100,
+      "title": "Безопасность журналов: задание 1",
+      "anchors": {
+        "teacher": "screen-100",
+        "presenter": "screen-100"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q07-test-2",
+      "displayNumber": 101,
+      "title": "Безопасность журналов: задание 2",
+      "anchors": {
+        "teacher": "screen-101",
+        "presenter": "screen-101"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q07-test-3",
+      "displayNumber": 102,
+      "title": "Безопасность журналов: задание 3",
+      "anchors": {
+        "teacher": "screen-102",
+        "presenter": "screen-102"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q07-test-4",
+      "displayNumber": 103,
+      "title": "Безопасность журналов: задание 4",
+      "anchors": {
+        "teacher": "screen-103",
+        "presenter": "screen-103"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q08-section",
+      "displayNumber": 104,
+      "title": "Организация сбора",
+      "anchors": {
+        "teacher": "screen-104",
+        "presenter": "screen-104"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q08-theory",
+      "displayNumber": 105,
+      "title": "Организация сбора",
+      "anchors": {
+        "teacher": "screen-105",
+        "presenter": "screen-105"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q08-term",
+      "displayNumber": 106,
+      "title": "Политика сбора",
+      "anchors": {
+        "teacher": "screen-106",
+        "presenter": "screen-106"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q08-example",
+      "displayNumber": 107,
+      "title": "Разобранный пример",
+      "anchors": {
+        "teacher": "screen-107",
+        "presenter": "screen-107"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q08-flow",
+      "displayNumber": 108,
+      "title": "Организация сбора: основания решения",
+      "anchors": {
+        "teacher": "screen-108",
+        "presenter": "screen-108"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q08-warning",
+      "displayNumber": 109,
+      "title": "Где решение становится ошибочным",
+      "anchors": {
+        "teacher": "screen-109",
+        "presenter": "screen-109"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q08-notebook",
+      "displayNumber": 110,
+      "title": "Запишите правило и границу применения",
+      "anchors": {
+        "teacher": "screen-110",
+        "presenter": "screen-110"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q08-distinctions",
+      "displayNumber": 111,
+      "title": "Различайте близкие объекты работы",
+      "anchors": {
+        "teacher": "screen-111",
+        "presenter": "screen-111"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q08-passport",
+      "displayNumber": 112,
+      "title": "Организация сбора",
+      "anchors": {
+        "teacher": "screen-112",
+        "presenter": "screen-112"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q08-test-1",
+      "displayNumber": 113,
+      "title": "Организация сбора: задание 1",
+      "anchors": {
+        "teacher": "screen-113",
+        "presenter": "screen-113"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q08-test-2",
+      "displayNumber": 114,
+      "title": "Организация сбора: задание 2",
+      "anchors": {
+        "teacher": "screen-114",
+        "presenter": "screen-114"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q08-test-3",
+      "displayNumber": 115,
+      "title": "Организация сбора: задание 3",
+      "anchors": {
+        "teacher": "screen-115",
+        "presenter": "screen-115"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-Q08-test-4",
+      "displayNumber": 116,
+      "title": "Организация сбора: задание 4",
+      "anchors": {
+        "teacher": "screen-116",
+        "presenter": "screen-116"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-summary-a",
+      "displayNumber": 117,
+      "title": "Главные решения: вопросы 1–4",
+      "anchors": {
+        "teacher": "screen-117",
+        "presenter": "screen-117"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-summary-b",
+      "displayNumber": 118,
+      "title": "Главные решения: вопросы 5–8",
+      "anchors": {
+        "teacher": "screen-118",
+        "presenter": "screen-118"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-final-case",
+      "displayNumber": 119,
+      "title": "Итоговое применение к работе поддержки",
+      "anchors": {
+        "teacher": "screen-119",
+        "presenter": "screen-119"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-next",
+      "displayNumber": 120,
+      "title": "Связь с дальнейшей работой",
+      "anchors": {
+        "teacher": "screen-120",
+        "presenter": "screen-120"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-sources",
+      "displayNumber": 121,
+      "title": "Источники и чтение",
+      "anchors": {
+        "teacher": "screen-121",
+        "presenter": "screen-121"
+      }
+    },
+    {
+      "lectureId": "s08-02-error-collection",
+      "slideId": "s08-02-error-collection-audience-questions",
+      "displayNumber": 122,
+      "title": "Вопросы от аудитории",
+      "anchors": {
+        "teacher": "screen-122",
+        "presenter": "screen-122"
+      }
+    }
+  ]
+}

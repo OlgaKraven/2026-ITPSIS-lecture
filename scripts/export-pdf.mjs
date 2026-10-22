@@ -1,6 +1,7 @@
 import {mkdir,readFile,writeFile} from 'node:fs/promises';
 import {spawn} from 'node:child_process';
 import {chromium} from '@playwright/test';
+import {PDFDocument} from 'pdf-lib';
 const course=JSON.parse(await readFile('public/course.json','utf8'));
 const port=5294,base=`http://127.0.0.1:${port}/2026-ITPSIS-lecture/`;
 const server=spawn(process.execPath,['node_modules/vite/bin/vite.js','preview','--host','127.0.0.1','--port',String(port),'--strictPort'],{stdio:'pipe',windowsHide:true});
@@ -14,7 +15,20 @@ try{
     await page.goto(`${base}?mode=print&scope=${l.id}`);await page.locator('.print-page').last().waitFor();
     await page.evaluate(async()=>{await document.fonts.ready;await Promise.all([...document.images].map(i=>i.decode().catch(()=>{})));});
     if(await page.locator('.print-page').count()!==l.slides.length)throw Error('Неполная печать '+l.id);
-    await page.pdf({path:`${out}/${l.id}.pdf`,preferCSSPageSize:true,printBackground:true});
+    const full=await PDFDocument.load(await page.pdf({preferCSSPageSize:true,printBackground:true}));
+    // Chromium paginates nested headings inside grids incorrectly across fixed pages.
+    // Render passports without preceding pages, then replace only their matching pages.
+    const passports=l.slides.flatMap((s,index)=>s.supplement?[{s,index}]:[]);
+    if(passports.length){
+      await page.addStyleTag({content:'@media print{.print-page{display:none!important}.print-page.export-single{display:block!important;break-after:auto!important}}'});
+      for(const {s,index} of passports){
+        await page.evaluate(id=>{document.querySelector('.export-single')?.classList.remove('export-single');document.querySelector(`[data-slide-id="${id}"]`)?.closest('.print-page').classList.add('export-single')},s.id);
+        const isolated=await PDFDocument.load(await page.pdf({preferCSSPageSize:true,printBackground:true}));
+        if(isolated.getPageCount()!==1)throw Error('Incorrect isolated passport: '+s.id);
+        const [replacement]=await full.copyPages(isolated,[0]);full.removePage(index);full.insertPage(index,replacement);
+      }
+    }
+    await writeFile(`${out}/${l.id}.pdf`,await full.save());
     result.push({id:l.id,pages:l.slides.length,path:`${out}/${l.id}.pdf`});
   }
   await writeFile('reports/pdf-export.json',JSON.stringify({contentVersion:course.contentVersion,files:result},null,2)+'\n');console.log(`Сохранено ${result.length} ученических PDF из рендерера сайта.`);

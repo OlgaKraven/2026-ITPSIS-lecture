@@ -1,10 +1,11 @@
+import {upgradeCourse,auditVersion} from '../authoring/audit-upgrade.mjs';
 import {readFile,writeFile,mkdir} from 'node:fs/promises';
 import {context} from '../authoring/itil-context.mjs';
 import {workedResults} from '../authoring/worked-results.mjs';
 const original=JSON.parse(await readFile('authoring/original-course.json','utf8'));
 const sources=JSON.parse(await readFile('authoring/sources.json','utf8'));
 const literature=JSON.parse(await readFile('authoring/literature.json','utf8'));
-const version='2026-09-12-itil-4';
+const version=auditVersion;
 const course={schemaVersion:1,contentVersion:version,id:'itpsis',code:'МДК.06.02',discipline:'Инженерно-техническая поддержка сопровождения информационных систем',year:'не указан',heroTitle:'Поддержка и сопровождение',heroAccent:'информационных систем',slogan:'Понимать услугу. Находить причины. Восстанавливать работу.',mascot:'brand/mascot/okfks-rhino-catalog.png',mascotAlt:'Носорог — специалист инженерно-технической поддержки',logo:'brand/synergy-logo.png',ornament:'brand/side-ornament.png',font:'fonts/raleway-cyrillic.woff2',materialsUrl:original.course.materialsUrl,teacherNotesUrl:'teacher-notes/{lectureId}.json',teacherNotesPreviousVersions:['2026-09-12-itil-3','2026-09-12-itil-2'],topicArrow:'brand/topic-arrow.webp',literature,demo:false,semesters:[7,8],assessment:{mode:'autonomous',url:'assessment.json'},lectures:[]};
 const bank={schemaVersion:1,courseId:course.id,contentVersion:version,mode:'autonomous-educational',notice:'Учебная самопроверка. Ключи технически доступны в файлах сайта. Это не защищённый экзамен.',keys:{}};
 const registry=[],mapping=[],glossary=[],questionMap=[];
@@ -81,6 +82,10 @@ for(const [li,t] of original.topics.entries()){
   registry.push({id:l.id,title:l.title,semester:l.semester,sourceTitle:l.sourceTitle,hours:null,questions:t.questions.map(q=>q.title),slides:l.slides.length,tests:l.slides.filter(s=>s.task).length,visuals:l.slides.filter(s=>s.visual||s.rows).length,version,status:'содержание готово',teacher:'нужна сборка',pdf:'нужна сборка',checks:'запланировано',titleId});
   course.lectures.push(l);
 }
+const activities=upgradeCourse(course,bank,original,questionMap);
+await mkdir('public/activities',{recursive:true});
+for(const activity of activities)await writeFile(`public/activities/${activity.id}.json`,formatJSON(activity));
+for(const r of registry){const l=course.lectures.find(x=>x.id===r.id);r.slides=l.slides.length;r.visuals=l.slides.filter(s=>s.visual||s.rows).length;}
 for(const dir of ['public','authoring','reports'])await mkdir(dir,{recursive:true});
 for(const [path,data]of [['public/course.json',course],['public/assessment.json',bank],['authoring/question-map.json',questionMap],['authoring/migration-map.json',mapping],['authoring/glossary.json',glossary],['reports/registry.json',registry]])await writeFile(path,formatJSON(data));
 const concepts=new Map();for(const g of glossary){const key=g.term.toLowerCase();if(!concepts.has(key))concepts.set(key,{term:g.term,definition:g.definition,mainLectureId:g.mainLectureId,mainSlideId:g.mainSlideId,applications:[]});else concepts.get(key).applications.push({lectureId:g.mainLectureId,slideId:g.mainSlideId,questionId:g.questionId});}await writeFile('authoring/concept-matrix.json',formatJSON([...concepts.values()]));

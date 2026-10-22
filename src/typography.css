@@ -1,0 +1,10 @@
+/* Approved transferable typography profile, 23 October 2026. */
+:root{--font-text:Raleway,Arial,sans-serif;--font-code:Consolas,"Courier New",monospace;font-family:var(--font-text);font-weight:400;font-synthesis:none}
+body,input,select,textarea{font-family:var(--font-text);font-weight:400}
+h1,h2,h3,h4,h5,h6{font-family:var(--font-text);font-weight:700}
+button,.button,.icon-button,summary,nav a,[role=tab]{font-family:var(--font-text);font-weight:600}
+pre,code,kbd,samp,.code-block{font-family:var(--font-code);font-variant-ligatures:none}
+.ok-page :is(h1,h2,h3),.slide-frame .slide-copy>h2,.pd-brand strong,.notes-heading h2,.case-study :is(h1,h2,h3){font-weight:700!important}
+.slide-frame :is(.slide-body-copy,.public-task,.task-prompt),.slide-frame .slide-copy>ul,.note-reader,.case-study :is(p,textarea,legend,.case-option),.slide-frame .svg-label--body{font-weight:400!important}
+.ok-page :is(button,summary,nav a),.pd-toolbar :is(button,summary,nav a),.deck-controls :is(button,a),.note-tabs button,.case-study .button,.slide-frame .pd-passport>.button{font-weight:600!important}
+.slide-frame .svg-label--title,.slide-frame .svg-label--value{font-weight:700!important}

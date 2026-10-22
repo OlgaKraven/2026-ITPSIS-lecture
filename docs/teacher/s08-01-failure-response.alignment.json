@@ -1,0 +1,1246 @@
+{
+  "schemaVersion": 1,
+  "courseId": "itpsis",
+  "contentVersion": "2026-10-23-itpsis-5",
+  "sourceKind": "local",
+  "sourceSha256": "aaba319d21607e3520b386cc542c53ed54f17004fa2e5c12424b746d834b03a3",
+  "lectureIds": [
+    "s08-01-failure-response"
+  ],
+  "documents": {
+    "teacher": "s08-01-failure-response.teacher.md",
+    "presenter": "s08-01-failure-response.presenter.md"
+  },
+  "slides": [
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-title",
+      "displayNumber": 1,
+      "title": "Отказ системы и порядок реагирования",
+      "anchors": {
+        "teacher": "screen-001",
+        "presenter": "screen-001"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-literature-1",
+      "displayNumber": 2,
+      "title": "Основная литература: 1",
+      "anchors": {
+        "teacher": "screen-002",
+        "presenter": "screen-002"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-literature-2",
+      "displayNumber": 3,
+      "title": "Основная литература: 2",
+      "anchors": {
+        "teacher": "screen-003",
+        "presenter": "screen-003"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-additional-reading",
+      "displayNumber": 4,
+      "title": "Дополнительная литература",
+      "anchors": {
+        "teacher": "screen-004",
+        "presenter": "screen-004"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-materials",
+      "displayNumber": 5,
+      "title": "Материалы лекции",
+      "anchors": {
+        "teacher": "screen-005",
+        "presenter": "screen-005"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-agenda",
+      "displayNumber": 6,
+      "title": "Вопросы темы",
+      "anchors": {
+        "teacher": "screen-006",
+        "presenter": "screen-006"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-intro",
+      "displayNumber": 7,
+      "title": "Место темы в сопровождении",
+      "anchors": {
+        "teacher": "screen-007",
+        "presenter": "screen-007"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-case",
+      "displayNumber": 8,
+      "title": "CampusHelp: условия учебной ситуации",
+      "anchors": {
+        "teacher": "screen-008",
+        "presenter": "screen-008"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-facts-1",
+      "displayNumber": 9,
+      "title": "Первая хронология",
+      "anchors": {
+        "teacher": "screen-009",
+        "presenter": "screen-009"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-facts-2",
+      "displayNumber": 10,
+      "title": "Первая хронология",
+      "anchors": {
+        "teacher": "screen-010",
+        "presenter": "screen-010"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-readiness",
+      "displayNumber": 11,
+      "title": "Исходные знания и результат",
+      "anchors": {
+        "teacher": "screen-011",
+        "presenter": "screen-011"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-itil",
+      "displayNumber": 12,
+      "title": "Как ITIL помогает в этой теме",
+      "anchors": {
+        "teacher": "screen-012",
+        "presenter": "screen-012"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-versions",
+      "displayNumber": 13,
+      "title": "Версии и границы учебных примеров",
+      "anchors": {
+        "teacher": "screen-013",
+        "presenter": "screen-013"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q01-section",
+      "displayNumber": 14,
+      "title": "Отказ и деградация",
+      "anchors": {
+        "teacher": "screen-014",
+        "presenter": "screen-014"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q01-theory",
+      "displayNumber": 15,
+      "title": "Отказ и деградация",
+      "anchors": {
+        "teacher": "screen-015",
+        "presenter": "screen-015"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q01-term",
+      "displayNumber": 16,
+      "title": "Деградация",
+      "anchors": {
+        "teacher": "screen-016",
+        "presenter": "screen-016"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q01-example",
+      "displayNumber": 17,
+      "title": "Разобранный пример",
+      "anchors": {
+        "teacher": "screen-017",
+        "presenter": "screen-017"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q01-flow",
+      "displayNumber": 18,
+      "title": "Отказ и деградация: основания решения",
+      "anchors": {
+        "teacher": "screen-018",
+        "presenter": "screen-018"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q01-warning",
+      "displayNumber": 19,
+      "title": "Где решение становится ошибочным",
+      "anchors": {
+        "teacher": "screen-019",
+        "presenter": "screen-019"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q01-notebook",
+      "displayNumber": 20,
+      "title": "Запишите правило и границу применения",
+      "anchors": {
+        "teacher": "screen-020",
+        "presenter": "screen-020"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q01-distinctions",
+      "displayNumber": 21,
+      "title": "Различайте близкие объекты работы",
+      "anchors": {
+        "teacher": "screen-021",
+        "presenter": "screen-021"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q01-passport",
+      "displayNumber": 22,
+      "title": "Отказ и деградация",
+      "anchors": {
+        "teacher": "screen-022",
+        "presenter": "screen-022"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q01-test-1",
+      "displayNumber": 23,
+      "title": "Отказ и деградация: задание 1",
+      "anchors": {
+        "teacher": "screen-023",
+        "presenter": "screen-023"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q01-test-2",
+      "displayNumber": 24,
+      "title": "Отказ и деградация: задание 2",
+      "anchors": {
+        "teacher": "screen-024",
+        "presenter": "screen-024"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q01-test-3",
+      "displayNumber": 25,
+      "title": "Отказ и деградация: задание 3",
+      "anchors": {
+        "teacher": "screen-025",
+        "presenter": "screen-025"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q01-test-4",
+      "displayNumber": 26,
+      "title": "Отказ и деградация: задание 4",
+      "anchors": {
+        "teacher": "screen-026",
+        "presenter": "screen-026"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q02-section",
+      "displayNumber": 27,
+      "title": "Масштаб последствий",
+      "anchors": {
+        "teacher": "screen-027",
+        "presenter": "screen-027"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q02-theory",
+      "displayNumber": 28,
+      "title": "Масштаб последствий",
+      "anchors": {
+        "teacher": "screen-028",
+        "presenter": "screen-028"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q02-term",
+      "displayNumber": 29,
+      "title": "Влияние",
+      "anchors": {
+        "teacher": "screen-029",
+        "presenter": "screen-029"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q02-example",
+      "displayNumber": 30,
+      "title": "Разобранный пример",
+      "anchors": {
+        "teacher": "screen-030",
+        "presenter": "screen-030"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q02-flow",
+      "displayNumber": 31,
+      "title": "Масштаб последствий: основания решения",
+      "anchors": {
+        "teacher": "screen-031",
+        "presenter": "screen-031"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q02-warning",
+      "displayNumber": 32,
+      "title": "Где решение становится ошибочным",
+      "anchors": {
+        "teacher": "screen-032",
+        "presenter": "screen-032"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q02-notebook",
+      "displayNumber": 33,
+      "title": "Запишите правило и границу применения",
+      "anchors": {
+        "teacher": "screen-033",
+        "presenter": "screen-033"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q02-distinctions",
+      "displayNumber": 34,
+      "title": "Различайте близкие объекты работы",
+      "anchors": {
+        "teacher": "screen-034",
+        "presenter": "screen-034"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q02-passport",
+      "displayNumber": 35,
+      "title": "Масштаб последствий",
+      "anchors": {
+        "teacher": "screen-035",
+        "presenter": "screen-035"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q02-test-1",
+      "displayNumber": 36,
+      "title": "Масштаб последствий: задание 1",
+      "anchors": {
+        "teacher": "screen-036",
+        "presenter": "screen-036"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q02-test-2",
+      "displayNumber": 37,
+      "title": "Масштаб последствий: задание 2",
+      "anchors": {
+        "teacher": "screen-037",
+        "presenter": "screen-037"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q02-test-3",
+      "displayNumber": 38,
+      "title": "Масштаб последствий: задание 3",
+      "anchors": {
+        "teacher": "screen-038",
+        "presenter": "screen-038"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q02-test-4",
+      "displayNumber": 39,
+      "title": "Масштаб последствий: задание 4",
+      "anchors": {
+        "teacher": "screen-039",
+        "presenter": "screen-039"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q03-section",
+      "displayNumber": 40,
+      "title": "Подтверждение события",
+      "anchors": {
+        "teacher": "screen-040",
+        "presenter": "screen-040"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q03-theory",
+      "displayNumber": 41,
+      "title": "Подтверждение события",
+      "anchors": {
+        "teacher": "screen-041",
+        "presenter": "screen-041"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q03-term",
+      "displayNumber": 42,
+      "title": "Событие",
+      "anchors": {
+        "teacher": "screen-042",
+        "presenter": "screen-042"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q03-example",
+      "displayNumber": 43,
+      "title": "Разобранный пример",
+      "anchors": {
+        "teacher": "screen-043",
+        "presenter": "screen-043"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q03-flow",
+      "displayNumber": 44,
+      "title": "Подтверждение события: основания решения",
+      "anchors": {
+        "teacher": "screen-044",
+        "presenter": "screen-044"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q03-warning",
+      "displayNumber": 45,
+      "title": "Где решение становится ошибочным",
+      "anchors": {
+        "teacher": "screen-045",
+        "presenter": "screen-045"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q03-notebook",
+      "displayNumber": 46,
+      "title": "Запишите правило и границу применения",
+      "anchors": {
+        "teacher": "screen-046",
+        "presenter": "screen-046"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q03-distinctions",
+      "displayNumber": 47,
+      "title": "Различайте близкие объекты работы",
+      "anchors": {
+        "teacher": "screen-047",
+        "presenter": "screen-047"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q03-passport",
+      "displayNumber": 48,
+      "title": "Подтверждение события",
+      "anchors": {
+        "teacher": "screen-048",
+        "presenter": "screen-048"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q03-test-1",
+      "displayNumber": 49,
+      "title": "Подтверждение события: задание 1",
+      "anchors": {
+        "teacher": "screen-049",
+        "presenter": "screen-049"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q03-test-2",
+      "displayNumber": 50,
+      "title": "Подтверждение события: задание 2",
+      "anchors": {
+        "teacher": "screen-050",
+        "presenter": "screen-050"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q03-test-3",
+      "displayNumber": 51,
+      "title": "Подтверждение события: задание 3",
+      "anchors": {
+        "teacher": "screen-051",
+        "presenter": "screen-051"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q03-test-4",
+      "displayNumber": 52,
+      "title": "Подтверждение события: задание 4",
+      "anchors": {
+        "teacher": "screen-052",
+        "presenter": "screen-052"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q04-section",
+      "displayNumber": 53,
+      "title": "Роли аварийной команды",
+      "anchors": {
+        "teacher": "screen-053",
+        "presenter": "screen-053"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q04-theory",
+      "displayNumber": 54,
+      "title": "Роли аварийной команды",
+      "anchors": {
+        "teacher": "screen-054",
+        "presenter": "screen-054"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q04-term",
+      "displayNumber": 55,
+      "title": "Координатор инцидента",
+      "anchors": {
+        "teacher": "screen-055",
+        "presenter": "screen-055"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q04-example",
+      "displayNumber": 56,
+      "title": "Разобранный пример",
+      "anchors": {
+        "teacher": "screen-056",
+        "presenter": "screen-056"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q04-flow",
+      "displayNumber": 57,
+      "title": "Роли аварийной команды: основания решения",
+      "anchors": {
+        "teacher": "screen-057",
+        "presenter": "screen-057"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q04-warning",
+      "displayNumber": 58,
+      "title": "Где решение становится ошибочным",
+      "anchors": {
+        "teacher": "screen-058",
+        "presenter": "screen-058"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q04-notebook",
+      "displayNumber": 59,
+      "title": "Запишите правило и границу применения",
+      "anchors": {
+        "teacher": "screen-059",
+        "presenter": "screen-059"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q04-distinctions",
+      "displayNumber": 60,
+      "title": "Различайте близкие объекты работы",
+      "anchors": {
+        "teacher": "screen-060",
+        "presenter": "screen-060"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q04-passport",
+      "displayNumber": 61,
+      "title": "Роли аварийной команды",
+      "anchors": {
+        "teacher": "screen-061",
+        "presenter": "screen-061"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q04-test-1",
+      "displayNumber": 62,
+      "title": "Роли аварийной команды: задание 1",
+      "anchors": {
+        "teacher": "screen-062",
+        "presenter": "screen-062"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q04-test-2",
+      "displayNumber": 63,
+      "title": "Роли аварийной команды: задание 2",
+      "anchors": {
+        "teacher": "screen-063",
+        "presenter": "screen-063"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q04-test-3",
+      "displayNumber": 64,
+      "title": "Роли аварийной команды: задание 3",
+      "anchors": {
+        "teacher": "screen-064",
+        "presenter": "screen-064"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q04-test-4",
+      "displayNumber": 65,
+      "title": "Роли аварийной команды: задание 4",
+      "anchors": {
+        "teacher": "screen-065",
+        "presenter": "screen-065"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q05-section",
+      "displayNumber": 66,
+      "title": "Стабилизация",
+      "anchors": {
+        "teacher": "screen-066",
+        "presenter": "screen-066"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q05-theory",
+      "displayNumber": 67,
+      "title": "Стабилизация",
+      "anchors": {
+        "teacher": "screen-067",
+        "presenter": "screen-067"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q05-term",
+      "displayNumber": 68,
+      "title": "Стабилизация",
+      "anchors": {
+        "teacher": "screen-068",
+        "presenter": "screen-068"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q05-example",
+      "displayNumber": 69,
+      "title": "Разобранный пример",
+      "anchors": {
+        "teacher": "screen-069",
+        "presenter": "screen-069"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q05-flow",
+      "displayNumber": 70,
+      "title": "Стабилизация: основания решения",
+      "anchors": {
+        "teacher": "screen-070",
+        "presenter": "screen-070"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q05-warning",
+      "displayNumber": 71,
+      "title": "Где решение становится ошибочным",
+      "anchors": {
+        "teacher": "screen-071",
+        "presenter": "screen-071"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q05-notebook",
+      "displayNumber": 72,
+      "title": "Запишите правило и границу применения",
+      "anchors": {
+        "teacher": "screen-072",
+        "presenter": "screen-072"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q05-distinctions",
+      "displayNumber": 73,
+      "title": "Различайте близкие объекты работы",
+      "anchors": {
+        "teacher": "screen-073",
+        "presenter": "screen-073"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q05-passport",
+      "displayNumber": 74,
+      "title": "Стабилизация",
+      "anchors": {
+        "teacher": "screen-074",
+        "presenter": "screen-074"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q05-test-1",
+      "displayNumber": 75,
+      "title": "Стабилизация: задание 1",
+      "anchors": {
+        "teacher": "screen-075",
+        "presenter": "screen-075"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q05-test-2",
+      "displayNumber": 76,
+      "title": "Стабилизация: задание 2",
+      "anchors": {
+        "teacher": "screen-076",
+        "presenter": "screen-076"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q05-test-3",
+      "displayNumber": 77,
+      "title": "Стабилизация: задание 3",
+      "anchors": {
+        "teacher": "screen-077",
+        "presenter": "screen-077"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q05-test-4",
+      "displayNumber": 78,
+      "title": "Стабилизация: задание 4",
+      "anchors": {
+        "teacher": "screen-078",
+        "presenter": "screen-078"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q06-section",
+      "displayNumber": 79,
+      "title": "Оповещение заинтересованных сторон",
+      "anchors": {
+        "teacher": "screen-079",
+        "presenter": "screen-079"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q06-theory",
+      "displayNumber": 80,
+      "title": "Оповещение заинтересованных сторон",
+      "anchors": {
+        "teacher": "screen-080",
+        "presenter": "screen-080"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q06-term",
+      "displayNumber": 81,
+      "title": "Статусное сообщение",
+      "anchors": {
+        "teacher": "screen-081",
+        "presenter": "screen-081"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q06-example",
+      "displayNumber": 82,
+      "title": "Разобранный пример",
+      "anchors": {
+        "teacher": "screen-082",
+        "presenter": "screen-082"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q06-flow",
+      "displayNumber": 83,
+      "title": "Оповещение заинтересованных сторон: основания решения",
+      "anchors": {
+        "teacher": "screen-083",
+        "presenter": "screen-083"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q06-warning",
+      "displayNumber": 84,
+      "title": "Где решение становится ошибочным",
+      "anchors": {
+        "teacher": "screen-084",
+        "presenter": "screen-084"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q06-notebook",
+      "displayNumber": 85,
+      "title": "Запишите правило и границу применения",
+      "anchors": {
+        "teacher": "screen-085",
+        "presenter": "screen-085"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q06-distinctions",
+      "displayNumber": 86,
+      "title": "Различайте близкие объекты работы",
+      "anchors": {
+        "teacher": "screen-086",
+        "presenter": "screen-086"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q06-passport",
+      "displayNumber": 87,
+      "title": "Оповещение заинтересованных сторон",
+      "anchors": {
+        "teacher": "screen-087",
+        "presenter": "screen-087"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q06-test-1",
+      "displayNumber": 88,
+      "title": "Оповещение заинтересованных сторон: задание 1",
+      "anchors": {
+        "teacher": "screen-088",
+        "presenter": "screen-088"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q06-test-2",
+      "displayNumber": 89,
+      "title": "Оповещение заинтересованных сторон: задание 2",
+      "anchors": {
+        "teacher": "screen-089",
+        "presenter": "screen-089"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q06-test-3",
+      "displayNumber": 90,
+      "title": "Оповещение заинтересованных сторон: задание 3",
+      "anchors": {
+        "teacher": "screen-090",
+        "presenter": "screen-090"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q06-test-4",
+      "displayNumber": 91,
+      "title": "Оповещение заинтересованных сторон: задание 4",
+      "anchors": {
+        "teacher": "screen-091",
+        "presenter": "screen-091"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q07-section",
+      "displayNumber": 92,
+      "title": "Подтверждение восстановления",
+      "anchors": {
+        "teacher": "screen-092",
+        "presenter": "screen-092"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q07-theory",
+      "displayNumber": 93,
+      "title": "Подтверждение восстановления",
+      "anchors": {
+        "teacher": "screen-093",
+        "presenter": "screen-093"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q07-term",
+      "displayNumber": 94,
+      "title": "Восстановление услуги",
+      "anchors": {
+        "teacher": "screen-094",
+        "presenter": "screen-094"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q07-example",
+      "displayNumber": 95,
+      "title": "Разобранный пример",
+      "anchors": {
+        "teacher": "screen-095",
+        "presenter": "screen-095"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q07-flow",
+      "displayNumber": 96,
+      "title": "Подтверждение восстановления: основания решения",
+      "anchors": {
+        "teacher": "screen-096",
+        "presenter": "screen-096"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q07-warning",
+      "displayNumber": 97,
+      "title": "Где решение становится ошибочным",
+      "anchors": {
+        "teacher": "screen-097",
+        "presenter": "screen-097"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q07-notebook",
+      "displayNumber": 98,
+      "title": "Запишите правило и границу применения",
+      "anchors": {
+        "teacher": "screen-098",
+        "presenter": "screen-098"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q07-distinctions",
+      "displayNumber": 99,
+      "title": "Различайте близкие объекты работы",
+      "anchors": {
+        "teacher": "screen-099",
+        "presenter": "screen-099"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q07-passport",
+      "displayNumber": 100,
+      "title": "Подтверждение восстановления",
+      "anchors": {
+        "teacher": "screen-100",
+        "presenter": "screen-100"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q07-test-1",
+      "displayNumber": 101,
+      "title": "Подтверждение восстановления: задание 1",
+      "anchors": {
+        "teacher": "screen-101",
+        "presenter": "screen-101"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q07-test-2",
+      "displayNumber": 102,
+      "title": "Подтверждение восстановления: задание 2",
+      "anchors": {
+        "teacher": "screen-102",
+        "presenter": "screen-102"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q07-test-3",
+      "displayNumber": 103,
+      "title": "Подтверждение восстановления: задание 3",
+      "anchors": {
+        "teacher": "screen-103",
+        "presenter": "screen-103"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q07-test-4",
+      "displayNumber": 104,
+      "title": "Подтверждение восстановления: задание 4",
+      "anchors": {
+        "teacher": "screen-104",
+        "presenter": "screen-104"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q08-section",
+      "displayNumber": 105,
+      "title": "Переход к разбору",
+      "anchors": {
+        "teacher": "screen-105",
+        "presenter": "screen-105"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q08-theory",
+      "displayNumber": 106,
+      "title": "Переход к разбору",
+      "anchors": {
+        "teacher": "screen-106",
+        "presenter": "screen-106"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q08-term",
+      "displayNumber": 107,
+      "title": "Запись проблемы",
+      "anchors": {
+        "teacher": "screen-107",
+        "presenter": "screen-107"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q08-example",
+      "displayNumber": 108,
+      "title": "Разобранный пример",
+      "anchors": {
+        "teacher": "screen-108",
+        "presenter": "screen-108"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q08-flow",
+      "displayNumber": 109,
+      "title": "Переход к разбору: основания решения",
+      "anchors": {
+        "teacher": "screen-109",
+        "presenter": "screen-109"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q08-warning",
+      "displayNumber": 110,
+      "title": "Где решение становится ошибочным",
+      "anchors": {
+        "teacher": "screen-110",
+        "presenter": "screen-110"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q08-notebook",
+      "displayNumber": 111,
+      "title": "Запишите правило и границу применения",
+      "anchors": {
+        "teacher": "screen-111",
+        "presenter": "screen-111"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q08-distinctions",
+      "displayNumber": 112,
+      "title": "Различайте близкие объекты работы",
+      "anchors": {
+        "teacher": "screen-112",
+        "presenter": "screen-112"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q08-passport",
+      "displayNumber": 113,
+      "title": "Переход к разбору",
+      "anchors": {
+        "teacher": "screen-113",
+        "presenter": "screen-113"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q08-test-1",
+      "displayNumber": 114,
+      "title": "Переход к разбору: задание 1",
+      "anchors": {
+        "teacher": "screen-114",
+        "presenter": "screen-114"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q08-test-2",
+      "displayNumber": 115,
+      "title": "Переход к разбору: задание 2",
+      "anchors": {
+        "teacher": "screen-115",
+        "presenter": "screen-115"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q08-test-3",
+      "displayNumber": 116,
+      "title": "Переход к разбору: задание 3",
+      "anchors": {
+        "teacher": "screen-116",
+        "presenter": "screen-116"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-Q08-test-4",
+      "displayNumber": 117,
+      "title": "Переход к разбору: задание 4",
+      "anchors": {
+        "teacher": "screen-117",
+        "presenter": "screen-117"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-summary-a",
+      "displayNumber": 118,
+      "title": "Главные решения: вопросы 1–4",
+      "anchors": {
+        "teacher": "screen-118",
+        "presenter": "screen-118"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-summary-b",
+      "displayNumber": 119,
+      "title": "Главные решения: вопросы 5–8",
+      "anchors": {
+        "teacher": "screen-119",
+        "presenter": "screen-119"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-final-case",
+      "displayNumber": 120,
+      "title": "Итоговое применение к работе поддержки",
+      "anchors": {
+        "teacher": "screen-120",
+        "presenter": "screen-120"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-next",
+      "displayNumber": 121,
+      "title": "Связь с дальнейшей работой",
+      "anchors": {
+        "teacher": "screen-121",
+        "presenter": "screen-121"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-sources",
+      "displayNumber": 122,
+      "title": "Источники и чтение",
+      "anchors": {
+        "teacher": "screen-122",
+        "presenter": "screen-122"
+      }
+    },
+    {
+      "lectureId": "s08-01-failure-response",
+      "slideId": "s08-01-failure-response-audience-questions",
+      "displayNumber": 123,
+      "title": "Вопросы от аудитории",
+      "anchors": {
+        "teacher": "screen-123",
+        "presenter": "screen-123"
+      }
+    }
+  ]
+}

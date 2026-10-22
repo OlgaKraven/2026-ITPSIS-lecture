@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import {readFile,writeFile} from 'node:fs/promises';
-import {validateCourse} from '../vendor/validation/model.ts';
-import {evaluate} from '../vendor/validation/scoring.ts';
+import {validateCourse} from '../src/engine/model.ts';
+import {evaluate} from '../src/engine/scoring.ts';
 const read=async p=>JSON.parse(await readFile(p,'utf8'));
 const c=await read('public/course.json'), bank=await read('public/assessment.json'), map=await read('authoring/question-map.json'), original=await read('authoring/original-course.json'), migration=await read('authoring/migration-map.json');
 validateCourse(c);assert.equal(c.demo,false);assert.equal(c.lectures.length,15);assert.equal(map.length,120);
@@ -27,7 +27,7 @@ for(const [i,l]of c.lectures.entries()){
     const first=l.slides.findIndex(s=>s.task?.id===q.testIds[0]);for(const id of q.explanationSlideIds)assert.ok(l.slides.findIndex(s=>s.id===id)<first);
   }
   for(const s of l.slides){
-    add(s.id);if(s.visual){visuals++;assert.ok(s.visual.caption);if(s.visual.type==='process'){assert.ok(s.visual.items.length>=2&&s.visual.items.length<=4);assert.ok(s.visual.items.every(x=>x.title&&x.text));}}
+    add(s.id);if(s.visual||s.rows)visuals++;if(s.visual){assert.ok(s.visual.caption);if(s.visual.type==='process'){assert.ok(s.visual.items.length>=2&&s.visual.items.length<=4);assert.ok(s.visual.items.every(x=>x.title&&x.text));}}
     if(s.rows){assert.ok(s.rows.length<=4);assert.ok(s.rows.every(r=>r.length===s.columns.length));}
     if(!s.task)continue; tasks++;const t=s.task,k=bank.keys[t.id];add(t.id);assert.ok(k);assert.equal(k.type,t.type);
     if(t.options)assert.equal(new Set(t.options.map(x=>x.id)).size,t.options.length);

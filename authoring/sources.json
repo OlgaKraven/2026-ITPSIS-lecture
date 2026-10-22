@@ -50,5 +50,8 @@
     "Библиографические записи IPR сохранены из исходника; полный текст книг не использован для неподтверждённых цитат.",
     "Физические работы и реальные договорные последствия требуют документации конкретной организации и производителя; учебные числа не являются нормами безопасности или юридическими рекомендациями."
   ],
-  "templateNotesPatch": "vendor/patches/published-notes.patch"
+  "templateNotesPatch": "vendor/patches/published-notes.patch",
+  "auditCheckedAt": "2026-10-23",
+  "rendererSource": "src/engine/",
+  "rendererProvenance": "vendor/renderer-provenance.md"
 }

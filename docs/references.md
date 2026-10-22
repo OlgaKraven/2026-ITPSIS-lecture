@@ -1,5 +1,17 @@
 # Реестр источников МДК.06.02
 
+## Уточнения аудита 23 октября 2026
+
+- Рабочий рендерер: `src/engine/`; происхождение переноса — `vendor/renderer-provenance.md`.
+- Полный логотип `public/brand/synergy-wordmark.jpg` и знак `public/brand/synergy-mark.png` взяты из утверждённого эталона presentation-design от 22 октября.
+- Тематический маскот: `public/brand/rhino-itpsis.png`. Прежние изображения сохранены. Новый сюжет — диагностика службы поддержки; у PNG подтверждены alpha и прозрачные углы.
+- [PeopleCert ITIL FAQ](https://www.peoplecert.org/help-and-support/faq-itil): сохранена явно обозначенная основа ITIL 4 с отдельным упоминанием Version 5. Полные платные Practice Guides не проверялись.
+- [PostgreSQL: архивирование и PITR](https://www.postgresql.org/docs/17/continuous-archiving.html): проверены границы восстановления по цепочке и необходимость отдельных конфигурационных файлов. Это не инструкция развёртывания PostgreSQL в курсе.
+- [Google SRE: error budget policy](https://sre.google/workbook/error-budget-policy/): показатели интерпретируются относительно услуги, периода и знаменателя. Пороги примеров Google не перенесены как нормы CampusHelp.
+- 120 самостоятельных случаев в `authoring/transfer-cases.mjs` содержат вымышленные учебные условия, а не данные реальной эксплуатации.
+
+## Исходный реестр
+
 Дата технической проверки: 04.09.2026. Машиночитаемый реестр находится в `src/data/sourceRegistry.ts`.
 
 | ID | Источник | Назначение | URL или путь | Публикация |

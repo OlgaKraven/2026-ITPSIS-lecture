@@ -1,6 +1,9 @@
 import { createRoot } from 'react-dom/client'
-import { LectureSite, validateCourse } from '@olgakraven/lecture-engine'
-import '@olgakraven/lecture-engine/style.css'
+import { LectureSite, validateCourse } from './engine'
+import {CourseCatalog} from './CourseCatalog'
+import './presentation-design.css'
+import './typography.css'
+import {migrateCompatibleProgress} from './compatibility'
 
 async function start() {
   const base = import.meta.env.BASE_URL
@@ -9,6 +12,10 @@ async function start() {
   const course = await response.json()
   validateCourse(course)
   const url = new URL(location.href)
+  if(!['audience','print'].includes(url.searchParams.get('mode')||'')){
+    try{migrateCompatibleProgress(course,base,localStorage)}catch{console.warn('Сохранённые данные остались в предыдущей редакции; браузер не разрешил перенос.')}
+  }
+  if(url.searchParams.get('mode')==='case'){const {CaseStudy}=await import('./CaseStudy');createRoot(document.getElementById('root')!).render(<CaseStudy course={course} base={base}/>);return}
   // Ссылки прежнего проигрывателя сохраняют учебный объект через карту переноса.
   const oldTopic = url.searchParams.get('topic')
   if (oldTopic) {
@@ -27,6 +34,6 @@ async function start() {
   }
   history.replaceState(null, '', url)
   document.title = `${course.code} · ${course.discipline}`
-  createRoot(document.getElementById('root')!).render(<LectureSite course={course} base={base} />)
+  createRoot(document.getElementById('root')!).render(<LectureSite course={course} base={base} renderCatalog={props=><CourseCatalog {...props}/>} />)
 }
 start().catch(error => { document.getElementById('root')!.textContent = String(error) })

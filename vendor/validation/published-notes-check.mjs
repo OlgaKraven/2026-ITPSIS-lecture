@@ -1,6 +1,6 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
-import {mergeNotes,validatePublishedNotes} from './publishedNotes.ts';
+import {mergeNotes,validatePublishedNotes} from '../../src/engine/publishedNotes.ts';
 const note={script:'Сценарий',preparation:'Подготовка',notebook:'Запись',questions:'Вопросы',answer:'Ответы',estimatedSeconds:60};
 const course={id:'test',contentVersion:'v1'},lecture={slides:[{id:'slide'}]};
 const pack=()=>({schemaVersion:1,courseId:'test',contentVersion:'v1',notes:{slide:{...note}}});

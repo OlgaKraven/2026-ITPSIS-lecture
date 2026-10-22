@@ -1,7 +1,7 @@
 {
   "name": "2026-itpsis-lecture",
   "private": true,
-  "version": "2.2.0",
+  "version": "2.3.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -21,12 +21,13 @@
     "export:pdf": "node scripts/export-pdf.mjs",
     "check:pdf": "node scripts/check-pdf.mjs",
     "prepare:notes": "node scripts/prepare-teacher-notes.mjs",
-    "generate:guide": "node scripts/generate-guide.mjs"
+    "generate:guide": "node scripts/generate-guide.mjs",
+    "generate:teacher": "node scripts/generate-teacher-text.mjs"
   },
   "dependencies": {
-    "@olgakraven/lecture-engine": "file:vendor/olgakraven-lecture-engine-0.1.1-itpsis.1.tgz",
     "lucide-react": "^1.38.0",
     "motion": "^13.1.1",
+    "qrcode": "^1.5.4",
     "react": "^19.2.8",
     "react-dom": "^19.2.8"
   },
@@ -47,6 +48,6 @@
     "sharp": "^0.35.4",
     "typescript": "~6.0.2",
     "vite": "^8.2.2",
-    "vitest": "^4.1.11"
+    "vitest": "^4.1.12"
   }
 }
