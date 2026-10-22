@@ -37,8 +37,13 @@ jobs:
         run: npm run spellcheck
       - name: Build
         run: npm run build
-      - name: Browser tests
-        run: npx playwright install --with-deps chrome
+      - name: Check Chrome
+        run: |
+          if [ -x /opt/google/chrome/chrome ]; then
+            /opt/google/chrome/chrome --version
+          else
+            npx playwright install --with-deps chrome
+          fi
       - name: Production browser checks
         run: npm run test:e2e
       - name: Configure Pages
