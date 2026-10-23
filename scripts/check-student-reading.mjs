@@ -20,9 +20,10 @@ const checks=course.lectures.flatMap((lecture,li)=>reading[li].map((entry,qi)=>{
 if(checks.length!==120||checks.some(row=>!row.explanationVisible||!row.boundaryVisible||!row.foundationsVisible||row.assessmentSlides.length!==4))throw Error('Неполная карта самостоятельного чтения');
 await writeFile('reports/student-reading-check.json',JSON.stringify({contentVersion:course.contentVersion,questions:checks.length,checks},null,2)+'\n');
 const plan=course.lectures.flatMap(lecture=>lecture.slides.map(slide=>{
- const table=!!slide.rows||['comparison','matrix'].includes(slide.visual?.type);
+ const reasoning=slide.columns?.[0]==='Часть разбора',contrast=slide.id.endsWith('-warning')&&slide.rows?.length===1,stateTracks=slide.visual?.display==='stateTracks';
+ const table=!!slide.rows&&!reasoning&&!contrast||['comparison','matrix'].includes(slide.visual?.type)&&!stateTracks;
  return {lectureId:lecture.id,slideId:slide.id,goal:slide.id.endsWith('-flow')&&!slide.visual?'Проверить вывод при изменённом условии':slide.title,
-  representation:table?'таблица':slide.visual?.type||'текст',catalogId:table?'TAB-01':null};
+  representation:reasoning?'разбор условия':contrast?'ошибка и правило':stateTracks?'потоки состояний':table?'таблица':slide.visual?.type||'текст',catalogId:table?'TAB-01':null};
 }));
 await writeFile('reports/visual-plan.json',JSON.stringify(plan,null,2)+'\n');
 console.log('Карта самостоятельного чтения: 120 вопросов, 480 заданий.');

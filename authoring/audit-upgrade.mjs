@@ -3,12 +3,13 @@ import {compactSummaries} from './student-summaries.mjs';
 import {reading} from './student-reading.mjs';
 import {foundations} from './student-foundations.mjs';
 import {cases} from './transfer-cases.mjs';
-export const auditVersion='2026-10-23-itpsis-10';
+import {applyVisualReview} from './visual-review.mjs';
+export const auditVersion='2026-10-23-itpsis-11';
 
 export function upgradeCourse(course,bank,original,questionMap){
  const activities=[];
  course.slideAliases=Object.fromEntries(course.lectures.map(l=>[`${l.id}-literature-2`,`${l.id}-literature-1`]));
- course.teacherNotesPreviousVersions=['2026-10-23-itpsis-9','2026-10-23-itpsis-8','2026-10-23-itpsis-7','2026-09-12-itil-2','2026-09-12-itil-3','2026-09-12-itil-4','2026-10-23-itpsis-5','2026-10-23-itpsis-6'];
+ course.teacherNotesPreviousVersions=['2026-10-23-itpsis-10','2026-10-23-itpsis-9','2026-10-23-itpsis-8','2026-10-23-itpsis-7','2026-09-12-itil-2','2026-09-12-itil-3','2026-09-12-itil-4','2026-10-23-itpsis-5','2026-10-23-itpsis-6'];
  course.mascot='brand/rhino-itpsis.png';
  course.year='';
  course.publicUrl='https://olgakraven.github.io/2026-ITPSIS-lecture/';
@@ -77,5 +78,6 @@ export function upgradeCourse(course,bank,original,questionMap){
  set(12,1,{type:'comparison',columns:['Слой','Проверка','Предел вывода'],rows:[['Рабочее место / сеть','Другой клиент; DNS, TCP, TLS','Ping не проверяет HTTP'],['Приложение / сервер','Операция, журнал, ресурсы','Статика не проверяет API'],['База данных','Запрос, блокировка, транзакция','Соединение не проверяет запись']],caption:'Это карта диагностических областей, а не обязательная очередь и не доказанная причина отказа.'});
  set(13,4,{type:'comparison',columns:['Наблюдение','Допустимый вывод','Не доказано'],rows:[['Перезапуск помог','Действие восстановило проверенную функцию','Корневая причина остановки'],['Сбой после релиза','Есть временная связь','Что именно в релизе вызвало сбой'],['Контрольный опыт повторил эффект','Гипотеза получила подтверждение в опыте','Поведение при любых иных условиях']],caption:'Причинное объяснение требует механизма и свидетельств; последовательность событий сама его не создаёт.'});
  set(14,3,{type:'comparison',columns:['Показатель','Учебное значение','Интерпретация'],rows:[['Динамика при той же нагрузке','58 → 69 °C','Рост на 11 °C'],['Вывод','Проверить триггер обслуживания','Предел аварийности здесь не задан'],['Применимость','Конкретная модель и нагрузка','Сверить пределы с документацией производителя']],caption:'Числа — учебные условия, а не нормы безопасности для произвольного оборудования.'});
+ applyVisualReview(course);
  return activities;
 }

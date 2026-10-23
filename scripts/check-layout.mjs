@@ -13,7 +13,7 @@ try{
    await page.evaluate(()=>document.fonts.ready);await page.waitForFunction(()=>[...document.images].every(i=>i.complete));
    const bad=await page.locator('.slide-frame').evaluateAll(nodes=>nodes.flatMap(e=>{
     const result=[];const rect=e.getBoundingClientRect();
-    for(const x of e.querySelectorAll('.slide-copy,.slide-content,.public-task,.table-scroll,.write-note,.title-profile')){
+    for(const x of e.querySelectorAll('.slide-copy,.slide-content,.public-task,.table-scroll,.write-note,.title-profile,.study-reasoning,.study-contrast,.study-tracks,.study-duration')){
      if(x.scrollHeight>x.clientHeight+3||x.scrollWidth>x.clientWidth+3)result.push({id:e.dataset.slideId,kind:e.className,element:x.className,scroll:[x.scrollHeight,x.clientHeight,x.scrollWidth,x.clientWidth]});
     }
     for(const x of e.querySelectorAll('h2,.slide-footer,.title-profile,.write-note')){const r=x.getBoundingClientRect();if(r.bottom>rect.bottom+3)result.push({id:e.dataset.slideId,element:x.className,bottom:r.bottom-rect.bottom});}

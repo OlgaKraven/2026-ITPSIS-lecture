@@ -2,6 +2,7 @@ import {useId} from 'react'
 import type {ReactNode} from 'react'
 import type {Visual} from './model'
 import {ExtendedInfographic, extendedInfographicHeight, svgTextLines, svgTextHeight, SVG_LINE_HEIGHT} from './ExtendedInfographic'
+import {DurationFigure,StateTracks} from './StudyVisual'
 
 const palette=['var(--ig-muted)','var(--ig-muted)','var(--ig-muted)','var(--ig-muted)','var(--ig-muted)']
 const number=new Intl.NumberFormat('ru-RU',{maximumFractionDigits:4,useGrouping:false})
@@ -14,6 +15,8 @@ function Label({text,x,y,size=24,width=300,bold=false,fill='var(--ig-ink)',kind=
 
 export function Infographic({visual:v,base='/'}:{visual:Visual;base?:string}){
   const marker=useId().replace(/:/g,'')
+  if(v.type==='duration')return <DurationFigure visual={v}/>
+  if((v.type==='comparison'||v.type==='matrix')&&v.display==='stateTracks')return <StateTracks visual={v}/>
   if(v.type==='comparison'||v.type==='matrix')return <figure className="infographic infographic-table" tabIndex={0} aria-label={'Сопоставление: '+v.caption}>
     <div className="table-scroll"><table className="comparison-table"><thead><tr>{v.columns.map((c,i)=><th scope="col" key={i}>{c}</th>)}</tr></thead><tbody>{v.rows.map((row,r)=><tr key={r}>{row.map((cell,c)=>c===0?<th scope="row" key={c}>{cell}</th>:<td key={c}>{cell}</td>)}</tr>)}</tbody></table></div><figcaption>{v.caption}</figcaption>
   </figure>

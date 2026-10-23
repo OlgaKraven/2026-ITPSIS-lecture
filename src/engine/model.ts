@@ -8,7 +8,8 @@ export type Visual =
  | {type:'bars';items:{label:string;value:number}[];max:number;unit:string;threshold?:number;caption:string}
  | {type:'decision';question:string;yes:string;no:string;start:string;caption:string}
  | {type:'cycle';items:{title:string;text:string}[];caption:string}
- | {type:'comparison'|'matrix';columns:string[];rows:string[][];caption:string}
+ | {type:'comparison'|'matrix';columns:string[];rows:string[][];caption:string;display?:'stateTracks'}
+ | {type:'duration';segments:{title:string;value:number}[];unit:string;max:number;ticks:{value:number;label:string}[];threshold?:{value:number;label:string};axisLabel:string;rows:string[][];columns:string[];caption:string}
  | {type:'beforeAfter';before:{title:string;fields:{label:string;value:string}[]};after:{title:string;fields:{label:string;value:string}[]};changes:string[];caption:string}
  | {type:'conceptMap';center:string;items:{title:string;example:string;relation:string}[];caption:string}
  | {type:'states';states:string[];cancelFrom:number[];caption:string}

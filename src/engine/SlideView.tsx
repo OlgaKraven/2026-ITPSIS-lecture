@@ -5,6 +5,7 @@ import {assetUrl,supplementUrl} from './model'
 import {Infographic} from './Infographic'
 import {TaskView} from './Assessment'
 import {VisualRendererContext} from './VisualRenderer'
+import {RowVisual} from './StudyVisual'
 export function SlideView({course,lecture,slide,profile,base,number,interactive=false,printMode=false}:{course:Course;lecture:Lecture;slide:Slide;profile:Profile;base:string;number:number;interactive?:boolean;printMode?:boolean}){
  const renderVisual=useContext(VisualRendererContext)
  const customVisual=renderVisual?.({slide,base,interactive})
@@ -26,7 +27,7 @@ export function SlideView({course,lecture,slide,profile,base,number,interactive=
  {!slide.supplement&&slide.bullets&&<ul>{slide.bullets.map(x=><li key={x}>{x}</li>)}</ul>}
  {slide.supplement&&<section className="pd-passport"><div><h3>Задача</h3><p>{slide.body}</p></div><div><h3>Что проверить</h3><ul>{slide.bullets?.map(x=><li key={x}>{x}</li>)}</ul></div><p className="pd-passport-scenario">Самостоятельный учебный случай: прогноз, наблюдения и проверка обоснованного вывода.</p><a className="button primary" href={supplementUrl(slide.supplement.href,printMode?(course.publicUrl||base):base)} target="_blank" rel="noopener">{slide.supplement.label} ↗</a></section>}
  {visual}
- {slide.rows&&<div className="table-scroll" tabIndex={0} role="region" aria-label={`Таблица: ${slide.title}`}><table className="comparison-table"><thead><tr>{slide.columns?.map(x=><th key={x}>{x}</th>)}</tr></thead><tbody>{slide.rows.map((row,i)=><tr key={i}>{row.map((cell,j)=><td key={j}>{cell}</td>)}</tr>)}</tbody></table></div>}
+ {slide.rows&&<RowVisual slide={slide}/>}
  {slide.notebook&&<aside className="write-note"><span>Запишите</span><strong>{slide.notebook}</strong></aside>}
  {slide.task&&interactive&&<TaskView task={slide.task}/>}
  {slide.task&&!interactive&&<div className="public-task"><p>{slide.task.prompt}</p>{slide.task.type==='matching'?<div className="matching-public"><ol>{slide.task.items?.map(x=><li key={x.id}>{x.text}</li>)}</ol><ol type="A">{slide.task.options?.map(x=><li key={x.id}>{x.text}</li>)}</ol></div>:slide.task.options?<ol className="public-options">{slide.task.options.map((x,i)=><li key={x.id}><b>{String.fromCharCode(1040+i)}</b><span>{x.text}</span></li>)}</ol>:<div className="answer-line">Краткий ответ: __________________________________</div>}</div>}
