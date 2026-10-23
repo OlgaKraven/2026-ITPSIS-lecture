@@ -32,6 +32,8 @@ async function start() {
     url.searchParams.set('mode', 'print')
     if (oldTopic) url.searchParams.set('scope', oldTopic)
   }
+  const alias=course.slideAliases?.[url.searchParams.get('slide')||'']
+  if(alias)url.searchParams.set('slide',alias)
   history.replaceState(null, '', url)
   document.title = `${course.code} · ${course.discipline}`
   createRoot(document.getElementById('root')!).render(<LectureSite course={course} base={base} renderCatalog={props=><CourseCatalog {...props}/>} />)

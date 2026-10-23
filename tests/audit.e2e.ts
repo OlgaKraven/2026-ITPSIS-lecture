@@ -1,6 +1,12 @@
 import {expect,test} from '@playwright/test'
 import {readFileSync} from 'node:fs'
 const course=JSON.parse(readFileSync('public/course.json','utf8'))
+async function fillChecks(page,activity){
+ for(const c of activity.calculations)await page.getByLabel(c.prompt+' ('+c.unit+')',{exact:true}).fill(String(c.value))
+ if(activity.calculations.length)await page.getByRole('button',{name:'Проверить расчёт',exact:true}).click()
+ for(const [i,s]of activity.statements.entries())await page.getByLabel('Категория записи '+(i+1),{exact:true}).selectOption(s.category)
+}
+
 
 test('previous edition resumes stable slides and saved task drafts',async({page})=>{
  const l=course.lectures[0],s=l.slides.find(s=>s.task?.type==='single')
@@ -19,6 +25,8 @@ test('previous edition resumes stable slides and saved task drafts',async({page}
 
 test('catalog view, filters, profile and QR persist accessibly',async({page})=>{
  await page.goto('./')
+ await expect(page.locator('.ok-hero h1')).toHaveText(course.discipline)
+ await expect(page.locator('.ok-footer')).toHaveCount(0)
  await page.getByRole('button',{name:'8 семестр',exact:true}).click()
  await page.getByRole('button',{name:'Вид: список'}).click()
  await expect(page.locator('.ok-topic')).toHaveCount(5)
@@ -50,21 +58,21 @@ test('all 120 activities load at overview, keep drafts and distinguish correct a
   await expect(page.locator('h1')).toHaveText(activity.title)
   await expect(page.locator('.case-solution')).toHaveCount(0)
   await expect(page.locator('.case-navigation span')).toContainText('Шаг 0')
-  await page.getByLabel('Мой прогноз',{exact:true}).fill('Проверю границы подтверждённого вывода.')
+  await fillChecks(page,activity)
   await page.locator('input[value="premature"]').check()
-  await page.getByLabel('Моё обоснование',{exact:true}).fill('Сопоставляю исходное наблюдение и правило.')
-  await page.getByRole('button',{name:'Проверить вывод',exact:true}).click()
-  await expect(page.locator('form [role=status]')).toContainText(activity.mistake)
+  await page.getByRole('button',{name:'Проверить решение',exact:true}).click()
+  await expect(page.locator('form')).toContainText(activity.mistake)
   await page.locator('input[value="evidence"]').check()
-  await page.getByRole('button',{name:'Проверить вывод',exact:true}).click()
-  await expect(page.locator('form [role=status]')).toContainText('Вывод выбран верно')
+  await page.getByRole('button',{name:'Проверить решение',exact:true}).click()
+  await expect(page.locator('form')).toContainText('Вывод выбран верно')
   await expect(page.locator('.case-solution')).toHaveCount(0)
   await page.getByRole('button',{name:'Открыть разбор',exact:true}).click()
   await expect(page.locator('.case-solution')).toContainText(activity.explanation)
  }
  const last=course.lectures.at(-1).slides.filter(s=>s.supplement).at(-1)
  await page.reload()
- await expect(page.getByLabel('Мой прогноз',{exact:true})).toHaveValue('Проверю границы подтверждённого вывода.')
+ await expect(page.locator('.case-study textarea')).toHaveCount(0)
+ await expect(page.locator('.case-classification select').first()).not.toHaveValue('')
  await page.getByRole('button',{name:'Далее',exact:true}).click()
  await expect(page.locator('.case-navigation span')).toContainText('Шаг 1')
  await page.getByRole('button',{name:'Назад',exact:true}).click()
@@ -140,12 +148,11 @@ test('pointer and theme synchronize; audience explanation requires an explicit c
 
 test('independent calculation diagrams keep computed results behind explicit reveal',async({page})=>{
  await page.goto('./?mode=case&case=s07-10-backup-restore-Q03-case')
- await expect(page.locator('.case-calculation')).toContainText('Самостоятельно')
+ await expect(page.locator('.case-calculation')).toContainText('командой')
  await expect(page.locator('.case-calculation svg text').filter({hasText:/^65$/})).toHaveCount(0)
- await page.getByLabel('Мой прогноз').fill('Сложу последовательные этапы')
+ await fillChecks(page,JSON.parse(readFileSync('public/activities/s07-10-backup-restore-Q03-case.json','utf8')))
  await page.locator('input[value="evidence"]').check()
- await page.getByLabel('Моё обоснование').fill('Подготовка, восстановление и проверка входят в полный маршрут')
- await page.getByRole('button',{name:'Проверить вывод',exact:true}).click()
+ await page.getByRole('button',{name:'Проверить решение',exact:true}).click()
  await expect(page.locator('.case-calculation svg text').filter({hasText:/^65$/})).toHaveCount(0)
  await page.getByRole('button',{name:'Открыть разбор',exact:true}).click()
  await expect(page.locator('.case-calculation svg text').filter({hasText:/^65$/})).toBeVisible()
@@ -173,4 +180,33 @@ test('table text remains readable against every row in light and dark themes',as
   },theme)
   expect(failures,theme).toEqual([])
  }
+})
+
+test('merged bibliography keeps both sources and redirects the removed slide',async({page})=>{
+ const l=course.lectures[0]
+ await page.goto(`./?lecture=${l.id}&slide=${l.id}-literature-2`)
+ await expect(page.locator('.active-slide .slide-frame')).toHaveAttribute('data-slide-id',l.id+'-literature-1')
+ await expect(page.locator('.active-slide .reading-entry')).toHaveCount(2)
+ await expect(page.locator('.active-slide .resource-qr')).toHaveCount(2)
+})
+
+test('practical task rejects wrong categories and numbers, resets grading on edits and persists draft',async({page})=>{
+ const activity=JSON.parse(readFileSync('public/activities/s07-10-backup-restore-Q03-case.json','utf8'))
+ await page.goto('./?mode=case&case='+activity.id)
+ await expect(page.locator('.case-classification')).toHaveCount(0)
+ await page.getByRole('button',{name:'Проверить расчёт',exact:true}).click()
+ await expect(page.locator('form')).toContainText('Неверно.')
+ await expect(page.locator('.case-classification')).toHaveCount(0)
+ await fillChecks(page,activity)
+ await page.getByLabel('Категория записи 1',{exact:true}).selectOption(activity.statements[0].category==='fact'?'assumption':'fact')
+ await page.locator('input[value="evidence"]').check()
+ await page.getByRole('button',{name:'Проверить решение',exact:true}).click()
+ await expect(page.locator('.case-item-feedback').first()).toContainText('Неверно.')
+ await expect(page.locator('form')).toContainText('Есть ошибки.')
+ await page.getByLabel('Категория записи 1',{exact:true}).selectOption(activity.statements[0].category)
+ await expect(page.locator('.case-item-feedback')).toHaveCount(0)
+ await page.getByRole('button',{name:'Проверить решение',exact:true}).click()
+ await expect(page.locator('form')).toContainText('Задача решена верно')
+ await page.reload()
+ await expect(page.getByLabel('Категория записи 1',{exact:true})).toHaveValue(activity.statements[0].category)
 })

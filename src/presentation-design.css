@@ -214,3 +214,21 @@
 .slide-frame[data-slide-id] .comparison-table{font-size:2.04cqw;line-height:1.4}
 .slide-frame[data-slide-id] .comparison-table :is(td,th){padding:.8cqw 1cqw}
 @media screen and (max-width:820px){.active-slide .slide-frame[data-slide-id] .comparison-table{font-size:18px}.active-slide .slide-frame[data-slide-id] .comparison-table :is(td,th){padding:10px 12px}}
+
+/* Shared instructional surfaces: the table and SVG renderers use the same roles. */
+.slide-frame,.case-study{--ig-environment:#f4f4f5;--ig-surface:#fff;--ig-ink:#171719;--ig-muted:#65656d;--ig-line:#dedee2;--ig-neutral:#eeeeef;--ig-accent:#d31626;--ig-focus:#fff1f2}
+:root[data-theme=dark] :is(.slide-frame,.case-study){--ig-environment:#171719;--ig-surface:#232326;--ig-ink:#f4f4f5;--ig-muted:#b4b4bd;--ig-line:#3b3b42;--ig-neutral:#303035;--ig-accent:#ff5360;--ig-focus:#3c2429}
+.slide-frame[data-slide-id] .table-scroll{border:1px solid var(--ig-line);border-radius:12px;background:var(--ig-surface)}
+.slide-frame[data-slide-id] .comparison-table{border-collapse:separate;border-spacing:0;margin:0;color:var(--ig-ink);width:100%}
+.slide-frame[data-slide-id] .comparison-table :is(th,td){background:var(--ig-surface);color:var(--ig-ink);border:0;border-right:1px solid var(--ig-line);border-bottom:1px solid var(--ig-line);text-align:left;font-weight:400;vertical-align:top}
+.slide-frame[data-slide-id] .comparison-table thead th{background:var(--ig-neutral);font-weight:700}
+.slide-frame[data-slide-id] .comparison-table tbody th{font-weight:600}
+.slide-frame[data-slide-id] .comparison-table tr:nth-child(even)>:is(td,th){background:var(--ig-environment)}
+.slide-frame[data-slide-id] .comparison-table tr>:last-child{border-right:0}
+.slide-frame[data-slide-id] .comparison-table tbody tr:last-child>:is(td,th){border-bottom:0}
+.slide-frame[data-slide-id] .infographic-table{display:flex;flex-direction:column;gap:.8cqw;justify-content:center;margin:0;padding:0;overflow:visible}
+.slide-frame[data-slide-id] .infographic-table .table-scroll{flex:none;max-height:100%;overflow:auto}
+.slide-frame[data-slide-id] .infographic figcaption{border:0;background:none;padding:.4cqw 0;color:var(--ig-muted);font-weight:400;text-transform:none;letter-spacing:0;font-size:1.55cqw;line-height:1.4}
+.slide-frame[data-slide-id] .infographic:not(.infographic-table){border:1px solid var(--ig-line);border-radius:12px;padding:1cqw;background:var(--ig-surface)}
+.case-study .case-calculation{border:1px solid var(--ig-line);border-radius:12px;padding:16px;background:var(--ig-surface);color:var(--ig-ink)}
+@media screen and (max-width:820px){.active-slide .slide-frame[data-slide-id] .infographic figcaption{font-size:16px}.active-slide .slide-frame[data-slide-id] .infographic-table{display:flex}}

@@ -3,10 +3,10 @@ import type {ReactNode} from 'react'
 import type {Visual} from './model'
 import {ExtendedInfographic, extendedInfographicHeight, svgTextLines, svgTextHeight, SVG_LINE_HEIGHT} from './ExtendedInfographic'
 
-const palette=['#DE040D','#4561C8','#1C8D00','#66758A','#9A7079']
+const palette=['var(--ig-muted)','var(--ig-muted)','var(--ig-muted)','var(--ig-muted)','var(--ig-muted)']
 const number=new Intl.NumberFormat('ru-RU',{maximumFractionDigits:4,useGrouping:false})
 type LabelKind='title'|'body'|'edge'|'axis'|'value'
-function Label({text,x,y,size=24,width=300,bold=false,fill='#1c1c1c',kind='body',anchor='middle'}:{text:string;x:number;y:number;size?:number;width?:number;bold?:boolean;fill?:string;kind?:LabelKind;anchor?:'middle'|'start'|'end'}){
+function Label({text,x,y,size=24,width=300,bold=false,fill='var(--ig-ink)',kind='body',anchor='middle'}:{text:string;x:number;y:number;size?:number;width?:number;bold?:boolean;fill?:string;kind?:LabelKind;anchor?:'middle'|'start'|'end'}){
   return <text className={`svg-label svg-label--${kind}`} x={x} y={y} textAnchor={anchor} fontSize={size} fill={fill} fontWeight={bold?750:450}>
     {svgTextLines(text,width,size).map((line,i)=><tspan key={i} x={x} dy={i?`${SVG_LINE_HEIGHT}em`:0}>{line}</tspan>)}
   </text>
@@ -14,6 +14,9 @@ function Label({text,x,y,size=24,width=300,bold=false,fill='#1c1c1c',kind='body'
 
 export function Infographic({visual:v,base='/'}:{visual:Visual;base?:string}){
   const marker=useId().replace(/:/g,'')
+  if(v.type==='comparison'||v.type==='matrix')return <figure className="infographic infographic-table" tabIndex={0} aria-label={'Сопоставление: '+v.caption}>
+    <div className="table-scroll"><table className="comparison-table"><thead><tr>{v.columns.map((c,i)=><th scope="col" key={i}>{c}</th>)}</tr></thead><tbody>{v.rows.map((row,r)=><tr key={r}>{row.map((cell,c)=>c===0?<th scope="row" key={c}>{cell}</th>:<td key={c}>{cell}</td>)}</tr>)}</tbody></table></div><figcaption>{v.caption}</figcaption>
+  </figure>
   const W=1040
   let H=extendedInfographicHeight(v)
   let shape:ReactNode=null
@@ -25,15 +28,15 @@ export function Infographic({visual:v,base='/'}:{visual:Visual;base?:string}){
     const boxHeight=Math.max(174,...heights.map(h=>pad*2+h.title+16+h.body))
     H=top+boxHeight+24
     shape=<>
-      {v.type==='timeline'&&<line x1="50" y1="58" x2="990" y2="58" stroke="#d4d5da" strokeWidth="5"/>}
+      {v.type==='timeline'&&<line x1="50" y1="58" x2="990" y2="58" stroke="var(--ig-line)" strokeWidth="5"/>}
       {v.items.map((item,i)=>{
         const x=20+i*(width+gap),cy=v.type==='timeline'?58:34
         return <g key={i}>
-          {v.type==='process'&&i<v.items.length-1&&<path d={`M ${x+width+5} ${top+boxHeight/2} h ${gap-15}`} fill="none" stroke="#66758a" strokeWidth="3" markerEnd={`url(#${marker})`}/>}
-          <rect x={x} y={top} width={width} height={boxHeight} rx="13" fill="#f5f5f7" stroke="#d4d5da"/>
+          {v.type==='process'&&i<v.items.length-1&&<path d={`M ${x+width+5} ${top+boxHeight/2} h ${gap-15}`} fill="none" stroke="var(--ig-muted)" strokeWidth="1.5" markerEnd={`url(#${marker})`}/>}
+          <rect x={x} y={top} width={width} height={boxHeight} rx="13" fill="var(--ig-neutral)" stroke="var(--ig-line)"/>
           <rect x={x} y={top} width={width} height="5" rx="2" fill={palette[i%palette.length]}/>
           <circle cx={x+width/2} cy={cy} r="25" fill={palette[i%palette.length]}/>
-          <text className="svg-label svg-label--axis" x={x+width/2} y={cy+8} textAnchor="middle" fontSize="24" fontWeight="800" fill="white">{i+1}</text>
+          <text className="svg-label svg-label--axis" x={x+width/2} y={cy+8} textAnchor="middle" fontSize="24" fontWeight="700" fill="var(--ig-surface)">{i+1}</text>
           <Label text={item.title} x={x+width/2} y={top+pad+titleSize} size={titleSize} width={width-pad*2} kind="title" bold/>
           <Label text={item.text} x={x+width/2} y={top+pad+heights[i].title+16+bodySize} size={bodySize} width={width-pad*2}/>
         </g>
@@ -58,16 +61,16 @@ export function Infographic({visual:v,base='/'}:{visual:Visual;base?:string}){
     shape=<>
       <rect x={520-rootWidth/2} y="8" width={rootWidth} height={rootHeight} rx="12" fill="#1c1c1c"/>
       <Label text={v.root} x={520} y={20+28} size={28} width={rootWidth-40} fill="white" kind="title" bold/>
-      <path d={`M520 ${rootBottom} V${trunkY}`} stroke="#66758a" strokeWidth="3"/>
+      <path d={`M520 ${rootBottom} V${trunkY}`} stroke="var(--ig-muted)" strokeWidth="1.5"/>
       {v.branches.map((branch,i)=>{
         const x=40+i*width,cx=x+width/2
         return <g key={i}>
-          <path d={`M520 ${trunkY} H${cx} V${branchTop-10}`} fill="none" stroke={palette[i%palette.length]} strokeWidth="3" markerEnd={`url(#${marker})`}/>
+          <path d={`M520 ${trunkY} H${cx} V${branchTop-10}`} fill="none" stroke={palette[i%palette.length]} strokeWidth="1.5" markerEnd={`url(#${marker})`}/>
           <rect x={x+12} y={branchTop} width={width-24} height={branchHeight} rx="10" fill="#f4f4f6" stroke={palette[i%palette.length]} strokeWidth="2"/>
           <Label text={branch.title} x={cx} y={branchTop+14+titleSize} size={titleSize} width={width-60} kind="title" bold/>
           {layout[i].items.map((item,j)=><g key={j}>
             <path d={`M${x+25} ${branchTop+branchHeight} V${item.y+item.h/2} H${x+37}`} fill="none" stroke={palette[i%palette.length]} strokeWidth="2" markerEnd={`url(#${marker})`}/>
-            <rect x={x+45} y={item.y} width={width-60} height={item.h} rx="8" fill="#fff" stroke="#d4d5da"/>
+            <rect x={x+45} y={item.y} width={width-60} height={item.h} rx="8" fill="#fff" stroke="var(--ig-line)"/>
             <Label text={item.text} x={cx+15} y={item.y+13+bodySize} size={bodySize} width={width-92}/>
           </g>)}
         </g>
@@ -89,14 +92,14 @@ export function Infographic({visual:v,base='/'}:{visual:Visual;base?:string}){
         if(!a||!b)return null
         const right=b.x>a.x,sx=right?a.x+a.w:a.x,ex=right?b.x-10:b.x+b.w+10
         return <g key={i}>
-          <path d={`M${sx} ${top+boxHeight/2} H${ex}`} stroke="#66758a" strokeWidth="3" fill="none" markerEnd={`url(#${marker})`}/>
+          <path d={`M${sx} ${top+boxHeight/2} H${ex}`} stroke="var(--ig-muted)" strokeWidth="1.5" fill="none" markerEnd={`url(#${marker})`}/>
           <Label text={edge.label} x={(sx+ex)/2} y={12+23} size={23} width={edgeWidth} kind="edge"/>
         </g>
       })}
       {v.nodes.map((node,i)=>{
         const p=positions[i]
         return <g key={node.id}>
-          <rect x={p.x} y={p.y} width={p.w} height={boxHeight} rx="12" fill="#fff" stroke={palette[i%palette.length]} strokeWidth="3"/>
+          <rect x={p.x} y={p.y} width={p.w} height={boxHeight} rx="12" fill="#fff" stroke={palette[i%palette.length]} strokeWidth="1.5"/>
           <Label text={node.title} x={p.x+p.w/2} y={top+pad+titleSize} size={titleSize} width={width-pad*2} kind="title" bold/>
           <Label text={node.text} x={p.x+p.w/2} y={top+pad+heights[i].title+16+bodySize} size={bodySize} width={width-pad*2}/>
         </g>
@@ -112,7 +115,7 @@ export function Infographic({visual:v,base='/'}:{visual:Visual;base?:string}){
     H=axisY+(v.unit?84:62)
     shape=<>
       {[0,.25,.5,.75,1].map(f=><g key={f}>
-        <line x1={left+width*f} y1={top-8} x2={left+width*f} y2={axisY} stroke="#e0e1e5" strokeDasharray="4 4"/>
+        <line x1={left+width*f} y1={top-8} x2={left+width*f} y2={axisY} stroke="var(--ig-line)" strokeDasharray="4 4"/>
         <text className="svg-label svg-label--axis" x={left+width*f} y={axisY+32} textAnchor="middle" fontSize="24" fill="#555">{number.format(v.max*f)}</text>
       </g>)}
       {rows.map(({item,y,h},i)=>{
@@ -134,7 +137,7 @@ export function Infographic({visual:v,base='/'}:{visual:Visual;base?:string}){
 
   return <figure className={`infographic infographic-${v.type}`} tabIndex={0} aria-label={`Схема: ${v.caption}`}>
     <svg className="infographic-svg" role="img" aria-label={v.caption} viewBox={`0 0 ${W} ${H}`} xmlns="http://www.w3.org/2000/svg">
-      <defs><marker id={marker} markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8" fill="#66758a"/></marker></defs>
+      <defs><marker id={marker} markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8" fill="var(--ig-muted)"/></marker></defs>
       {shape||<ExtendedInfographic visual={v} marker={marker} base={base}/>}
     </svg>
     <figcaption>{v.caption}</figcaption>

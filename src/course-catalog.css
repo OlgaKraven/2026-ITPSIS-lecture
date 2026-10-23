@@ -1110,3 +1110,6 @@
 .ok-page .ok-teacher-footer > .ok-button { width:100%; justify-content:center; }
 
 .ok-page .ok-teacher-footer > .ok-button-primary { background:var(--ok-red); border-color:var(--ok-red); color:#fff; }
+
+.ok-hero{min-height:280px}.ok-hero-copy{max-width:74%}.ok-hero h1{max-width:720px;overflow-wrap:normal}
+@media(max-width:700px){.ok-hero{min-height:390px;align-items:flex-start}.ok-hero-copy{max-width:100%;padding-bottom:100px}.ok-hero h1{font-size:29px;max-width:100%;line-height:1.2}.ok-rhino{width:132px;height:132px}}

@@ -1,13 +1,15 @@
+import {practiceChecks} from './practice-checks.mjs';
 import {compactSummaries} from './student-summaries.mjs';
 import {distractors} from './case-distractors.mjs';
 import {reading} from './student-reading.mjs';
 import {foundations} from './student-foundations.mjs';
 import {cases} from './transfer-cases.mjs';
-export const auditVersion='2026-10-23-itpsis-7';
+export const auditVersion='2026-10-23-itpsis-8';
 
 export function upgradeCourse(course,bank,original,questionMap){
  const activities=[];
- course.teacherNotesPreviousVersions=['2026-09-12-itil-2','2026-09-12-itil-3','2026-09-12-itil-4','2026-10-23-itpsis-5','2026-10-23-itpsis-6'];
+ course.slideAliases=Object.fromEntries(course.lectures.map(l=>[`${l.id}-literature-2`,`${l.id}-literature-1`]));
+ course.teacherNotesPreviousVersions=['2026-10-23-itpsis-7','2026-09-12-itil-2','2026-09-12-itil-3','2026-09-12-itil-4','2026-10-23-itpsis-5','2026-10-23-itpsis-6'];
  course.mascot='brand/rhino-itpsis.png';
  course.year='';
  course.publicUrl='https://olgakraven.github.io/2026-ITPSIS-lecture/';
@@ -41,20 +43,20 @@ export function upgradeCourse(course,bank,original,questionMap){
    term.definitionEntries=[{term:termName,definition:definitionText}];
    term.notebook=`${termName} — ${definitionText}`;
    const [condition,conclusion]=cases[li][qi];
-   if(condition===q.example)throw Error('Самостоятельный случай повторяет пример');
+   if(condition===q.example)throw Error('Практическая задача повторяет пример');
    const id=`${l.id}-${prefix}-case`;
    const options=[{id:'evidence',text:conclusion},{id:'premature',text:distractors[li][qi]}];
    // Alternate positions without assigning correctness to a position.
    if((li+qi)%2)options.reverse();
-   const activity={id,revision:2,lectureId:l.id,questionId:map.questionId,title:q.title,condition,
+   const activity={...practiceChecks(li,qi,condition,conclusion,distractors[li][qi]),id,revision:3,lectureId:l.id,questionId:map.questionId,title:q.title,condition,
     observations:condition.split(/(?<=[.!?])\s+(?=[А-ЯA-ZЁ])/u),
     task:'Выберите вывод, который следует из условия. Обоснуйте его конкретным наблюдением.',options,
     correct:'evidence',explanation:conclusion,rule:q.rule,
     mistake:`Выбранный вывод добавляет к условию неподтверждённое предположение. Правило проверки: ${q.rule}`};
    activities.push(activity);
-   const passport={id:`${l.id}-${prefix}-passport`,kind:'example',title:q.title,kicker:`Вопрос ${qi+1} · Самостоятельный случай`,
-    body:condition,bullets:['Запишите прогноз до разбора.','Сопоставьте данные и вывод, затем обоснуйте решение.'],
-    supplement:{label:'Интерактивная схема',href:`?mode=case&case=${id}`},source:'Независимый учебный пример'};
+   const passport={id:`${l.id}-${prefix}-passport`,kind:'example',title:q.title,kicker:`Вопрос ${qi+1} · Практическая задача`,
+    body:condition,bullets:['Отделите факты от решений и предположений.','Выполните задание и проверьте ответ в разборе задачи.'],
+    supplement:{label:'Разбор задачи',href:`?mode=case&case=${id}`},source:'Независимый учебный пример'};
    const at=l.slides.findIndex(s=>s.id===`${l.id}-${prefix}-test-1`);
    l.slides.splice(at,0,passport);
    map.slideIds.splice(map.slideIds.length-4,0,passport.id);

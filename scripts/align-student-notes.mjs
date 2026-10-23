@@ -2,7 +2,8 @@ import {readFile,writeFile} from 'node:fs/promises';
 import {corrections} from '../authoring/student-corrections.mjs';
 const course=JSON.parse(await readFile('public/course.json','utf8'));
 const pack=JSON.parse(await readFile('authoring/teacher-notes.json','utf8'));
-pack.contentVersion=course.contentVersion;pack.notesRevision='2026-10-23-student-reading-3';
+pack.contentVersion=course.contentVersion;pack.notesRevision='2026-10-23-practice-4';
+for(const id of Object.keys(pack.notes))if(id.endsWith('-literature-2'))delete pack.notes[id];
 for(const c of corrections){
  const prefix=`${course.lectures[c.lecture].id}-Q${String(c.question+1).padStart(2,'0')}-`;
  for(const [id,note] of Object.entries(pack.notes))if(id.startsWith(prefix)){
@@ -11,6 +12,9 @@ for(const c of corrections){
 }
 for(const lecture of course.lectures)for(const slide of lecture.slides){
  const n=pack.notes[slide.id];
+ for(const key of ['script','preparation','notebook','questions','answer'])n[key]=n[key].replaceAll('Самостоятельный случай','Практическая задача').replaceAll('самостоятельный случай','практическую задачу').replaceAll('Интерактивная схема','Разбор задачи');
+ if(slide.id.endsWith('-literature-1'))n.script='Основная литература по дисциплине. '+slide.references.map(r=>r.citation).join(' ')+' Ссылки и QR-коды открывают соответствующие источники.';
+ if(slide.id.endsWith('-passport'))n.script=slide.body+' Откройте «Разбор задачи»: сначала классифицируйте факты, решения и предположения, затем проверьте свой вывод. Расчётные ответы вводите в указанных единицах.';
  if(slide.id.endsWith('-term')){
   n.script=`${slide.notebook} ${slide.body} Сопоставьте объяснение с коротким определением в блоке «Запишите». Определение фиксирует признаки понятия; пояснение показывает, какой вывод допустим и где требуется дополнительная проверка.`;
   n.questions='Какое различие объясняет этот слайд? Приведите условие, при котором короткого определения недостаточно для выбора действия.';

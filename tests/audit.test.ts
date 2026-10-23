@@ -32,7 +32,7 @@ describe('finished course and independent evidence cases',()=>{
   }
  })
 
- it.each(['2026-09-12-itil-4','2026-10-23-itpsis-5','2026-10-23-itpsis-6'])('migrates compatible progress and attempts from %s without replacing current data',(previous)=>{
+ it.each(['2026-09-12-itil-4','2026-10-23-itpsis-5','2026-10-23-itpsis-6','2026-10-23-itpsis-7'])('migrates compatible progress and attempts from %s without replacing current data',(previous)=>{
   const l=course.lectures[0],slide=l.slides[4],task=l.slides.find(s=>s.task)!.task!
   const prefix='lecture:/course/:itpsis'
   const values=new Map<string,string>([
@@ -61,7 +61,7 @@ describe('finished course and independent evidence cases',()=>{
    const prefix=`${l.id}-Q${String(qi+1).padStart(2,'0')}`
    const activity=read(`public/activities/${prefix}-case.json`)
    const flow=l.slides.find(s=>s.id===`${prefix}-flow`)!
-   expect(activity.revision).toBe(2)
+   expect(activity.revision).toBe(3)
    expect(activity.options.find(o=>o.id==='premature').text).toBe(distractors[li][qi])
    expect(JSON.stringify(flow)).not.toContain(activity.condition)
    expect(JSON.stringify(flow)).not.toContain(activity.explanation)
@@ -105,7 +105,7 @@ describe('finished course and independent evidence cases',()=>{
   expect(grading(bank.keys)).toEqual(grading(baseline.assessmentKeys))
   for(const l of course.lectures){
    const before=baseline.slides[l.id] as string[]
-   expect(l.slides.filter(s=>before.includes(s.id)).map(s=>s.id)).toEqual(before)
+   expect(l.slides.filter(s=>before.includes(s.id)).map(s=>s.id)).toEqual(before.filter(id=>!id.endsWith('-literature-2')))
   }
  })
 })
