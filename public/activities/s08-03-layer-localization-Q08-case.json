@@ -1,6 +1,6 @@
 {
   "id": "s08-03-layer-localization-Q08-case",
-  "revision": 4,
+  "revision": 5,
   "lectureId": "s08-03-layer-localization",
   "questionId": "s08-03-layer-localization-Q08",
   "title": "Фиксация локализации",
@@ -33,6 +33,7 @@
         "choice-1"
       ],
       "explanation": "Запись должна соответствовать фактическому тесту.",
+      "hint": "Вывод не должен быть шире проведённого теста.",
       "id": "s08-03-layer-localization-Q08-case-step-1"
     },
     {
@@ -73,6 +74,7 @@
         "choice-2"
       ],
       "explanation": "Проверки закрывают разные уровни.",
+      "hint": "Подбирайте проверку к тому уровню, о котором задан вопрос.",
       "id": "s08-03-layer-localization-Q08-case-step-2"
     },
     {
@@ -97,6 +99,7 @@
         "choice-0"
       ],
       "explanation": "Вывод не должен превышать границу свидетельства.",
+      "hint": "Сохраните в формулировке фактические границы известного.",
       "id": "s08-03-layer-localization-Q08-case-step-3"
     }
   ],

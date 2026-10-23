@@ -1,6 +1,6 @@
 {
   "id": "s08-05-hardware-maintenance-Q01-case",
-  "revision": 4,
+  "revision": 5,
   "lectureId": "s08-05-hardware-maintenance",
   "questionId": "s08-05-hardware-maintenance-Q01",
   "title": "Единица учёта оборудования",
@@ -33,6 +33,7 @@
         "choice-1"
       ],
       "explanation": "Имя не гарантирует уникальность физической единицы.",
+      "hint": "Различайте имя группы объектов и идентичность отдельной единицы.",
       "id": "s08-05-hardware-maintenance-Q01-case-step-1"
     },
     {
@@ -73,6 +74,7 @@
         "choice-2"
       ],
       "explanation": "Учёт должен сохранять и идентичность, и функциональную связь.",
+      "hint": "Устойчивый идентификатор и функциональная связь решают разные вопросы.",
       "id": "s08-05-hardware-maintenance-Q01-case-step-2"
     },
     {
@@ -97,6 +99,7 @@
         "choice-0"
       ],
       "explanation": "Имя может сохраниться при замене оборудования.",
+      "hint": "Сохранение имени не означает сохранения физического объекта.",
       "id": "s08-05-hardware-maintenance-Q01-case-step-3"
     }
   ],

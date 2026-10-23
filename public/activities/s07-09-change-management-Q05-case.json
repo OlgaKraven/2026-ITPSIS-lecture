@@ -1,6 +1,6 @@
 {
   "id": "s07-09-change-management-Q05-case",
-  "revision": 4,
+  "revision": 5,
   "lectureId": "s07-09-change-management",
   "questionId": "s07-09-change-management-Q05",
   "title": "Оценка риска",
@@ -44,6 +44,7 @@
         "choice-2"
       ],
       "explanation": "Одна низкая оценка не делает весь риск приемлемым.",
+      "hint": "Вероятность и тяжесть последствий отвечают на разные вопросы.",
       "id": "s07-09-change-management-Q05-case-step-1"
     },
     {
@@ -73,6 +74,7 @@
         "choice-1"
       ],
       "explanation": "Влияние требует самостоятельной оценки.",
+      "hint": "Проверьте, как предполагаемая мера влияет на риск.",
       "id": "s07-09-change-management-Q05-case-step-2"
     },
     {
@@ -97,6 +99,7 @@
         "choice-0"
       ],
       "explanation": "Непроверенная мера не равна доказанному контролю риска.",
+      "hint": "Различайте существование меры и подтверждение её работоспособности.",
       "id": "s07-09-change-management-Q05-case-step-3"
     }
   ],

@@ -1,6 +1,6 @@
 {
   "id": "s08-05-hardware-maintenance-Q02-case",
-  "revision": 4,
+  "revision": 5,
   "lectureId": "s08-05-hardware-maintenance",
   "questionId": "s08-05-hardware-maintenance-Q02",
   "title": "Конфигурация и зависимости",
@@ -44,6 +44,7 @@
         "choice-2"
       ],
       "explanation": "Отключение компонента оценивают через зависимую функцию.",
+      "hint": "Проследите зависимость пользовательского результата от обслуживаемой единицы.",
       "id": "s08-05-hardware-maintenance-Q02-case-step-1"
     },
     {
@@ -73,6 +74,7 @@
         "choice-1"
       ],
       "explanation": "Схема не подтверждает работающий резерв.",
+      "hint": "Подтвердите допустимость влияния и реальную готовность выбранного маршрута.",
       "id": "s08-05-hardware-maintenance-Q02-case-step-2"
     },
     {
@@ -97,6 +99,7 @@
         "choice-0"
       ],
       "explanation": "Не выполнено основание безопасного планирования.",
+      "hint": "Отсутствующее предусловие нельзя заменить предположением.",
       "id": "s08-05-hardware-maintenance-Q02-case-step-3"
     }
   ],

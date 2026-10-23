@@ -1,6 +1,6 @@
 {
   "id": "s07-08-update-regulation-Q07-case",
-  "revision": 4,
+  "revision": 5,
   "lectureId": "s07-08-update-regulation",
   "questionId": "s07-08-update-regulation-Q07",
   "title": "Критерии и порядок отката",
@@ -14,6 +14,7 @@
       "value": 4,
       "tolerance": 0,
       "explanation": "12 − 8 = 4 минуты.",
+      "hint": "Сопоставьте время маршрута и оставшееся окно.",
       "id": "s07-08-update-regulation-Q07-case-step-1"
     },
     {
@@ -24,6 +25,7 @@
       "value": 15,
       "tolerance": 0,
       "explanation": "12 + 3 = 15 минут; это минимальный маршрут без дополнительного резерва.",
+      "hint": "Сложите все последовательно необходимые этапы, включая контроль.",
       "id": "s07-08-update-regulation-Q07-case-step-2"
     },
     {
@@ -48,6 +50,7 @@
         "choice-0"
       ],
       "explanation": "Запоздание нельзя устранить арифметическим обещанием.",
+      "hint": "Недостаток времени не исчезает от повторного обещания.",
       "id": "s07-08-update-regulation-Q07-case-step-3"
     }
   ],

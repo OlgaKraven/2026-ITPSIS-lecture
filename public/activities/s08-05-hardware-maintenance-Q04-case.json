@@ -1,6 +1,6 @@
 {
   "id": "s08-05-hardware-maintenance-Q04-case",
-  "revision": 4,
+  "revision": 5,
   "lectureId": "s08-05-hardware-maintenance",
   "questionId": "s08-05-hardware-maintenance-Q04",
   "title": "Планирование обслуживания",
@@ -33,6 +33,7 @@
         "choice-1"
       ],
       "explanation": "Состояние может потребовать действия раньше календаря.",
+      "hint": "Оцените связь динамики состояния с предусмотренным триггером.",
       "id": "s08-05-hardware-maintenance-Q04-case-step-1"
     },
     {
@@ -73,6 +74,7 @@
         "choice-2"
       ],
       "explanation": "Календарь не отменяет согласованные триггеры состояния.",
+      "hint": "Разделите основания начала работы и её приёмки.",
       "id": "s08-05-hardware-maintenance-Q04-case-step-2"
     },
     {
@@ -97,6 +99,7 @@
         "choice-0"
       ],
       "explanation": "Действие следует заданному триггеру и порядку работ.",
+      "hint": "Сопоставьте текущее состояние с действующим условием внеплановой работы.",
       "id": "s08-05-hardware-maintenance-Q04-case-step-3"
     }
   ],

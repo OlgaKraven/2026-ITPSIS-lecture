@@ -1,6 +1,6 @@
 {
   "id": "s08-03-layer-localization-Q03-case",
-  "revision": 4,
+  "revision": 5,
   "lectureId": "s08-03-layer-localization",
   "questionId": "s08-03-layer-localization-Q03",
   "title": "Сетевой слой",
@@ -44,6 +44,7 @@
         "choice-2"
       ],
       "explanation": "Успех ICMP не заменяет остальные уровни.",
+      "hint": "У разных протокольных проверок разные пределы.",
       "id": "s08-03-layer-localization-Q03-case-step-1"
     },
     {
@@ -73,6 +74,7 @@
         "choice-1"
       ],
       "explanation": "Нужно локализовать этап соединения.",
+      "hint": "Определите этап, на котором прекращается установление соединения.",
       "id": "s08-03-layer-localization-Q03-case-step-2"
     },
     {
@@ -97,6 +99,7 @@
         "choice-0"
       ],
       "explanation": "Обнаружен конкретный этап и проверяемое расхождение.",
+      "hint": "Используйте конкретный текст ошибки как основание следующей проверки.",
       "id": "s08-03-layer-localization-Q03-case-step-3"
     }
   ],

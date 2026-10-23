@@ -1,6 +1,6 @@
 {
   "id": "s07-07-knowledge-base-Q08-case",
-  "revision": 4,
+  "revision": 5,
   "lectureId": "s07-07-knowledge-base",
   "questionId": "s07-07-knowledge-base-Q08",
   "title": "Актуальность и метрики",
@@ -14,6 +14,7 @@
       "value": 30,
       "tolerance": 0,
       "explanation": "Показатель относится к подходящим попыткам, а не просмотрам.",
+      "hint": "Определите, какое событие считается попыткой применения.",
       "id": "s07-07-knowledge-base-Q08-case-step-1"
     },
     {
@@ -24,6 +25,7 @@
       "value": 40,
       "tolerance": 0,
       "explanation": "12 / 30 × 100 = 40%.",
+      "hint": "Числитель и знаменатель должны относиться к одной совокупности.",
       "id": "s07-07-knowledge-base-Q08-case-step-2"
     },
     {
@@ -48,6 +50,7 @@
         "choice-0"
       ],
       "explanation": "Изменение другого показателя не меняет исходный знаменатель.",
+      "hint": "Проверьте, изменились ли величины именно этого показателя.",
       "id": "s07-07-knowledge-base-Q08-case-step-3"
     }
   ],

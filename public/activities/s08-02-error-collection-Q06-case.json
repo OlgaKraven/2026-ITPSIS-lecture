@@ -1,10 +1,10 @@
 {
   "id": "s08-02-error-collection-Q06-case",
-  "revision": 4,
+  "revision": 5,
   "lectureId": "s08-02-error-collection",
   "questionId": "s08-02-error-collection-Q06",
   "title": "Корреляция источников",
-  "condition": "Клиент 10:05 UTC+3, сервер 07:05 UTC, requestId совпадает.",
+  "condition": "Клиент 10:05 UTC+3, сервер 07:05 UTC в тот же день, requestId совпадает.",
   "steps": [
     {
       "type": "code",
@@ -15,6 +15,7 @@
         "7:05"
       ],
       "explanation": "10:05 − 3 часа = 07:05 UTC.",
+      "hint": "Смена представления часовой зоны не должна менять физический момент.",
       "id": "s08-02-error-collection-Q06-case-step-1"
     },
     {
@@ -25,6 +26,7 @@
       "value": 0,
       "tolerance": 0,
       "explanation": "Обе отметки 07:05 UTC; разность нулевая.",
+      "hint": "Сравните отметки только после приведения к общей зоне.",
       "id": "s08-02-error-collection-Q06-case-step-2"
     },
     {
@@ -54,6 +56,7 @@
         "choice-1"
       ],
       "explanation": "Идентификатор и контекст сильнее порядка строк разных источников.",
+      "hint": "Учитывайте предметную связь вместе со временной.",
       "id": "s08-02-error-collection-Q06-case-step-3"
     }
   ],

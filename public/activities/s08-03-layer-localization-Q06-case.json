@@ -1,6 +1,6 @@
 {
   "id": "s08-03-layer-localization-Q06-case",
-  "revision": 4,
+  "revision": 5,
   "lectureId": "s08-03-layer-localization",
   "questionId": "s08-03-layer-localization-Q06",
   "title": "Слой базы данных",
@@ -44,6 +44,7 @@
         "choice-2"
       ],
       "explanation": "Успех соединения не доказывает выполнение запросов.",
+      "hint": "Соединение и выполнение запроса подтверждаются разными проверками.",
       "id": "s08-03-layer-localization-Q06-case-step-1"
     },
     {
@@ -73,6 +74,7 @@
         "choice-1"
       ],
       "explanation": "Нужно понять владельца и последствия вмешательства.",
+      "hint": "Для вмешательства нужны сведения о владельце и последствиях ожидания.",
       "id": "s08-03-layer-localization-Q06-case-step-2"
     },
     {
@@ -97,6 +99,7 @@
         "choice-0"
       ],
       "explanation": "Вмешательство требует знания последствий и полномочий.",
+      "hint": "Оцените последствия отмены и границы разрешённого действия.",
       "id": "s08-03-layer-localization-Q06-case-step-3"
     }
   ],

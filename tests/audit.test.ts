@@ -31,7 +31,7 @@ describe('finished course and independent evidence cases',()=>{
   }
  })
 
- it.each(['2026-09-12-itil-4','2026-10-23-itpsis-5','2026-10-23-itpsis-6','2026-10-23-itpsis-7','2026-10-23-itpsis-8'])('migrates compatible progress and attempts from %s without replacing current data',(previous)=>{
+ it.each(['2026-09-12-itil-4','2026-10-23-itpsis-5','2026-10-23-itpsis-6','2026-10-23-itpsis-7','2026-10-23-itpsis-8','2026-10-23-itpsis-9'])('migrates compatible progress and attempts from %s without replacing current data',(previous)=>{
   const l=course.lectures[0],slide=l.slides[4],task=l.slides.find(s=>s.task)!.task!
   const prefix='lecture:/course/:itpsis'
   const values=new Map<string,string>([
@@ -60,7 +60,7 @@ describe('finished course and independent evidence cases',()=>{
    const prefix=`${l.id}-Q${String(qi+1).padStart(2,'0')}`
    const activity=read(`public/activities/${prefix}-case.json`)
    const flow=l.slides.find(s=>s.id===`${prefix}-flow`)!
-   expect(activity.revision).toBe(4)
+   expect(activity.revision).toBe(5)
    expect(activity.steps).toHaveLength(3)
    expect(new Set(activity.steps.map(s=>s.type)).size).toBeGreaterThan(1)
    expect(JSON.stringify(flow)).not.toContain(activity.condition)

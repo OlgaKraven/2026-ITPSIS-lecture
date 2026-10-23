@@ -1,6 +1,6 @@
 {
   "id": "s07-10-backup-restore-Q05-case",
-  "revision": 4,
+  "revision": 5,
   "lectureId": "s07-10-backup-restore",
   "questionId": "s07-10-backup-restore-Q05",
   "title": "Расписание и хранение",
@@ -14,6 +14,7 @@
       "value": 6,
       "tolerance": 0,
       "explanation": "60 / 10 = 6. Это частота, не устойчивость носителя.",
+      "hint": "Отличайте число интервалов от числа файлов на их границах.",
       "id": "s07-10-backup-restore-Q05-case-step-1"
     },
     {
@@ -54,6 +55,7 @@
         "choice-2"
       ],
       "explanation": "Эти свойства нельзя заменять друг другом.",
+      "hint": "Каждая мера действует на определённый сценарий отказа.",
       "id": "s07-10-backup-restore-Q05-case-step-2"
     },
     {
@@ -78,6 +80,7 @@
         "choice-0"
       ],
       "explanation": "Копии на том же утраченном диске разделяют его отказ.",
+      "hint": "Проверьте, разделяют ли носитель и копии один отказ.",
       "id": "s07-10-backup-restore-Q05-case-step-3"
     }
   ],

@@ -1,6 +1,6 @@
 {
   "id": "s07-09-change-management-Q07-case",
-  "revision": 4,
+  "revision": 5,
   "lectureId": "s07-09-change-management",
   "questionId": "s07-09-change-management-Q07",
   "title": "Внедрение и наблюдение",
@@ -14,6 +14,7 @@
       "value": 95,
       "tolerance": 0,
       "explanation": "100 − 5 = 95%.",
+      "hint": "Отделите проверенную часть от всей совокупности.",
       "id": "s07-09-change-management-Q07-case-step-1"
     },
     {
@@ -43,6 +44,7 @@
         "choice-1"
       ],
       "explanation": "Расширение должно иметь критерии, а не автоматическое доверие.",
+      "hint": "Продолжение требует правил допуска и остановки.",
       "id": "s07-09-change-management-Q07-case-step-2"
     },
     {
@@ -67,6 +69,7 @@
         "choice-0"
       ],
       "explanation": "Новая стадия проверяет и может опровергнуть пригодность расширения.",
+      "hint": "Новая стадия оценивается по её собственным наблюдениям.",
       "id": "s07-09-change-management-Q07-case-step-3"
     }
   ],

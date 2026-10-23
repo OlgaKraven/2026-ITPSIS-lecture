@@ -3,12 +3,12 @@ import {compactSummaries} from './student-summaries.mjs';
 import {reading} from './student-reading.mjs';
 import {foundations} from './student-foundations.mjs';
 import {cases} from './transfer-cases.mjs';
-export const auditVersion='2026-10-23-itpsis-9';
+export const auditVersion='2026-10-23-itpsis-10';
 
 export function upgradeCourse(course,bank,original,questionMap){
  const activities=[];
  course.slideAliases=Object.fromEntries(course.lectures.map(l=>[`${l.id}-literature-2`,`${l.id}-literature-1`]));
- course.teacherNotesPreviousVersions=['2026-10-23-itpsis-8','2026-10-23-itpsis-7','2026-09-12-itil-2','2026-09-12-itil-3','2026-09-12-itil-4','2026-10-23-itpsis-5','2026-10-23-itpsis-6'];
+ course.teacherNotesPreviousVersions=['2026-10-23-itpsis-9','2026-10-23-itpsis-8','2026-10-23-itpsis-7','2026-09-12-itil-2','2026-09-12-itil-3','2026-09-12-itil-4','2026-10-23-itpsis-5','2026-10-23-itpsis-6'];
  course.mascot='brand/rhino-itpsis.png';
  course.year='';
  course.publicUrl='https://olgakraven.github.io/2026-ITPSIS-lecture/';
@@ -45,7 +45,7 @@ export function upgradeCourse(course,bank,original,questionMap){
    if(condition===q.example)throw Error('Практическая задача повторяет пример');
    const id=`${l.id}-${prefix}-case`;
    const steps=buildTeamSteps(li,qi,id);
-   const activity={id,revision:4,lectureId:l.id,questionId:map.questionId,title:q.title,condition,steps,explanation:conclusion,rule:q.rule};
+   const activity={id,revision:5,lectureId:l.id,questionId:map.questionId,title:q.title,condition,steps,explanation:conclusion,rule:q.rule};
    activities.push(activity);
    const passport={id:`${l.id}-${prefix}-passport`,kind:'example',title:q.title,kicker:`Вопрос ${qi+1} · Практическая задача`,
     body:condition,bullets:steps.map(step=>step.title),

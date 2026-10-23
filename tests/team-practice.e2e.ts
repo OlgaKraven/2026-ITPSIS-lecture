@@ -35,7 +35,8 @@ for(const l of course.lectures)test(`all 8 team cases: ${l.id}; every step rejec
    await expect(page.locator('.team-current')).toHaveAttribute('data-step-id',s.id)
    if(i<2)await expect(page.getByRole('button',{name:'Следующий шаг',exact:true})).toBeDisabled()
    await fill(page,s,incorrect(s));await page.getByRole('button',{name:'Проверить шаг',exact:true}).click();await expect(page.locator('.team-feedback')).toHaveClass(/incorrect/)
-   await expect(page.locator('.team-complete')).toHaveCount(0);await page.getByRole('button',{name:'Разобрать ошибку шага',exact:true}).click();await expect(page.locator('.team-hint')).toContainText(s.explanation)
+   await expect(page.locator('.team-complete')).toHaveCount(0);await page.getByRole('button',{name:'Подсказка к шагу',exact:true}).click();await expect(page.locator('.team-hint')).toHaveText(s.hint)
+   await expect(page.locator('.team-hint')).not.toContainText(s.explanation)
    await fill(page,s,correct(s));await expect(page.locator('.team-hint')).toHaveCount(0)
    await page.getByRole('button',{name:'Проверить шаг',exact:true}).click();await expect(page.locator('.team-feedback')).toHaveClass(/\bcorrect\b/);await expect(page.locator('.team-feedback')).toContainText(s.explanation)
    if(i<2)await page.getByRole('button',{name:'Следующий шаг',exact:true}).click()
@@ -56,7 +57,7 @@ test('numeric zero, empty input, reset, themes, keyboard and narrow view retain 
  const a=activity('s08-02-error-collection-Q06-case');await page.getByRole('button',{name:'Начать решение',exact:true}).click();await page.getByRole('button',{name:'Проверить шаг',exact:true}).click();await expect(page.locator('.team-feedback')).toContainText('Введите');await expect(page.getByRole('button',{name:'Следующий шаг',exact:true})).toBeDisabled()
  await fill(page,a.steps[0],correct(a.steps[0]));await page.getByRole('button',{name:'Проверить шаг',exact:true}).click();await page.getByRole('button',{name:'Следующий шаг',exact:true}).click();await fill(page,a.steps[1],'0');await page.locator('.team-value input').press('Enter');await expect(page.locator('.team-feedback')).toContainText('Шаг выполнен верно')
  await page.getByRole('button',{name:'Тёмная тема',exact:true}).click();await expect(page.locator('html')).toHaveAttribute('data-theme','dark');expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true)
- await page.getByRole('button',{name:'Начать заново',exact:true}).click();await expect(page.locator('.team-progress')).toContainText('Шаг 0');await expect(page.locator('.team-progress')).toContainText('Проверено: 0 / 3')
+ await page.getByRole('button',{name:'Начать заново',exact:true}).click();await page.getByRole('button',{name:'Сбросить решение',exact:true}).click();await expect(page.locator('.team-progress')).toContainText('Шаг 0');await expect(page.locator('.team-progress')).toContainText('Проверено: 0 / 3')
 })
 
 test('team controls have readable text contrast in both themes',async({page})=>{
@@ -69,4 +70,21 @@ test('team controls have readable text contrast in both themes',async({page})=>{
    return nodes.flatMap(e=>{const s=getComputedStyle(e),a=lum(rgb(s.color)),b=lum(rgb(s.backgroundColor)),ratio=(Math.max(a,b)+.05)/(Math.min(a,b)+.05);return ratio<4.5?[{text:e.textContent,ratio}]:[]})
   })).toEqual([])
  }
+})
+
+test('previous data and the actual team answers remain available without reopening a solved step',async({page})=>{
+ const a=activity('s07-08-update-regulation-Q01-case');await page.goto('./?mode=case&case='+a.id);await page.getByRole('button',{name:'Начать решение',exact:true}).click()
+ for(const s of a.steps.slice(0,2)){await fill(page,s,correct(s));await page.getByRole('button',{name:'Проверить шаг',exact:true}).click();await page.getByRole('button',{name:'Следующий шаг',exact:true}).click()}
+ await page.locator('.team-history summary').click();await expect(page.locator('.team-history')).toContainText(a.steps[1].prompt);await expect(page.locator('.team-history')).toContainText('Ответ команды:');await expect(page.locator('.team-current')).toHaveAttribute('data-step-id',a.steps[2].id)
+})
+test('an alternate independent experiment order is accepted; hint gives method rather than solved order',async({page})=>{
+ const a=activity('s07-05-reproduction-Q02-case');await page.goto('./?mode=case&case='+a.id);await page.getByRole('button',{name:'Начать решение',exact:true}).click()
+ for(const s of a.steps.slice(0,2)){await fill(page,s,correct(s));await page.getByRole('button',{name:'Проверить шаг',exact:true}).click();await page.getByRole('button',{name:'Следующий шаг',exact:true}).click()}
+ await fill(page,a.steps[2],['item-1','item-0','item-2']);await page.getByRole('button',{name:'Проверить шаг',exact:true}).click();await expect(page.locator('.team-complete')).toBeVisible()
+})
+test('deduplication data and rounded mean can be solved without a numerical answer in the hint',async({page})=>{
+ const a=activity('s08-04-postmortem-Q06-case');await page.goto('./?mode=case&case='+a.id);await page.getByRole('button',{name:'Начать решение',exact:true}).click();await expect(page.locator('.team-data tbody tr')).toHaveCount(4)
+ await page.locator('.team-value input').fill('4');await page.getByRole('button',{name:'Проверить шаг',exact:true}).click();await page.getByRole('button',{name:'Подсказка к шагу',exact:true}).click();await expect(page.locator('.team-hint')).toHaveText(a.steps[0].hint);await expect(page.locator('.team-hint')).not.toContainText('3')
+ await page.locator('.team-value input').fill('3');await page.getByRole('button',{name:'Проверить шаг',exact:true}).click();await page.getByRole('button',{name:'Следующий шаг',exact:true}).click();await page.locator('.team-history summary').click();await expect(page.locator('.team-history .team-data tbody tr')).toHaveCount(4);await page.locator('.team-value input').fill('3,33');await page.getByRole('button',{name:'Проверить шаг',exact:true}).click();await expect(page.locator('.team-feedback')).toContainText('Шаг выполнен верно')
+ await page.getByRole('button',{name:'Начать заново',exact:true}).click();await expect(page.locator('.team-progress')).toContainText('Проверено: 2 / 3');await page.getByRole('button',{name:'Продолжить решение',exact:true}).click();await expect(page.locator('.team-progress')).toContainText('Проверено: 2 / 3')
 })

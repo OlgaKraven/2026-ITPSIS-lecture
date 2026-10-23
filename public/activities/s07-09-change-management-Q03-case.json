@@ -1,6 +1,6 @@
 {
   "id": "s07-09-change-management-Q03-case",
-  "revision": 4,
+  "revision": 5,
   "lectureId": "s07-09-change-management",
   "questionId": "s07-09-change-management-Q03",
   "title": "Полнота заявки",
@@ -33,6 +33,7 @@
         "choice-1"
       ],
       "explanation": "Артефакт не определяет ответственность и результат.",
+      "hint": "Известный артефакт ещё не определяет готовность решения.",
       "id": "s07-09-change-management-Q03-case-step-1"
     },
     {
@@ -59,6 +60,7 @@
         "item-2"
       ],
       "explanation": "Решение принимают по подготовленным основаниям.",
+      "hint": "Последующее решение требует подготовленных оснований.",
       "id": "s07-09-change-management-Q03-case-step-2"
     },
     {
@@ -83,6 +85,7 @@
         "choice-0"
       ],
       "explanation": "Полномочие не восполняет отсутствующую проверку.",
+      "hint": "Наличие ответственного не заменяет отсутствующую проверку результата.",
       "id": "s07-09-change-management-Q03-case-step-3"
     }
   ],

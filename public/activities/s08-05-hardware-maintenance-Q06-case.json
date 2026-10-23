@@ -1,6 +1,6 @@
 {
   "id": "s08-05-hardware-maintenance-Q06-case",
-  "revision": 4,
+  "revision": 5,
   "lectureId": "s08-05-hardware-maintenance",
   "questionId": "s08-05-hardware-maintenance-Q06",
   "title": "Работы с сервером и накопителями",
@@ -44,6 +44,7 @@
         "choice-2"
       ],
       "explanation": "Индикаторы могут охватывать разные механизмы.",
+      "hint": "У каждого индикатора ограничена область подтверждения.",
       "id": "s08-05-hardware-maintenance-Q06-case-step-1"
     },
     {
@@ -73,6 +74,7 @@
         "choice-1"
       ],
       "explanation": "Нужно сопоставить фактическое нарушение и источники.",
+      "hint": "Сопоставьте наблюдаемое нарушение с независимыми данными.",
       "id": "s08-05-hardware-maintenance-Q06-case-step-2"
     },
     {
@@ -97,6 +99,7 @@
         "choice-0"
       ],
       "explanation": "Нарушение подтверждено, конкретный механизм ещё может уточняться.",
+      "hint": "Повтор ошибки подтверждает нарушение, но не любую выбранную причину.",
       "id": "s08-05-hardware-maintenance-Q06-case-step-3"
     }
   ],

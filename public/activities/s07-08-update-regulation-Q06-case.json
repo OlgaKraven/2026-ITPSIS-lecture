@@ -1,6 +1,6 @@
 {
   "id": "s07-08-update-regulation-Q06-case",
-  "revision": 4,
+  "revision": 5,
   "lectureId": "s07-08-update-regulation",
   "questionId": "s07-08-update-regulation-Q06",
   "title": "Проверка после обновления",
@@ -44,6 +44,7 @@
         "choice-2"
       ],
       "explanation": "Техническая готовность не заменяет функцию.",
+      "hint": "У каждого сигнала свой предел подтверждённой функции.",
       "id": "s07-08-update-regulation-Q06-case-step-1"
     },
     {
@@ -73,6 +74,7 @@
         "choice-1"
       ],
       "explanation": "Проверяется результат на всём маршруте.",
+      "hint": "Контроль должен проследить ожидаемый результат на всём маршруте.",
       "id": "s07-08-update-regulation-Q06-case-step-2"
     },
     {
@@ -97,6 +99,7 @@
         "choice-0"
       ],
       "explanation": "Заданный обязательный критерий остаётся невыполненным.",
+      "hint": "Сравните наблюдение с обязательным критерием готовности.",
       "id": "s07-08-update-regulation-Q06-case-step-3"
     }
   ],

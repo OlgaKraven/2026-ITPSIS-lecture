@@ -1,6 +1,6 @@
 {
   "id": "s07-09-change-management-Q06-case",
-  "revision": 4,
+  "revision": 5,
   "lectureId": "s07-09-change-management",
   "questionId": "s07-09-change-management-Q06",
   "title": "Согласование решения",
@@ -40,6 +40,7 @@
         "choice-0"
       ],
       "explanation": "Подготовка решения и его утверждение различаются.",
+      "hint": "Разделите подготовку технического решения и полномочие принять риск.",
       "id": "s07-09-change-management-Q06-case-step-1"
     },
     {
@@ -69,6 +70,7 @@
         "choice-1"
       ],
       "explanation": "Нужны основания принятия риска.",
+      "hint": "Решение должно иметь проверяемые основания.",
       "id": "s07-09-change-management-Q06-case-step-2"
     },
     {
@@ -93,6 +95,7 @@
         "choice-0"
       ],
       "explanation": "Неопределённое поручение не доказывает требуемое полномочие.",
+      "hint": "Неоднозначное поручение требует уточнения объёма полномочий.",
       "id": "s07-09-change-management-Q06-case-step-3"
     }
   ],

@@ -1,6 +1,6 @@
 {
   "id": "s08-02-error-collection-Q05-case",
-  "revision": 4,
+  "revision": 5,
   "lectureId": "s08-02-error-collection",
   "questionId": "s08-02-error-collection-Q05",
   "title": "Метрики и динамика",
@@ -14,6 +14,7 @@
       "value": 50,
       "tolerance": 0,
       "explanation": "1000 × 0,05 = 50.",
+      "hint": "Сначала установите долю выбранной совокупности.",
       "id": "s08-02-error-collection-Q05-case-step-1"
     },
     {
@@ -24,6 +25,7 @@
       "value": 8000,
       "tolerance": 0,
       "explanation": "8 × 1000 = 8000 мс; это не 8 мс.",
+      "hint": "Переведите величины к одной единице без изменения длительности.",
       "id": "s08-02-error-collection-Q05-case-step-2"
     },
     {
@@ -48,6 +50,7 @@
         "choice-0"
       ],
       "explanation": "Среднее не отменяет известную долю медленных операций.",
+      "hint": "Проверьте, совместима ли уже известная доля неуспеха с критерием.",
       "id": "s08-02-error-collection-Q05-case-step-3"
     }
   ],

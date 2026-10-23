@@ -1,6 +1,6 @@
 {
   "id": "s08-03-layer-localization-Q04-case",
-  "revision": 4,
+  "revision": 5,
   "lectureId": "s08-03-layer-localization",
   "questionId": "s08-03-layer-localization-Q04",
   "title": "Слой приложения",
@@ -44,6 +44,7 @@
         "choice-2"
       ],
       "explanation": "Статика и API имеют разные пути выполнения.",
+      "hint": "Маршрут получения статики может отличаться от обработки операции.",
       "id": "s08-03-layer-localization-Q04-case-step-1"
     },
     {
@@ -73,6 +74,7 @@
         "choice-1"
       ],
       "explanation": "След должен относиться к сбойной операции.",
+      "hint": "Свяжите запрос с его обработкой и вызовами зависимостей.",
       "id": "s08-03-layer-localization-Q04-case-step-2"
     },
     {
@@ -97,6 +99,7 @@
         "choice-0"
       ],
       "explanation": "Новая связь локализует направление, не произвольную причину.",
+      "hint": "Ищите проверку участка, на котором обнаружено отклонение.",
       "id": "s08-03-layer-localization-Q04-case-step-3"
     }
   ],

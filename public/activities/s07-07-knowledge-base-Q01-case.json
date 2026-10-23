@@ -1,6 +1,6 @@
 {
   "id": "s07-07-knowledge-base-Q01-case",
-  "revision": 4,
+  "revision": 5,
   "lectureId": "s07-07-knowledge-base",
   "questionId": "s07-07-knowledge-base-Q01",
   "title": "Назначение базы знаний",
@@ -33,6 +33,7 @@
         "choice-1"
       ],
       "explanation": "Польза проверяется результатом в применимом случае.",
+      "hint": "Выбирайте измерения результата в применимом случае.",
       "id": "s07-07-knowledge-base-Q01-case-step-1"
     },
     {
@@ -43,6 +44,7 @@
       "value": 60,
       "tolerance": 0,
       "explanation": "18 / 30 × 100 = 60%.",
+      "hint": "Сначала определите, к какому набору относится показатель.",
       "id": "s07-07-knowledge-base-Q01-case-step-2"
     },
     {
@@ -67,6 +69,7 @@
         "choice-0"
       ],
       "explanation": "Изменение состава может менять показатель без эффекта редакции.",
+      "hint": "Учитывайте, изменился ли состав сравниваемых случаев.",
       "id": "s07-07-knowledge-base-Q01-case-step-3"
     }
   ],

@@ -1,6 +1,6 @@
 {
   "id": "s08-01-failure-response-Q02-case",
-  "revision": 4,
+  "revision": 5,
   "lectureId": "s08-01-failure-response",
   "questionId": "s08-01-failure-response-Q02",
   "title": "Масштаб последствий",
@@ -14,6 +14,7 @@
       "value": 1,
       "tolerance": 0,
       "explanation": "5 / 500 × 100 = 1%.",
+      "hint": "Числитель и знаменатель должны считать одинаковые сущности.",
       "id": "s08-01-failure-response-Q02-case-step-1"
     },
     {
@@ -43,6 +44,7 @@
         "choice-1"
       ],
       "explanation": "Малая численность не определяет низкий риск результата.",
+      "hint": "Охват не заменяет оценку последствий и срочности.",
       "id": "s08-01-failure-response-Q02-case-step-2"
     },
     {
@@ -67,6 +69,7 @@
         "choice-0"
       ],
       "explanation": "Нельзя выдумать универсальный код без применимого правила.",
+      "hint": "Для кода нужны применимые правила, а не одно число охвата.",
       "id": "s08-01-failure-response-Q02-case-step-3"
     }
   ],

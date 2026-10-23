@@ -1,6 +1,6 @@
 {
   "id": "s07-09-change-management-Q08-case",
-  "revision": 4,
+  "revision": 5,
   "lectureId": "s07-09-change-management",
   "questionId": "s07-09-change-management-Q08",
   "title": "Проверка и разбор изменения",
@@ -44,6 +44,7 @@
         "choice-2"
       ],
       "explanation": "Установка не является достижением цели.",
+      "hint": "Исполнение изменения и достижение цели подтверждаются разными фактами.",
       "id": "s07-09-change-management-Q08-case-step-1"
     },
     {
@@ -73,6 +74,7 @@
         "choice-1"
       ],
       "explanation": "Сравнение должно учитывать существенные условия.",
+      "hint": "Сравниваемые показатели должны иметь сопоставимые условия.",
       "id": "s07-09-change-management-Q08-case-step-2"
     },
     {
@@ -97,6 +99,7 @@
         "choice-0"
       ],
       "explanation": "Заданный критерий определяет действие при неуспехе.",
+      "hint": "Примените заданное правило реакции на подтверждённое отклонение.",
       "id": "s07-09-change-management-Q08-case-step-3"
     }
   ],

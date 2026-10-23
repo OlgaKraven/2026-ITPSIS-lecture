@@ -1,6 +1,6 @@
 {
   "id": "s08-03-layer-localization-Q01-case",
-  "revision": 4,
+  "revision": 5,
   "lectureId": "s08-03-layer-localization",
   "questionId": "s08-03-layer-localization-Q01",
   "title": "Модель пяти слоёв",
@@ -44,6 +44,7 @@
         "choice-2"
       ],
       "explanation": "Карта задаёт направления, а не установленную причину.",
+      "hint": "Проверка охватывает только определённый участок маршрута.",
       "id": "s08-03-layer-localization-Q01-case-step-1"
     },
     {
@@ -73,6 +74,7 @@
         "choice-1"
       ],
       "explanation": "Контроль позволяет связать различие и эффект.",
+      "hint": "Чтобы связать различие с эффектом, нужен сопоставимый опыт.",
       "id": "s08-03-layer-localization-Q01-case-step-2"
     },
     {
@@ -97,6 +99,7 @@
         "choice-0"
       ],
       "explanation": "Сужение области не доказывает конкретный механизм.",
+      "hint": "Сужайте область по характеру нарушенной функции.",
       "id": "s08-03-layer-localization-Q01-case-step-3"
     }
   ],

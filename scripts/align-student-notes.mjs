@@ -3,7 +3,7 @@ import {corrections} from '../authoring/student-corrections.mjs';
 const course=JSON.parse(await readFile('public/course.json','utf8'));
 const activities=new Map(await Promise.all(course.lectures.flatMap(l=>l.slides.filter(s=>s.supplement).map(async s=>{const a=JSON.parse(await readFile('public/activities/'+s.id.replace(/-passport$/,'-case')+'.json','utf8'));return [s.id,a]}))));
 const pack=JSON.parse(await readFile('authoring/teacher-notes.json','utf8'));
-pack.contentVersion=course.contentVersion;pack.notesRevision='2026-10-23-team-practice-5';
+pack.contentVersion=course.contentVersion;pack.notesRevision='2026-10-23-student-practice-6';
 for(const id of Object.keys(pack.notes))if(id.endsWith('-literature-2'))delete pack.notes[id];
 for(const c of corrections){
  const prefix=`${course.lectures[c.lecture].id}-Q${String(c.question+1).padStart(2,'0')}-`;

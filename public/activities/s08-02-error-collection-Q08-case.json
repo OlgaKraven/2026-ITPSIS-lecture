@@ -1,6 +1,6 @@
 {
   "id": "s08-02-error-collection-Q08-case",
-  "revision": 4,
+  "revision": 5,
   "lectureId": "s08-02-error-collection",
   "questionId": "s08-02-error-collection-Q08",
   "title": "Организация сбора",
@@ -44,6 +44,7 @@
         "choice-2"
       ],
       "explanation": "Централизация не определяет эти решения автоматически.",
+      "hint": "Центральное хранение само не определяет правила управления.",
       "id": "s08-02-error-collection-Q08-case-step-1"
     },
     {
@@ -73,6 +74,7 @@
         "choice-1"
       ],
       "explanation": "Отсутствие события может быть пробелом сбора.",
+      "hint": "Отсутствие записи может быть следствием неполного сбора.",
       "id": "s08-02-error-collection-Q08-case-step-2"
     },
     {
@@ -97,6 +99,7 @@
         "choice-0"
       ],
       "explanation": "Вывод ограничен доступностью данных.",
+      "hint": "Ограничьте отрицательный вывод полнотой доступного источника.",
       "id": "s08-02-error-collection-Q08-case-step-3"
     }
   ],

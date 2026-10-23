@@ -1,5 +1,5 @@
 export type PracticeOption={id:string;text:string}
-export type PracticeStep={id:string;title:string;prompt:string;explanation:string;type:'single'|'multiple'|'order'|'matching'|'numeric'|'code';choices?:PracticeOption[];items?:PracticeOption[];solution?:string[];unit?:string;value?:number;tolerance?:number;accepted?:string[]}
+export type PracticeStep={id:string;title:string;prompt:string;hint:string;explanation:string;type:'single'|'multiple'|'order'|'matching'|'numeric'|'code';choices?:PracticeOption[];items?:PracticeOption[];solution?:string[];before?:[string,string][];data?:{caption:string;columns:string[];rows:string[][]};unit?:string;value?:number;tolerance?:number;accepted?:string[]}
 export type TeamActivity={id:string;revision:number;lectureId:string;questionId:string;title:string;condition:string;explanation:string;rule:string;steps:PracticeStep[]}
 export type StepAnswer=string|string[]|Record<string,string>
 export type StepDraft={answer:StepAnswer;checked:boolean;attempts:number}
@@ -7,6 +7,12 @@ export type TeamDraft={cursor:number;steps:Record<string,StepDraft>;revealed:boo
 export type StepGrade={status:'empty'|'incorrect'|'correct';message:string;items?:{id:string;correct:boolean}[]}
 const normalize=(s:string)=>s.normalize('NFKC').trim().replace(/\s+/g,' ').toLocaleLowerCase('ru')
 export function initialAnswer(step:PracticeStep):StepAnswer{return step.type==='order'?step.items!.map(x=>x.id):step.type==='matching'?{}:step.type==='multiple'?[]:''}
+export function validOrder(step:PracticeStep,answer:string[]){return answer.length===step.items!.length&&new Set(answer).size===answer.length&&answer.every(id=>step.items!.some(x=>x.id===id))&&(step.before?step.before.every(([a,b])=>answer.indexOf(a)<answer.indexOf(b)):answer.every((x,i)=>x===step.solution![i]))}
+export function describeAnswer(step:PracticeStep,answer:StepAnswer){
+ if(typeof answer==='string')return (step.choices?.find(c=>c.id===answer)?.text||answer)+(step.type==='numeric'?' '+step.unit:'')
+ if(Array.isArray(answer))return answer.map(id=>(step.type==='order'?step.items:step.choices)?.find(x=>x.id===id)?.text||id).join(step.type==='order'?' → ': '; ')
+ return step.items!.map(item=>item.text+' — '+(step.choices!.find(c=>c.id===answer[item.id])?.text||'')).join('; ')
+}
 export function gradeStep(step:PracticeStep,answer:StepAnswer):StepGrade{
  const empty=(message='Выполните действие команды перед проверкой.'):StepGrade=>({status:'empty',message})
  const done=(correct:boolean,message:string,items?:StepGrade['items']):StepGrade=>({status:correct?'correct':'incorrect',message:correct?'Шаг выполнен верно. '+step.explanation:message,items})
@@ -32,7 +38,7 @@ export function gradeStep(step:PracticeStep,answer:StepAnswer):StepGrade{
  if(!Array.isArray(answer)||!answer.length)return empty()
  if(step.type==='order'){
   if(answer.length!==step.items!.length||new Set(answer).size!==answer.length||answer.some(id=>!step.items!.some(x=>x.id===id)))return done(false,'В последовательности должны присутствовать все действия по одному разу.')
-  return done(answer.every((x,i)=>x===step.solution![i]),'Порядок нарушает зависимости действий. Проверьте, что должно быть подготовлено до следующей операции.')
+  return done(validOrder(step,answer),'Порядок нарушает зависимости действий. Проверьте, что должно быть подготовлено до следующей операции.')
  }
  const valid=new Set(step.choices!.map(x=>x.id));if(answer.some(x=>!valid.has(x)))return done(false,'Обнаружен неизвестный вариант ответа.')
  const correct=answer.length===step.solution!.length&&new Set(answer).size===answer.length&&answer.every(x=>step.solution!.includes(x));

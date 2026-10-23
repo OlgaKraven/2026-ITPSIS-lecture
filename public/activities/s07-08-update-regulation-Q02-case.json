@@ -1,6 +1,6 @@
 {
   "id": "s07-08-update-regulation-Q02-case",
-  "revision": 4,
+  "revision": 5,
   "lectureId": "s07-08-update-regulation",
   "questionId": "s07-08-update-regulation-Q02",
   "title": "Готовность среды",
@@ -44,6 +44,7 @@
         "choice-2"
       ],
       "explanation": "Результат ограничен фактическим окружением.",
+      "hint": "Успех опыта ограничен средой его выполнения.",
       "id": "s07-08-update-regulation-Q02-case-step-1"
     },
     {
@@ -73,6 +74,7 @@
         "choice-1"
       ],
       "explanation": "Различие должно быть проверено по механизму.",
+      "hint": "Сосредоточьтесь на существенных для механизма различиях.",
       "id": "s07-08-update-regulation-Q02-case-step-2"
     },
     {
@@ -97,6 +99,7 @@
         "choice-0"
       ],
       "explanation": "Готовность не подтверждена при известной несовместимости.",
+      "hint": "Найдите, какое предусловие успешного теста не выполняется в рабочей среде.",
       "id": "s07-08-update-regulation-Q02-case-step-3"
     }
   ],

@@ -1,6 +1,6 @@
 {
   "id": "s07-09-change-management-Q01-case",
-  "revision": 4,
+  "revision": 5,
   "lectureId": "s07-09-change-management",
   "questionId": "s07-09-change-management-Q01",
   "title": "Ценность изменения",
@@ -33,6 +33,7 @@
         "choice-1"
       ],
       "explanation": "Изменение связывают с потребностью и критерием.",
+      "hint": "Технический вариант должен отвечать конкретной потребности.",
       "id": "s07-09-change-management-Q01-case-step-1"
     },
     {
@@ -73,6 +74,7 @@
         "choice-2"
       ],
       "explanation": "Вариант технологии не является самой потребностью.",
+      "hint": "Различайте цель, способ её достижения и измерение эффекта.",
       "id": "s07-09-change-management-Q01-case-step-2"
     },
     {
@@ -97,6 +99,7 @@
         "choice-0"
       ],
       "explanation": "Обоснование должно допускать соразмерное решение.",
+      "hint": "Сравнивайте пригодные варианты по последствиям и ожидаемому результату.",
       "id": "s07-09-change-management-Q01-case-step-3"
     }
   ],

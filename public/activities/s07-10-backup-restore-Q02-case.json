@@ -1,6 +1,6 @@
 {
   "id": "s07-10-backup-restore-Q02-case",
-  "revision": 4,
+  "revision": 5,
   "lectureId": "s07-10-backup-restore",
   "questionId": "s07-10-backup-restore-Q02",
   "title": "Цель RPO",
@@ -14,6 +14,7 @@
       "value": 28,
       "tolerance": 0,
       "explanation": "14:00 − 13:32 = 28 минут.",
+      "hint": "Найдите длительность между двумя временными отметками.",
       "id": "s07-10-backup-restore-Q02-case-step-1"
     },
     {
@@ -24,6 +25,7 @@
       "value": 8,
       "tolerance": 0,
       "explanation": "28 − 20 = 8 минут.",
+      "hint": "Сравните полученный интервал с заданной допустимой границей.",
       "id": "s07-10-backup-restore-Q02-case-step-2"
     },
     {
@@ -48,6 +50,7 @@
         "choice-0"
       ],
       "explanation": "Сравнивается время пригодного состояния данных, не начало копирования.",
+      "hint": "Оцените новую точку по тому же правилу и в тех же единицах.",
       "id": "s07-10-backup-restore-Q02-case-step-3"
     }
   ],

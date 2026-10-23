@@ -1,6 +1,6 @@
 {
   "id": "s08-05-hardware-maintenance-Q08-case",
-  "revision": 4,
+  "revision": 5,
   "lectureId": "s08-05-hardware-maintenance",
   "questionId": "s08-05-hardware-maintenance-Q08",
   "title": "Возврат в работу и история",
@@ -33,6 +33,7 @@
         "choice-1"
       ],
       "explanation": "Приёмка связывает оборудование и функцию услуги.",
+      "hint": "Приёмка должна связать состояние оборудования с пользовательской функцией.",
       "id": "s08-05-hardware-maintenance-Q08-case-step-1"
     },
     {
@@ -59,6 +60,7 @@
         "item-2"
       ],
       "explanation": "Закрытие следует после функциональной проверки.",
+      "hint": "Итоговая запись опирается на выполненную проверку результата.",
       "id": "s08-05-hardware-maintenance-Q08-case-step-2"
     },
     {
@@ -83,6 +85,7 @@
         "choice-0"
       ],
       "explanation": "Улучшение одного показателя не подтверждает весь результат.",
+      "hint": "Улучшение одного показателя не заменяет оставшийся обязательный критерий.",
       "id": "s08-05-hardware-maintenance-Q08-case-step-3"
     }
   ],

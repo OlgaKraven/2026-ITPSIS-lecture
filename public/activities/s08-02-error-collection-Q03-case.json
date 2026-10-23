@@ -1,6 +1,6 @@
 {
   "id": "s08-02-error-collection-Q03-case",
-  "revision": 4,
+  "revision": 5,
   "lectureId": "s08-02-error-collection",
   "questionId": "s08-02-error-collection-Q03",
   "title": "Журнал приложения",
@@ -33,6 +33,7 @@
         "choice-1"
       ],
       "explanation": "Уровень журнала не заменяет контекст.",
+      "hint": "Уровень важности не заменяет контекст операции.",
       "id": "s08-02-error-collection-Q03-case-step-1"
     },
     {
@@ -73,6 +74,7 @@
         "choice-2"
       ],
       "explanation": "Каждое поле решает свою часть корреляции.",
+      "hint": "У разных полей разные функции поиска и сопоставления.",
       "id": "s08-02-error-collection-Q03-case-step-2"
     },
     {
@@ -97,6 +99,7 @@
         "choice-0"
       ],
       "explanation": "Значимость не доказывает принадлежность нужной операции.",
+      "hint": "Проверьте принадлежность найденной строки нужному событию.",
       "id": "s08-02-error-collection-Q03-case-step-3"
     }
   ],

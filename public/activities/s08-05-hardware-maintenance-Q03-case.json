@@ -1,6 +1,6 @@
 {
   "id": "s08-05-hardware-maintenance-Q03-case",
-  "revision": 4,
+  "revision": 5,
   "lectureId": "s08-05-hardware-maintenance",
   "questionId": "s08-05-hardware-maintenance-Q03",
   "title": "Показатели состояния",
@@ -14,6 +14,7 @@
       "value": 2,
       "tolerance": 0,
       "explanation": "72 − 70 = 2 °C.",
+      "hint": "Сравните наблюдение с нужной границей, а не с другой границей.",
       "id": "s08-05-hardware-maintenance-Q03-case-step-1"
     },
     {
@@ -24,6 +25,7 @@
       "value": 8,
       "tolerance": 0,
       "explanation": "80 − 72 = 8 °C; предупредительный уже превышен.",
+      "hint": "Ищите расстояние до заданного уровня в той же единице.",
       "id": "s08-05-hardware-maintenance-Q03-case-step-2"
     },
     {
@@ -48,6 +50,7 @@
         "choice-0"
       ],
       "explanation": "Учебные пороги не являются универсальными нормами производителя.",
+      "hint": "Учебные пороги действуют в границах описанного примера.",
       "id": "s08-05-hardware-maintenance-Q03-case-step-3"
     }
   ],
