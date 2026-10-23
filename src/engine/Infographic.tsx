@@ -13,12 +13,12 @@ function Label({text,x,y,size=24,width=300,bold=false,fill='var(--ig-ink)',kind=
   </text>
 }
 
-export function Infographic({visual:v,base='/'}:{visual:Visual;base?:string}){
+export function Infographic({visual:v,base='/',focus=-1,progress=0,modelTime,track=0}:{visual:Visual;base?:string;focus?:number;progress?:number;modelTime?:number;track?:number}){
   const marker=useId().replace(/:/g,'')
-  if(v.type==='duration')return <DurationFigure visual={v}/>
-  if((v.type==='comparison'||v.type==='matrix')&&v.display==='stateTracks')return <StateTracks visual={v}/>
+  if(v.type==='duration')return <DurationFigure visual={v} modelTime={modelTime}/>
+  if((v.type==='comparison'||v.type==='matrix')&&v.display==='stateTracks')return <StateTracks visual={v} focus={focus} track={track}/>
   if(v.type==='comparison'||v.type==='matrix')return <figure className="infographic infographic-table" tabIndex={0} aria-label={'Сопоставление: '+v.caption}>
-    <div className="table-scroll"><table className="comparison-table"><thead><tr>{v.columns.map((c,i)=><th scope="col" key={i}>{c}</th>)}</tr></thead><tbody>{v.rows.map((row,r)=><tr key={r}>{row.map((cell,c)=>c===0?<th scope="row" key={c}>{cell}</th>:<td key={c}>{cell}</td>)}</tr>)}</tbody></table></div><figcaption>{v.caption}</figcaption>
+    <div className="table-scroll"><table className="comparison-table"><thead><tr>{v.columns.map((c,i)=><th scope="col" key={i}>{c}</th>)}</tr></thead><tbody>{v.rows.map((row,r)=><tr key={r} data-ig-active={focus===r}>{row.map((cell,c)=>c===0?<th scope="row" key={c}>{cell}</th>:<td key={c}>{cell}</td>)}</tr>)}</tbody></table></div><figcaption>{v.caption}</figcaption>
   </figure>
   const W=1040
   let H=extendedInfographicHeight(v)
@@ -34,7 +34,7 @@ export function Infographic({visual:v,base='/'}:{visual:Visual;base?:string}){
       {v.type==='timeline'&&<line x1="50" y1="58" x2="990" y2="58" stroke="var(--ig-line)" strokeWidth="5"/>}
       {v.items.map((item,i)=>{
         const x=20+i*(width+gap),cy=v.type==='timeline'?58:34
-        return <g key={i}>
+        return <g key={i} data-ig-active={focus===i}>
           {v.type==='process'&&i<v.items.length-1&&<path d={`M ${x+width+5} ${top+boxHeight/2} h ${gap-15}`} fill="none" stroke="var(--ig-muted)" strokeWidth="1.5" markerEnd={`url(#${marker})`}/>}
           <rect x={x} y={top} width={width} height={boxHeight} rx="13" fill="var(--ig-neutral)" stroke="var(--ig-line)"/>
           <rect x={x} y={top} width={width} height="5" rx="2" fill={palette[i%palette.length]}/>
@@ -44,6 +44,7 @@ export function Infographic({visual:v,base='/'}:{visual:Visual;base?:string}){
           <Label text={item.text} x={x+width/2} y={top+pad+heights[i].title+16+bodySize} size={bodySize} width={width-pad*2}/>
         </g>
       })}
+      {progress>0&&<circle className="diagram-token" r="12" cx={focus<0?20+progress*width/2:20+(focus+.5)*(width+gap)-gap/2+progress*(width+gap)} cy={top+boxHeight/2}/>}
     </>
   }
   else if(v.type==='tree'){

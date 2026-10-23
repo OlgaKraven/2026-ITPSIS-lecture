@@ -1,4 +1,4 @@
-import {useContext,useLayoutEffect,useRef,useState} from 'react'
+import {useContext,useEffect,useLayoutEffect,useRef,useState} from 'react'
 import {Resources} from './Resources'
 import type {Course,Lecture,Profile,Slide} from './model'
 import {assetUrl,supplementUrl} from './model'
@@ -6,8 +6,17 @@ import {Infographic} from './Infographic'
 import {TaskView} from './Assessment'
 import {VisualRendererContext} from './VisualRenderer'
 import {RowVisual} from './StudyVisual'
+import {DiagramPlayer,diagramSteps} from './DiagramPlayer'
+import {Modal} from './Modal'
+import {DiagramSyncContext} from './DiagramSync'
 export function SlideView({course,lecture,slide,profile,base,number,interactive=false,printMode=false}:{course:Course;lecture:Lecture;slide:Slide;profile:Profile;base:string;number:number;interactive?:boolean;printMode?:boolean}){
  const renderVisual=useContext(VisualRendererContext)
+ const diagramSync=useContext(DiagramSyncContext)
+ const [expanded,setExpanded]=useState(false)
+ useEffect(()=>setExpanded(false),[slide.id])
+ const canExplore=interactive&&!printMode&&diagramSteps(slide).length>0
+ const diagramOpen=diagramSync.readonly?diagramSync.state?.slideId===slide.id&&diagramSync.state.open:expanded
+ const closeDiagram=()=>{setExpanded(false);diagramSync.onChange?.({slideId:slide.id,open:false,step:0,track:0,fraction:0,playing:false})}
  const customVisual=renderVisual?.({slide,base,interactive})
  const visual=customVisual===undefined
   ? slide.visual?<Infographic visual={slide.visual} base={base}/>
@@ -19,7 +28,7 @@ export function SlideView({course,lecture,slide,profile,base,number,interactive=
  const hasVisual=slide.rows||(visual!==undefined&&visual!==null&&visual!==false)
  return <article className={`slide-frame kind-${slide.kind} ${hasVisual?'has-visual':''} ${slide.supplement?'has-supplement':''}`} data-slide-id={slide.id} data-definition-count={slide.definitionEntries?.length}>
  <div className="presentation-circles" aria-hidden="true"/>
- <header className="slide-header"><div className="slide-brand">{slide.kind==='title'&&<img className="presentation-wordmark" src={assetUrl('brand/synergy-wordmark.jpg',base)} alt="Университет Синергия"/>}<span>{course.code} · {lecture.semester} семестр</span></div><div className="slide-header-actions"><span className="presentation-topic">Тема {topic}</span>{slide.kind!=='title'&&<img className="presentation-mark" src={assetUrl('brand/synergy-mark.png',base)} alt="Синергия"/>}</div></header>
+ <header className="slide-header"><div className="slide-brand">{slide.kind==='title'&&<img className="presentation-wordmark" src={assetUrl('brand/synergy-wordmark.jpg',base)} alt="Университет Синергия"/>}<span>{course.code} · {lecture.semester} семестр</span></div><div className="slide-header-actions">{canExplore&&!diagramSync.readonly&&<button className="button primary diagram-open" onClick={()=>setExpanded(true)}>Развернуть схему</button>}<span className="presentation-topic">Тема {topic}</span>{slide.kind!=='title'&&<img className="presentation-mark" src={assetUrl('brand/synergy-mark.png',base)} alt="Синергия"/>}</div></header>
  <div className="slide-content"><div className="slide-copy"><p className="slide-kicker">{slide.kind==='title'?'Лекция':slide.kicker}</p>{slide.kind==='section'?<QuestionHeading title={slide.title}/>:<h2>{slide.title}</h2>}
  {(slide.kind==='literature'||slide.kind==='materials')&&<Resources course={course} slide={slide} base={base}/>}
  {slide.kind==='agenda'&&<ol className="topic-agenda">{lecture.slides.filter(s=>s.kind==='section').map((s,i)=><li key={s.id}><span>{String(i+1).padStart(2,'0')}</span><strong>{s.title}</strong></li>)}</ol>}
@@ -34,6 +43,7 @@ export function SlideView({course,lecture,slide,profile,base,number,interactive=
  {slide.kind==='title'&&<><p className="presentation-discipline">{course.discipline}</p><div className="title-profile"><small>Преподаватель</small><strong>{profile.fullName}</strong><span>{profile.position}</span><span>{profile.department}</span></div></>}
  </div>{slide.kind==='section'&&<div className="topic-arrow presentation-chevron" aria-hidden="true"/>}{slide.kind==='title'&&<img className="title-mascot" src={assetUrl(course.mascot,base)} alt={course.mascotAlt}/>}</div>
  <footer className="slide-footer"><span>{questionNumber?`Вопрос ${questionNumber}`:''}</span><span className="presentation-page">{String(number).padStart(2,'0')}</span></footer>
+ {canExplore&&diagramOpen&&<Modal title={slide.title} onClose={closeDiagram}><DiagramPlayer key={slide.id} slide={slide} base={base}/></Modal>}
  </article>
 }
 

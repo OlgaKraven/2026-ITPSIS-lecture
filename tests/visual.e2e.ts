@@ -2,6 +2,48 @@ import {test,expect} from '@playwright/test'
 import {readFileSync} from 'node:fs'
 import type {Course} from '../src/engine/model'
 const course:Course=JSON.parse(readFileSync('public/course.json','utf8'))
+
+test('local player moves in proportion to time, pauses in place and resumes without skipping the interrupted interval',async({page})=>{
+ const id='s07-10-backup-restore-Q03-flow'
+ await page.goto(`./?lecture=s07-10-backup-restore&slide=${id}`)
+ await page.getByRole('button',{name:'Развернуть схему',exact:true}).click()
+ const player=page.locator('.diagram-player'),cursor=player.locator('[data-model-time]')
+ await expect(player).toHaveAttribute('data-step','0');await page.waitForTimeout(200);await expect(cursor).toHaveAttribute('data-model-time','0')
+ await player.getByRole('button',{name:'Показать',exact:true}).click();await expect.poll(async()=>Number(await cursor.getAttribute('data-model-time'))).toBeGreaterThan(2)
+ await player.getByRole('button',{name:'Пауза',exact:true}).click()
+ const held=Number(await cursor.getAttribute('data-model-time')),step=await player.getAttribute('data-step')
+ await page.waitForTimeout(250);expect(Number(await cursor.getAttribute('data-model-time'))).toBe(held);await expect(player).toHaveAttribute('data-step',step!)
+ await player.getByRole('button',{name:'Показать',exact:true}).click();await expect.poll(async()=>Number(await cursor.getAttribute('data-model-time'))).toBeGreaterThan(held)
+ await player.getByRole('button',{name:'Пауза',exact:true}).click();await player.getByRole('button',{name:'К началу',exact:true}).click();await expect(cursor).toHaveAttribute('data-model-time','0')
+ await player.getByRole('button',{name:'Далее',exact:true}).click();await expect(cursor).toHaveAttribute('data-model-time','20')
+ await player.getByRole('button',{name:'Далее',exact:true}).click();await expect(cursor).toHaveAttribute('data-model-time','115')
+ await player.getByRole('button',{name:'Назад',exact:true}).click();await expect(cursor).toHaveAttribute('data-model-time','20')
+ await player.getByRole('button',{name:'Далее',exact:true}).click();await player.getByRole('button',{name:'Далее',exact:true}).click();await expect(player.getByRole('button',{name:'Повторить',exact:true})).toBeVisible()
+ await player.getByRole('button',{name:'Повторить',exact:true}).click();await expect(player.getByRole('button',{name:'Пауза',exact:true})).toBeVisible()
+ await page.getByRole('button',{name:'Закрыть окно',exact:true}).click();await expect(page.getByRole('button',{name:'Развернуть схему',exact:true})).toBeFocused()
+ await page.getByRole('button',{name:'Развернуть схему',exact:true}).click();await expect(player).toHaveAttribute('data-step','0')
+})
+test('independent tracks reset without carrying execution forward; reduced motion keeps keyboard steps and the print model',async({page})=>{
+ await page.emulateMedia({reducedMotion:'reduce'});await page.setViewportSize({width:390,height:844})
+ await page.goto('./?lecture=s07-01-support-lifecycle&slide=s07-01-support-lifecycle-Q04-flow')
+ await page.getByRole('button',{name:'Развернуть схему',exact:true}).click();const player=page.locator('.diagram-player')
+ await expect(player.getByRole('button',{name:'Показать',exact:true})).toHaveCount(0)
+ await player.getByRole('button',{name:'Далее',exact:true}).click();await player.getByRole('button',{name:'Далее',exact:true}).click();await expect(player).toHaveAttribute('data-step','2')
+ await player.getByRole('combobox',{name:'Маршрут записи',exact:true}).selectOption('1');await expect(player).toHaveAttribute('data-step','0')
+ await player.getByRole('button',{name:'Далее',exact:true}).focus();await page.keyboard.press('ArrowRight');await expect(player).toHaveAttribute('data-step','1')
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+2)).toBe(true)
+ await page.goto('./?mode=print&scope=s07-01-support-lifecycle');await expect(page.locator('.diagram-player,.diagram-open')).toHaveCount(0);await expect(page.locator('.study-tracks li')).toHaveCount(8)
+})
+test('presenter controls synchronize diagram steps, cursor and closing to the audience without sending private notes',async({page,context})=>{
+ await page.goto('./?lecture=s07-10-backup-restore&slide=s07-10-backup-restore-Q03-flow')
+ const popup=context.waitForEvent('page');await page.getByRole('button',{name:'Режим показа',exact:true}).click();const audience=await popup
+ await expect(page.locator('.connection')).toContainText('Синхронизировано')
+ await page.getByRole('button',{name:'Развернуть схему',exact:true}).click();await expect(audience.locator('.diagram-player')).toHaveAttribute('data-step','0')
+ await page.locator('.diagram-player').getByRole('button',{name:'Далее',exact:true}).click();await expect(audience.locator('.diagram-player')).toHaveAttribute('data-step','1');await expect(audience.locator('.diagram-player [data-model-time]')).toHaveAttribute('data-model-time','20')
+ await expect(audience.locator('.diagram-controls button')).toHaveCount(0);await expect(audience.locator('.presenter-notes')).toHaveCount(0)
+ await page.getByRole('button',{name:'Закрыть окно',exact:true}).click();await expect(audience.locator('.diagram-player')).toHaveCount(0)
+ await page.getByRole('button',{name:'Завершить показ',exact:true}).click()
+})
 for(const theme of ['light','dark'])test(`instructional figures preserve scale and fit the ${theme} slide`,async({page})=>{
  await page.setViewportSize({width:1440,height:1000})
  await page.addInitScript(theme=>localStorage.setItem('lecture:/2026-ITPSIS-lecture/:itpsis:theme',JSON.stringify(theme)),theme)
