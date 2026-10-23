@@ -1,3 +1,4 @@
+import './report-directory.mjs';
 import {mkdir,readFile,writeFile} from 'node:fs/promises';
 import {spawn} from 'node:child_process';
 import {chromium} from '@playwright/test';

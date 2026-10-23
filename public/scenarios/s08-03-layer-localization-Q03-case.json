@@ -1,0 +1,234 @@
+{
+  "id": "s08-03-layer-localization-Q03-case",
+  "revision": 2,
+  "initial": {
+    "cert": "old.example",
+    "verification": true,
+    "tcp": "не проверен",
+    "https": "не проверен",
+    "trusted": false
+  },
+  "fields": [
+    {
+      "key": "cert",
+      "label": "Имя в сертификате"
+    },
+    {
+      "key": "verification",
+      "label": "Проверка TLS включена"
+    },
+    {
+      "key": "tcp",
+      "label": "TCP 443"
+    },
+    {
+      "key": "https",
+      "label": "HTTPS"
+    },
+    {
+      "key": "trusted",
+      "label": "Имя проверено"
+    }
+  ],
+  "computed": {},
+  "lectureId": "s08-03-layer-localization",
+  "questionId": "s08-03-layer-localization-Q03",
+  "goal": "Восстановить HTTPS с проверенным именем сертификата.",
+  "rules": [
+    "ICMP и TCP 443 успешны. TLS не проходит: сертификат выдан old.example, клиент обращается к service.example. Проверку имени отключать нельзя для приёмки."
+  ],
+  "actions": [
+    {
+      "id": "ping",
+      "label": "Проверить ping",
+      "outcomes": [
+        {
+          "when": true,
+          "set": {
+            "tcp": "ICMP успешен; TCP ещё не проверен"
+          },
+          "text": "ICMP ответил, TLS не изменился."
+        }
+      ]
+    },
+    {
+      "id": "tcp",
+      "label": "Открыть TCP 443",
+      "outcomes": [
+        {
+          "when": true,
+          "set": {
+            "tcp": "успех"
+          },
+          "text": "TCP соединение установлено."
+        }
+      ]
+    },
+    {
+      "id": "disable",
+      "label": "Отключить проверку имени TLS",
+      "outcomes": [
+        {
+          "when": true,
+          "set": {
+            "verification": false,
+            "trusted": false
+          },
+          "text": "Соединение может открыться без подтверждения имени сервера."
+        }
+      ]
+    },
+    {
+      "id": "cert",
+      "label": "Установить сертификат service.example",
+      "outcomes": [
+        {
+          "when": true,
+          "set": {
+            "cert": "service.example",
+            "trusted": false
+          },
+          "text": "Установлен сертификат нужного имени."
+        }
+      ]
+    },
+    {
+      "id": "enable",
+      "label": "Включить проверку TLS",
+      "outcomes": [
+        {
+          "when": true,
+          "set": {
+            "verification": true,
+            "trusted": false
+          },
+          "text": "Проверка имени возвращена."
+        }
+      ]
+    },
+    {
+      "id": "request",
+      "label": "Выполнить HTTPS запрос",
+      "outcomes": [
+        {
+          "when": true,
+          "set": {
+            "https": {
+              "op": "if",
+              "args": [
+                {
+                  "op": "or",
+                  "args": [
+                    {
+                      "op": "eq",
+                      "args": [
+                        {
+                          "ref": "cert"
+                        },
+                        "service.example"
+                      ]
+                    },
+                    {
+                      "op": "eq",
+                      "args": [
+                        {
+                          "ref": "verification"
+                        },
+                        false
+                      ]
+                    }
+                  ]
+                },
+                "соединение установлено",
+                "ошибка имени"
+              ]
+            },
+            "trusted": {
+              "op": "and",
+              "args": [
+                {
+                  "op": "eq",
+                  "args": [
+                    {
+                      "ref": "cert"
+                    },
+                    "service.example"
+                  ]
+                },
+                {
+                  "op": "eq",
+                  "args": [
+                    {
+                      "ref": "verification"
+                    },
+                    true
+                  ]
+                }
+              ]
+            }
+          },
+          "text": "HTTPS: {https}; имя подтверждено {trusted}."
+        }
+      ]
+    }
+  ],
+  "scenes": [
+    {
+      "when": {
+        "op": "eq",
+        "args": [
+          {
+            "ref": "verification"
+          },
+          false
+        ]
+      },
+      "text": "Проверка имени отключена. Успех соединения не подтверждает нужный сервер."
+    },
+    {
+      "when": {
+        "op": "eq",
+        "args": [
+          {
+            "ref": "https"
+          },
+          "ошибка имени"
+        ]
+      },
+      "text": "TCP открыт, TLS отверг имя сертификата. Изменять нужно сертификат или корректный маршрут имени."
+    },
+    {
+      "when": true,
+      "text": "Сертификат {cert}; HTTPS {https}; доверенное имя {trusted}."
+    }
+  ],
+  "checks": [
+    {
+      "when": {
+        "op": "eq",
+        "args": [
+          {
+            "ref": "trusted"
+          },
+          true
+        ]
+      },
+      "text": "HTTPS проверил имя нужного сервера"
+    },
+    {
+      "when": {
+        "op": "eq",
+        "args": [
+          {
+            "ref": "https"
+          },
+          "соединение установлено"
+        ]
+      },
+      "text": "Запрос HTTPS проходит"
+    }
+  ],
+  "debrief": "Успех нижнего уровня не меняет TLS. Обход проверки меняет доверие, а не исправляет сертификат.",
+  "title": "Сетевой слой",
+  "condition": "Ping успешен, HTTPS-соединение не устанавливается."
+}

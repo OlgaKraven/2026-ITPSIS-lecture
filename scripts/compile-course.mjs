@@ -1,3 +1,4 @@
+import './report-directory.mjs';
 import {applyStudentCorrections} from '../authoring/student-corrections.mjs';
 import {upgradeCourse,auditVersion} from '../authoring/audit-upgrade.mjs';
 import {readFile,writeFile,mkdir} from 'node:fs/promises';

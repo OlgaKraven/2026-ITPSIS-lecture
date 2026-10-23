@@ -1,0 +1,5905 @@
+[
+  {
+    "id": "s07-01-support-lifecycle-Q01-case",
+    "happy": {
+      "actions": [
+        "patch",
+        "download",
+        "read",
+        "accept"
+      ],
+      "expect": {
+        "closed": true,
+        "field": "заполнено"
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "download",
+          "read",
+          "close"
+        ],
+        "expect": {
+          "file": "дефектный",
+          "field": "пусто",
+          "closed": true
+        },
+        "recover": [
+          "reopen",
+          "patch",
+          "download",
+          "read",
+          "accept"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "download",
+          "patch",
+          "read"
+        ],
+        "expect": {
+          "field": "пусто",
+          "template": "исправленный"
+        },
+        "recover": [
+          "download",
+          "read",
+          "accept"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-01-support-lifecycle-Q02-case",
+    "happy": {
+      "actions": [
+        "split",
+        "owners",
+        "process"
+      ],
+      "expect": {
+        "password": 0,
+        "role": 0
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "merge",
+          "process"
+        ],
+        "expect": {
+          "password": 0,
+          "role": 1,
+          "merged": true
+        },
+        "recover": [
+          "split",
+          "owners",
+          "process"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "delete"
+        ],
+        "expect": {
+          "links": "связи роли потеряны"
+        },
+        "recover": [
+          "split",
+          "restore-links",
+          "owners",
+          "process"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-01-support-lifecycle-Q03-case",
+    "happy": {
+      "actions": [
+        "approve20",
+        "install",
+        "start"
+      ],
+      "expect": {
+        "elapsed": 20,
+        "checked": true
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "approve10",
+          "install"
+        ],
+        "expect": {
+          "allowed": 10,
+          "outage": true
+        },
+        "recover": [
+          "approve20",
+          "start"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "self",
+          "install"
+        ],
+        "expect": {
+          "allowed": 0,
+          "installed": true
+        },
+        "recover": [
+          "approve20",
+          "start"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-01-support-lifecycle-Q04-case",
+    "happy": {
+      "actions": [
+        "approve",
+        "driver",
+        "test",
+        "accept"
+      ],
+      "expect": {
+        "print": "успех"
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "test",
+          "close-all",
+          "reboot",
+          "test"
+        ],
+        "expect": {
+          "print": "отказ",
+          "change": "закрыто"
+        },
+        "recover": [
+          "reopen",
+          "approve",
+          "driver",
+          "test",
+          "accept"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "close-all"
+        ],
+        "expect": {
+          "driver": "старый",
+          "incident": "закрыто"
+        },
+        "recover": [
+          "reopen",
+          "approve",
+          "driver",
+          "test",
+          "accept"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-01-support-lifecycle-Q05-case",
+    "happy": {
+      "actions": [
+        "card",
+        "start",
+        "request",
+        "verify"
+      ],
+      "expect": {
+        "accepted": true
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "ping",
+          "accept",
+          "request"
+        ],
+        "expect": {
+          "ping": "успех",
+          "document": "ошибка генератора"
+        },
+        "recover": [
+          "card",
+          "start",
+          "request",
+          "verify"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "accept"
+        ],
+        "expect": {
+          "accepted": true,
+          "generator": "остановлен"
+        },
+        "recover": [
+          "card",
+          "start",
+          "request",
+          "verify"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-01-support-lifecycle-Q06-case",
+    "happy": {
+      "actions": [
+        "correct",
+        "basis",
+        "replace"
+      ],
+      "expect": {
+        "battery": true,
+        "serverCount": 0
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "include",
+          "replace"
+        ],
+        "expect": {
+          "serverCount": 1,
+          "battery": false
+        },
+        "recover": [
+          "correct",
+          "basis",
+          "replace"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "future",
+          "include"
+        ],
+        "expect": {
+          "serverCount": 1,
+          "route": "договор сервера"
+        },
+        "recover": [
+          "correct",
+          "basis",
+          "replace"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-01-support-lifecycle-Q07-case",
+    "happy": {
+      "actions": [
+        "decision",
+        "old"
+      ],
+      "expect": {
+        "authority": true,
+        "old": "индивидуальное решение"
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "average"
+        ],
+        "expect": {
+          "calendar": "до 19:00"
+        },
+        "recover": [
+          "withdraw",
+          "decision",
+          "old"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "twenty",
+          "decision"
+        ],
+        "expect": {
+          "calculated": "ретроспективно по 20:00"
+        },
+        "recover": [
+          "withdraw",
+          "old"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-01-support-lifecycle-Q08-case",
+    "happy": {
+      "actions": [
+        "repair",
+        "drain",
+        "day"
+      ],
+      "expect": {
+        "queue": 18,
+        "completed": 18
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "day"
+        ],
+        "expect": {
+          "queue": 45,
+          "completed": 9
+        },
+        "recover": [
+          "repair",
+          "drain",
+          "day"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "day",
+          "day"
+        ],
+        "expect": {
+          "queue": 54,
+          "ratio": 3
+        },
+        "recover": [
+          "repair",
+          "drain",
+          "day"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-02-support-levels-Q01-case",
+    "happy": {
+      "actions": [
+        "work"
+      ],
+      "expect": {
+        "print": true,
+        "login": true
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "merge",
+          "work"
+        ],
+        "expect": {
+          "print": true,
+          "login": false
+        },
+        "recover": [
+          "split",
+          "work"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "delete",
+          "work"
+        ],
+        "expect": {
+          "evidence": false,
+          "login": false
+        },
+        "recover": [
+          "restore",
+          "work"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-02-support-levels-Q02-case",
+    "happy": {
+      "actions": [
+        "inspect",
+        "send"
+      ],
+      "expect": {
+        "queue": "L2",
+        "accepted": true
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "sql",
+          "inspect",
+          "send"
+        ],
+        "expect": {
+          "rows": "изменена без основания",
+          "accepted": false
+        },
+        "recover": [
+          "restore",
+          "send"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "guess"
+        ],
+        "expect": {
+          "queue": "диагноз без свидетельств"
+        },
+        "recover": [
+          "inspect",
+          "send"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-02-support-levels-Q03-case",
+    "happy": {
+      "actions": [
+        "tick",
+        "api",
+        "tick"
+      ],
+      "expect": {
+        "queue": 0,
+        "done": 55
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "tick",
+          "restart",
+          "tick"
+        ],
+        "expect": {
+          "queue": 30,
+          "api": "ожидание"
+        },
+        "recover": [
+          "api",
+          "tick",
+          "tick"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "tick",
+          "purge"
+        ],
+        "expect": {
+          "lost": 15,
+          "queue": 0
+        },
+        "recover": [
+          "replay",
+          "api",
+          "tick"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-02-support-levels-Q04-case",
+    "happy": {
+      "actions": [
+        "role",
+        "draft",
+        "run",
+        "send"
+      ],
+      "expect": {
+        "accepted": true
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "run",
+          "send"
+        ],
+        "expect": {
+          "result": "сбой не повторён",
+          "accepted": false
+        },
+        "recover": [
+          "role",
+          "draft",
+          "run",
+          "send"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "role",
+          "draft",
+          "run",
+          "admin",
+          "run"
+        ],
+        "expect": {
+          "result": "сбой не повторён",
+          "role": "администратор"
+        },
+        "recover": [
+          "role",
+          "run",
+          "send"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-02-support-levels-Q05-case",
+    "happy": {
+      "actions": [
+        "request",
+        "approve",
+        "create",
+        "grant",
+        "test"
+      ],
+      "expect": {
+        "role": "читатель",
+        "access": "доступно"
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "incident",
+          "approve",
+          "create",
+          "test"
+        ],
+        "expect": {
+          "approved": false,
+          "access": "отказ доступа"
+        },
+        "recover": [
+          "request",
+          "approve",
+          "grant",
+          "test"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "request",
+          "approve",
+          "create",
+          "admin",
+          "test"
+        ],
+        "expect": {
+          "role": "администратор",
+          "excess": true,
+          "access": "доступно"
+        },
+        "recover": [
+          "revoke",
+          "grant",
+          "test"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-02-support-levels-Q06-case",
+    "happy": {
+      "actions": [
+        "backup",
+        "assign",
+        "send",
+        "poll"
+      ],
+      "expect": {
+        "accepted": true
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "send"
+        ],
+        "expect": {
+          "message": "канал закрыт"
+        },
+        "recover": [
+          "backup",
+          "assign",
+          "send",
+          "poll"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "backup",
+          "send",
+          "poll"
+        ],
+        "expect": {
+          "message": "голосовая почта",
+          "accepted": false
+        },
+        "recover": [
+          "assign",
+          "poll"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-02-support-levels-Q07-case",
+    "happy": {
+      "actions": [
+        "log",
+        "accept",
+        "work"
+      ],
+      "expect": {
+        "next": "проверка новой гипотезы",
+        "lost": 0
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "leave",
+          "work"
+        ],
+        "expect": {
+          "owner": "никто",
+          "lost": 20
+        },
+        "recover": [
+          "log",
+          "accept",
+          "work"
+        ],
+        "after": {
+          "lost": 20
+        }
+      },
+      {
+        "path": [
+          "accept",
+          "work"
+        ],
+        "expect": {
+          "accepted": false,
+          "next": "повтор старого теста"
+        },
+        "recover": [
+          "log",
+          "accept",
+          "work"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-02-support-levels-Q08-case",
+    "happy": {
+      "actions": [
+        "task",
+        "send",
+        "accept",
+        "work"
+      ],
+      "expect": {
+        "owner": "L2",
+        "working": "выполняется"
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "send",
+          "drop",
+          "work"
+        ],
+        "expect": {
+          "owner": "никто",
+          "working": "не назначена"
+        },
+        "recover": [
+          "restore",
+          "task",
+          "accept",
+          "work"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "send",
+          "accept",
+          "work"
+        ],
+        "expect": {
+          "accepted": false,
+          "working": "не назначена"
+        },
+        "recover": [
+          "task",
+          "accept",
+          "work"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-03-sla-Q01-case",
+    "happy": {
+      "actions": [
+        "route",
+        "work"
+      ],
+      "expect": {
+        "fixed": true,
+        "report": 0
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "attach",
+          "work"
+        ],
+        "expect": {
+          "report": 1,
+          "fixed": false
+        },
+        "recover": [
+          "report",
+          "route",
+          "work"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "ignore"
+        ],
+        "expect": {
+          "queue": "закрыто без исполнения"
+        },
+        "recover": [
+          "route",
+          "work"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-03-sla-Q02-case",
+    "happy": {
+      "actions": [
+        "business",
+        "compare",
+        "send"
+      ],
+      "expect": {
+        "minutes": 25,
+        "decision": "в пределах норматива"
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "wall",
+          "compare",
+          "send"
+        ],
+        "expect": {
+          "minutes": 3805,
+          "decision": "превышение норматива"
+        },
+        "recover": [
+          "withdraw",
+          "business",
+          "compare",
+          "send"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "business",
+          "compare",
+          "send",
+          "wall"
+        ],
+        "expect": {
+          "minutes": 3805,
+          "decision": "не определён",
+          "exported": false
+        },
+        "recover": [
+          "business",
+          "compare",
+          "send"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-03-sla-Q03-case",
+    "happy": {
+      "actions": [
+        "bypass"
+      ],
+      "expect": {
+        "submitted": true,
+        "left": 6
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "low",
+          "work"
+        ],
+        "expect": {
+          "left": -2,
+          "deadlineMissed": true
+        },
+        "recover": [
+          "permit",
+          "bypass"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "work",
+          "bypass"
+        ],
+        "expect": {
+          "submitted": false,
+          "deadlineMissed": true
+        },
+        "recover": [
+          "permit",
+          "bypass"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-03-sla-Q04-case",
+    "happy": {
+      "actions": [
+        "p2",
+        "dispatch",
+        "deadline",
+        "p1",
+        "dispatch"
+      ],
+      "expect": {
+        "done": true,
+        "priority": "P1"
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "p3",
+          "dispatch",
+          "deadline"
+        ],
+        "expect": {
+          "wait": 10,
+          "priority": "P3"
+        },
+        "recover": [
+          "p1",
+          "dispatch"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "p2",
+          "dispatch",
+          "deadline",
+          "dispatch"
+        ],
+        "expect": {
+          "done": false,
+          "wait": 10,
+          "expected": "P1"
+        },
+        "recover": [
+          "p1",
+          "dispatch"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-03-sla-Q05-case",
+    "happy": {
+      "actions": [
+        "specialist",
+        "export"
+      ],
+      "expect": {
+        "duration": 9
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "auto",
+          "export"
+        ],
+        "expect": {
+          "duration": 0,
+          "report": "0 минут; автоуведомление"
+        },
+        "recover": [
+          "withdraw",
+          "specialist",
+          "export"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "specialist",
+          "export",
+          "auto"
+        ],
+        "expect": {
+          "owner": "не подтверждён",
+          "duration": 0
+        },
+        "recover": [
+          "withdraw",
+          "specialist",
+          "export"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-03-sla-Q06-case",
+    "happy": {
+      "actions": [
+        "restart",
+        "operation",
+        "report"
+      ],
+      "expect": {
+        "end": 13
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "restart",
+          "early"
+        ],
+        "expect": {
+          "end": 7,
+          "function": "не работает"
+        },
+        "recover": [
+          "operation",
+          "report"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "restart",
+          "operation",
+          "report",
+          "stop"
+        ],
+        "expect": {
+          "function": "не работает",
+          "reported": false
+        },
+        "recover": [
+          "restart",
+          "operation",
+          "report"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-03-sla-Q07-case",
+    "happy": {
+      "actions": [
+        "record",
+        "pause",
+        "send"
+      ],
+      "expect": {
+        "counted": 40
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "all",
+          "send"
+        ],
+        "expect": {
+          "counted": 0,
+          "evidence": false
+        },
+        "recover": [
+          "record",
+          "pause",
+          "send"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "none",
+          "send"
+        ],
+        "expect": {
+          "counted": 60,
+          "decision": "превышение"
+        },
+        "recover": [
+          "record",
+          "pause",
+          "send"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-03-sla-Q08-case",
+    "happy": {
+      "actions": [
+        "rates",
+        "decide",
+        "send"
+      ],
+      "expect": {
+        "first": 10,
+        "second": 5
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "counts",
+          "decide",
+          "send"
+        ],
+        "expect": {
+          "decision": "объявлено ухудшение по количеству"
+        },
+        "recover": [
+          "rates",
+          "decide",
+          "send"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "rates",
+          "cause"
+        ],
+        "expect": {
+          "decision": "выдуманная причина"
+        },
+        "recover": [
+          "decide",
+          "send"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-04-ticket-flow-Q01-case",
+    "happy": {
+      "actions": [
+        "inspect",
+        "filter",
+        "view"
+      ],
+      "expect": {
+        "visible": true
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "db",
+          "filter",
+          "view"
+        ],
+        "expect": {
+          "row": "удалена",
+          "visible": false
+        },
+        "recover": [
+          "restore",
+          "view"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "db",
+          "view"
+        ],
+        "expect": {
+          "row": "удалена",
+          "visible": false
+        },
+        "recover": [
+          "restore",
+          "inspect",
+          "filter",
+          "view"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-04-ticket-flow-Q02-case",
+    "happy": {
+      "actions": [
+        "utc",
+        "window",
+        "search",
+        "link"
+      ],
+      "expect": {
+        "found": true
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "raw",
+          "search",
+          "deny"
+        ],
+        "expect": {
+          "found": false,
+          "claim": "события не было"
+        },
+        "recover": [
+          "utc",
+          "window",
+          "search",
+          "link"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "utc",
+          "search"
+        ],
+        "expect": {
+          "found": false,
+          "radius": 0
+        },
+        "recover": [
+          "window",
+          "search",
+          "link"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-04-ticket-flow-Q03-case",
+    "happy": {
+      "actions": [
+        "incident",
+        "bypass",
+        "check",
+        "defect",
+        "accept"
+      ],
+      "expect": {
+        "checked": true
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "request",
+          "bypass"
+        ],
+        "expect": {
+          "service": "отказ"
+        },
+        "recover": [
+          "incident",
+          "bypass",
+          "check",
+          "defect",
+          "accept"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "incident",
+          "bypass",
+          "check",
+          "close"
+        ],
+        "expect": {
+          "defect": "закрыто без исследования"
+        },
+        "recover": [
+          "defect",
+          "accept"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-04-ticket-flow-Q04-case",
+    "happy": {
+      "actions": [
+        "approve",
+        "24",
+        "grant",
+        "test23",
+        "test24"
+      ],
+      "expect": {
+        "role": "нужная",
+        "access": "прекращён"
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "grant",
+          "24",
+          "test23"
+        ],
+        "expect": {
+          "role": "другая",
+          "access": "отказ"
+        },
+        "recover": [
+          "approve",
+          "grant",
+          "test23",
+          "test24"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "approve",
+          "grant",
+          "23",
+          "test23"
+        ],
+        "expect": {
+          "expiry": 23,
+          "access": "отказ"
+        },
+        "recover": [
+          "24",
+          "test23",
+          "test24"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-04-ticket-flow-Q05-case",
+    "happy": {
+      "actions": [
+        "match",
+        "repeat",
+        "write"
+      ],
+      "expect": {
+        "evidence": true
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "repeat",
+          "delete"
+        ],
+        "expect": {
+          "evidence": false,
+          "verdict": "дефект исключён"
+        },
+        "recover": [
+          "restore",
+          "match",
+          "repeat",
+          "write"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "repeat",
+          "write"
+        ],
+        "expect": {
+          "verdict": "недостаточно сопоставимых данных"
+        },
+        "recover": [
+          "match",
+          "repeat",
+          "write"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-04-ticket-flow-Q06-case",
+    "happy": {
+      "actions": [
+        "bypass",
+        "deadline",
+        "reassess",
+        "work"
+      ],
+      "expect": {
+        "access": true
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "same",
+          "deadline",
+          "work"
+        ],
+        "expect": {
+          "access": false,
+          "request": "низкий"
+        },
+        "recover": [
+          "bypass",
+          "reassess",
+          "work"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "bypass",
+          "reassess",
+          "deadline",
+          "work"
+        ],
+        "expect": {
+          "access": false,
+          "request": "обычный"
+        },
+        "recover": [
+          "reassess",
+          "work"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-04-ticket-flow-Q07-case",
+    "happy": {
+      "actions": [
+        "assign",
+        "send",
+        "accept",
+        "work"
+      ],
+      "expect": {
+        "owner": "Борис",
+        "work": "выполнена"
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "assign",
+          "leave",
+          "work"
+        ],
+        "expect": {
+          "owner": "никто",
+          "work": "простаивает"
+        },
+        "recover": [
+          "send",
+          "accept",
+          "work"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "work"
+        ],
+        "expect": {
+          "owner": "группа без владельца",
+          "work": "простаивает"
+        },
+        "recover": [
+          "assign",
+          "send",
+          "accept",
+          "work"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-04-ticket-flow-Q08-case",
+    "happy": {
+      "actions": [
+        "test",
+        "wait",
+        "accept"
+      ],
+      "expect": {
+        "closed": true,
+        "stable": 15
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "close"
+        ],
+        "expect": {
+          "closed": true,
+          "user": false,
+          "stable": 0
+        },
+        "recover": [
+          "test",
+          "wait",
+          "accept"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "test",
+          "wait",
+          "recur",
+          "accept"
+        ],
+        "expect": {
+          "stable": 0,
+          "symptom": true,
+          "closed": false
+        },
+        "recover": [
+          "repair",
+          "test",
+          "wait",
+          "accept"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-05-reproduction-Q01-case",
+    "happy": {
+      "actions": [
+        "request",
+        "trace",
+        "proxy",
+        "request"
+      ],
+      "expect": {
+        "client": "ответ получен"
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "request",
+          "db",
+          "request"
+        ],
+        "expect": {
+          "client": "тайм-аут",
+          "proxy": 8
+        },
+        "recover": [
+          "trace",
+          "proxy",
+          "request"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "stop-db"
+        ],
+        "expect": {
+          "db": "остановлена",
+          "client": "ошибка сервера"
+        },
+        "recover": [
+          "start-db",
+          "trace",
+          "proxy",
+          "request"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-05-reproduction-Q02-case",
+    "happy": {
+      "actions": [
+        "small",
+        "upload",
+        "reset",
+        "large",
+        "upload",
+        "compare"
+      ],
+      "expect": {
+        "conclusion": "подтверждена граница объёма в опыте"
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "large",
+          "upload",
+          "compare"
+        ],
+        "expect": {
+          "small": "нет",
+          "conclusion": "не хватает сопоставимых прогонов"
+        },
+        "recover": [
+          "reset",
+          "small",
+          "upload",
+          "compare"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "small",
+          "upload",
+          "large",
+          "upload"
+        ],
+        "expect": {
+          "large": "нет",
+          "conclusion": "опыт смешан с состоянием черновика"
+        },
+        "recover": [
+          "reset",
+          "large",
+          "upload",
+          "compare"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-05-reproduction-Q03-case",
+    "happy": {
+      "actions": [
+        "off",
+        "run",
+        "on",
+        "run",
+        "compare"
+      ],
+      "expect": {
+        "confirmed": true
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "off",
+          "upgrade",
+          "run",
+          "compare"
+        ],
+        "expect": {
+          "result": "несопоставимая сборка",
+          "confirmed": false
+        },
+        "recover": [
+          "restore",
+          "off",
+          "run",
+          "on",
+          "run",
+          "compare"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "off",
+          "run",
+          "compare"
+        ],
+        "expect": {
+          "on": "нет",
+          "confirmed": false
+        },
+        "recover": [
+          "on",
+          "run",
+          "compare"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-05-reproduction-Q04-case",
+    "happy": {
+      "actions": [
+        "role",
+        "draft",
+        "run",
+        "record"
+      ],
+      "expect": {
+        "result": "сбой черновика"
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "run",
+          "deny"
+        ],
+        "expect": {
+          "result": "успех",
+          "record": "дефект исключён"
+        },
+        "recover": [
+          "role",
+          "draft",
+          "run",
+          "record"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "role",
+          "draft",
+          "clear",
+          "run",
+          "record"
+        ],
+        "expect": {
+          "result": "успех"
+        },
+        "recover": [
+          "draft",
+          "run",
+          "record"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-05-reproduction-Q05-case",
+    "happy": {
+      "actions": [
+        "write",
+        "peer"
+      ],
+      "expect": {
+        "sent": true
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "peer"
+        ],
+        "expect": {
+          "sent": false,
+          "peer": "остановился перед отправкой"
+        },
+        "recover": [
+          "write",
+          "peer"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "write",
+          "peer",
+          "short",
+          "peer"
+        ],
+        "expect": {
+          "sent": false
+        },
+        "recover": [
+          "write",
+          "peer"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-05-reproduction-Q06-case",
+    "happy": {
+      "actions": [
+        "commit",
+        "round",
+        "send",
+        "read"
+      ],
+      "expect": {
+        "rows": 1,
+        "sum": 125.5
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "send",
+          "http",
+          "read"
+        ],
+        "expect": {
+          "rows": 0,
+          "verified": false
+        },
+        "recover": [
+          "commit",
+          "round",
+          "send",
+          "read"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "commit",
+          "send",
+          "read"
+        ],
+        "expect": {
+          "rows": 1,
+          "sum": 125,
+          "verified": false
+        },
+        "recover": [
+          "round",
+          "send",
+          "read"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-05-reproduction-Q07-case",
+    "happy": {
+      "actions": [
+        "run",
+        "remove",
+        "run",
+        "return",
+        "run"
+      ],
+      "expect": {
+        "stage": "возврат подтверждён"
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "remove",
+          "run"
+        ],
+        "expect": {
+          "baseline": "успех"
+        },
+        "recover": [
+          "restart",
+          "run",
+          "remove",
+          "run",
+          "return",
+          "run"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "language",
+          "run",
+          "run"
+        ],
+        "expect": {
+          "without": "нет",
+          "returned": "нет"
+        },
+        "recover": [
+          "remove",
+          "run",
+          "return",
+          "run"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-05-reproduction-Q08-case",
+    "happy": {
+      "actions": [
+        "synthetic",
+        "run",
+        "send"
+      ],
+      "expect": {
+        "exposed": false,
+        "reproduced": true
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "empty",
+          "run",
+          "send"
+        ],
+        "expect": {
+          "reproduced": false,
+          "data": "пусто"
+        },
+        "recover": [
+          "synthetic",
+          "run",
+          "send"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "send"
+        ],
+        "expect": {
+          "exposed": true
+        },
+        "recover": [
+          "withdraw",
+          "revoke",
+          "synthetic",
+          "run",
+          "send"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-06-escalation-Q01-case",
+    "happy": {
+      "actions": [
+        "l2",
+        "task",
+        "accept",
+        "read"
+      ],
+      "expect": {
+        "trace": true
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "l1",
+          "read"
+        ],
+        "expect": {
+          "owner": "L1",
+          "trace": false
+        },
+        "recover": [
+          "l2",
+          "task",
+          "accept",
+          "read"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "l2",
+          "accept",
+          "read"
+        ],
+        "expect": {
+          "owner": "нет",
+          "trace": false
+        },
+        "recover": [
+          "task",
+          "accept",
+          "read"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-06-escalation-Q02-case",
+    "happy": {
+      "actions": [
+        "request",
+        "approve",
+        "limited",
+        "notify",
+        "test"
+      ],
+      "expect": {
+        "mode": "ограниченный",
+        "tested": true
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "promise",
+          "test"
+        ],
+        "expect": {
+          "mode": "обещан недоступный резерв",
+          "tested": false
+        },
+        "recover": [
+          "request",
+          "approve",
+          "limited",
+          "notify",
+          "test"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "request",
+          "promise"
+        ],
+        "expect": {
+          "resource": "отказано"
+        },
+        "recover": [
+          "approve",
+          "limited",
+          "notify",
+          "test"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-06-escalation-Q03-case",
+    "happy": {
+      "actions": [
+        "escalate",
+        "bypass",
+        "check"
+      ],
+      "expect": {
+        "left": 3,
+        "checked": true
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "long"
+        ],
+        "expect": {
+          "left": -8,
+          "checked": false
+        },
+        "recover": [
+          "escalate",
+          "bypass",
+          "check",
+          "revise"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "check"
+        ],
+        "expect": {
+          "left": 8,
+          "checked": false
+        },
+        "recover": [
+          "escalate",
+          "bypass",
+          "check",
+          "revise"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-06-escalation-Q04-case",
+    "happy": {
+      "actions": [
+        "db",
+        "task",
+        "work"
+      ],
+      "expect": {
+        "owner": "инженер БД"
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "broadcast",
+          "work"
+        ],
+        "expect": {
+          "answer": "никто не выполнил"
+        },
+        "recover": [
+          "db",
+          "task",
+          "work"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "db",
+          "work"
+        ],
+        "expect": {
+          "answer": "схему посмотрели"
+        },
+        "recover": [
+          "task",
+          "work"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-06-escalation-Q05-case",
+    "happy": {
+      "actions": [
+        "task",
+        "work",
+        "link"
+      ],
+      "expect": {
+        "linked": true
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "send",
+          "link"
+        ],
+        "expect": {
+          "id": "R17",
+          "linked": false
+        },
+        "recover": [
+          "task",
+          "work",
+          "link"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "task",
+          "work",
+          "omit",
+          "link"
+        ],
+        "expect": {
+          "id": "нет",
+          "linked": false
+        },
+        "recover": [
+          "work",
+          "link"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-06-escalation-Q06-case",
+    "happy": {
+      "actions": [
+        "time",
+        "update"
+      ],
+      "expect": {
+        "missed": false
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "drop",
+          "time",
+          "update"
+        ],
+        "expect": {
+          "contact": "никто",
+          "missed": true
+        },
+        "recover": [
+          "contact",
+          "update"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "promise",
+          "time"
+        ],
+        "expect": {
+          "message": "гарантия восстановления без основания"
+        },
+        "recover": [
+          "update"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-06-escalation-Q07-case",
+    "happy": {
+      "actions": [
+        "reopen",
+        "task",
+        "accept",
+        "work"
+      ],
+      "expect": {
+        "source": "передана"
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "work"
+        ],
+        "expect": {
+          "result": "простаивает",
+          "owner": "никто"
+        },
+        "recover": [
+          "reopen",
+          "task",
+          "accept",
+          "work"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "reopen",
+          "task",
+          "close",
+          "accept",
+          "work"
+        ],
+        "expect": {
+          "result": "простаивает",
+          "accepted": false
+        },
+        "recover": [
+          "reopen",
+          "accept",
+          "work"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-06-escalation-Q08-case",
+    "happy": {
+      "actions": [
+        "six",
+        "original",
+        "adjacent",
+        "accept"
+      ],
+      "expect": {
+        "accepted": true
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "early",
+          "original",
+          "adjacent"
+        ],
+        "expect": {
+          "accepted": true,
+          "adjacent": "отказ"
+        },
+        "recover": [
+          "six",
+          "original",
+          "adjacent",
+          "accept"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "original",
+          "adjacent",
+          "accept"
+        ],
+        "expect": {
+          "accepted": false,
+          "adjacent": "отказ"
+        },
+        "recover": [
+          "six",
+          "original",
+          "adjacent",
+          "accept"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-07-knowledge-base-Q01-case",
+    "happy": {
+      "actions": [
+        "rate",
+        "strata",
+        "report"
+      ],
+      "expect": {
+        "first": 40,
+        "second": 40
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "count",
+          "cause"
+        ],
+        "expect": {
+          "claim": "редакция доказанно улучшила результат"
+        },
+        "recover": [
+          "rate",
+          "strata",
+          "report"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "rate",
+          "cause"
+        ],
+        "expect": {
+          "measure": "общая доля"
+        },
+        "recover": [
+          "strata",
+          "report"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-07-knowledge-base-Q02-case",
+    "happy": {
+      "actions": [
+        "adapt",
+        "apply"
+      ],
+      "expect": {
+        "service": "работает через обход"
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "apply",
+          "adapt"
+        ],
+        "expect": {
+          "queue": "неверный формат"
+        },
+        "recover": [
+          "restore",
+          "apply"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "adapt",
+          "apply",
+          "close"
+        ],
+        "expect": {
+          "defect": "закрыт"
+        },
+        "recover": [
+          "reopen"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-07-knowledge-base-Q03-case",
+    "happy": {
+      "actions": [
+        "title",
+        "search",
+        "current",
+        "apply",
+        "test"
+      ],
+      "expect": {
+        "print": "полная справка"
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "search",
+          "old",
+          "apply",
+          "test"
+        ],
+        "expect": {
+          "found": "ничего",
+          "print": "пустая справка"
+        },
+        "recover": [
+          "title",
+          "search",
+          "current",
+          "apply",
+          "test"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "title",
+          "search",
+          "old",
+          "apply",
+          "test"
+        ],
+        "expect": {
+          "config": "7.1",
+          "print": "пустая справка"
+        },
+        "recover": [
+          "current",
+          "apply",
+          "test"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-07-knowledge-base-Q04-case",
+    "happy": {
+      "actions": [
+        "inspect",
+        "mode",
+        "test"
+      ],
+      "expect": {
+        "tested": true
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "legacy",
+          "test"
+        ],
+        "expect": {
+          "service": "отказ неизвестного параметра",
+          "tested": false
+        },
+        "recover": [
+          "inspect",
+          "remove",
+          "mode",
+          "test"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "inspect",
+          "legacy",
+          "mode",
+          "test"
+        ],
+        "expect": {
+          "legacy": true,
+          "tested": false
+        },
+        "recover": [
+          "remove",
+          "test"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-07-knowledge-base-Q05-case",
+    "happy": {
+      "actions": [
+        "save",
+        "set",
+        "test"
+      ],
+      "expect": {
+        "verified": true
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "guess",
+          "test"
+        ],
+        "expect": {
+          "timeout": 500,
+          "service": "очередь ожидания блокирована"
+        },
+        "recover": [
+          "backup",
+          "rollback",
+          "set",
+          "test"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "save",
+          "guess",
+          "set"
+        ],
+        "expect": {
+          "timeout": 15,
+          "service": "очередь ожидания блокирована"
+        },
+        "recover": [
+          "test"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-07-knowledge-base-Q06-case",
+    "happy": {
+      "actions": [
+        "record",
+        "baseline",
+        "change",
+        "return"
+      ],
+      "expect": {
+        "tested": true
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "guess"
+        ],
+        "expect": {
+          "current": "угаданное"
+        },
+        "recover": [
+          "record",
+          "baseline",
+          "change",
+          "return"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "baseline",
+          "change",
+          "guess"
+        ],
+        "expect": {
+          "claim": "объявлен откат без точки"
+        },
+        "recover": [
+          "record",
+          "return"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-07-knowledge-base-Q07-case",
+    "happy": {
+      "actions": [
+        "edit",
+        "review",
+        "approve"
+      ],
+      "expect": {
+        "published": true
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "review",
+          "hint",
+          "publish"
+        ],
+        "expect": {
+          "peer": "выполнена с помощью",
+          "text": "кнопка не указана"
+        },
+        "recover": [
+          "edit",
+          "review",
+          "approve"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "publish"
+        ],
+        "expect": {
+          "published": true,
+          "peer": "нет"
+        },
+        "recover": [
+          "edit",
+          "review",
+          "approve"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-07-knowledge-base-Q08-case",
+    "happy": {
+      "actions": [
+        "attempts",
+        "publish"
+      ],
+      "expect": {
+        "report": 40
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "views",
+          "publish"
+        ],
+        "expect": {
+          "report": 12
+        },
+        "recover": [
+          "attempts",
+          "publish"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "grow",
+          "views",
+          "publish"
+        ],
+        "expect": {
+          "report": 6,
+          "views": 200
+        },
+        "recover": [
+          "attempts",
+          "publish"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-08-update-regulation-Q01-case",
+    "happy": {
+      "actions": [
+        "manifest",
+        "api5",
+        "bridge",
+        "client5",
+        "test"
+      ],
+      "expect": {
+        "api": 5,
+        "client": 5,
+        "tested": true
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "client5"
+        ],
+        "expect": {
+          "client": 5,
+          "api": 4,
+          "service": "отказ: несовместимый API"
+        },
+        "recover": [
+          "client4",
+          "manifest",
+          "api5",
+          "bridge",
+          "client5",
+          "test"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "manifest",
+          "api5",
+          "bridge",
+          "client5",
+          "test",
+          "api4"
+        ],
+        "expect": {
+          "api": 4,
+          "tested": false,
+          "service": "отказ: несовместимый API"
+        },
+        "recover": [
+          "client4",
+          "api5",
+          "bridge",
+          "client5",
+          "test"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-08-update-regulation-Q02-case",
+    "happy": {
+      "actions": [
+        "match",
+        "sql",
+        "adapt",
+        "verify",
+        "accept"
+      ],
+      "expect": {
+        "testDb": 12,
+        "admitted": true
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "sql",
+          "deploy"
+        ],
+        "expect": {
+          "service": "ошибка SQL",
+          "testedDb": 15
+        },
+        "recover": [
+          "rollback",
+          "match",
+          "adapt",
+          "verify",
+          "accept"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "match",
+          "sql",
+          "deploy"
+        ],
+        "expect": {
+          "sql": "функция отсутствует",
+          "service": "ошибка SQL"
+        },
+        "recover": [
+          "rollback",
+          "adapt",
+          "verify",
+          "accept"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-08-update-regulation-Q03-case",
+    "happy": {
+      "actions": [
+        "notify",
+        "start",
+        "submit",
+        "finish"
+      ],
+      "expect": {
+        "finished": true,
+        "pending": 0
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "start",
+          "submit"
+        ],
+        "expect": {
+          "pending": 1,
+          "notice": 0
+        },
+        "recover": [
+          "stop",
+          "notify",
+          "reconcile",
+          "start",
+          "finish"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "notify",
+          "move"
+        ],
+        "expect": {
+          "window": 19,
+          "notice": 18
+        },
+        "recover": [
+          "notify",
+          "start",
+          "submit",
+          "finish"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-08-update-regulation-Q04-case",
+    "happy": {
+      "actions": [
+        "export",
+        "approve",
+        "binary",
+        "database",
+        "replay",
+        "test"
+      ],
+      "expect": {
+        "tested": true,
+        "newRows": 2
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "binary"
+        ],
+        "expect": {
+          "service": "ошибка схемы"
+        },
+        "recover": [
+          "export",
+          "approve",
+          "database",
+          "replay",
+          "test"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "database"
+        ],
+        "expect": {
+          "lost": 2,
+          "newRows": 0
+        },
+        "recover": [
+          "source",
+          "approve",
+          "binary",
+          "replay",
+          "test"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-08-update-regulation-Q05-case",
+    "happy": {
+      "actions": [
+        "stop",
+        "migrate",
+        "new",
+        "test"
+      ],
+      "expect": {
+        "tested": true,
+        "conflicts": 0
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "migrate",
+          "stop"
+        ],
+        "expect": {
+          "conflicts": 1,
+          "writer": false
+        },
+        "recover": [
+          "repair",
+          "new",
+          "test"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "stop",
+          "migrate",
+          "new",
+          "restart-old",
+          "write"
+        ],
+        "expect": {
+          "conflicts": 1,
+          "writer": true
+        },
+        "recover": [
+          "stop",
+          "repair",
+          "test"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-08-update-regulation-Q06-case",
+    "happy": {
+      "actions": [
+        "template",
+        "request",
+        "publish"
+      ],
+      "expect": {
+        "pdf": "правильная справка",
+        "published": true
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "health",
+          "publish",
+          "request"
+        ],
+        "expect": {
+          "published": true,
+          "pdf": "ошибка формирования",
+          "failedRequests": 1
+        },
+        "recover": [
+          "pause",
+          "template",
+          "request",
+          "reconcile",
+          "publish"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "request",
+          "template"
+        ],
+        "expect": {
+          "pdf": "не запрошен",
+          "failedRequests": 1
+        },
+        "recover": [
+          "request",
+          "reconcile",
+          "publish"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-08-update-regulation-Q07-case",
+    "happy": {
+      "actions": [
+        "extend",
+        "rollback",
+        "check"
+      ],
+      "expect": {
+        "left": 8,
+        "verified": true
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "rollback",
+          "check"
+        ],
+        "expect": {
+          "left": -7,
+          "overrun": 7
+        },
+        "recover": [
+          "extend"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "wait",
+          "rollback"
+        ],
+        "expect": {
+          "left": -9,
+          "rollback": true
+        },
+        "recover": [
+          "extend",
+          "check"
+        ],
+        "after": {
+          "left": 3
+        }
+      }
+    ]
+  },
+  {
+    "id": "s07-08-update-regulation-Q08-case",
+    "happy": {
+      "actions": [
+        "observe",
+        "rollback",
+        "observe",
+        "report",
+        "close"
+      ],
+      "expect": {
+        "app": 4,
+        "errors": 1,
+        "closed": true
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "installer"
+        ],
+        "expect": {
+          "closed": true,
+          "observed": false
+        },
+        "recover": [
+          "reopen",
+          "observe",
+          "rollback",
+          "observe",
+          "report",
+          "close"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "observe",
+          "report",
+          "close"
+        ],
+        "expect": {
+          "errors": 12,
+          "closed": false,
+          "reported": "приложение 5 / схема 2"
+        },
+        "recover": [
+          "rollback",
+          "observe",
+          "report",
+          "close"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-09-change-management-Q01-case",
+    "happy": {
+      "actions": [
+        "compare",
+        "config",
+        "test"
+      ],
+      "expect": {
+        "duration": 3
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "new",
+          "test"
+        ],
+        "expect": {
+          "migration": true,
+          "tested": false
+        },
+        "recover": [
+          "compare",
+          "cancel",
+          "config",
+          "test"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "new",
+          "compare"
+        ],
+        "expect": {
+          "migration": true
+        },
+        "recover": [
+          "cancel",
+          "config",
+          "test"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-09-change-management-Q02-case",
+    "happy": {
+      "actions": [
+        "normal",
+        "test",
+        "approve"
+      ],
+      "expect": {
+        "approved": true
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "standard",
+          "test"
+        ],
+        "expect": {
+          "config": "несовместимая",
+          "test": "несовместимость"
+        },
+        "recover": [
+          "restore",
+          "normal",
+          "test",
+          "approve"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "normal",
+          "standard"
+        ],
+        "expect": {
+          "procedure": "старый шаблон БД 12"
+        },
+        "recover": [
+          "restore",
+          "normal",
+          "test",
+          "approve"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-09-change-management-Q03-case",
+    "happy": {
+      "actions": [
+        "owner",
+        "criterion",
+        "deploy",
+        "test",
+        "accept"
+      ],
+      "expect": {
+        "accepted": true
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "owner",
+          "deploy",
+          "early"
+        ],
+        "expect": {
+          "accepted": true,
+          "result": "нет"
+        },
+        "recover": [
+          "criterion",
+          "test",
+          "accept"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "deploy",
+          "test"
+        ],
+        "expect": {
+          "result": "проверка не определена"
+        },
+        "recover": [
+          "owner",
+          "criterion",
+          "test",
+          "accept"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-09-change-management-Q04-case",
+    "happy": {
+      "actions": [
+        "bridge",
+        "test",
+        "traffic"
+      ],
+      "expect": {
+        "failed": 0
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "break",
+          "traffic"
+        ],
+        "expect": {
+          "failed": 10,
+          "api": "только новый"
+        },
+        "recover": [
+          "bridge",
+          "test",
+          "replay"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "bridge",
+          "test",
+          "break",
+          "traffic"
+        ],
+        "expect": {
+          "tested": false,
+          "failed": 10
+        },
+        "recover": [
+          "bridge",
+          "test",
+          "replay"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-09-change-management-Q05-case",
+    "happy": {
+      "actions": [
+        "full",
+        "test",
+        "approve"
+      ],
+      "expect": {
+        "risk": true
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "accept",
+          "fail",
+          "restore"
+        ],
+        "expect": {
+          "rows": 80,
+          "risk": false
+        },
+        "recover": [
+          "journal",
+          "restore",
+          "test",
+          "approve"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "test",
+          "accept"
+        ],
+        "expect": {
+          "stand": 80,
+          "risk": true
+        },
+        "recover": [
+          "full",
+          "test",
+          "approve"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-09-change-management-Q06-case",
+    "happy": {
+      "actions": [
+        "package",
+        "owner",
+        "deploy"
+      ],
+      "expect": {
+        "config": "согласованная"
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "self"
+        ],
+        "expect": {
+          "config": "изменена без решения"
+        },
+        "recover": [
+          "return",
+          "package",
+          "owner",
+          "deploy"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "oral",
+          "self"
+        ],
+        "expect": {
+          "approved": false
+        },
+        "recover": [
+          "return",
+          "package",
+          "owner",
+          "deploy"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-09-change-management-Q07-case",
+    "happy": {
+      "actions": [
+        "expand",
+        "return",
+        "fix",
+        "expand",
+        "verify"
+      ],
+      "expect": {
+        "errors": 1,
+        "verified": true
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "expand",
+          "all"
+        ],
+        "expect": {
+          "traffic": 100,
+          "lost": 20
+        },
+        "recover": [
+          "return",
+          "fix",
+          "expand",
+          "verify",
+          "replay"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "all"
+        ],
+        "expect": {
+          "traffic": 100,
+          "lost": 20
+        },
+        "recover": [
+          "return",
+          "fix",
+          "expand",
+          "verify",
+          "replay"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-09-change-management-Q08-case",
+    "happy": {
+      "actions": [
+        "measure",
+        "rollback",
+        "measure",
+        "accept"
+      ],
+      "expect": {
+        "duration": 3
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "install"
+        ],
+        "expect": {
+          "accepted": true,
+          "duration": 6
+        },
+        "recover": [
+          "measure",
+          "rollback",
+          "measure",
+          "accept"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "explain"
+        ],
+        "expect": {
+          "load": false
+        },
+        "recover": [
+          "same",
+          "measure",
+          "rollback",
+          "measure",
+          "accept"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-10-backup-restore-Q01-case",
+    "happy": {
+      "actions": [
+        "tables",
+        "files",
+        "config",
+        "open"
+      ],
+      "expect": {
+        "document": "открыт"
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "tables",
+          "open"
+        ],
+        "expect": {
+          "files": false,
+          "document": "ошибка зависимости"
+        },
+        "recover": [
+          "files",
+          "config",
+          "open"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "tables",
+          "files",
+          "config",
+          "open",
+          "drop",
+          "open"
+        ],
+        "expect": {
+          "document": "ошибка зависимости",
+          "files": false
+        },
+        "recover": [
+          "files",
+          "open"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-10-backup-restore-Q02-case",
+    "happy": {
+      "actions": [
+        "inspect",
+        "new",
+        "restore",
+        "verify"
+      ],
+      "expect": {
+        "loss": 15,
+        "verified": true
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "restore",
+          "verify"
+        ],
+        "expect": {
+          "restored": 32,
+          "verified": false,
+          "excess": 8
+        },
+        "recover": [
+          "inspect",
+          "new",
+          "restore",
+          "verify"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "inspect",
+          "new",
+          "restore",
+          "old"
+        ],
+        "expect": {
+          "point": 32,
+          "restored": 45,
+          "loss": 28
+        },
+        "recover": [
+          "new",
+          "restore",
+          "verify"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-10-backup-restore-Q03-case",
+    "happy": {
+      "actions": [
+        "kit",
+        "prepare",
+        "restore",
+        "verify",
+        "close"
+      ],
+      "expect": {
+        "elapsed": 60,
+        "total": 60
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "prepare",
+          "restore",
+          "verify",
+          "close"
+        ],
+        "expect": {
+          "elapsed": 65,
+          "verified": true
+        },
+        "recover": [
+          "rehearsal",
+          "kit",
+          "prepare",
+          "restore",
+          "verify",
+          "close"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "kit",
+          "prepare",
+          "restore",
+          "close"
+        ],
+        "expect": {
+          "elapsed": 40,
+          "verified": false,
+          "closed": true
+        },
+        "recover": [
+          "reopen",
+          "verify",
+          "close"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-10-backup-restore-Q04-case",
+    "happy": {
+      "actions": [
+        "full",
+        "i1",
+        "find",
+        "i2",
+        "i3",
+        "verify"
+      ],
+      "expect": {
+        "point": "I3",
+        "verified": true
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "full",
+          "i1",
+          "i3"
+        ],
+        "expect": {
+          "point": "I1",
+          "errors": "разрыв перед I3"
+        },
+        "recover": [
+          "find",
+          "i2",
+          "i3",
+          "verify"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "full",
+          "i1",
+          "fake"
+        ],
+        "expect": {
+          "errors": "контрольная сумма I2 не совпала",
+          "point": "I1"
+        },
+        "recover": [
+          "find",
+          "i2",
+          "i3",
+          "verify"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-10-backup-restore-Q05-case",
+    "happy": {
+      "actions": [
+        "remote",
+        "fail",
+        "restore"
+      ],
+      "expect": {
+        "restored": true
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "more",
+          "fail",
+          "restore"
+        ],
+        "expect": {
+          "local": false,
+          "restored": false,
+          "lossRecorded": true
+        },
+        "recover": [
+          "new"
+        ],
+        "after": {
+          "restored": false,
+          "newCycle": true
+        }
+      },
+      {
+        "path": [
+          "fail"
+        ],
+        "expect": {
+          "local": false,
+          "remote": false
+        },
+        "recover": [
+          "record",
+          "new"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-10-backup-restore-Q06-case",
+    "happy": {
+      "actions": [
+        "record",
+        "key",
+        "copy",
+        "test"
+      ],
+      "expect": {
+        "tested": true,
+        "oldKey": false
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "try"
+        ],
+        "expect": {
+          "oldData": "отказ расшифрования",
+          "tested": false
+        },
+        "recover": [
+          "record",
+          "key",
+          "copy",
+          "test"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "guess"
+        ],
+        "expect": {
+          "oldData": "ошибка аутентификации шифротекста"
+        },
+        "recover": [
+          "record",
+          "key",
+          "copy",
+          "test"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-10-backup-restore-Q07-case",
+    "happy": {
+      "actions": [
+        "restore",
+        "recopy",
+        "restore",
+        "check"
+      ],
+      "expect": {
+        "restoredRows": 100,
+        "accepted": true
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "accept"
+        ],
+        "expect": {
+          "accepted": true,
+          "restoredRows": 0
+        },
+        "recover": [
+          "restore",
+          "recopy",
+          "restore",
+          "check"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "recopy",
+          "restore",
+          "truncate"
+        ],
+        "expect": {
+          "copyRows": 88,
+          "restoredRows": 100,
+          "accepted": false
+        },
+        "recover": [
+          "recopy",
+          "restore",
+          "check"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s07-10-backup-restore-Q08-case",
+    "happy": {
+      "actions": [
+        "files",
+        "path",
+        "links",
+        "open",
+        "verify"
+      ],
+      "expect": {
+        "result": "успех",
+        "accepted": true
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "accept",
+          "open"
+        ],
+        "expect": {
+          "accepted": false,
+          "result": "вложение недоступно"
+        },
+        "recover": [
+          "files",
+          "path",
+          "links",
+          "open",
+          "verify"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "files",
+          "path",
+          "links",
+          "open",
+          "disconnect",
+          "open"
+        ],
+        "expect": {
+          "files": false,
+          "result": "вложение недоступно"
+        },
+        "recover": [
+          "files",
+          "links",
+          "open",
+          "verify"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s08-01-failure-response-Q01-case",
+    "happy": {
+      "actions": [
+        "out",
+        "sample"
+      ],
+      "expect": {
+        "errors": 0
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "accept"
+        ],
+        "expect": {
+          "accepted": true,
+          "errors": 50
+        },
+        "recover": [
+          "out",
+          "sample"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "out",
+          "sample",
+          "in",
+          "sample"
+        ],
+        "expect": {
+          "errors": 50,
+          "accepted": false
+        },
+        "recover": [
+          "out",
+          "fix",
+          "in",
+          "sample"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s08-01-failure-response-Q02-case",
+    "happy": {
+      "actions": [
+        "impact",
+        "urgent",
+        "work"
+      ],
+      "expect": {
+        "restored": true
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "low",
+          "wait",
+          "work"
+        ],
+        "expect": {
+          "restored": false,
+          "missed": true
+        },
+        "recover": [
+          "impact",
+          "urgent",
+          "work",
+          "deviation"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "low",
+          "work"
+        ],
+        "expect": {
+          "route": "обычная",
+          "restored": false
+        },
+        "recover": [
+          "impact",
+          "urgent",
+          "work"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s08-01-failure-response-Q03-case",
+    "happy": {
+      "actions": [
+        "address",
+        "poll",
+        "test"
+      ],
+      "expect": {
+        "alert": "норма",
+        "tested": true
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "restart",
+          "poll"
+        ],
+        "expect": {
+          "service": "остановлена",
+          "alert": "авария"
+        },
+        "recover": [
+          "start",
+          "address",
+          "poll",
+          "test"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "mute"
+        ],
+        "expect": {
+          "alert": "заглушён",
+          "sensor": "OLD"
+        },
+        "recover": [
+          "address",
+          "poll",
+          "test"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s08-01-failure-response-Q04-case",
+    "happy": {
+      "actions": [
+        "pause",
+        "coordinate",
+        "change",
+        "test"
+      ],
+      "expect": {
+        "result": "успех"
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "one",
+          "two",
+          "test"
+        ],
+        "expect": {
+          "timeout": 1,
+          "result": "тайм-аут"
+        },
+        "recover": [
+          "pause",
+          "coordinate",
+          "change",
+          "test"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "two",
+          "coordinate"
+        ],
+        "expect": {
+          "timeout": 1,
+          "paused": false
+        },
+        "recover": [
+          "pause",
+          "change",
+          "test"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s08-01-failure-response-Q05-case",
+    "happy": {
+      "actions": [
+        "save",
+        "one",
+        "api",
+        "test"
+      ],
+      "expect": {
+        "tested": true
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "mass",
+          "test"
+        ],
+        "expect": {
+          "requests": 20,
+          "tested": false,
+          "logs": false
+        },
+        "recover": [
+          "save",
+          "api",
+          "test",
+          "replay"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "save",
+          "one",
+          "mass"
+        ],
+        "expect": {
+          "logs": false,
+          "requests": 20
+        },
+        "recover": [
+          "save",
+          "api",
+          "test",
+          "replay"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s08-01-failure-response-Q06-case",
+    "happy": {
+      "actions": [
+        "correct",
+        "time",
+        "update"
+      ],
+      "expect": {
+        "updated": true
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "promise",
+          "silence"
+        ],
+        "expect": {
+          "usersWaiting": true,
+          "updated": false
+        },
+        "recover": [
+          "correct",
+          "update"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "promise"
+        ],
+        "expect": {
+          "message": "восстановление в 14:05"
+        },
+        "recover": [
+          "correct",
+          "time",
+          "update"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s08-01-failure-response-Q07-case",
+    "happy": {
+      "actions": [
+        "wait",
+        "test",
+        "accept"
+      ],
+      "expect": {
+        "stable": 15,
+        "closed": true
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "close"
+        ],
+        "expect": {
+          "closed": true,
+          "stable": 2
+        },
+        "recover": [
+          "wait",
+          "test",
+          "accept"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "ten",
+          "accept"
+        ],
+        "expect": {
+          "stable": 0,
+          "symptom": true,
+          "closed": false
+        },
+        "recover": [
+          "repair",
+          "wait",
+          "two",
+          "test",
+          "accept"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s08-01-failure-response-Q08-case",
+    "happy": {
+      "actions": [
+        "save",
+        "owner"
+      ],
+      "expect": {
+        "saved": true,
+        "left": 28
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "tomorrow"
+        ],
+        "expect": {
+          "exists": false,
+          "saved": false
+        },
+        "recover": [
+          "gap",
+          "retention",
+          "owner"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "tomorrow",
+          "save"
+        ],
+        "expect": {
+          "saved": false,
+          "exists": false
+        },
+        "recover": [
+          "gap",
+          "retention",
+          "owner"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s08-02-error-collection-Q01-case",
+    "happy": {
+      "actions": [
+        "context",
+        "search",
+        "analyse"
+      ],
+      "expect": {
+        "selected": "R42"
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "time",
+          "analyse"
+        ],
+        "expect": {
+          "direction": "аутентификация",
+          "linked": false
+        },
+        "recover": [
+          "context",
+          "search",
+          "analyse"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "search",
+          "analyse"
+        ],
+        "expect": {
+          "selected": "R17"
+        },
+        "recover": [
+          "context",
+          "search",
+          "analyse"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s08-02-error-collection-Q02-case",
+    "happy": {
+      "actions": [
+        "prepare",
+        "retry",
+        "link",
+        "limit"
+      ],
+      "expect": {
+        "linked": true
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "retry",
+          "link"
+        ],
+        "expect": {
+          "id": "повтор без контекста",
+          "linked": false
+        },
+        "recover": [
+          "prepare",
+          "retry",
+          "link",
+          "limit"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "prepare",
+          "retry",
+          "link",
+          "claim"
+        ],
+        "expect": {
+          "original": "исходная причина объявлена по R99"
+        },
+        "recover": [
+          "limit"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s08-02-error-collection-Q03-case",
+    "happy": {
+      "actions": [
+        "fields",
+        "search",
+        "send"
+      ],
+      "expect": {
+        "package": "версия 5 / R42 / 10:05"
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "first",
+          "send"
+        ],
+        "expect": {
+          "package": "версия 4 / R17 / 09:05"
+        },
+        "recover": [
+          "fields",
+          "search",
+          "send"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "search",
+          "fields",
+          "send"
+        ],
+        "expect": {
+          "package": "версия 4 / R17 / 09:05"
+        },
+        "recover": [
+          "search",
+          "send"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s08-02-error-collection-Q04-case",
+    "happy": {
+      "actions": [
+        "history",
+        "key",
+        "test",
+        "report"
+      ],
+      "expect": {
+        "service": "успех"
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "blame",
+          "undo"
+        ],
+        "expect": {
+          "conclusion": "перезапуск доказан по двум минутам",
+          "service": "отказ"
+        },
+        "recover": [
+          "history",
+          "key",
+          "test",
+          "report"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "history",
+          "blame"
+        ],
+        "expect": {
+          "history": true,
+          "conclusion": "перезапуск доказан по двум минутам"
+        },
+        "recover": [
+          "key",
+          "test",
+          "report"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s08-02-error-collection-Q05-case",
+    "happy": {
+      "actions": [
+        "measure",
+        "tune",
+        "sample"
+      ],
+      "expect": {
+        "criterion": 100
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "mean"
+        ],
+        "expect": {
+          "accepted": true,
+          "criterion": 95
+        },
+        "recover": [
+          "measure",
+          "tune",
+          "sample"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "units",
+          "sample"
+        ],
+        "expect": {
+          "tailMs": 8000,
+          "accepted": false
+        },
+        "recover": [
+          "measure",
+          "tune",
+          "sample"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s08-02-error-collection-Q06-case",
+    "happy": {
+      "actions": [
+        "utc",
+        "id",
+        "link"
+      ],
+      "expect": {
+        "difference": 0,
+        "linked": true
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "sort",
+          "id",
+          "link"
+        ],
+        "expect": {
+          "difference": 3,
+          "linked": false
+        },
+        "recover": [
+          "utc",
+          "link"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "shift",
+          "id",
+          "link"
+        ],
+        "expect": {
+          "serverHour": 10,
+          "linked": true
+        },
+        "recover": [
+          "restore",
+          "utc",
+          "link"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s08-02-error-collection-Q07-case",
+    "happy": {
+      "actions": [
+        "mask",
+        "secure"
+      ],
+      "expect": {
+        "exposed": false
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "public",
+          "delete",
+          "mask"
+        ],
+        "expect": {
+          "exposed": true,
+          "active": true
+        },
+        "recover": [
+          "revoke",
+          "secure"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "erase",
+          "secure"
+        ],
+        "expect": {
+          "context": false,
+          "archive": "пустой"
+        },
+        "recover": [
+          "mask",
+          "secure"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s08-02-error-collection-Q08-case",
+    "happy": {
+      "actions": [
+        "start",
+        "probe",
+        "gap",
+        "owner"
+      ],
+      "expect": {
+        "future": true
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "search",
+          "deny"
+        ],
+        "expect": {
+          "claim": "ошибок не было",
+          "future": false
+        },
+        "recover": [
+          "start",
+          "probe",
+          "gap",
+          "owner"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "probe",
+          "deny"
+        ],
+        "expect": {
+          "future": false,
+          "agent": false
+        },
+        "recover": [
+          "start",
+          "probe",
+          "gap",
+          "owner"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s08-03-layer-localization-Q01-case",
+    "happy": {
+      "actions": [
+        "trace",
+        "worker",
+        "test"
+      ],
+      "expect": {
+        "result": "успех"
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "client",
+          "test"
+        ],
+        "expect": {
+          "client": "сброшена",
+          "result": "отказ"
+        },
+        "recover": [
+          "restore",
+          "trace",
+          "worker",
+          "test"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "db"
+        ],
+        "expect": {
+          "db": "остановлена",
+          "result": "ошибка БД"
+        },
+        "recover": [
+          "restore",
+          "trace",
+          "worker",
+          "test"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s08-03-layer-localization-Q02-case",
+    "happy": {
+      "actions": [
+        "off",
+        "run",
+        "on",
+        "run",
+        "record"
+      ],
+      "expect": {
+        "claim": "X связан со сбоем в этих условиях"
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "off",
+          "user",
+          "run"
+        ],
+        "expect": {
+          "claim": "несопоставимая роль"
+        },
+        "recover": [
+          "restore",
+          "off",
+          "run",
+          "on",
+          "run",
+          "record"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "off",
+          "run",
+          "record"
+        ],
+        "expect": {
+          "claim": "контроль не завершён"
+        },
+        "recover": [
+          "on",
+          "run",
+          "record"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s08-03-layer-localization-Q03-case",
+    "happy": {
+      "actions": [
+        "tcp",
+        "cert",
+        "request"
+      ],
+      "expect": {
+        "trusted": true
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "ping",
+          "request"
+        ],
+        "expect": {
+          "https": "ошибка имени"
+        },
+        "recover": [
+          "tcp",
+          "cert",
+          "request"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "disable",
+          "request"
+        ],
+        "expect": {
+          "https": "соединение установлено",
+          "trusted": false
+        },
+        "recover": [
+          "cert",
+          "enable",
+          "request"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s08-03-layer-localization-Q04-case",
+    "happy": {
+      "actions": [
+        "trace",
+        "endpoint",
+        "request"
+      ],
+      "expect": {
+        "api": 200
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "static"
+        ],
+        "expect": {
+          "accepted": true,
+          "api": 500
+        },
+        "recover": [
+          "trace",
+          "endpoint",
+          "request"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "trace",
+          "endpoint",
+          "request",
+          "broken",
+          "request"
+        ],
+        "expect": {
+          "api": 500
+        },
+        "recover": [
+          "endpoint",
+          "request"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s08-03-layer-localization-Q05-case",
+    "happy": {
+      "actions": [
+        "clean",
+        "rights",
+        "write"
+      ],
+      "expect": {
+        "file": "записан"
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "clean",
+          "write"
+        ],
+        "expect": {
+          "file": "отказ: нет прав",
+          "free": 600
+        },
+        "recover": [
+          "rights",
+          "write"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "delete",
+          "rights",
+          "write"
+        ],
+        "expect": {
+          "documents": false,
+          "file": "записан"
+        },
+        "recover": [
+          "restore",
+          "write"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s08-03-layer-localization-Q06-case",
+    "happy": {
+      "actions": [
+        "connect",
+        "query",
+        "agree",
+        "finish",
+        "query"
+      ],
+      "expect": {
+        "query": "успех",
+        "lost": 0
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "kill",
+          "query"
+        ],
+        "expect": {
+          "query": "успех",
+          "lost": 10
+        },
+        "recover": [
+          "agree",
+          "replay"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "connect",
+          "query"
+        ],
+        "expect": {
+          "query": "ожидает блокировку"
+        },
+        "recover": [
+          "agree",
+          "finish",
+          "query"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s08-03-layer-localization-Q07-case",
+    "happy": {
+      "actions": [
+        "test",
+        "on",
+        "test",
+        "adapt",
+        "prod"
+      ],
+      "expect": {
+        "prod": "успех"
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "test",
+          "on",
+          "test",
+          "copy",
+          "prod"
+        ],
+        "expect": {
+          "prod": "задание не обработано"
+        },
+        "recover": [
+          "adapt",
+          "prod"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "on",
+          "test",
+          "copy",
+          "prod"
+        ],
+        "expect": {
+          "off": "нет",
+          "prod": "задание не обработано"
+        },
+        "recover": [
+          "off",
+          "test",
+          "adapt",
+          "prod"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s08-03-layer-localization-Q08-case",
+    "happy": {
+      "actions": [
+        "ping",
+        "https",
+        "port",
+        "https",
+        "record"
+      ],
+      "expect": {
+        "https": "успех"
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "ping",
+          "claim"
+        ],
+        "expect": {
+          "record": "сеть полностью исправна",
+          "https": "не проверен"
+        },
+        "recover": [
+          "https",
+          "port",
+          "https",
+          "record"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "https",
+          "record"
+        ],
+        "expect": {
+          "record": "ICMP не проверен; HTTPS не подтверждён"
+        },
+        "recover": [
+          "ping",
+          "port",
+          "https",
+          "record"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s08-04-postmortem-Q01-case",
+    "happy": {
+      "actions": [
+        "trace",
+        "guard",
+        "replay",
+        "report"
+      ],
+      "expect": {
+        "service": "ошибка отклонена; услуга работает"
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "blame",
+          "replay"
+        ],
+        "expect": {
+          "service": "услуга остановлена"
+        },
+        "recover": [
+          "trace",
+          "guard",
+          "replay",
+          "report"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "replay"
+        ],
+        "expect": {
+          "service": "услуга остановлена",
+          "measure": "нет"
+        },
+        "recover": [
+          "trace",
+          "guard",
+          "replay",
+          "report"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s08-04-postmortem-Q02-case",
+    "happy": {
+      "actions": [
+        "search",
+        "update"
+      ],
+      "expect": {
+        "interval": 9,
+        "reportStart": 55
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "exact",
+          "search"
+        ],
+        "expect": {
+          "reportStart": 58,
+          "earliest": 55
+        },
+        "recover": [
+          "update"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "search",
+          "ignore"
+        ],
+        "expect": {
+          "reportStart": 58,
+          "interval": 9
+        },
+        "recover": [
+          "update"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s08-04-postmortem-Q03-case",
+    "happy": {
+      "actions": [
+        "utc",
+        "sort",
+        "precision",
+        "sort",
+        "publish"
+      ],
+      "expect": {
+        "order": "B раньше A и C; порядок A/C неизвестен"
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "raw",
+          "publish"
+        ],
+        "expect": {
+          "published": "B,C,A"
+        },
+        "recover": [
+          "utc",
+          "precision",
+          "sort",
+          "publish"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "utc",
+          "sort",
+          "publish",
+          "precision"
+        ],
+        "expect": {
+          "published": "B,A,C",
+          "uncertainty": true
+        },
+        "recover": [
+          "sort",
+          "publish"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s08-04-postmortem-Q04-case",
+    "happy": {
+      "actions": [
+        "recur",
+        "inspect",
+        "repair",
+        "test"
+      ],
+      "expect": {
+        "service": "работает устойчиво"
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "restart",
+          "blame",
+          "test"
+        ],
+        "expect": {
+          "service": "отказ повторяется"
+        },
+        "recover": [
+          "recur",
+          "inspect",
+          "repair",
+          "test"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "recur",
+          "restart"
+        ],
+        "expect": {
+          "service": "не стартует",
+          "disk": false
+        },
+        "recover": [
+          "inspect",
+          "repair",
+          "test"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s08-04-postmortem-Q05-case",
+    "happy": {
+      "actions": [
+        "alert",
+        "leak",
+        "test",
+        "accept"
+      ],
+      "expect": {
+        "stopped": false,
+        "signal": 2
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "alert",
+          "test",
+          "early"
+        ],
+        "expect": {
+          "stopped": true,
+          "leak": false
+        },
+        "recover": [
+          "leak",
+          "test",
+          "accept"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "test",
+          "early"
+        ],
+        "expect": {
+          "stopped": true,
+          "signal": 10
+        },
+        "recover": [
+          "alert",
+          "leak",
+          "test",
+          "accept"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s08-04-postmortem-Q06-case",
+    "happy": {
+      "actions": [
+        "unique",
+        "assign"
+      ],
+      "expect": {
+        "people": 3,
+        "tasks": 3
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "rows",
+          "assign"
+        ],
+        "expect": {
+          "tasks": 4,
+          "duplicate": true
+        },
+        "recover": [
+          "unique",
+          "cancel"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "retry-count",
+          "assign"
+        ],
+        "expect": {
+          "people": 10,
+          "tasks": 10
+        },
+        "recover": [
+          "unique",
+          "assign"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s08-04-postmortem-Q07-case",
+    "happy": {
+      "actions": [
+        "owner",
+        "configure",
+        "test",
+        "accept"
+      ],
+      "expect": {
+        "closed": true
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "slogan"
+        ],
+        "expect": {
+          "closed": true,
+          "threshold": 0
+        },
+        "recover": [
+          "owner",
+          "configure",
+          "test",
+          "accept"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "owner",
+          "late",
+          "test",
+          "accept"
+        ],
+        "expect": {
+          "test": "раннего сигнала нет",
+          "closed": false
+        },
+        "recover": [
+          "configure",
+          "test",
+          "accept"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s08-04-postmortem-Q08-case",
+    "happy": {
+      "actions": [
+        "record",
+        "configure",
+        "test",
+        "close"
+      ],
+      "expect": {
+        "closed": true
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "hide",
+          "test"
+        ],
+        "expect": {
+          "late": false,
+          "test": "файл применён; отказ"
+        },
+        "recover": [
+          "record",
+          "configure",
+          "test",
+          "close"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "test",
+          "close"
+        ],
+        "expect": {
+          "test": "файл применён; отказ",
+          "closed": false
+        },
+        "recover": [
+          "record",
+          "configure",
+          "test",
+          "close"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s08-05-hardware-maintenance-Q01-case",
+    "happy": {
+      "actions": [
+        "serial",
+        "replace",
+        "history"
+      ],
+      "expect": {
+        "record": "C303"
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "name",
+          "replace"
+        ],
+        "expect": {
+          "wrong": true,
+          "done": false
+        },
+        "recover": [
+          "return",
+          "serial",
+          "replace",
+          "history"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "serial",
+          "replace"
+        ],
+        "expect": {
+          "actual": "C303",
+          "record": "A101"
+        },
+        "recover": [
+          "history"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s08-05-hardware-maintenance-Q02-case",
+    "happy": {
+      "actions": [
+        "reserve",
+        "approve",
+        "maintain",
+        "test"
+      ],
+      "expect": {
+        "tested": true
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "off"
+        ],
+        "expect": {
+          "service": "отказ",
+          "disk": false
+        },
+        "recover": [
+          "on",
+          "reserve",
+          "approve",
+          "maintain",
+          "test"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "reserve",
+          "off"
+        ],
+        "expect": {
+          "reserve": "не готов",
+          "service": "отказ"
+        },
+        "recover": [
+          "on",
+          "approve",
+          "maintain",
+          "test"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s08-05-hardware-maintenance-Q03-case",
+    "happy": {
+      "actions": [
+        "cool",
+        "test"
+      ],
+      "expect": {
+        "temp": 65
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "ignore"
+        ],
+        "expect": {
+          "temp": 82,
+          "alarm": true
+        },
+        "recover": [
+          "cool",
+          "test"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "test"
+        ],
+        "expect": {
+          "temp": 82,
+          "tested": false
+        },
+        "recover": [
+          "cool",
+          "test"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s08-05-hardware-maintenance-Q04-case",
+    "happy": {
+      "actions": [
+        "record",
+        "replace",
+        "test"
+      ],
+      "expect": {
+        "tested": true
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "wait"
+        ],
+        "expect": {
+          "fan": "остановлен",
+          "cooling": "отказ"
+        },
+        "recover": [
+          "record",
+          "replace",
+          "test"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "calendar",
+          "wait"
+        ],
+        "expect": {
+          "ticket": "плановая через 30 дней",
+          "fan": "остановлен"
+        },
+        "recover": [
+          "record",
+          "replace",
+          "test"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s08-05-hardware-maintenance-Q05-case",
+    "happy": {
+      "actions": [
+        "prepare",
+        "sync",
+        "switch",
+        "test",
+        "verify"
+      ],
+      "expect": {
+        "accepted": true
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "switch",
+          "accept",
+          "test"
+        ],
+        "expect": {
+          "result": "устаревшие данные"
+        },
+        "recover": [
+          "prepare",
+          "return",
+          "sync",
+          "switch",
+          "test",
+          "verify"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "prepare",
+          "switch",
+          "test",
+          "verify"
+        ],
+        "expect": {
+          "accepted": false
+        },
+        "recover": [
+          "return",
+          "sync",
+          "switch",
+          "test",
+          "verify"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s08-05-hardware-maintenance-Q06-case",
+    "happy": {
+      "actions": [
+        "read",
+        "replace",
+        "read",
+        "accept"
+      ],
+      "expect": {
+        "accepted": true
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "smart",
+          "read"
+        ],
+        "expect": {
+          "errors": 2,
+          "accepted": false
+        },
+        "recover": [
+          "replace",
+          "read",
+          "accept"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "read",
+          "clear"
+        ],
+        "expect": {
+          "errors": 0,
+          "read": false,
+          "disk": "исходный"
+        },
+        "recover": [
+          "read",
+          "replace",
+          "read",
+          "accept"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s08-05-hardware-maintenance-Q07-case",
+    "happy": {
+      "actions": [
+        "load",
+        "test",
+        "report"
+      ],
+      "expect": {
+        "minutes": 7
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "half"
+        ],
+        "expect": {
+          "claim": "6 минут по пропорции",
+          "tested": false
+        },
+        "recover": [
+          "load",
+          "test",
+          "report"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "test",
+          "report"
+        ],
+        "expect": {
+          "claim": "12 минут только при 30%"
+        },
+        "recover": [
+          "load",
+          "test",
+          "report"
+        ],
+        "after": {}
+      }
+    ]
+  },
+  {
+    "id": "s08-05-hardware-maintenance-Q08-case",
+    "happy": {
+      "actions": [
+        "port",
+        "test",
+        "history",
+        "accept"
+      ],
+      "expect": {
+        "closed": true
+      }
+    },
+    "faults": [
+      {
+        "path": [
+          "close",
+          "test"
+        ],
+        "expect": {
+          "closed": true,
+          "document": "нет связи"
+        },
+        "recover": [
+          "reopen",
+          "port",
+          "test",
+          "history",
+          "accept"
+        ],
+        "after": {}
+      },
+      {
+        "path": [
+          "test",
+          "history",
+          "accept"
+        ],
+        "expect": {
+          "closed": false,
+          "document": "нет связи"
+        },
+        "recover": [
+          "port",
+          "test",
+          "history",
+          "accept"
+        ],
+        "after": {}
+      }
+    ]
+  }
+]

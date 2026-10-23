@@ -1,0 +1,231 @@
+{
+  "id": "s08-03-layer-localization-Q04-case",
+  "revision": 2,
+  "initial": {
+    "endpoint": "недоступный",
+    "trace": false,
+    "static": "работает",
+    "api": 500,
+    "accepted": false
+  },
+  "fields": [
+    {
+      "key": "endpoint",
+      "label": "Адрес внешнего сервиса"
+    },
+    {
+      "key": "trace",
+      "label": "След API получен"
+    },
+    {
+      "key": "static",
+      "label": "Статика"
+    },
+    {
+      "key": "api",
+      "label": "Ответ API"
+    },
+    {
+      "key": "accepted",
+      "label": "Услуга принята"
+    }
+  ],
+  "computed": {},
+  "lectureId": "s08-03-layer-localization",
+  "questionId": "s08-03-layer-localization-Q04",
+  "goal": "Восстановить API выдачи и связать изменение с его внешней зависимостью.",
+  "rules": [
+    "Статика не вызывает внешний сервис. API выдачи вызывает недоступный внешний адрес; разрешённый резервный адрес работает."
+  ],
+  "actions": [
+    {
+      "id": "static",
+      "label": "Проверить только статику",
+      "outcomes": [
+        {
+          "when": true,
+          "set": {
+            "static": "работает",
+            "accepted": true
+          },
+          "text": "Статические файлы доступны, API всё ещё {api}."
+        }
+      ]
+    },
+    {
+      "id": "trace",
+      "label": "Найти след 500 по requestId",
+      "outcomes": [
+        {
+          "when": true,
+          "set": {
+            "trace": true
+          },
+          "text": "След локализовал ожидание внешнего сервиса."
+        }
+      ]
+    },
+    {
+      "id": "endpoint",
+      "label": "Переключить на разрешённый резервный адрес",
+      "requires": {
+        "op": "eq",
+        "args": [
+          {
+            "ref": "trace"
+          },
+          true
+        ]
+      },
+      "blocked": "Сначала свяжите внешнее ожидание с данным API.",
+      "outcomes": [
+        {
+          "when": true,
+          "set": {
+            "endpoint": "резервный",
+            "accepted": false
+          },
+          "text": "Внешний маршрут изменён; нужен API-запрос."
+        }
+      ]
+    },
+    {
+      "id": "request",
+      "label": "Вызвать API выдачи",
+      "outcomes": [
+        {
+          "when": true,
+          "set": {
+            "api": {
+              "op": "if",
+              "args": [
+                {
+                  "op": "eq",
+                  "args": [
+                    {
+                      "ref": "endpoint"
+                    },
+                    "резервный"
+                  ]
+                },
+                200,
+                500
+              ]
+            },
+            "accepted": {
+              "op": "eq",
+              "args": [
+                {
+                  "ref": "endpoint"
+                },
+                "резервный"
+              ]
+            }
+          },
+          "text": "API вернул {api}."
+        }
+      ]
+    },
+    {
+      "id": "broken",
+      "label": "Вернуть недоступный внешний адрес",
+      "outcomes": [
+        {
+          "when": true,
+          "set": {
+            "endpoint": "недоступный",
+            "accepted": false
+          },
+          "text": "Адрес возвращён; последний ответ API ещё не обновлён."
+        }
+      ]
+    }
+  ],
+  "scenes": [
+    {
+      "when": {
+        "op": "and",
+        "args": [
+          {
+            "op": "eq",
+            "args": [
+              {
+                "ref": "accepted"
+              },
+              true
+            ]
+          },
+          {
+            "op": "eq",
+            "args": [
+              {
+                "ref": "api"
+              },
+              500
+            ]
+          }
+        ]
+      },
+      "text": "Статика принята за работоспособность API. Пользовательская выдача всё ещё возвращает 500."
+    },
+    {
+      "when": {
+        "op": "eq",
+        "args": [
+          {
+            "ref": "endpoint"
+          },
+          "недоступный"
+        ]
+      },
+      "text": "API зависит от недоступного внешнего адреса; статика его не использует."
+    },
+    {
+      "when": true,
+      "text": "Маршрут {endpoint}; ответ API {api}; приёмка {accepted}."
+    }
+  ],
+  "checks": [
+    {
+      "when": {
+        "op": "eq",
+        "args": [
+          {
+            "ref": "endpoint"
+          },
+          "резервный"
+        ]
+      },
+      "text": "Рабочая внешняя зависимость выбрана"
+    },
+    {
+      "when": {
+        "op": "and",
+        "args": [
+          {
+            "op": "eq",
+            "args": [
+              {
+                "ref": "api"
+              },
+              200
+            ]
+          },
+          {
+            "op": "eq",
+            "args": [
+              {
+                "ref": "accepted"
+              },
+              true
+            ]
+          }
+        ]
+      },
+      "text": "API выдачи проверен"
+    }
+  ],
+  "debrief": "Разные маршруты сайта используют разные зависимости. После смены адреса выполняется новый запрос.",
+  "title": "Слой приложения",
+  "condition": "Статика открывается, API выдачи справки возвращает 500."
+}

@@ -1,66 +1,60 @@
-import {useEffect,useLayoutEffect,useRef,useState} from 'react'
+import {useEffect,useState} from 'react'
 import type {Course} from './engine'
-import {CaseDiagram} from './CaseDiagram'
-import {describeAnswer,initialAnswer} from './teamPractice'
-import type {PracticeStep,StepAnswer,TeamActivity} from './teamPractice'
-import {caseProfile,clearStage,newSimulation,probeSimulation,restoreSimulation,runOperation,runProbe} from './caseSimulation'
-import type {Simulation} from './caseSimulation'
+import {actionEnabled,availableActions,checks,completed,currentScene,newSimulation,persistSimulation,renderText,restoreSimulation,runAction} from './caseSimulation'
+import type {Scenario,ScenarioAction,Simulation,Value} from './caseSimulation'
 import './case-study.css'
 
-function DataTable({data}:{data:PracticeStep['data']}){return data?<div className="team-data" tabIndex={0} role="region" aria-label={data.caption}><table><caption>{data.caption}</caption><thead><tr>{data.columns.map((c,i)=><th scope="col" key={i}>{c}</th>)}</tr></thead><tbody>{data.rows.map((row,i)=> <tr key={i}>{row.map((cell,j)=>j===0?<th scope="row" key={j}>{cell}</th>:<td key={j}>{cell}</td>)}</tr>)}</tbody></table></div>:null}
-function storageKey(course:Course,base:string,a:TeamActivity){return `lecture:${base}:${course.id}:simulation:${a.id}:revision-${a.revision}:model-1`}
-function Editor({step,execute,simulation}:{step:PracticeStep;execute:(value:StepAnswer,operation?:string)=>void;simulation:Simulation}){
- const record=simulation.records[step.id]
- const [answer,change]=useState<StepAnswer>(()=>record?.payload??initialAnswer(step))
- if(step.type==='single')return <div className="sim-operations" aria-label="Доступные действия">{step.choices!.map(c=><button type="button" className="button secondary" key={c.id} data-action-id={c.id} onClick={()=>execute(c.id)}>{c.text}</button>)}</div>
- if(step.type==='order')return <div className="sim-operations" aria-label="Операции участка">{step.items!.map(item=><button type="button" className="button secondary" key={item.id} data-action-id={item.id} disabled={record?.operations?.includes(item.id)} onClick={()=>execute(record?.payload||[],item.id)}>{item.text}</button>)}</div>
- return <form onSubmit={e=>{e.preventDefault();execute(answer)}}>
-  {step.type==='numeric'||step.type==='code'?<label className="team-value">{step.type==='numeric'?`Рабочее значение (${step.unit})`:'Значение записи'}<input aria-label={step.type==='numeric'?`Рабочее значение (${step.unit})`:'Значение записи'} inputMode={step.type==='numeric'?'decimal':'text'} autoComplete="off" value={typeof answer==='string'?answer:''} onChange={e=>change(e.target.value)}/></label>
-   :step.type==='matching'?<div className="team-matching">{step.items!.map((item,i)=><label key={item.id}><span>{item.text}</span><select aria-label={`Назначение ${i+1}: ${item.text}`} value={typeof answer==='object'&&!Array.isArray(answer)?answer[item.id]||'':''} onChange={e=>change({...typeof answer==='object'&&!Array.isArray(answer)?answer:{},[item.id]:e.target.value})}><option value="">Не назначено</option>{step.choices!.map(c=><option key={c.id} value={c.id}>{c.text}</option>)}</select></label>)}</div>
-   :<fieldset className="sim-package"><legend>Состав рабочего пакета</legend>{step.choices!.map(c=><label className="case-option" key={c.id}><input type="checkbox" value={c.id} checked={Array.isArray(answer)&&answer.includes(c.id)} onChange={()=>change(Array.isArray(answer)&&answer.includes(c.id)?answer.filter(x=>x!==c.id):[...Array.isArray(answer)?answer:[],c.id])}/><span>{c.text}</span></label>)}</fieldset>}
-  <button className="button primary" type="submit">{step.type==='matching'?'Записать назначения':step.type==='multiple'?'Передать пакет':'Применить значение'}</button>
- </form>
+const valueText=(value:Value)=>typeof value==='boolean'?(value?'да':'нет'):typeof value==='number'?new Intl.NumberFormat('ru-RU',{maximumFractionDigits:2}).format(value):value
+function Operation({action,simulation,execute}:{action:ScenarioAction;simulation:Simulation;execute:(id:string,value?:number)=>void}){
+ const [value,setValue]=useState(''),enabled=actionEnabled(action,simulation.world)
+ return <div className="scenario-operation" data-operation={action.id}>
+  {action.input?<form onSubmit={e=>{e.preventDefault();execute(action.id,Number(value.replace(',','.')))}}><label>{action.input.label}<input type="number" step="any" min={action.input.min} max={action.input.max} required value={value} onChange={e=>setValue(e.target.value)}/> {action.input.unit}</label><button className="button secondary" type="submit" disabled={!enabled||!value}>{action.label}</button></form>:<button className="button secondary" data-action-id={action.id} disabled={!enabled} onClick={()=>execute(action.id)}>{action.label}</button>}
+  {!enabled&&<p className="operation-reason">{action.blocked||'Для операции пока нет необходимого состояния.'}</p>}
+ </div>
 }
+function storageKey(base:string,course:Course,scenario:Scenario){return `lecture:${base}:${course.id}:simulation:${scenario.id}:model-2`}
 export function CaseStudy({course,base}:{course:Course;base:string}){
- const [activity,setActivity]=useState<TeamActivity|null>(null),[error,setError]=useState(''),[retry,setRetry]=useState(0),[simulation,setSimulation]=useState(newSimulation),[storageError,setStorageError]=useState(false),[notice,setNotice]=useState(''),[hint,setHint]=useState(false),[resetPending,setResetPending]=useState(false)
- const heading=useRef<HTMLHeadingElement>(null)
- const [theme,setTheme]=useState(()=>{try{return JSON.parse(localStorage.getItem(`lecture:${base}:${course.id}:theme`)||'"light"')}catch{return 'light'}})
+ const [scenario,setScenario]=useState<Scenario|null>(null),[simulation,setSimulation]=useState<Simulation|null>(null),[error,setError]=useState(''),[retry,setRetry]=useState(0),[storageError,setStorageError]=useState(false),[resetPending,setResetPending]=useState(false)
  const id=new URL(location.href).searchParams.get('case')||''
+ const [theme,setTheme]=useState(()=>{try{return JSON.parse(localStorage.getItem(`lecture:${base}:${course.id}:theme`)||'"light"')}catch{return 'light'}})
  useEffect(()=>{document.documentElement.dataset.theme=theme==='dark'||theme==='auto'&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';try{localStorage.setItem(`lecture:${base}:${course.id}:theme`,JSON.stringify(theme))}catch{}},[theme,base,course.id])
- useEffect(()=>{const controller=new AbortController();setError('');if(!/^[a-z0-9-]+-Q\d\d-case$/.test(id)){setError('Практическая задача не найдена.');return}
-  fetch(`${base}activities/${id}.json`,{signal:controller.signal}).then(r=>{if(!r.ok)throw Error('Не удалось загрузить задачу.');return r.json()}).then((a:TeamActivity)=>{if(controller.signal.aborted)return;if(a.id!==id||!Array.isArray(a.steps)||a.steps.length<3||!course.lectures.some(l=>l.id===a.lectureId))throw Error('Неверный состав задачи.');caseProfile(a);let value:unknown;try{value=JSON.parse(localStorage.getItem(storageKey(course,base,a))||'null')}catch{}setActivity(a);setSimulation(restoreSimulation(a,value));document.title=a.title+' — Интерактивный кейс'}).catch(e=>{if(!controller.signal.aborted)setError(String(e))});return()=>controller.abort()},[id,base,course,retry])
- const current=activity?.steps[simulation.cursor-1],currentRecord=current&&simulation.records[current.id]
- useEffect(()=>setHint(false),[current,currentRecord])
- useLayoutEffect(()=>{heading.current?.focus({preventScroll:true});heading.current?.scrollIntoView({behavior:'instant',block:'nearest'})},[simulation.cursor])
- function update(next:Simulation){setSimulation(next);setNotice('');setResetPending(false);if(activity)try{localStorage.setItem(storageKey(course,base,activity),JSON.stringify(next));setStorageError(false)}catch{setStorageError(true)}}
- function navigate(cursor:number){update({...simulation,cursor})}
+ useEffect(()=>{
+  const controller=new AbortController();setError('')
+  if(!/^[a-z0-9-]+-Q\d\d-case$/.test(id)){setError('Практическая задача не найдена.');return}
+  fetch(`${base}scenarios/${id}.json`,{signal:controller.signal}).then(r=>{if(!r.ok)throw Error('Не удалось загрузить сценарий.');return r.json()}).then((model:Scenario)=>{
+   if(controller.signal.aborted)return
+   if(model.id!==id||!model.actions?.length||!model.checks?.length||!course.lectures.some(l=>l.id===model.lectureId))throw Error('Неверный состав сценария.')
+   let saved:unknown;try{saved=JSON.parse(localStorage.getItem(storageKey(base,course,model))||'null')}catch{}
+   setScenario(model);setSimulation(restoreSimulation(model,saved));document.title=model.title+' — Интерактивный кейс'
+  }).catch(e=>{if(!controller.signal.aborted)setError(String(e))})
+  return()=>controller.abort()
+ },[id,base,course,retry])
+ function update(next:Simulation){setSimulation(next);setResetPending(false);if(scenario)try{localStorage.setItem(storageKey(base,course,scenario),JSON.stringify(persistSimulation(scenario,next)));setStorageError(false)}catch{setStorageError(true)}}
  if(error)return <main className="case-study"><h1>Практическая задача</h1><p role="alert">{error}</p><button className="button primary" onClick={()=>setRetry(n=>n+1)}>Повторить загрузку</button><a href={base}>Каталог</a></main>
- if(!activity)return <main className="case-study" role="status">Загружаем задачу…</main>
- const a=activity,l=course.lectures.find(l=>l.id===a.lectureId)!,profile=caseProfile(a),diagnostics=probeSimulation(a,simulation),healthy=diagnostics.every(d=>d.status==='ready'),index=simulation.cursor-1
- function execute(payload:StepAnswer,operation?:string){const next=runOperation(a,simulation,index,payload,operation);if(next===simulation){setNotice('Задайте рабочее значение или состав пакета перед выполнением.');return}update(next)}
- return <main className="case-study team-practice case-simulation">
- <header><a className="button secondary" href={`${base}?lecture=${l.id}&slide=${a.questionId}-passport`}>Вернуться к лекции</a><button className="button secondary" onClick={()=>setTheme(theme==='dark'?'light':'dark')}>{theme==='dark'?'Светлая тема':'Тёмная тема'}</button></header>
- <p className="eyebrow">{course.code} · {l.semester} семестр · Интерактивный кейс</p><h1>{a.title}</h1>
- <section className="case-condition"><h2>Исходная ситуация</h2><p>{a.condition}</p><DataTable data={a.steps[0].data}/><p><strong>Цель:</strong> {profile.goal}</p><p className="case-data-label">Учебная модель. Команда выбирает действия, преподаватель выполняет их здесь. Неверное действие тоже выполняется и меняет рабочие записи. Обсудите прогноз последствий до запуска.</p></section>
- {storageError&&<p role="alert">Браузер не сохраняет ход работы. Продолжать можно до закрытия страницы.</p>}
- <section className="sim-state" aria-label="Текущее состояние кейса"><h2>{profile.artifact}</h2><div className="sim-records">{a.steps.map((step,i)=>{const record=simulation.records[step.id],result=diagnostics[i];return <article key={step.id} data-record-id={step.id} data-state={simulation.probe?result.status:record?'written':'empty'}><h3>{step.title}</h3><p>{record?(describeAnswer(step,record.payload)||'Пакет без вложений'):'Запись отсутствует'}</p><small>{simulation.probe?result.message:record?'Сохранено в рабочей модели; итоговый прогон ещё не выполнен.':'Операции ещё не выполнялись.'}</small></article>})}</div></section>
- <nav className="sim-stages" aria-label="Рабочие участки">{a.steps.map((step,i)=><button type="button" className="button secondary" aria-current={simulation.cursor===i+1?'step':undefined} key={step.id} onClick={()=>navigate(i+1)}>{i+1}. {step.title}</button>)}</nav>
- {simulation.cursor===0?<section className="team-overview"><h2 ref={heading} tabIndex={-1}>Перед началом</h2><p>Спрогнозируйте, что получит следующий исполнитель и при каких условиях кейс сломается. Участки доступны в любом порядке: пропуск подготовки тоже повлияет на результат.</p><CaseDiagram id={a.id} focus={0}/><button className="button primary" onClick={()=>navigate(1)}>Начать работу</button></section>:<section className="team-current" data-step-id={current!.id} data-step-type={current!.type}>
- <h2 ref={heading} tabIndex={-1}>{current!.title}</h2><p className="team-prompt">{current!.type==='order'?current!.prompt.replace(/Расставьте|Расположите|Упорядочьте/gi,'Выполните'):current!.prompt}</p><DataTable data={current!.data}/>
- {index>0&&<aside className="sim-input"><h3>Вход с предыдущих участков</h3>{a.steps.slice(0,index).map(step=><p key={step.id}><strong>{step.title}:</strong> {simulation.records[step.id]?describeAnswer(step,simulation.records[step.id].payload):'не подготовлен'}</p>)}<p className="case-data-label">Операция использует именно эти записи. После исправления входа повторите зависящие от него операции.</p></aside>}
- {current!.type==='order'&&<p>Выполняйте операции по одной. Запуск до подготовки оставит непригодный результат. Поздняя подготовка не отменяет уже совершённую операцию.</p>}
- <Editor key={`${current!.id}:${currentRecord?.revision||0}`} step={current!} execute={execute} simulation={simulation}/>
- <p className="sim-observation" role="status" aria-live="polite">{notice||currentRecord?.observation||'Участок ещё не изменён.'}</p>
- <div className="case-navigation"><button className="button secondary" onClick={()=>update(clearStage(a,simulation,index))}>Восстановить участок</button><button className="button secondary" onClick={()=>setHint(!hint)}>{hint?'Скрыть подсказку':'Подсказка к участку'}</button>{simulation.cursor<a.steps.length&&<button className="button primary" onClick={()=>navigate(simulation.cursor+1)}>К следующему участку</button>}</div>
- {hint&&<aside className="team-hint">{current!.hint}</aside>}
- </section>}
- <section className="sim-probe"><h2>{profile.consumer}</h2><p>Запустите проверку всей цепочки на текущих записях. Она учитывает пропущенные операции, последствия ошибок и устаревшие входы.</p><button className="button primary" onClick={()=>update(runProbe(a,simulation))}>Выполнить контрольный прогон</button>
- {simulation.probe&&<div className="sim-result" data-result={healthy?'ready':'broken'} role="status"><h3>{healthy?'Цепочка выдержала контрольный прогон':'Цепочка сломалась при контрольном прогоне'}</h3><ul>{diagnostics.map(d=><li key={d.id}>{d.message}</li>)}</ul>{healthy?<p>Сопоставьте результат с исходной целью и объясните, почему выбранные действия обеспечили его.</p>:<p>Найдите первый повреждённый участок, исправьте его и повторно выполните зависимые операции. Прежний прогон останется в журнале действий.</p>}</div>}
- {simulation.events.length>0&&<button className="button secondary sim-solution-toggle" onClick={()=>update({...simulation,revealed:!simulation.revealed})}>{simulation.revealed?'Скрыть разбор':'Открыть полный разбор'}</button>}
- </section>
- {simulation.revealed&&<aside className="case-solution"><h2>Разбор маршрута</h2><ol>{a.steps.map(step=><li key={step.id}><strong>{step.title}.</strong> {step.explanation}</li>)}</ol><p>{a.explanation}</p><p>{a.rule}</p><p>После просмотра разбора вернитесь к рабочим участкам: открытие объяснения само по себе не исправляет состояние кейса.</p><CaseDiagram id={a.id} focus={0} reveal/></aside>}
- <details className="sim-log" open={simulation.events.length>0}><summary>Журнал действий · {simulation.events.length}</summary>{simulation.events.length?<ol>{simulation.events.map(event=><li key={event.sequence}><strong>{event.sequence}. {event.operation}</strong><p>{event.observation}</p></li>)}</ol>:<p>Действия ещё не выполнялись.</p>}</details>
- <footer className="team-actions"><button className="button secondary" onClick={()=>navigate(0)}>К исходной ситуации</button><button className="button secondary" onClick={()=>setResetPending(true)}>Начать заново</button></footer>
- {resetPending&&<aside className="team-reset" aria-label="Сброс кейса"><p>Вернуть весь учебный случай к исходному состоянию и очистить этот журнал действий?</p><button className="button secondary" onClick={()=>setResetPending(false)}>Продолжить работу</button><button className="button primary" onClick={()=>update(newSimulation())}>Сбросить кейс</button></aside>}
+ if(!scenario||!simulation)return <main className="case-study" role="status">Загружаем сценарий…</main>
+ const model=scenario,state=simulation,lecture=course.lectures.find(l=>l.id===model.lectureId)!,last=state.events.at(-1),results=checks(model,state.world),ready=completed(model,state.world)
+ const label=(key:string)=>model.fields.find(f=>f.key===key)?.label||key
+ function execute(action:string,value?:number){const next=runAction(model,state,action,value);if(next!==state)update(next)}
+ return <main className="case-study team-practice case-simulation" data-case-id={model.id}>
+  <header><a className="button secondary" href={`${base}?lecture=${lecture.id}&slide=${model.questionId}-passport`}>Вернуться к лекции</a><button className="button secondary" onClick={()=>setTheme(theme==='dark'?'light':'dark')}>{theme==='dark'?'Светлая тема':'Тёмная тема'}</button></header>
+  <p className="eyebrow">{course.code} · {lecture.semester} семестр · Интерактивный кейс</p><h1>{model.title}</h1>
+  <section className="case-condition"><h2>Исходная ситуация</h2><p>{model.condition}</p><p><strong>Цель:</strong> {model.goal}</p><ul>{model.rules.map((rule,i)=><li key={i}>{rule}</li>)}</ul><p className="case-data-label">Выполняйте операции и наблюдайте результат. Время в модели проходит при выполнении действий. Исправляйте последствия в текущей ситуации; история сохраняется.</p></section>
+  {storageError&&<p role="alert">Браузер не сохраняет ход работы. Продолжать можно до закрытия страницы.</p>}
+  <section className="sim-state" aria-label="Состояние системы"><h2>Состояние системы</h2><dl className="scenario-fields">{model.fields.map(field=>{
+   const changed=last?.changes.some(change=>change.key===field.key)
+   return <div key={`${field.key}:${changed?state.events.length:0}`} data-field={field.key} data-value={String(state.world[field.key])} className={changed?'state-changed':''}><dt>{field.label}</dt><dd>{valueText(state.world[field.key])}{field.unit&&<span> {field.unit}</span>}</dd></div>
+  })}</dl></section>
+  <section className="scenario-work" aria-labelledby="situation-heading"><h2 id="situation-heading">Текущая ситуация</h2><p className="scenario-scene" data-scene role="status" aria-live="polite">{currentScene(model,state.world)}</p>
+   {last&&<div className="sim-observation" aria-label="Результат последней операции"><strong>{last.label}</strong><p>{last.text}</p>{last.changes.length>0?<ul>{last.changes.map(change=><li key={change.key}>{label(change.key)}: {valueText(change.before)} → {valueText(change.after)}</li>)}</ul>:<p>Состояние системы не изменилось.</p>}</div>}
+   <h3>Доступные операции</h3><div className="scenario-actions">{availableActions(model,state.world).map(action=><Operation key={action.id} action={action} simulation={state} execute={execute}/>)}</div>
+  </section>
+  <section className="sim-probe"><h2>Проверка результата</h2><button className="button primary" onClick={()=>update({...state,probe:true})}>Выполнить контрольный прогон</button>
+   {state.probe&&<div className="sim-result" data-result={ready?'ready':'broken'} role="status"><h3>{ready?'Цель достигнута':'Работа ещё не завершена'}</h3><ul>{results.map((result,i)=><li key={i} data-met={result.met}>{result.met?'Выполнено: ':'Требуется: '}{result.text}</li>)}</ul></div>}
+   <button className="button secondary sim-solution-toggle" onClick={()=>update({...state,revealed:!state.revealed})}>{state.revealed?'Скрыть разбор':'Открыть разбор механизма'}</button>
+  </section>
+  {state.revealed&&<aside className="case-solution"><h2>Почему меняется результат</h2><p>{renderText(model.debrief,state.world)}</p><p>Разбор не выполняет операции и не меняет состояние системы.</p></aside>}
+  <details className="sim-log"><summary>Журнал действий · {state.events.length}</summary><ol>{state.events.map((event,i)=><li key={i}><strong>{event.label}</strong><p>{event.text}</p>{event.changes.map(change=><p key={change.key}>{label(change.key)}: {valueText(change.before)} → {valueText(change.after)}</p>)}</li>)}</ol></details>
+  <div className="case-navigation"><button className="button secondary" onClick={()=>setResetPending(true)}>Начать заново</button></div>
+  {resetPending&&<section className="team-reset" aria-label="Подтверждение сброса"><p>Начать отдельное прохождение с исходной ситуации? Текущие действия этого кейса будут удалены из сохранения браузера.</p><button className="button secondary" onClick={()=>setResetPending(false)}>Продолжить работу</button><button className="button primary" onClick={()=>update(newSimulation(model))}>Сбросить кейс</button></section>}
  </main>
 }

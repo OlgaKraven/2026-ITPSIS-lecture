@@ -1,3 +1,4 @@
+import './report-directory.mjs';
 import assert from 'node:assert/strict';import {readFile,writeFile} from 'node:fs/promises';
 import {gradeStep,initialAnswer,passedPrefix,editAnswer,restoreDraft,validOrder} from '../src/teamPractice.ts';
 const course=JSON.parse(await readFile('public/course.json','utf8'));const map=[];let checks=0;const types={};const signatures=new Set();

@@ -1,3 +1,4 @@
+import './report-directory.mjs';
 import {readFile,writeFile} from 'node:fs/promises';
 import {reading} from '../authoring/student-reading.mjs';
 import {foundations} from '../authoring/student-foundations.mjs';

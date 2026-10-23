@@ -1,0 +1,232 @@
+{
+  "id": "s08-02-error-collection-Q06-case",
+  "revision": 2,
+  "initial": {
+    "clientHour": 10,
+    "serverHour": 7,
+    "difference": 3,
+    "id": false,
+    "linked": false
+  },
+  "fields": [
+    {
+      "key": "clientHour",
+      "label": "Час клиента в сравнении"
+    },
+    {
+      "key": "serverHour",
+      "label": "Час сервера UTC"
+    },
+    {
+      "key": "difference",
+      "label": "Разность",
+      "unit": "ч"
+    },
+    {
+      "key": "id",
+      "label": "requestId учтён"
+    },
+    {
+      "key": "linked",
+      "label": "Операция связана"
+    }
+  ],
+  "computed": {
+    "difference": {
+      "op": "sub",
+      "args": [
+        {
+          "ref": "clientHour"
+        },
+        {
+          "ref": "serverHour"
+        }
+      ]
+    }
+  },
+  "lectureId": "s08-02-error-collection",
+  "questionId": "s08-02-error-collection-Q06",
+  "goal": "Сопоставить клиентскую и серверную отметки одной операции в UTC.",
+  "rules": [
+    "Клиент 10:05 UTC+3, сервер 07:05 UTC; requestId одинаков. Сортировка исходных строк не нормализует время."
+  ],
+  "actions": [
+    {
+      "id": "sort",
+      "label": "Сравнить исходные часы без зоны",
+      "outcomes": [
+        {
+          "when": true,
+          "set": {
+            "clientHour": 10,
+            "linked": false
+          },
+          "text": "Клиент выглядит на {difference} часа позже сервера."
+        }
+      ]
+    },
+    {
+      "id": "utc",
+      "label": "Привести клиентскую отметку к UTC",
+      "outcomes": [
+        {
+          "when": true,
+          "set": {
+            "clientHour": 7,
+            "linked": false
+          },
+          "text": "Обе отметки в UTC; разность {difference} часов."
+        }
+      ]
+    },
+    {
+      "id": "id",
+      "label": "Сопоставить requestId и контекст",
+      "outcomes": [
+        {
+          "when": true,
+          "set": {
+            "id": true
+          },
+          "text": "Одинаковый ID и контекст подтверждены."
+        }
+      ]
+    },
+    {
+      "id": "link",
+      "label": "Связать источники",
+      "outcomes": [
+        {
+          "when": true,
+          "set": {
+            "linked": {
+              "op": "and",
+              "args": [
+                {
+                  "op": "eq",
+                  "args": [
+                    {
+                      "ref": "difference"
+                    },
+                    0
+                  ]
+                },
+                {
+                  "op": "eq",
+                  "args": [
+                    {
+                      "ref": "id"
+                    },
+                    true
+                  ]
+                }
+              ]
+            }
+          },
+          "text": "Связь: {linked}."
+        }
+      ]
+    },
+    {
+      "id": "shift",
+      "label": "Сдвинуть сервер на три часа вместо нормализации клиента",
+      "outcomes": [
+        {
+          "when": true,
+          "set": {
+            "serverHour": 10,
+            "linked": false
+          },
+          "text": "Временная запись сервера искажена; её реальная зона UTC."
+        }
+      ]
+    },
+    {
+      "id": "restore",
+      "label": "Вернуть серверную отметку 07:05 UTC",
+      "outcomes": [
+        {
+          "when": true,
+          "set": {
+            "serverHour": 7,
+            "linked": false
+          },
+          "text": "Исходная серверная отметка восстановлена."
+        }
+      ]
+    }
+  ],
+  "scenes": [
+    {
+      "when": {
+        "op": "ne",
+        "args": [
+          {
+            "ref": "serverHour"
+          },
+          7
+        ]
+      },
+      "text": "Серверная отметка изменена без основания. Верните источник перед корреляцией."
+    },
+    {
+      "when": {
+        "op": "ne",
+        "args": [
+          {
+            "ref": "difference"
+          },
+          0
+        ]
+      },
+      "text": "Сравнение часов даёт {difference} часа разности; зоны ещё не согласованы."
+    },
+    {
+      "when": true,
+      "text": "Обе отметки 07:05 UTC; ID учтён {id}; связь {linked}."
+    }
+  ],
+  "checks": [
+    {
+      "when": {
+        "op": "and",
+        "args": [
+          {
+            "op": "eq",
+            "args": [
+              {
+                "ref": "clientHour"
+              },
+              7
+            ]
+          },
+          {
+            "op": "eq",
+            "args": [
+              {
+                "ref": "serverHour"
+              },
+              7
+            ]
+          }
+        ]
+      },
+      "text": "Отметки нормализованы без подмены источника"
+    },
+    {
+      "when": {
+        "op": "eq",
+        "args": [
+          {
+            "ref": "linked"
+          },
+          true
+        ]
+      },
+      "text": "Связаны время, ID и контекст"
+    }
+  ],
+  "debrief": "Совпадение ошибочно изменённых часов не является нормализацией.",
+  "title": "Корреляция источников",
+  "condition": "Клиент 10:05 UTC+3, сервер 07:05 UTC в тот же день, requestId совпадает."
+}

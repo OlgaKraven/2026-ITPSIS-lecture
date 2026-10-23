@@ -16,3 +16,5 @@ private/
 .playwright-cli/
 .playwright/
 output/playwright/
+
+reports/

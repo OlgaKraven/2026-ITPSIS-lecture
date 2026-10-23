@@ -1,0 +1,380 @@
+{
+  "id": "s07-10-backup-restore-Q03-case",
+  "revision": 2,
+  "initial": {
+    "prep": 15,
+    "elapsed": 0,
+    "prepared": false,
+    "restored": false,
+    "verified": false,
+    "closed": false,
+    "total": 65,
+    "excess": 5
+  },
+  "fields": [
+    {
+      "key": "prep",
+      "label": "Длительность подготовки",
+      "unit": "мин"
+    },
+    {
+      "key": "elapsed",
+      "label": "Прошло после отказа",
+      "unit": "мин"
+    },
+    {
+      "key": "prepared",
+      "label": "Подготовка выполнена"
+    },
+    {
+      "key": "restored",
+      "label": "Данные восстановлены"
+    },
+    {
+      "key": "verified",
+      "label": "Услуга проверена"
+    },
+    {
+      "key": "closed",
+      "label": "Работа закрыта"
+    },
+    {
+      "key": "total",
+      "label": "Длительность полного маршрута",
+      "unit": "мин"
+    },
+    {
+      "key": "excess",
+      "label": "Превышение полного маршрута над RTO",
+      "unit": "мин"
+    }
+  ],
+  "computed": {
+    "total": {
+      "op": "add",
+      "args": [
+        {
+          "ref": "prep"
+        },
+        30,
+        20
+      ]
+    },
+    "excess": {
+      "op": "max",
+      "args": [
+        0,
+        {
+          "op": "sub",
+          "args": [
+            {
+              "ref": "total"
+            },
+            60
+          ]
+        }
+      ]
+    }
+  },
+  "lectureId": "s07-10-backup-restore",
+  "questionId": "s07-10-backup-restore-Q03",
+  "goal": "Восстановить услугу с обязательной проверкой не дольше 60 минут.",
+  "rules": [
+    "Последовательные этапы: подготовка 15, восстановление 30, проверка 20 минут.",
+    "На стенде подтверждён подготовленный комплект, сокращающий подготовку до 10 минут. Пропуск проверки не подтверждает услугу."
+  ],
+  "actions": [
+    {
+      "id": "kit",
+      "label": "Подготовить проверенный комплект заранее",
+      "requires": {
+        "op": "eq",
+        "args": [
+          {
+            "ref": "prepared"
+          },
+          false
+        ]
+      },
+      "blocked": "Комплект меняет только ещё не выполненную подготовку.",
+      "outcomes": [
+        {
+          "when": true,
+          "set": {
+            "prep": 10
+          },
+          "text": "Подготовка теперь занимает 10 минут. Полный маршрут {total} мин., превышение {excess} мин."
+        }
+      ]
+    },
+    {
+      "id": "prepare",
+      "label": "Выполнить подготовку",
+      "outcomes": [
+        {
+          "when": true,
+          "set": {
+            "elapsed": {
+              "op": "add",
+              "args": [
+                {
+                  "ref": "elapsed"
+                },
+                {
+                  "ref": "prep"
+                }
+              ]
+            },
+            "prepared": true,
+            "closed": false
+          },
+          "text": "Подготовка завершена. Прошло {elapsed} минут."
+        }
+      ]
+    },
+    {
+      "id": "restore",
+      "label": "Восстановить данные",
+      "outcomes": [
+        {
+          "when": {
+            "op": "eq",
+            "args": [
+              {
+                "ref": "prepared"
+              },
+              true
+            ]
+          },
+          "set": {
+            "elapsed": {
+              "op": "add",
+              "args": [
+                {
+                  "ref": "elapsed"
+                },
+                30
+              ]
+            },
+            "restored": true,
+            "verified": false,
+            "closed": false
+          },
+          "text": "Восстановление завершено. Прошло {elapsed} минут."
+        },
+        {
+          "when": true,
+          "set": {
+            "elapsed": {
+              "op": "add",
+              "args": [
+                {
+                  "ref": "elapsed"
+                },
+                30
+              ]
+            },
+            "restored": false,
+            "verified": false
+          },
+          "text": "Попытка без подготовленного комплекта не восстановила данные; потрачено 30 минут."
+        }
+      ]
+    },
+    {
+      "id": "verify",
+      "label": "Выполнить обязательную проверку услуги",
+      "outcomes": [
+        {
+          "when": {
+            "op": "eq",
+            "args": [
+              {
+                "ref": "restored"
+              },
+              true
+            ]
+          },
+          "set": {
+            "elapsed": {
+              "op": "add",
+              "args": [
+                {
+                  "ref": "elapsed"
+                },
+                20
+              ]
+            },
+            "verified": true
+          },
+          "text": "Услуга проверена. Фактическое время {elapsed} минут."
+        },
+        {
+          "when": true,
+          "set": {
+            "elapsed": {
+              "op": "add",
+              "args": [
+                {
+                  "ref": "elapsed"
+                },
+                20
+              ]
+            },
+            "verified": false
+          },
+          "text": "Проверка обнаружила отсутствие восстановленных данных."
+        }
+      ]
+    },
+    {
+      "id": "close",
+      "label": "Закрыть работу",
+      "outcomes": [
+        {
+          "when": true,
+          "set": {
+            "closed": true
+          },
+          "text": "Работа помечена закрытой; фактическое время {elapsed}, проверка {verified}."
+        }
+      ]
+    },
+    {
+      "id": "reopen",
+      "label": "Вернуть работу в исполнение",
+      "visible": {
+        "op": "eq",
+        "args": [
+          {
+            "ref": "closed"
+          },
+          true
+        ]
+      },
+      "outcomes": [
+        {
+          "when": true,
+          "set": {
+            "closed": false
+          },
+          "text": "Работа возобновлена; время после отказа сохранено."
+        }
+      ]
+    },
+    {
+      "id": "rehearsal",
+      "label": "Организовать новый учебный прогон от нового отказа",
+      "outcomes": [
+        {
+          "when": true,
+          "set": {
+            "elapsed": 0,
+            "prepared": false,
+            "restored": false,
+            "verified": false,
+            "closed": false
+          },
+          "text": "Начат отдельный учебный прогон. Прежнее нарушение осталось в журнале; это не изменение времени старого отказа."
+        }
+      ]
+    }
+  ],
+  "scenes": [
+    {
+      "when": {
+        "op": "and",
+        "args": [
+          {
+            "op": "eq",
+            "args": [
+              {
+                "ref": "closed"
+              },
+              true
+            ]
+          },
+          {
+            "op": "eq",
+            "args": [
+              {
+                "ref": "verified"
+              },
+              false
+            ]
+          }
+        ]
+      },
+      "text": "Закрытие без проверки оставило услугу неподтверждённой. Требуется возобновить исполнение."
+    },
+    {
+      "when": {
+        "op": "gte",
+        "args": [
+          {
+            "ref": "elapsed"
+          },
+          61
+        ]
+      },
+      "text": "RTO текущего отказа уже нарушен: прошло {elapsed} мин. Это время нельзя убрать редактированием расчёта. Сначала подтвердите услугу; затем испытайте улучшение в новом прогоне."
+    },
+    {
+      "when": {
+        "op": "eq",
+        "args": [
+          {
+            "ref": "prepared"
+          },
+          false
+        ]
+      },
+      "text": "Полный план занимает {total} мин., превышение {excess}. Выбор подготовки изменит последующее фактическое время."
+    },
+    {
+      "when": true,
+      "text": "Прошло {elapsed} мин. Подготовка {prepared}, данные {restored}, проверка {verified}."
+    }
+  ],
+  "checks": [
+    {
+      "when": {
+        "op": "eq",
+        "args": [
+          {
+            "ref": "verified"
+          },
+          true
+        ]
+      },
+      "text": "Услуга проверена"
+    },
+    {
+      "when": {
+        "op": "lte",
+        "args": [
+          {
+            "ref": "elapsed"
+          },
+          60
+        ]
+      },
+      "text": "Текущий учебный прогон уложился в RTO"
+    },
+    {
+      "when": {
+        "op": "eq",
+        "args": [
+          {
+            "ref": "closed"
+          },
+          true
+        ]
+      },
+      "text": "Работа закрыта после проверки"
+    }
+  ],
+  "debrief": "Часы накапливают фактически выполненные этапы. Ускорение будущего плана не сокращает уже затраченное время; новый прогон отделён от прежнего отказа.",
+  "title": "Цель RTO",
+  "condition": "RTO = 60 минут. Подготовка 15, восстановление 30, проверка услуги 20 минут."
+}

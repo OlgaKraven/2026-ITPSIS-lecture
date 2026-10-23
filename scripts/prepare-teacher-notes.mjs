@@ -1,3 +1,4 @@
+import './report-directory.mjs';
 import assert from 'node:assert/strict';
 import {mkdir,readFile,writeFile} from 'node:fs/promises';
 const course=JSON.parse(await readFile('public/course.json','utf8'));

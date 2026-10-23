@@ -1,7 +1,7 @@
 import { readFile, readdir } from 'node:fs/promises'
 import path from 'node:path'
 
-const roots = ['src', 'authoring', 'README.md', 'docs/references.md', 'docs']
+const roots = ['src', 'authoring', 'README.md', 'docs']
 const extensions = new Set(['.ts', '.tsx', '.md', '.html', '.mjs'])
 const files = []
 const dictionary = JSON.parse(await readFile('spellcheck.config.json', 'utf8'))

@@ -1,0 +1,255 @@
+{
+  "id": "s07-10-backup-restore-Q02-case",
+  "revision": 2,
+  "initial": {
+    "point": 32,
+    "checked": false,
+    "loss": 28,
+    "excess": 8,
+    "restored": 0,
+    "verified": false
+  },
+  "fields": [
+    {
+      "key": "point",
+      "label": "Минут от 13:00 у выбранной точки",
+      "unit": "мин"
+    },
+    {
+      "key": "checked",
+      "label": "Точка 13:45 проверена"
+    },
+    {
+      "key": "loss",
+      "label": "Потенциальная потеря",
+      "unit": "мин"
+    },
+    {
+      "key": "excess",
+      "label": "Превышение RPO",
+      "unit": "мин"
+    },
+    {
+      "key": "restored",
+      "label": "Восстановленная точка"
+    },
+    {
+      "key": "verified",
+      "label": "Данные проверены"
+    }
+  ],
+  "computed": {
+    "loss": {
+      "op": "sub",
+      "args": [
+        60,
+        {
+          "ref": "point"
+        }
+      ]
+    },
+    "excess": {
+      "op": "max",
+      "args": [
+        0,
+        {
+          "op": "sub",
+          "args": [
+            {
+              "ref": "loss"
+            },
+            20
+          ]
+        }
+      ]
+    }
+  },
+  "lectureId": "s07-10-backup-restore",
+  "questionId": "s07-10-backup-restore-Q02",
+  "goal": "Выбрать пригодную точку, уложиться в RPO и проверить восстановленные данные.",
+  "rules": [
+    "Отказ в 14:00; RPO 20 минут. Подтверждённые точки 13:32 и 13:45.",
+    "Точка 13:45 становится доступна после проверки её целостности."
+  ],
+  "actions": [
+    {
+      "id": "old",
+      "label": "Выбрать точку 13:32",
+      "outcomes": [
+        {
+          "when": true,
+          "set": {
+            "point": 32,
+            "verified": false
+          },
+          "text": "Выбрана 13:32. Потеря {loss} мин., превышение RPO {excess} мин."
+        }
+      ]
+    },
+    {
+      "id": "inspect",
+      "label": "Проверить точку 13:45",
+      "outcomes": [
+        {
+          "when": true,
+          "set": {
+            "checked": true
+          },
+          "text": "Целостность точки 13:45 подтверждена."
+        }
+      ]
+    },
+    {
+      "id": "new",
+      "label": "Выбрать точку 13:45",
+      "requires": {
+        "op": "eq",
+        "args": [
+          {
+            "ref": "checked"
+          },
+          true
+        ]
+      },
+      "blocked": "Сначала проверьте пригодность точки.",
+      "outcomes": [
+        {
+          "when": true,
+          "set": {
+            "point": 45,
+            "verified": false
+          },
+          "text": "Выбрана 13:45. Потеря {loss} мин."
+        }
+      ]
+    },
+    {
+      "id": "restore",
+      "label": "Восстановить выбранную точку",
+      "outcomes": [
+        {
+          "when": true,
+          "set": {
+            "restored": {
+              "ref": "point"
+            },
+            "verified": false
+          },
+          "text": "Данные восстановлены к 13:{restored}; выбор другой точки сам их не изменяет."
+        }
+      ]
+    },
+    {
+      "id": "verify",
+      "label": "Проверить данные и RPO",
+      "outcomes": [
+        {
+          "when": {
+            "op": "and",
+            "args": [
+              {
+                "op": "eq",
+                "args": [
+                  {
+                    "ref": "restored"
+                  },
+                  45
+                ]
+              },
+              {
+                "op": "eq",
+                "args": [
+                  {
+                    "ref": "point"
+                  },
+                  45
+                ]
+              },
+              {
+                "op": "eq",
+                "args": [
+                  {
+                    "ref": "checked"
+                  },
+                  true
+                ]
+              }
+            ]
+          },
+          "set": {
+            "verified": true
+          },
+          "text": "Восстановлена пригодная точка; потенциальная потеря 15 минут."
+        },
+        {
+          "when": true,
+          "set": {
+            "verified": false
+          },
+          "text": "Восстановленная точка 13:{restored} не подтверждает заданный маршрут RPO."
+        }
+      ]
+    }
+  ],
+  "scenes": [
+    {
+      "when": {
+        "op": "gte",
+        "args": [
+          {
+            "ref": "excess"
+          },
+          1
+        ]
+      },
+      "text": "Выбранная точка оставляет {loss} минут потери при RPO 20. Требуется более поздняя пригодная точка."
+    },
+    {
+      "when": {
+        "op": "ne",
+        "args": [
+          {
+            "ref": "restored"
+          },
+          {
+            "ref": "point"
+          }
+        ]
+      },
+      "text": "Выбрана новая точка, но данные ещё относятся к другой. Нужно выполнить восстановление."
+    },
+    {
+      "when": true,
+      "text": "Выбрана 13:{point}, восстановлена 13:{restored}; данные проверены: {verified}."
+    }
+  ],
+  "checks": [
+    {
+      "when": {
+        "op": "eq",
+        "args": [
+          {
+            "ref": "excess"
+          },
+          0
+        ]
+      },
+      "text": "Точка укладывается в RPO"
+    },
+    {
+      "when": {
+        "op": "eq",
+        "args": [
+          {
+            "ref": "verified"
+          },
+          true
+        ]
+      },
+      "text": "Восстановлены и проверены данные этой точки"
+    }
+  ],
+  "debrief": "Выбор точки пересчитывает потерю, но не выполняет восстановление. Смена записи времени не меняет данные.",
+  "title": "Цель RPO",
+  "condition": "RPO = 20 минут. Отказ в 14:00, последняя подтверждённая точка 13:32."
+}

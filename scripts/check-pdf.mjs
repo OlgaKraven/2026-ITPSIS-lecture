@@ -1,3 +1,4 @@
+import './report-directory.mjs';
 import {readFile,writeFile} from 'node:fs/promises';
 import {getDocument} from 'pdfjs-dist/legacy/build/pdf.mjs';
 const course=JSON.parse(await readFile('public/course.json','utf8'));

@@ -1,3 +1,4 @@
+import './report-directory.mjs';
 import {chromium} from '@playwright/test';
 import {readFile,mkdir,writeFile} from 'node:fs/promises';
 const course=JSON.parse(await readFile('public/course.json','utf8'));

@@ -4,4 +4,4 @@
 - `public/qr/lit-main-01.png` и `public/qr/lit-main-02.png` — проверенные QR-коды основной литературы.
 - `public/brand/mascot/` — варианты маскота для каталога, экрана и PDF.
 
-Ссылки и назначение ресурсов описаны в корневом `docs/references.md` и `src/data/sourceRegistry.ts`.
+Ссылки и назначение ресурсов описаны в `docs/references.md` и `src/data/sourceRegistry.ts`.

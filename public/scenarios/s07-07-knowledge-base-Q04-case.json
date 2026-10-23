@@ -1,0 +1,204 @@
+{
+  "id": "s07-07-knowledge-base-Q04-case",
+  "revision": 2,
+  "initial": {
+    "legacy": false,
+    "mode": "default",
+    "service": "работает",
+    "tested": false,
+    "mechanism": false
+  },
+  "fields": [
+    {
+      "key": "legacy",
+      "label": "Удалённый параметр добавлен"
+    },
+    {
+      "key": "mode",
+      "label": "rendererMode"
+    },
+    {
+      "key": "service",
+      "label": "Загрузка конфигурации"
+    },
+    {
+      "key": "tested",
+      "label": "Функция проверена"
+    },
+    {
+      "key": "mechanism",
+      "label": "Различие версий исследовано"
+    }
+  ],
+  "computed": {},
+  "lectureId": "s07-07-knowledge-base",
+  "questionId": "s07-07-knowledge-base-Q04",
+  "goal": "Выполнить поддерживаемую настройку в 8.0 после проверки механизма.",
+  "rules": [
+    "Параметр legacyMode из инструкции 7.1 удалён в 8.0.",
+    "Для 8.0 проверен параметр rendererMode=compatible. Неизвестный параметр блокирует загрузку конфигурации."
+  ],
+  "actions": [
+    {
+      "id": "legacy",
+      "label": "Добавить legacyMode по старой статье",
+      "outcomes": [
+        {
+          "when": true,
+          "set": {
+            "legacy": true,
+            "service": "отказ неизвестного параметра",
+            "tested": false
+          },
+          "text": "8.0 не загрузила конфигурацию с удалённым параметром."
+        }
+      ]
+    },
+    {
+      "id": "inspect",
+      "label": "Проверить схему параметров 8.0",
+      "outcomes": [
+        {
+          "when": true,
+          "set": {
+            "mechanism": true
+          },
+          "text": "В 8.0 используется rendererMode; legacyMode отсутствует."
+        }
+      ]
+    },
+    {
+      "id": "remove",
+      "label": "Удалить legacyMode из конфигурации",
+      "outcomes": [
+        {
+          "when": true,
+          "set": {
+            "legacy": false,
+            "service": "работает",
+            "tested": false
+          },
+          "text": "Конфигурация снова загружается; режим ещё {mode}."
+        }
+      ]
+    },
+    {
+      "id": "mode",
+      "label": "Установить проверенный rendererMode=compatible",
+      "requires": {
+        "op": "eq",
+        "args": [
+          {
+            "ref": "mechanism"
+          },
+          true
+        ]
+      },
+      "blocked": "Сначала исследуйте различие механизма.",
+      "outcomes": [
+        {
+          "when": true,
+          "set": {
+            "mode": "compatible",
+            "tested": false
+          },
+          "text": "Выбран поддерживаемый режим."
+        }
+      ]
+    },
+    {
+      "id": "test",
+      "label": "Выполнить пользовательскую операцию",
+      "outcomes": [
+        {
+          "when": true,
+          "set": {
+            "tested": {
+              "op": "and",
+              "args": [
+                {
+                  "op": "eq",
+                  "args": [
+                    {
+                      "ref": "legacy"
+                    },
+                    false
+                  ]
+                },
+                {
+                  "op": "eq",
+                  "args": [
+                    {
+                      "ref": "mode"
+                    },
+                    "compatible"
+                  ]
+                }
+              ]
+            }
+          },
+          "text": "Проверка функции: {tested}."
+        }
+      ]
+    }
+  ],
+  "scenes": [
+    {
+      "when": {
+        "op": "eq",
+        "args": [
+          {
+            "ref": "legacy"
+          },
+          true
+        ]
+      },
+      "text": "Неизвестный параметр мешает загрузке. Новая настройка не отменяет старую строку автоматически."
+    },
+    {
+      "when": {
+        "op": "eq",
+        "args": [
+          {
+            "ref": "mechanism"
+          },
+          false
+        ]
+      },
+      "text": "Применимость старой инструкции ещё не установлена."
+    },
+    {
+      "when": true,
+      "text": "Конфигурация {service}; режим {mode}; функция {tested}."
+    }
+  ],
+  "checks": [
+    {
+      "when": {
+        "op": "eq",
+        "args": [
+          {
+            "ref": "legacy"
+          },
+          false
+        ]
+      },
+      "text": "Несовместимый параметр удалён"
+    },
+    {
+      "when": {
+        "op": "eq",
+        "args": [
+          {
+            "ref": "tested"
+          },
+          true
+        ]
+      },
+      "text": "Функция проверена в 8.0"
+    }
+  ],
+  "debrief": "Перенос инструкции меняет реальную конфигурацию. Исправление требует удалить несовместимую строку и применить новый механизм.",
+  "title": "Область применения",
+  "condition": "Инструкция проверена на 7.1, пользователь работает на 8.0."
+}

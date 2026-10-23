@@ -1,0 +1,221 @@
+{
+  "id": "s07-10-backup-restore-Q07-case",
+  "revision": 2,
+  "initial": {
+    "job": "успех",
+    "copyRows": 88,
+    "restoredRows": 0,
+    "accepted": false
+  },
+  "fields": [
+    {
+      "key": "job",
+      "label": "Задание копирования"
+    },
+    {
+      "key": "copyRows",
+      "label": "Обязательных строк в копии"
+    },
+    {
+      "key": "restoredRows",
+      "label": "Строк на стенде"
+    },
+    {
+      "key": "accepted",
+      "label": "Копия принята"
+    }
+  ],
+  "computed": {},
+  "lectureId": "s07-10-backup-restore",
+  "questionId": "s07-10-backup-restore-Q07",
+  "goal": "Проверить полноту копии восстановлением контрольных строк.",
+  "rules": [
+    "Задание копирования зелёное. Первая копия не содержит 12 обязательных строк; источник пока доступен."
+  ],
+  "actions": [
+    {
+      "id": "accept",
+      "label": "Принять копию по статусу задания",
+      "outcomes": [
+        {
+          "when": true,
+          "set": {
+            "accepted": true
+          },
+          "text": "Копия принята без чтения данных на стенде."
+        }
+      ]
+    },
+    {
+      "id": "restore",
+      "label": "Восстановить копию на стенд",
+      "outcomes": [
+        {
+          "when": true,
+          "set": {
+            "restoredRows": {
+              "ref": "copyRows"
+            },
+            "accepted": false
+          },
+          "text": "На стенде {restoredRows} строк из 100 ожидаемых."
+        }
+      ]
+    },
+    {
+      "id": "recopy",
+      "label": "Повторить копирование полного набора",
+      "outcomes": [
+        {
+          "when": true,
+          "set": {
+            "copyRows": 100,
+            "accepted": false
+          },
+          "text": "Копия содержит 100 строк. Стенд пока не изменился."
+        }
+      ]
+    },
+    {
+      "id": "check",
+      "label": "Сверить контрольные строки",
+      "outcomes": [
+        {
+          "when": {
+            "op": "eq",
+            "args": [
+              {
+                "ref": "restoredRows"
+              },
+              100
+            ]
+          },
+          "set": {
+            "accepted": true
+          },
+          "text": "Все 100 строк найдены на стенде."
+        },
+        {
+          "when": true,
+          "set": {
+            "accepted": false
+          },
+          "text": "На стенде {restoredRows} строк. Пригодность не подтверждена."
+        }
+      ]
+    },
+    {
+      "id": "truncate",
+      "label": "Скопировать только первые 88 строк",
+      "outcomes": [
+        {
+          "when": true,
+          "set": {
+            "copyRows": 88,
+            "accepted": false
+          },
+          "text": "Новая копия неполная; прежний стенд не обновлён."
+        }
+      ]
+    }
+  ],
+  "scenes": [
+    {
+      "when": {
+        "op": "and",
+        "args": [
+          {
+            "op": "eq",
+            "args": [
+              {
+                "ref": "accepted"
+              },
+              true
+            ]
+          },
+          {
+            "op": "ne",
+            "args": [
+              {
+                "ref": "restoredRows"
+              },
+              100
+            ]
+          }
+        ]
+      },
+      "text": "Копия принята без подтверждения полноты. Зелёное задание не добавило отсутствующие строки."
+    },
+    {
+      "when": {
+        "op": "and",
+        "args": [
+          {
+            "op": "gte",
+            "args": [
+              {
+                "ref": "restoredRows"
+              },
+              1
+            ]
+          },
+          {
+            "op": "ne",
+            "args": [
+              {
+                "ref": "restoredRows"
+              },
+              100
+            ]
+          }
+        ]
+      },
+      "text": "Пробное восстановление содержит {restoredRows} строк. Повторная копия потребует нового восстановления."
+    },
+    {
+      "when": true,
+      "text": "В копии {copyRows}, на стенде {restoredRows} строк; ожидается 100."
+    }
+  ],
+  "checks": [
+    {
+      "when": {
+        "op": "eq",
+        "args": [
+          {
+            "ref": "copyRows"
+          },
+          100
+        ]
+      },
+      "text": "Копия содержит полный набор"
+    },
+    {
+      "when": {
+        "op": "eq",
+        "args": [
+          {
+            "ref": "restoredRows"
+          },
+          100
+        ]
+      },
+      "text": "Полный набор восстановлен"
+    },
+    {
+      "when": {
+        "op": "eq",
+        "args": [
+          {
+            "ref": "accepted"
+          },
+          true
+        ]
+      },
+      "text": "Копия принята после сверки"
+    }
+  ],
+  "debrief": "Источник копии и восстановленный стенд — разные состояния. Исправление источника не дополняет уже восстановленные данные.",
+  "title": "Контроль задания копирования",
+  "condition": "Задание завершилось без ошибки, пробное восстановление ни разу не выполнялось."
+}
