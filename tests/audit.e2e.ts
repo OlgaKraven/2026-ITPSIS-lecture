@@ -54,7 +54,7 @@ test('all 120 activities load at overview, keep drafts and distinguish correct a
   await page.locator('input[value="premature"]').check()
   await page.getByLabel('Моё обоснование',{exact:true}).fill('Сопоставляю исходное наблюдение и правило.')
   await page.getByRole('button',{name:'Проверить вывод',exact:true}).click()
-  await expect(page.locator('form [role=status]')).toContainText('Преждевременный вывод')
+  await expect(page.locator('form [role=status]')).toContainText(activity.mistake)
   await page.locator('input[value="evidence"]').check()
   await page.getByRole('button',{name:'Проверить вывод',exact:true}).click()
   await expect(page.locator('form [role=status]')).toContainText('Вывод выбран верно')
@@ -136,4 +136,41 @@ test('pointer and theme synchronize; audience explanation requires an explicit c
  await page.getByRole('button',{name:'Закрыть окно',exact:true}).click()
  await expect(audience.locator('.audience-answer')).toHaveCount(0)
  await page.getByRole('button',{name:'Завершить показ',exact:true}).click()
+})
+
+test('independent calculation diagrams keep computed results behind explicit reveal',async({page})=>{
+ await page.goto('./?mode=case&case=s07-10-backup-restore-Q03-case')
+ await expect(page.locator('.case-calculation')).toContainText('Самостоятельно')
+ await expect(page.locator('.case-calculation svg text').filter({hasText:/^65$/})).toHaveCount(0)
+ await page.getByLabel('Мой прогноз').fill('Сложу последовательные этапы')
+ await page.locator('input[value="evidence"]').check()
+ await page.getByLabel('Моё обоснование').fill('Подготовка, восстановление и проверка входят в полный маршрут')
+ await page.getByRole('button',{name:'Проверить вывод',exact:true}).click()
+ await expect(page.locator('.case-calculation svg text').filter({hasText:/^65$/})).toHaveCount(0)
+ await page.getByRole('button',{name:'Открыть разбор',exact:true}).click()
+ await expect(page.locator('.case-calculation svg text').filter({hasText:/^65$/})).toBeVisible()
+ await page.getByRole('button',{name:'Скрыть разбор',exact:true}).click()
+ await expect(page.locator('.case-calculation svg text').filter({hasText:/^65$/})).toHaveCount(0)
+ await page.goto('./?mode=case&case=s07-10-backup-restore-Q02-case')
+ await expect(page.locator('.case-calculation')).not.toContainText('Фактический интервал: 28')
+})
+
+test('table text remains readable against every row in light and dark themes',async({page})=>{
+ await page.goto('./?mode=print&scope='+course.lectures[0].id)
+ await expect(page.locator('.print-page')).toHaveCount(course.lectures[0].slides.length)
+ for(const theme of ['light','dark']){
+  const failures=await page.evaluate(theme=>{
+   document.documentElement.dataset.theme=theme
+   const rgb=(value:string)=>value.match(/[\d.]+/g)!.slice(0,3).map(Number)
+   const luminance=(c:number[])=>c.map(v=>v/255).map(v=>v<=.04045?v/12.92:((v+.055)/1.055)**2.4).reduce((sum,v,i)=>sum+v*[.2126,.7152,.0722][i],0)
+   return [...document.querySelectorAll('.comparison-table td,.comparison-table th')].flatMap(cell=>{
+    let node:Element|null=cell,bg=''
+    while(node){const value=getComputedStyle(node).backgroundColor;if(value!=='transparent'&&value!=='rgba(0, 0, 0, 0)'){bg=value;break}node=node.parentElement}
+    const a=luminance(rgb(getComputedStyle(cell).color)),b=luminance(rgb(bg||'rgb(255, 255, 255)'))
+    const ratio=(Math.max(a,b)+.05)/(Math.min(a,b)+.05)
+    return ratio<4.5?[{id:cell.closest<HTMLElement>('[data-slide-id]')?.dataset.slideId,text:cell.textContent,ratio}]:[]
+   })
+  },theme)
+  expect(failures,theme).toEqual([])
+ }
 })

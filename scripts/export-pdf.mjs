@@ -3,6 +3,9 @@ import {spawn} from 'node:child_process';
 import {chromium} from '@playwright/test';
 import {PDFDocument} from 'pdf-lib';
 const course=JSON.parse(await readFile('public/course.json','utf8'));
+const requested=[...new Set((process.env.PDF_LECTURES||'').split(',').filter(Boolean))];
+const selected=requested.length?course.lectures.filter(l=>requested.includes(l.id)):course.lectures;
+if(requested.length&&selected.length!==requested.length)throw Error('Неизвестная лекция в PDF_LECTURES');
 const port=5294,base=`http://127.0.0.1:${port}/2026-ITPSIS-lecture/`;
 const server=spawn(process.execPath,['node_modules/vite/bin/vite.js','preview','--host','127.0.0.1','--port',String(port),'--strictPort'],{stdio:'pipe',windowsHide:true});
 let browser;
@@ -11,7 +14,7 @@ try{
   browser=await chromium.launch({channel:process.env.BROWSER_CHANNEL||'chrome',headless:true});
   const page=await browser.newPage({viewport:{width:1600,height:900}});
   const out=process.env.PDF_OUTPUT_DIR||'outputs/pdf';await mkdir(out,{recursive:true});const result=[];
-  for(const l of course.lectures){
+  for(const l of selected){
     await page.goto(`${base}?mode=print&scope=${l.id}`);await page.locator('.print-page').last().waitFor();
     await page.evaluate(async()=>{await document.fonts.ready;await Promise.all([...document.images].map(i=>i.decode().catch(()=>{})));});
     if(await page.locator('.print-page').count()!==l.slides.length)throw Error('Неполная печать '+l.id);
@@ -31,5 +34,5 @@ try{
     await writeFile(`${out}/${l.id}.pdf`,await full.save());
     result.push({id:l.id,pages:l.slides.length,path:`${out}/${l.id}.pdf`});
   }
-  await writeFile('reports/pdf-export.json',JSON.stringify({contentVersion:course.contentVersion,files:result},null,2)+'\n');console.log(`Сохранено ${result.length} ученических PDF из рендерера сайта.`);
+  await writeFile('reports/pdf-export.json',JSON.stringify({contentVersion:course.contentVersion,scope:selected.map(l=>l.id),files:result},null,2)+'\n');console.log(`Сохранено ${result.length} ученических PDF из рендерера сайта.`);
 }finally{await browser?.close();server.kill();}

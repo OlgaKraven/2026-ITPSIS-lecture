@@ -1,8 +1,8 @@
 import { readFile, readdir } from 'node:fs/promises'
 import path from 'node:path'
 
-const roots = ['src', 'README.md', 'docs/references.md', 'docs']
-const extensions = new Set(['.ts', '.tsx', '.md', '.html'])
+const roots = ['src', 'authoring', 'README.md', 'docs/references.md', 'docs']
+const extensions = new Set(['.ts', '.tsx', '.md', '.html', '.mjs'])
 const files = []
 const dictionary = JSON.parse(await readFile('spellcheck.config.json', 'utf8'))
 if (!Array.isArray(dictionary.allowedTerms) || dictionary.allowedTerms.length === 0) {

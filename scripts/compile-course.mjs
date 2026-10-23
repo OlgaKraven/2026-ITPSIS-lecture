@@ -1,8 +1,10 @@
+import {applyStudentCorrections} from '../authoring/student-corrections.mjs';
 import {upgradeCourse,auditVersion} from '../authoring/audit-upgrade.mjs';
 import {readFile,writeFile,mkdir} from 'node:fs/promises';
 import {context} from '../authoring/itil-context.mjs';
 import {workedResults} from '../authoring/worked-results.mjs';
 const original=JSON.parse(await readFile('authoring/original-course.json','utf8'));
+applyStudentCorrections(original,context);
 const sources=JSON.parse(await readFile('authoring/sources.json','utf8'));
 const literature=JSON.parse(await readFile('authoring/literature.json','utf8'));
 const version=auditVersion;
@@ -69,8 +71,8 @@ for(const [li,t] of original.topics.entries()){
     for(let j=0;j<7;j++)mapping.push({lectureId:l.id,oldSlide:oldStarts+j,oldQuestion:q.title,targetSlideIds:targets[j],action:j===0?'объединена':'отредактирована',reason:j===0?'Разделитель восстановлен по обновлённому шаблону; объяснение сохранено.':'Исходное содержание сохранено, добавлены границы применения и контроль.'});
     mapping.push({lectureId:l.id,oldSlide:69+qi,targetSlideIds:[example,flow,note],action:'объединена',reason:'Повторяемое поручение заменено разобранным применением и готовым критерием.'});
   }
-  add('summary-a','summary','Главные решения: вопросы 1–4',{bullets:t.questions.slice(0,4).map(q=>`${q.decision} Проверка результата: ${q.check}`)});
-  add('summary-b','summary','Главные решения: вопросы 5–8',{bullets:t.questions.slice(4).map(q=>`${q.decision} Проверка результата: ${q.check}`)});
+  add('summary-a','summary','Главные решения: вопросы 1–4',{columns:['Решение','Критерий результата'],rows:t.questions.slice(0,4).map(q=>[q.decision,q.check])});
+  add('summary-b','summary','Главные решения: вопросы 5–8',{columns:['Решение','Критерий результата'],rows:t.questions.slice(4).map(q=>[q.decision,q.check])});
   add('final-case','example','Итоговое применение к работе поддержки',{body:`Результат работы: ${t.projectArtifact}.`,bullets:[t.questions[0].example,t.questions[3].decision,t.questions[7].check]});
   add('next','summary','Связь с дальнейшей работой',{body:`${t.nextStep.charAt(0).toUpperCase()+t.nextStep.slice(1)}.`,bullets:[`Для закрепления: ${original.selfStudy[t.semester]}`,t.labNumbers.length?`Связанная лабораторная: ${original.laboratories.find(x=>x.topicId===t.id)?.title}.`:'Примените результат в общем регламенте сопровождения.']});
   add('sources','summary','Источники и чтение',{bullets:[sources.references[c.reference].title,sources.references[c.reference].url,'Исходные темы дисциплины и основная литература сохранены в материалах курса.','Определения и CampusHelp — учебные формулировки и авторские примеры.'],kicker:'Проверка открытых источников: 12.09.2026'});

@@ -1,8 +1,9 @@
 import {readFile,writeFile,mkdir} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 const raw=await readFile('public/course.json'),course=JSON.parse(raw),pack=JSON.parse(await readFile('authoring/teacher-notes.json','utf8'));
+const output=process.env.TEACHER_OUTPUT_DIR||'outputs/teacher';
 const hash=createHash('sha256').update(raw).digest('hex');
-await mkdir('docs/teacher',{recursive:true});
+await mkdir(output,{recursive:true});
 for(const l of course.lectures){
  const header=`---\ncourse: ${course.id}\nlecture: ${l.id}\ncontentVersion: ${course.contentVersion}\nsourceKind: local\nsourceSha256: ${hash}\n---\n\n# ${l.title}\n\n`;
  let teacher=header,presenter=header;
@@ -17,8 +18,8 @@ for(const l of course.lectures){
   presenter+=heading+`Речь и показ:\n\n${n.script}\n\nПодготовка:\n\n${n.preparation}\n\nЗапись:\n\n${n.notebook}\n\nОбсуждение:\n\n${n.questions}\n\nОтвет преподавателю:\n\n${n.answer}\n\nОценка времени: ${n.estimatedSeconds} с; хронометраж не проводился.\n\n`;
   slides.push({lectureId:l.id,slideId:s.id,displayNumber:i+1,title:s.title,anchors:{teacher:anchor,presenter:anchor}});
  }
- await writeFile(`docs/teacher/${l.id}.teacher.md`,teacher.trimEnd()+'\n');
- await writeFile(`docs/teacher/${l.id}.presenter.md`,presenter.trimEnd()+'\n');
- await writeFile(`docs/teacher/${l.id}.alignment.json`,JSON.stringify({schemaVersion:1,courseId:course.id,contentVersion:course.contentVersion,sourceKind:'local',sourceSha256:hash,lectureIds:[l.id],documents:{teacher:`${l.id}.teacher.md`,presenter:`${l.id}.presenter.md`},slides},null,2)+'\n');
+ await writeFile(`${output}/${l.id}.teacher.md`,teacher.trimEnd()+'\n');
+ await writeFile(`${output}/${l.id}.presenter.md`,presenter.trimEnd()+'\n');
+ await writeFile(`${output}/${l.id}.alignment.json`,JSON.stringify({schemaVersion:1,courseId:course.id,contentVersion:course.contentVersion,sourceKind:'local',sourceSha256:hash,lectureIds:[l.id],documents:{teacher:`${l.id}.teacher.md`,presenter:`${l.id}.presenter.md`},slides},null,2)+'\n');
 }
 console.log(`Тексты и сценарии: ${course.lectures.length} лекций; SHA-256 ${hash}`);

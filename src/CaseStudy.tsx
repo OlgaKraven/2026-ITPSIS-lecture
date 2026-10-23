@@ -45,7 +45,7 @@ export function CaseStudy({course,base}:{course:Course;base:string}){
   <label className="case-field">Мой прогноз<textarea aria-label="Мой прогноз" value={draft.prediction} onChange={e=>update({prediction:e.target.value})}/></label>
   <section className="case-evidence" aria-label="Разбор наблюдений">
    <div className="case-step" aria-live="polite">{step===0?'Обзор: прочитайте условие и запишите прогноз.':`Наблюдение ${step} из ${max}`}</div>
-   <CaseDiagram id={activity.id} focus={step}/><ol>{activity.observations.map((s,i)=><li key={i} aria-current={step===i+1?'step':undefined} className={step===i+1?'case-focus':''}>{s}</li>)}</ol>
+   <CaseDiagram id={activity.id} focus={step} reveal={draft.checked&&draft.revealed}/><ol>{activity.observations.map((s,i)=><li key={i} aria-current={step===i+1?'step':undefined} className={step===i+1?'case-focus':''}>{s}</li>)}</ol>
    <div className="case-navigation"><button className="button secondary" disabled={!step} onClick={()=>update({step:step-1})}>Назад</button><span>Шаг {step} / {max}</span><button className="button primary" disabled={step===max} onClick={()=>update({step:step+1})}>Далее</button><button className="button secondary" onClick={()=>update({step:0})}>К обзору</button></div>
   </section>
   <form onSubmit={e=>{e.preventDefault();check()}}>
