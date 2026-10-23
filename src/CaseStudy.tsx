@@ -1,4 +1,4 @@
-import {useEffect,useRef,useState} from 'react'
+import {useEffect,useLayoutEffect,useRef,useState} from 'react'
 import type {Course} from './engine'
 import {CaseDiagram} from './CaseDiagram'
 import {describeAnswer,initialAnswer} from './teamPractice'
@@ -9,8 +9,9 @@ import './case-study.css'
 
 function DataTable({data}:{data:PracticeStep['data']}){return data?<div className="team-data" tabIndex={0} role="region" aria-label={data.caption}><table><caption>{data.caption}</caption><thead><tr>{data.columns.map((c,i)=><th scope="col" key={i}>{c}</th>)}</tr></thead><tbody>{data.rows.map((row,i)=> <tr key={i}>{row.map((cell,j)=>j===0?<th scope="row" key={j}>{cell}</th>:<td key={j}>{cell}</td>)}</tr>)}</tbody></table></div>:null}
 function storageKey(course:Course,base:string,a:TeamActivity){return `lecture:${base}:${course.id}:simulation:${a.id}:revision-${a.revision}:model-1`}
-function Editor({step,answer,change,execute,simulation}:{step:PracticeStep;answer:StepAnswer;change:(answer:StepAnswer)=>void;execute:(value:StepAnswer,operation?:string)=>void;simulation:Simulation}){
+function Editor({step,execute,simulation}:{step:PracticeStep;execute:(value:StepAnswer,operation?:string)=>void;simulation:Simulation}){
  const record=simulation.records[step.id]
+ const [answer,change]=useState<StepAnswer>(()=>record?.payload??initialAnswer(step))
  if(step.type==='single')return <div className="sim-operations" aria-label="Доступные действия">{step.choices!.map(c=><button type="button" className="button secondary" key={c.id} data-action-id={c.id} onClick={()=>execute(c.id)}>{c.text}</button>)}</div>
  if(step.type==='order')return <div className="sim-operations" aria-label="Операции участка">{step.items!.map(item=><button type="button" className="button secondary" key={item.id} data-action-id={item.id} disabled={record?.operations?.includes(item.id)} onClick={()=>execute(record?.payload||[],item.id)}>{item.text}</button>)}</div>
  return <form onSubmit={e=>{e.preventDefault();execute(answer)}}>
@@ -21,7 +22,7 @@ function Editor({step,answer,change,execute,simulation}:{step:PracticeStep;answe
  </form>
 }
 export function CaseStudy({course,base}:{course:Course;base:string}){
- const [activity,setActivity]=useState<TeamActivity|null>(null),[error,setError]=useState(''),[retry,setRetry]=useState(0),[simulation,setSimulation]=useState(newSimulation),[storageError,setStorageError]=useState(false),[notice,setNotice]=useState(''),[hint,setHint]=useState(false),[resetPending,setResetPending]=useState(false),[editor,setEditor]=useState<StepAnswer>('')
+ const [activity,setActivity]=useState<TeamActivity|null>(null),[error,setError]=useState(''),[retry,setRetry]=useState(0),[simulation,setSimulation]=useState(newSimulation),[storageError,setStorageError]=useState(false),[notice,setNotice]=useState(''),[hint,setHint]=useState(false),[resetPending,setResetPending]=useState(false)
  const heading=useRef<HTMLHeadingElement>(null)
  const [theme,setTheme]=useState(()=>{try{return JSON.parse(localStorage.getItem(`lecture:${base}:${course.id}:theme`)||'"light"')}catch{return 'light'}})
  const id=new URL(location.href).searchParams.get('case')||''
@@ -29,9 +30,10 @@ export function CaseStudy({course,base}:{course:Course;base:string}){
  useEffect(()=>{const controller=new AbortController();setError('');if(!/^[a-z0-9-]+-Q\d\d-case$/.test(id)){setError('Практическая задача не найдена.');return}
   fetch(`${base}activities/${id}.json`,{signal:controller.signal}).then(r=>{if(!r.ok)throw Error('Не удалось загрузить задачу.');return r.json()}).then((a:TeamActivity)=>{if(controller.signal.aborted)return;if(a.id!==id||!Array.isArray(a.steps)||a.steps.length<3||!course.lectures.some(l=>l.id===a.lectureId))throw Error('Неверный состав задачи.');caseProfile(a);let value:unknown;try{value=JSON.parse(localStorage.getItem(storageKey(course,base,a))||'null')}catch{}setActivity(a);setSimulation(restoreSimulation(a,value));document.title=a.title+' — Интерактивный кейс'}).catch(e=>{if(!controller.signal.aborted)setError(String(e))});return()=>controller.abort()},[id,base,course,retry])
  const current=activity?.steps[simulation.cursor-1],currentRecord=current&&simulation.records[current.id]
- useEffect(()=>{if(current)setEditor(currentRecord?.payload??initialAnswer(current));setHint(false)},[current,currentRecord])
+ useEffect(()=>setHint(false),[current,currentRecord])
+ useLayoutEffect(()=>{heading.current?.focus({preventScroll:true});heading.current?.scrollIntoView({behavior:'instant',block:'nearest'})},[simulation.cursor])
  function update(next:Simulation){setSimulation(next);setNotice('');setResetPending(false);if(activity)try{localStorage.setItem(storageKey(course,base,activity),JSON.stringify(next));setStorageError(false)}catch{setStorageError(true)}}
- function navigate(cursor:number){update({...simulation,cursor});requestAnimationFrame(()=>heading.current?.focus())}
+ function navigate(cursor:number){update({...simulation,cursor})}
  if(error)return <main className="case-study"><h1>Практическая задача</h1><p role="alert">{error}</p><button className="button primary" onClick={()=>setRetry(n=>n+1)}>Повторить загрузку</button><a href={base}>Каталог</a></main>
  if(!activity)return <main className="case-study" role="status">Загружаем задачу…</main>
  const a=activity,l=course.lectures.find(l=>l.id===a.lectureId)!,profile=caseProfile(a),diagnostics=probeSimulation(a,simulation),healthy=diagnostics.every(d=>d.status==='ready'),index=simulation.cursor-1
@@ -47,7 +49,7 @@ export function CaseStudy({course,base}:{course:Course;base:string}){
  <h2 ref={heading} tabIndex={-1}>{current!.title}</h2><p className="team-prompt">{current!.type==='order'?current!.prompt.replace(/Расставьте|Расположите|Упорядочьте/gi,'Выполните'):current!.prompt}</p><DataTable data={current!.data}/>
  {index>0&&<aside className="sim-input"><h3>Вход с предыдущих участков</h3>{a.steps.slice(0,index).map(step=><p key={step.id}><strong>{step.title}:</strong> {simulation.records[step.id]?describeAnswer(step,simulation.records[step.id].payload):'не подготовлен'}</p>)}<p className="case-data-label">Операция использует именно эти записи. После исправления входа повторите зависящие от него операции.</p></aside>}
  {current!.type==='order'&&<p>Выполняйте операции по одной. Запуск до подготовки оставит непригодный результат. Поздняя подготовка не отменяет уже совершённую операцию.</p>}
- <Editor step={current!} answer={editor} change={setEditor} execute={execute} simulation={simulation}/>
+ <Editor key={`${current!.id}:${currentRecord?.revision||0}`} step={current!} execute={execute} simulation={simulation}/>
  <p className="sim-observation" role="status" aria-live="polite">{notice||currentRecord?.observation||'Участок ещё не изменён.'}</p>
  <div className="case-navigation"><button className="button secondary" onClick={()=>update(clearStage(a,simulation,index))}>Восстановить участок</button><button className="button secondary" onClick={()=>setHint(!hint)}>{hint?'Скрыть подсказку':'Подсказка к участку'}</button>{simulation.cursor<a.steps.length&&<button className="button primary" onClick={()=>navigate(simulation.cursor+1)}>К следующему участку</button>}</div>
  {hint&&<aside className="team-hint">{current!.hint}</aside>}
