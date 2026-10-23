@@ -1,5 +1,6 @@
 import {readFileSync} from 'node:fs'
 import {describe,it,expect} from 'vitest'
+import {context} from '../authoring/itil-context.mjs'
 import {cases} from '../authoring/transfer-cases.mjs'
 import {validateCourse} from '../src/engine/model'
 import {validatePublishedNotes,mergeNotes} from '../src/engine/publishedNotes'
@@ -9,9 +10,24 @@ const read=(file:string)=>JSON.parse(readFileSync(file,'utf8'))
 const course:Course=read('public/course.json'),original=read('authoring/original-course.json'),pack=read('authoring/teacher-notes.json')
 
 describe('finished course and independent evidence cases',()=>{
- it('migrates compatible progress and attempts without replacing current data',()=>{
+ it('shows each explanation with its rule and each summary decision with its acceptance criterion',()=>{
+  for(const [li,l] of course.lectures.entries())for(const [qi,q] of original.topics[li].questions.entries()){
+   const id=`${l.id}-Q${String(qi+1).padStart(2,'0')}`
+   const theory=l.slides.find(s=>s.id===`${id}-theory`)!
+   const term=l.slides.find(s=>s.id===`${id}-term`)!
+   const [,definition,explanation]=context[li].questions[qi]
+   expect(pack.notes[theory.id].script).toContain(explanation)
+   expect(theory.body).toContain(explanation)
+   expect(theory.body).toContain(q.rule)
+   expect(term.body).toBe(definition)
+   expect(l.slides.find(s=>s.id===`${l.id}-summary-${qi<4?'a':'b'}`)!.bullets)
+    .toContain(`${q.decision} Проверка результата: ${q.check}`)
+  }
+ })
+
+ it.each(['2026-09-12-itil-4','2026-10-23-itpsis-5'])('migrates compatible progress and attempts from %s without replacing current data',(previous)=>{
   const l=course.lectures[0],slide=l.slides[4],task=l.slides.find(s=>s.task)!.task!
-  const prefix='lecture:/course/:itpsis',previous='2026-09-12-itil-4'
+  const prefix='lecture:/course/:itpsis'
   const values=new Map<string,string>([
    [`${prefix}:${previous}:${l.id}:progress`,JSON.stringify(slide.id)],
    [`${prefix}:${previous}:attempts`,JSON.stringify({[task.id]:{draft:['decision'],attempts:1},unknown:{draft:[]}})],

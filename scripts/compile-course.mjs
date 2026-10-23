@@ -37,8 +37,8 @@ for(const [li,t] of original.topics.entries()){
     const block=[];
     const qa=(suffix,kind,title,fields,source)=>{const id=add(`${prefix}-${suffix}`,kind,title,{...fields,kicker},source);block.push(id);return id};
     const section=qa('section','section',q.title,{body:`Цель: ${q.check}`});
-    const theory=qa('theory','theory',q.title,{body:`${q.focus} ${q.rule}`});
-    const concept=qa('term','theory',term,{body:`${definition} ${application}`,kicker},`${sources.references[c.reference].title} · учебное применение`);
+    const theory=qa('theory','theory',q.title,{body:`${q.focus} ${q.rule}\n\n${application}`});
+    const concept=qa('term','theory',term,{body:definition,kicker},`${sources.references[c.reference].title} · учебное применение`);
     const example=qa('example','example','Разобранный пример',{body:q.example,bullets:[`Действие: ${q.decision}`,`Образец результата: ${workedResults[li][qi]}`,`Проверка: ${q.check}`]},'CampusHelp · авторский образец решения');
     const shortFacts={'s07-01-support-lifecycle-Q01':'Пользователь отправляет заявку; команда исправляет 503 и обновляет систему.','s07-01-support-lifecycle-Q02':'Работы: приём обращений, исправление очереди, обновление клиента, восстановление БД.','s07-03-sla-Q03':'126 из 180 пользователей не могут отправить обязательную заявку. Обхода нет.'};
     const flow=qa('flow','process','От условия к подтверждённому результату',{visual:{type:'process',items:[{title:'Исходные данные',text:shortFacts[qid]||q.example},{title:'Действие',text:q.decision},{title:'Проверка',text:q.check}],caption:`${q.title}: переход к выводу требует указанного свидетельства. Учебные данные.`}});
@@ -69,8 +69,8 @@ for(const [li,t] of original.topics.entries()){
     for(let j=0;j<7;j++)mapping.push({lectureId:l.id,oldSlide:oldStarts+j,oldQuestion:q.title,targetSlideIds:targets[j],action:j===0?'объединена':'отредактирована',reason:j===0?'Разделитель восстановлен по обновлённому шаблону; объяснение сохранено.':'Исходное содержание сохранено, добавлены границы применения и контроль.'});
     mapping.push({lectureId:l.id,oldSlide:69+qi,targetSlideIds:[example,flow,note],action:'объединена',reason:'Повторяемое поручение заменено разобранным применением и готовым критерием.'});
   }
-  add('summary-a','summary','Главные решения: вопросы 1–4',{bullets:t.questions.slice(0,4).map(q=>q.decision)});
-  add('summary-b','summary','Главные решения: вопросы 5–8',{bullets:t.questions.slice(4).map(q=>q.decision)});
+  add('summary-a','summary','Главные решения: вопросы 1–4',{bullets:t.questions.slice(0,4).map(q=>`${q.decision} Проверка результата: ${q.check}`)});
+  add('summary-b','summary','Главные решения: вопросы 5–8',{bullets:t.questions.slice(4).map(q=>`${q.decision} Проверка результата: ${q.check}`)});
   add('final-case','example','Итоговое применение к работе поддержки',{body:`Результат работы: ${t.projectArtifact}.`,bullets:[t.questions[0].example,t.questions[3].decision,t.questions[7].check]});
   add('next','summary','Связь с дальнейшей работой',{body:`${t.nextStep.charAt(0).toUpperCase()+t.nextStep.slice(1)}.`,bullets:[`Для закрепления: ${original.selfStudy[t.semester]}`,t.labNumbers.length?`Связанная лабораторная: ${original.laboratories.find(x=>x.topicId===t.id)?.title}.`:'Примените результат в общем регламенте сопровождения.']});
   add('sources','summary','Источники и чтение',{bullets:[sources.references[c.reference].title,sources.references[c.reference].url,'Исходные темы дисциплины и основная литература сохранены в материалах курса.','Определения и CampusHelp — учебные формулировки и авторские примеры.'],kicker:'Проверка открытых источников: 12.09.2026'});

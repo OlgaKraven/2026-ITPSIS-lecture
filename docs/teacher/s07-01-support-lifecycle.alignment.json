@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "courseId": "itpsis",
-  "contentVersion": "2026-10-23-itpsis-5",
+  "contentVersion": "2026-10-23-itpsis-6",
   "sourceKind": "local",
-  "sourceSha256": "aaba319d21607e3520b386cc542c53ed54f17004fa2e5c12424b746d834b03a3",
+  "sourceSha256": "ca30039ca5a71d5c98b9f578f4793c8af083a5232acf9ac8935a67fd64e8ac6b",
   "lectureIds": [
     "s07-01-support-lifecycle"
   ],

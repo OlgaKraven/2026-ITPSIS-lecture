@@ -1,9 +1,9 @@
 import {cases} from './transfer-cases.mjs';
-export const auditVersion='2026-10-23-itpsis-5';
+export const auditVersion='2026-10-23-itpsis-6';
 
 export function upgradeCourse(course,bank,original,questionMap){
  const activities=[];
- course.teacherNotesPreviousVersions=['2026-09-12-itil-2','2026-09-12-itil-3','2026-09-12-itil-4'];
+ course.teacherNotesPreviousVersions=['2026-09-12-itil-2','2026-09-12-itil-3','2026-09-12-itil-4','2026-10-23-itpsis-5'];
  course.mascot='brand/rhino-itpsis.png';
  course.year='';
  course.publicUrl='https://olgakraven.github.io/2026-ITPSIS-lecture/';

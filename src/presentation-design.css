@@ -200,3 +200,6 @@
 @media screen and (max-width:820px){.active-slide .pd-passport{grid-template-columns:1fr;font-size:18px;padding:16px;gap:16px}.active-slide .pd-passport h3{font-size:15px}.active-slide .pd-passport-scenario{font-size:14px}.active-slide .pd-passport>.button{font-size:14px;min-height:44px}}
 :root[data-theme=dark] .pd-toolbar .icon-button,:root[data-theme=dark] .deck-controls .button.secondary{background:var(--surface);color:var(--text);border-color:var(--border)}
 :root[data-theme=dark] .slide-frame .infographic figcaption{color:var(--pd-muted)}
+
+/* Keep a rule and its explanation readable as separate paragraphs. */
+.slide-frame[data-slide-id] .slide-body-copy{white-space:pre-line}
