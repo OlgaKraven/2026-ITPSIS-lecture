@@ -26,13 +26,13 @@ export function DiagramPlayer({slide,base}:{slide:Slide;base:string}){
  const active=step>0?step-1:-1
  function stop(){setPlaying(false)}
  function move(next:number){stop();position.current=0;setFraction(0);setStep(Math.max(0,Math.min(count,next)))}
- useEffect(()=>{if(sync.readonly&&sync.state?.slideId===slide.id){setStep(sync.state.step);setTrack(sync.state.track);setFraction(sync.state.fraction);setPlaying(false)}},[sync.readonly,sync.state,slide.id])
+ useEffect(()=>{if(sync.readonly&&sync.state?.slideId===slide.id){setStep(sync.state.step);setTrack(sync.state.track);setFraction(reduced?0:sync.state.fraction);setPlaying(false)}},[sync.readonly,sync.state,slide.id,reduced])
  useEffect(()=>{if(sync.readonly||!sync.onChange)return;const now=performance.now();if(playing&&fraction>0&&now-publishedAt.current<33)return;publishedAt.current=now;sync.onChange({slideId:slide.id,open:true,step,track,fraction,playing})},[sync.readonly,sync.onChange,slide.id,step,track,fraction,playing])
- useEffect(()=>{const mq=matchMedia('(prefers-reduced-motion: reduce)');const listener=()=>{setReduced(mq.matches);if(mq.matches)setPlaying(false)};mq.addEventListener('change',listener);const hide=()=>{if(document.hidden)setPlaying(false)};document.addEventListener('visibilitychange',hide);return()=>{mq.removeEventListener('change',listener);document.removeEventListener('visibilitychange',hide)}},[])
+ useEffect(()=>{const mq=matchMedia('(prefers-reduced-motion: reduce)');const listener=()=>{setReduced(mq.matches);if(mq.matches){setPlaying(false);position.current=0;setFraction(0)}};mq.addEventListener('change',listener);const hide=()=>{if(document.hidden)setPlaying(false)};document.addEventListener('visibilitychange',hide);return()=>{mq.removeEventListener('change',listener);document.removeEventListener('visibilitychange',hide)}},[])
  useEffect(()=>{
   if(!playing||reduced||sync.readonly||step>=count)return
   let frame=0;last.current=0
-  const tick=(now:number)=>{if(last.current)position.current=Math.min(1,position.current+(now-last.current)/steps[step].duration);last.current=now;setFraction(position.current)
+  const tick=(now:number)=>{if(document.hidden){setPlaying(false);return}if(last.current)position.current=Math.min(1,position.current+(now-last.current)/steps[step].duration);last.current=now;setFraction(position.current)
    if(position.current>=1){position.current=0;setFraction(0);setStep(n=>n+1);if(step+1>=count)setPlaying(false)}else frame=requestAnimationFrame(tick)
   }
   frame=requestAnimationFrame(tick);return()=>cancelAnimationFrame(frame)
