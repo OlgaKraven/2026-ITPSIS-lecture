@@ -1,8 +1,9 @@
 import {readFile,writeFile} from 'node:fs/promises';
 import {corrections} from '../authoring/student-corrections.mjs';
 const course=JSON.parse(await readFile('public/course.json','utf8'));
+const activities=new Map(await Promise.all(course.lectures.flatMap(l=>l.slides.filter(s=>s.supplement).map(async s=>{const a=JSON.parse(await readFile('public/activities/'+s.id.replace(/-passport$/,'-case')+'.json','utf8'));return [s.id,a]}))));
 const pack=JSON.parse(await readFile('authoring/teacher-notes.json','utf8'));
-pack.contentVersion=course.contentVersion;pack.notesRevision='2026-10-23-practice-4';
+pack.contentVersion=course.contentVersion;pack.notesRevision='2026-10-23-team-practice-5';
 for(const id of Object.keys(pack.notes))if(id.endsWith('-literature-2'))delete pack.notes[id];
 for(const c of corrections){
  const prefix=`${course.lectures[c.lecture].id}-Q${String(c.question+1).padStart(2,'0')}-`;
@@ -14,7 +15,7 @@ for(const lecture of course.lectures)for(const slide of lecture.slides){
  const n=pack.notes[slide.id];
  for(const key of ['script','preparation','notebook','questions','answer'])n[key]=n[key].replaceAll('Самостоятельный случай','Практическая задача').replaceAll('самостоятельный случай','практическую задачу').replaceAll('Интерактивная схема','Разбор задачи');
  if(slide.id.endsWith('-literature-1'))n.script='Основная литература по дисциплине. '+slide.references.map(r=>r.citation).join(' ')+' Ссылки и QR-коды открывают соответствующие источники.';
- if(slide.id.endsWith('-passport'))n.script=slide.body+' Откройте «Разбор задачи»: сначала классифицируйте факты, решения и предположения, затем проверьте свой вывод. Расчётные ответы вводите в указанных единицах.';
+ if(slide.id.endsWith('-passport')){const a=activities.get(slide.id);n.script=slide.body+' Откройте «Разбор задачи». Команда последовательно выполняет шаги: '+a.steps.map(s=>s.title).join('; ')+'. На каждом шаге введите согласованный ответ и нажмите «Проверить шаг». После верного шага обсудите основание и переходите дальше.';n.questions='Какие данные нужны для текущего шага? Что позволяет перейти дальше?';n.answer=a.steps.map((s,i)=>`${i+1}. ${s.title}. ${s.explanation}`).join(' ');n.preparation='Начните с обзора. Новые данные следующего шага рассматриваются после проверки предыдущего. Личные записи на экране не используются.';}
  if(slide.id.endsWith('-term')){
   n.script=`${slide.notebook} ${slide.body} Сопоставьте объяснение с коротким определением в блоке «Запишите». Определение фиксирует признаки понятия; пояснение показывает, какой вывод допустим и где требуется дополнительная проверка.`;
   n.questions='Какое различие объясняет этот слайд? Приведите условие, при котором короткого определения недостаточно для выбора действия.';

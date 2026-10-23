@@ -9,7 +9,7 @@
     "generate:qr": "node scripts/generate-qr.mjs",
     "typecheck": "tsc -b",
     "lint": "oxlint src scripts tests",
-    "test": "vitest run && npm run validate:content && npm run test:session && npm run prepare:notes && node --test vendor/validation/published-notes-check.mjs",
+    "test": "vitest run && node scripts/check-team-practice.mjs && npm run validate:content && npm run test:session && npm run prepare:notes && node --test vendor/validation/published-notes-check.mjs",
     "compile:content": "node scripts/compile-course.mjs",
     "validate:content": "node scripts/validate-content.mjs",
     "test:session": "node --test vendor/validation/session-check.mjs",

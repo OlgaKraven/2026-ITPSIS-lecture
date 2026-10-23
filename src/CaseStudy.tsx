@@ -1,66 +1,51 @@
-import {useEffect,useState} from 'react'
+import {useEffect,useRef,useState} from 'react'
 import type {Course} from './engine'
-import './case-study.css'
 import {CaseDiagram} from './CaseDiagram'
-
-type Statement={id:string;text:string;category:string;feedback:string}
-type Calculation={prompt:string;unit:string;value:number;hint:string}
-type Activity={classificationTitle?:string;classificationHelp?:string;categoryLabels?:Record<string,string>;statements:Statement[];calculations:Calculation[];id:string;revision:number;lectureId:string;questionId:string;title:string;condition:string;observations:string[];task:string;options:{id:string;text:string}[];correct:string;explanation:string;rule:string;mistake:string}
-type Draft={calculated:boolean;categories:Record<string,string>;numbers:Record<string,string>;choice:string;checked:boolean;revealed:boolean;step:number}
-const empty:Draft={calculated:false,categories:{},numbers:{},choice:'',checked:false,revealed:false,step:0}
-function read(key:string):Draft{try{return {...empty,...JSON.parse(localStorage.getItem(key)||'{}')}}catch{return empty}}
-
+import {editAnswer,gradeStep,initialAnswer,passedPrefix,restoreDraft} from './teamPractice'
+import type {PracticeStep,StepAnswer,TeamActivity,TeamDraft} from './teamPractice'
+import './case-study.css'
+const empty:TeamDraft={cursor:0,steps:{},revealed:false}
+function storageKey(course:Course,base:string,a:TeamActivity){return `lecture:${base}:${course.id}:case:${a.id}:revision-${a.revision}`}
+function Input({step,answer,change}:{step:PracticeStep;answer:StepAnswer;change:(answer:StepAnswer)=>void}){
+ if(step.type==='numeric'||step.type==='code')return <label className="team-value">{step.type==='numeric'?`Ответ (${step.unit})`:'Ответ'}<input aria-label={step.type==='numeric'?`Ответ (${step.unit})`:'Ответ'} inputMode={step.type==='numeric'?'decimal':'text'} autoComplete="off" value={typeof answer==='string'?answer:''} onChange={e=>change(e.target.value)}/></label>
+ if(step.type==='matching')return <div className="team-matching">{step.items!.map((item,i)=><label key={item.id}><span>{item.text}</span><select aria-label={`Соответствие ${i+1}: ${item.text}`} value={typeof answer==='object'&&!Array.isArray(answer)?answer[item.id]||'':''} onChange={e=>change({...typeof answer==='object'&&!Array.isArray(answer)?answer:{},[item.id]:e.target.value})}><option value="">Выберите соответствие</option>{step.choices!.map(c=><option key={c.id} value={c.id}>{c.text}</option>)}</select></label>)}</div>
+ if(step.type==='order'){
+  const ids=Array.isArray(answer)?answer:step.items!.map(x=>x.id)
+  const move=(i:number,delta:number)=>{const next=[...ids];[next[i],next[i+delta]]=[next[i+delta],next[i]];change(next)}
+  return <ol className="team-order">{ids.map((id,i)=><li key={id} data-item-id={id}><span>{step.items!.find(x=>x.id===id)?.text}</span><button type="button" className="button secondary" aria-label={`Выше: ${step.items!.find(x=>x.id===id)?.text}`} disabled={!i} onClick={()=>move(i,-1)}>↑</button><button type="button" className="button secondary" aria-label={`Ниже: ${step.items!.find(x=>x.id===id)?.text}`} disabled={i===ids.length-1} onClick={()=>move(i,1)}>↓</button></li>)}</ol>
+ }
+ return <div className="team-choices">{step.choices!.map(c=><label className="case-option" key={c.id}><input type={step.type==='multiple'?'checkbox':'radio'} name={step.id} value={c.id} checked={step.type==='multiple'?Array.isArray(answer)&&answer.includes(c.id):answer===c.id} onChange={()=>change(step.type==='multiple'?(Array.isArray(answer)&&answer.includes(c.id)?answer.filter(x=>x!==c.id):[...Array.isArray(answer)?answer:[],c.id]):c.id)}/><span>{c.text}</span></label>)}</div>
+}
 export function CaseStudy({course,base}:{course:Course;base:string}){
- const [activity,setActivity]=useState<Activity|null>(null),[error,setError]=useState(''),[retry,setRetry]=useState(0)
- const [draft,setDraft]=useState<Draft>(empty),[storageError,setStorageError]=useState(false),[feedback,setFeedback]=useState('')
+ const [activity,setActivity]=useState<TeamActivity|null>(null),[error,setError]=useState(''),[retry,setRetry]=useState(0),[draft,setDraft]=useState<TeamDraft>(empty),[storageError,setStorageError]=useState(false),[feedback,setFeedback]=useState(''),[hint,setHint]=useState(false)
+ const heading=useRef<HTMLHeadingElement>(null)
  const [theme,setTheme]=useState(()=>{try{return JSON.parse(localStorage.getItem(`lecture:${base}:${course.id}:theme`)||'"light"')}catch{return 'light'}})
  const id=new URL(location.href).searchParams.get('case')||''
- useEffect(()=>{document.documentElement.dataset.theme=(theme==='dark'||theme==='auto'&&matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light'},[theme])
- useEffect(()=>{
-  const controller=new AbortController();setError('')
-  if(!/^[a-z0-9-]+-Q\d\d-case$/.test(id)){setError('Практическая задача не найден.');return}
-  fetch(`${base}activities/${id}.json`,{signal:controller.signal}).then(r=>{if(!r.ok)throw Error('Не удалось загрузить условие.');return r.json()}).then((a:Activity)=>{
-   if(controller.signal.aborted)return
-   if(a.id!==id||!course.lectures.some(l=>l.id===a.lectureId)||!a.observations?.length)throw Error('Неверное условие.')
-   setActivity(a);setDraft(read(`lecture:${base}:${course.id}:case:${a.id}:revision-${a.revision}`))
-  }).catch(e=>{if(!controller.signal.aborted)setError(String(e))})
-  return()=>controller.abort()
- },[id,base,course,retry])
- function update(change:Partial<Draft>){
-  const next={...draft,...change};setDraft(next);setFeedback('')
-  if(activity)try{localStorage.setItem(`lecture:${base}:${course.id}:case:${activity.id}:revision-${activity.revision}`,JSON.stringify(next));setStorageError(false)}catch{setStorageError(true)}
- }
+ useEffect(()=>{document.documentElement.dataset.theme=theme==='dark'||theme==='auto'&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'},[theme])
+ useEffect(()=>{const controller=new AbortController();setError('');if(!/^[a-z0-9-]+-Q\d\d-case$/.test(id)){setError('Практическая задача не найдена.');return}
+ fetch(`${base}activities/${id}.json`,{signal:controller.signal}).then(r=>{if(!r.ok)throw Error('Не удалось загрузить задачу.');return r.json()}).then((a:TeamActivity)=>{if(controller.signal.aborted)return;if(a.id!==id||!Array.isArray(a.steps)||a.steps.length<3||!course.lectures.some(l=>l.id===a.lectureId))throw Error('Неверный состав задачи.');let value:unknown;try{value=JSON.parse(localStorage.getItem(storageKey(course,base,a))||'null')}catch{}setActivity(a);setDraft(restoreDraft(a,value))}).catch(e=>{if(!controller.signal.aborted)setError(String(e))});return()=>controller.abort()},[id,base,course,retry])
+ function update(next:TeamDraft){setDraft(next);setFeedback('');setHint(false);if(activity)try{localStorage.setItem(storageKey(course,base,activity),JSON.stringify(next));setStorageError(false)}catch{setStorageError(true)}}
+ function navigate(cursor:number){update({...draft,cursor});requestAnimationFrame(()=>heading.current?.focus())}
  if(error)return <main className="case-study"><h1>Практическая задача</h1><p role="alert">{error}</p><button className="button primary" onClick={()=>setRetry(n=>n+1)}>Повторить загрузку</button><a href={base}>Каталог</a></main>
- if(!activity)return <main className="case-study" role="status">Загружаем условие…</main>
- const lecture=course.lectures.find(l=>l.id===activity.lectureId)!
- const href=`${base}?lecture=${lecture.id}&slide=${activity.questionId}-passport`
- const max=activity.observations.length,step=Math.max(0,Math.min(max,draft.step))
- const numericCorrect=activity.calculations.every((c,i)=>draft.numbers[i]?.trim()&&Number(draft.numbers[i].replace(',','.'))===c.value)
- const canDecide=!activity.calculations.length||draft.calculated&&numericCorrect
- const check=()=>{
-  if(!draft.choice||activity.statements.some(s=>!draft.categories[s.id])||activity.calculations.some((_,i)=>!draft.numbers[i]?.trim())){setFeedback('Выполните классификацию, заполните расчёты и выберите решение.');return}
-  const correct=draft.choice===activity.correct&&activity.statements.every(s=>draft.categories[s.id]===s.category)&&activity.calculations.every((c,i)=>Number(draft.numbers[i].replace(',','.'))===c.value)
-  update({checked:true,revealed:false});setFeedback(correct?'Задача решена верно: классификация, расчёты и вывод согласованы.': 'Есть ошибки. Проверьте отмеченные пункты и попробуйте ещё раз.')
- }
- return <main className="case-study">
-  <header><a className="button secondary" href={href}>Вернуться к лекции</a><button className="button secondary" onClick={()=>setTheme(theme==='dark'?'light':'dark')}>{theme==='dark'?'Светлая тема':'Тёмная тема'}</button></header>
-  <p className="eyebrow">{course.code} · {lecture.semester} семестр · Практическая задача</p><h1>{activity.title}</h1>
-  <section className="case-condition"><h2>Условие</h2><p>{activity.condition}</p></section>
-  {storageError&&<p role="alert">Черновик не сохраняется в этом браузере. Скопируйте свои записи перед закрытием.</p>}
-  <section className="case-evidence" aria-label="Разбор наблюдений">
-   <div className="case-step" aria-live="polite">{step===0?'Обзор: обсудите условие и выберите действия команды.':`Наблюдение ${step} из ${max}`}</div>
-   <CaseDiagram id={activity.id} focus={step} reveal={draft.checked&&draft.revealed}/><ol>{activity.observations.map((s,i)=><li key={i} aria-current={step===i+1?'step':undefined} className={step===i+1?'case-focus':''}>{s}</li>)}</ol>
-   <div className="case-navigation"><button className="button secondary" disabled={!step} onClick={()=>update({step:step-1})}>Назад</button><span>Шаг {step} / {max}</span><button className="button primary" disabled={step===max} onClick={()=>update({step:step+1})}>Далее</button><button className="button secondary" onClick={()=>update({step:0})}>К обзору</button></div>
-  </section>
-  <form onSubmit={e=>{e.preventDefault();check()}}>
-   {canDecide&&<fieldset className="case-classification"><legend>1. {activity.classificationTitle||'Отделите исходные данные от выводов'}</legend><p>{activity.classificationHelp||'Для каждой записи выберите: что дано в условии, что обосновано данными, а что не следует из условия.'}</p>{activity.statements.map((s,i)=><div className="case-classification-item" key={s.id}><label htmlFor={'statement-'+s.id}>{s.text}</label><select id={'statement-'+s.id} aria-label={'Категория записи '+(i+1)} value={draft.categories[s.id]||''} onChange={e=>update({categories:{...draft.categories,[s.id]:e.target.value},checked:false,revealed:false})}><option value="">Выберите категорию</option><option value="fact">{activity.categoryLabels?.fact||'Факт из условия'}</option><option value="decision">{activity.categoryLabels?.decision||'Обоснованный вывод / действие'}</option><option value="assumption">{activity.categoryLabels?.assumption||'Необоснованный вывод / действие'}</option></select>{draft.checked&&<p className="case-item-feedback" role="status">{draft.categories[s.id]===s.category?'Верно.':'Неверно. '+s.feedback}</p>}</div>)}</fieldset>}
-   {!!activity.calculations.length&&<fieldset><legend>2. Выполните расчёт</legend>{activity.calculations.map((c,i)=><div className="case-classification-item" key={c.prompt}><label className="case-number">{c.prompt} ({c.unit})<input aria-label={c.prompt+' ('+c.unit+')'} inputMode="decimal" value={draft.numbers[i]||''} onChange={e=>update({numbers:{...draft.numbers,[i]:e.target.value},calculated:false,checked:false,revealed:false})}/></label>{(draft.checked||draft.calculated)&&<p role="status">{Number(draft.numbers[i]?.replace(',','.'))===c.value?'Верно. Единицы учтены.':'Неверно. '+c.hint}</p>}</div>)}<button type="button" className="button secondary" onClick={()=>update({calculated:true})}>Проверить расчёт</button></fieldset>}
-   {canDecide&&<fieldset><legend>{activity.calculations.length?'3':'2'}. {activity.task}</legend>{activity.options.map(o=><label className="case-option" key={o.id}><input type="radio" name="case-decision" value={o.id} checked={draft.choice===o.id} onChange={()=>update({choice:o.id,checked:false,revealed:false})}/><span>{o.text}</span></label>)}</fieldset>}
-   <button className="button primary" type="submit" disabled={!canDecide}>Проверить решение</button>
-   {draft.checked&&<p role="status">{draft.choice===activity.correct?'Вывод выбран верно.':activity.mistake}</p>}
-   <p role="status">{feedback|| (draft.checked?'Попытка сохранена. Исправьте ошибки или откройте разбор.':'')}</p>
-  </form>
-  {draft.checked&&<button className="button secondary" onClick={()=>update({revealed:!draft.revealed})}>{draft.revealed?'Скрыть разбор':'Открыть разбор'}</button>}
-  {draft.checked&&draft.revealed&&<aside className="case-solution"><h2>Основание решения</h2><p>{activity.explanation}</p>{activity.calculations.map(c=><p key={c.prompt}>{c.prompt}: {c.value} {c.unit}.</p>)}<p>{activity.rule}</p><p>Обсудите командой: какое наблюдение его подтверждает и что остаётся непроверенным?</p></aside>}
+ if(!activity)return <main className="case-study" role="status">Загружаем задачу…</main>
+ const a=activity,l=course.lectures.find(l=>l.id===a.lectureId)!,prefix=passedPrefix(a,draft),index=draft.cursor-1,step=a.steps[index],state=step&&draft.steps[step.id],answer=step?(state?.answer??initialAnswer(step)):'',grade=step&&state?.checked?gradeStep(step,answer):null,complete=prefix===a.steps.length
+ function check(){if(!step)return;const result=gradeStep(step,answer);if(result.status==='empty'){setFeedback(result.message);return}update({...draft,steps:{...draft.steps,[step.id]:{answer,checked:true,attempts:(state?.attempts||0)+1}}});setFeedback(result.message)}
+ return <main className="case-study team-practice">
+ <header><a className="button secondary" href={`${base}?lecture=${l.id}&slide=${a.questionId}-passport`}>Вернуться к лекции</a><button className="button secondary" onClick={()=>setTheme(theme==='dark'?'light':'dark')}>{theme==='dark'?'Светлая тема':'Тёмная тема'}</button></header>
+ <p className="eyebrow">{course.code} · {l.semester} семестр · Практическая задача</p><h1>{a.title}</h1>
+ {storageError&&<p role="alert">Браузер не сохраняет ход решения. Продолжать можно до закрытия страницы.</p>}
+ {draft.cursor===0?<section className="case-condition"><h2>Условие</h2><p>{a.condition}</p><p className="case-data-label">Учебный случай. Обсудите ответ командой; преподаватель вводит согласованное решение.</p></section>:<details className="case-condition"><summary>Условие задачи</summary><p>{a.condition}</p></details>}
+ <nav className="team-progress" aria-label="Ход решения"><span>Шаг {draft.cursor} / {a.steps.length}</span><span>Проверено: {prefix} / {a.steps.length}</span></nav>
+ {draft.cursor===0?<section className="team-overview"><h2 ref={heading} tabIndex={-1}>План командного решения</h2><ol>{a.steps.map(s=><li key={s.id}>{s.title}</li>)}</ol><CaseDiagram id={a.id} focus={0}/><button className="button primary" onClick={()=>navigate(1)}>Начать решение</button></section>:<section className="team-current" data-step-id={step.id} data-step-type={step.type}>
+ <h2 ref={heading} tabIndex={-1}>{step.title}</h2><p className="team-prompt">{step.prompt}</p>{step.type==='multiple'&&<p className="case-data-label">Выберите все подходящие пункты. Лишний пункт делает набор неверным.</p>}{step.type==='order'&&<p className="case-data-label">Расставьте действия по зависимостям кнопками ↑ и ↓.</p>}
+ <form onSubmit={e=>{e.preventDefault();check()}}><Input step={step} answer={answer} change={value=>update(editAnswer(a,draft,index,value))}/><button className="button primary" type="submit">Проверить шаг</button></form>
+ <div className={`team-feedback ${grade?.status||''}`} role="status" aria-live="polite">{feedback||grade?.message||''}</div>
+ {grade?.items&&<ul className="team-row-feedback">{grade.items.map(x=><li key={x.id}>{step.items!.find(item=>item.id===x.id)?.text}: {x.correct?'верно':'нужно исправить'}</li>)}</ul>}
+ {grade?.status==='incorrect'&&<button className="button secondary" onClick={()=>setHint(!hint)}>{hint?'Скрыть пояснение':'Разобрать ошибку шага'}</button>}{hint&&<aside className="team-hint">{step.explanation}</aside>}
+ <div className="case-navigation"><button className="button secondary" onClick={()=>navigate(draft.cursor-1)}>Назад</button>{draft.cursor<a.steps.length&&<button className="button primary" disabled={grade?.status!=='correct'} onClick={()=>navigate(draft.cursor+1)}>Следующий шаг</button>}</div>
+ </section>}
+ {complete&&<section className="team-complete"><h2>Командное решение проверено</h2><p>Все {a.steps.length} шага выполнены верно.</p><button className="button secondary" onClick={()=>update({...draft,revealed:!draft.revealed})}>{draft.revealed?'Скрыть разбор':'Открыть полный разбор'}</button></section>}
+ {complete&&draft.revealed&&<aside className="case-solution"><h2>Разбор задачи</h2><ol>{a.steps.map(s=><li key={s.id}><strong>{s.title}.</strong> {s.explanation}</li>)}</ol><p>{a.explanation}</p><p>{a.rule}</p><CaseDiagram id={a.id} focus={0} reveal/></aside>}
+ <footer className="team-actions"><button className="button secondary" onClick={()=>navigate(0)}>К условию и плану</button><button className="button secondary" onClick={()=>update(empty)}>Начать заново</button></footer>
  </main>
 }
